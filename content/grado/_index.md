@@ -45,16 +45,23 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
     </div>
   </a>
 
+  <a href="/apuntes/fundamentos/" style="text-decoration: none; color: inherit;">
+    <div style="border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--border)'">
+      <div style="font-size: 2rem; margin-bottom: 0.75rem;">🧮</div>
+      <h3 style="margin: 0 0 0.5rem 0;">Fundamentos</h3>
+      <p style="margin: 0 0 1rem 0; opacity: 0.8; font-size: 0.9rem;">Matemáticas, optimización, probabilidad y estadística para economía. Útil como base o referencia rápida si vienes de fuera del campo.</p>
+      <div style="font-size: 0.8rem; opacity: 0.6;">
+        Cálculo · Álgebra lineal · Optimización · Probabilidad · Estadística
+      </div>
+    </div>
+  </a>
+
 </div>
 {{< /rawhtml >}}
 
 ---
 
 ## Econometría
-
-**Cursos base:** Probabilidad y Estadística · Inferencia Estadística · Econometría  
-**Complemento posgrado:** Macroeconometría Aplicada · Microeconometría Aplicada  
-**Programa oficial:** [Ver temario](#) ← reemplazar con link UCursos
 
 - [Método científico en Economía](/grado/metrics/metodo-cientifico/)
 - [El MRL como modelo probabilístico](/grado/metrics/mrl/)
@@ -68,26 +75,19 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 ## Macroeconomía
 
 ### Macroeconomía I — Economía real cerrada
-**Profesor:** Por completar · [Web del profesor](#)  
-**Programa:** [Ver programa](#)
-
 - [Crecimiento económico](/grado/macro/crecimiento/)
 - [Consumo y ahorro](/grado/macro/consumo/)
 - [Inversión](/grado/macro/inversion/)
 - [Política fiscal: Gasto público, impuestos y subsidios](/grado/macro/politica-fiscal/)
 - [Equilibrio macroeconómico en una economía cerrada](/grado/macro/equilibrio-cerrado/)
 
-### Macroeconomía II — Economía nominal cerrada
-**Profesor:** Por completar · [Web del profesor](#)  
-**Programa:** [Ver programa](#)
+### Macroeconomía II — Economía monetaria cerrada
 
 - [Dinero: Naturaleza, oferta y demanda](/grado/macro/dinero/)
 - [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/oa-da/)
 - [Nivel de precios e inflación](/grado/macro/inflacion/)
 
 ### Macroeconomía Internacional — Economía abierta
-**Profesor:** Por completar · [Web del profesor](#)  
-**Programa:** [Ver programa](#)
 
 - [Cuentas externas y balanza de pagos](/grado/macro/balanza-de-pagos/)
 - [Dinero, tipo de cambio, tasa de interés y precios](/grado/macro/tipo-de-cambio/)
@@ -98,8 +98,6 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 ## Microeconomía
 
 ### Microeconomía I — Teoría clásica
-**Profesora:** María Luisa Vergara · [Web de la profesora](#)  
-**Programa:** [Ver programa](#)
 
 - [Elección del consumidor y demanda](/grado/micro/consumidor/)
 - [Teoría de la producción y oferta](/grado/micro/produccion/)
@@ -108,16 +106,12 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 - [Bienes públicos y externalidades](/grado/micro/externalidades/)
 
 ### Microeconomía II — Teoría moderna y riesgo
-**Profesor:** Por completar · [Web del profesor](#)  
-**Programa:** [Ver programa](#)
 
 - [Elección bajo incertidumbre](/grado/micro/incertidumbre/)
 - [Teoría de juegos](/grado/micro/juegos/)
 - [Información asimétrica](/grado/micro/info-asimetrica/)
 
 ### Competencia y Mercados
-**Profesor:** Por completar · [Web del profesor](#)  
-**Programa:** [Ver programa](#)
 
 - [Poder de mercado y monopolio](/grado/micro/monopolio/)
 - [Oligopolio](/grado/micro/oligopolio/)
