@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Balassa-Samuelson on Agustín Sandoval Tapia</title>
+    <link>http://localhost:4459/tags/balassa-samuelson/</link>
+    <description>Recent content in Balassa-Samuelson on Agustín Sandoval Tapia</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4459/tags/balassa-samuelson/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tipo de Cambio Real</title>
+      <link>http://localhost:4459/grado/macro/12_tcr/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/12_tcr/</guid>
+      <description>Definición y determinantes del tipo de cambio real en el corto y largo plazo. Modelo de transables y no transables. Efecto Balassa-Samuelson. Evidencia empírica y el PPP puzzle.</description>
+    </item>
+  </channel>
+</rss>

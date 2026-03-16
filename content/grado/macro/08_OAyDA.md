@@ -178,7 +178,7 @@ La distinción corto/largo plazo no es temporal sino conceptual: el "corto plazo
 **Ajuste hacia el largo plazo:** si $Y_{CP} > Y^n$ (brecha positiva), los salarios y precios suben → OACP se desplaza hacia arriba → el producto cae hacia $Y^n$. El proceso opera a través de la revisión de expectativas de inflación.
 
 **Equilibrio de largo plazo:** intersección de DA y OALP. $Y = Y^n$, la inflación es determinada solo por la política monetaria.
-
+ 
 ---
 
 ## 5. La curva de Phillips: historia e interpretaciones
