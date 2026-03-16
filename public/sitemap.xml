@@ -5,6 +5,15 @@
     <loc>http://localhost:7277/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:7277/grado/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:7277/grado/macro/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:7277/grado/macro/01_pol_mon/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:7277/posts/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,12 +26,6 @@
     <loc>http://localhost:7277/tags/test/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/grado/macro/</loc>
-  </url><url>
-    <loc>http://localhost:7277/grado/</loc>
-  </url><url>
     <loc>http://localhost:7277/categories/</loc>
-  </url><url>
-    <loc>http://localhost:7277/grado/macro/01_pol_mon/</loc>
   </url>
 </urlset>
