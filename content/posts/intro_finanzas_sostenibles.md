@@ -24,7 +24,7 @@ Distinguir las problemáticas que afectan a cada tópico son relevantes puesto q
 
 ---
 
-## Por qué importa: los fundamentos con respaldo empírico
+## ¿Por qué importa?
 
 El argumento más serio a favor de la inversión sostenible no es moral sino analítico: los factores ESG capturan información sobre la calidad de gestión, resiliencia operacional y exposición a riesgos regulatorios que los estados financieros convencionales no reflejan adecuadamente.
 
@@ -42,7 +42,7 @@ Otros efectos documentados:
 
 ---
 
-## Materialidad: no todos los factores ESG importan igual en todos los sectores
+## Materialidad: no todo importa
 
 El concepto central que articula la inversión ESG rigurosa es la **materialidad financiera**: un factor ESG es material cuando su presencia o ausencia puede afectar los ingresos, costos, activos, pasivos o costo de capital de una empresa. La pregunta relevante no es si una empresa tiene políticas ESG, sino si los factores ESG específicos de su industria están siendo bien gestionados.
 
@@ -122,7 +122,7 @@ Variante de la integración. Se mantiene la estructura sectorial del benchmark d
 ### 5. Inversión temática
 Exposición a temáticas específicas: energía renovable, agua, economía circular, diversidad. Los índices temáticos subdivididos han mostrado mejores Sharpe ratios que los índices ESG generales en horizontes de 10 años, con correlaciones más bajas entre sí, lo que mejora la diversificación.
 
-### 6. Engagement y activismo accionarial
+### 6. Engagement y "activismo" accionarial
 En lugar de excluir o seleccionar, se usa el poder como accionista para influir en el comportamiento corporativo: votación en juntas, diálogo con directorios, resoluciones de accionistas. Es la estrategia preferida por grandes gestores institucionales según la GSIA. La lógica es que cambiar a una empresa desde adentro tiene mayor impacto que desinvertir.
 
 ---
