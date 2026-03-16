@@ -42,6 +42,30 @@ Otros efectos documentados:
 
 ---
 
+## Materialidad: no todos los factores ESG importan igual en todos los sectores
+
+El concepto central que articula la inversión ESG rigurosa es la **materialidad financiera**: un factor ESG es material cuando su presencia o ausencia puede afectar los ingresos, costos, activos, pasivos o costo de capital de una empresa. La pregunta relevante no es si una empresa tiene políticas ESG, sino si los factores ESG específicos de su industria están siendo bien gestionados.
+
+El estándar de referencia para la materialidad sectorial es el **SASB Materiality Map** (ahora integrado al ISSB bajo IFRS S1/S2), que identifica 26 categorías generales de sostenibilidad agrupadas en cinco dimensiones: Medioambiente, Capital Social, Capital Humano, Modelo de Negocio e Innovación, y Gobernanza, especificando cuáles son financieramente materiales para cada una de 77 industrias.  MSCI calibra sus propios pesos por industria combinando dos factores: cuánto contribuye cada industria a la externalidad principal de cada issue, y el horizonte temporal en que dicha externalidad puede materializarse. 
+
+La implicancia práctica se hace evidente con ejemplos concretos:
+
+**Minería del cobre** — El factor más material no es la diversidad del directorio sino la **gestión del agua** (intensidad de uso hídrico, reciclaje en plantas) y las **emisiones de Scope 1 y 2** por tonelada producida. Una minera en zona de estrés hídrico con alta intensidad de consumo enfrenta riesgo regulatorio y operacional concreto, independiente de sus políticas de inclusión.
+
+**Banca retail** — La **privacidad de datos y ciberseguridad** es el factor dominante. Un banco con arquitectura tecnológica frágil tiene exposición material que no aparece en sus estados financieros hasta que ocurre un evento de breach. La huella de carbono directa del banco es irrelevante en comparación.
+
+**Industria farmacéutica** — Los factores materiales son **acceso a medicamentos y fijación de precios** (riesgo regulatorio y reputacional) y la **seguridad de productos** (litigios). Las emisiones operacionales de una farmacéutica son marginales frente a estos vectores de riesgo.
+
+**Software / tecnología** — La materialidad se concentra en **capital humano** (retención de talento, compensación, cultura) y **privacidad de datos**. La huella ambiental directa es baja, aunque esto cambia cuando se considera el consumo energético de centros de datos.
+
+**Utilities eléctricas** — Aquí sí dominan los factores ambientales: **intensidad de carbono de la generación**, mix de fuentes y exposición a regulación de transición energética. Una eléctrica con alta dependencia de carbón tiene riesgo de activos varados que es puramente financiero.
+
+El corolario de esto es que un score ESG agregado que promedia factores materiales e inmateriales introduce ruido. Un estudio publicado en *Review of Finance* encontró que reponderar los ratings ESG según materialidad SASB mejora significativamente su correlación con retornos accionarios futuros. La materialidad no es un concepto normativo: es una herramienta de filtro para separar señal de ruido.
+
+La herramienta pública para explorar qué factores son materiales por industria es el [SASB Materiality Finder](https://sasb.ifrs.org/standards/materiality-finder/find/).
+
+---
+
 ## Cómo se mide: proveedores, metodologías y el problema de la divergencia
 
 Aquí es donde el campo tiene su talón de Aquiles más evidente, y donde conviene ser especialmente riguroso.
