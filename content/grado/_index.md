@@ -3,10 +3,10 @@ title: "Apuntes para el Examen de Grado"
 layout: "single"
 ---
 
-Esta entrada contiene mis apuntes para los exámenes de grado en Ingeniería Comercial con mención en Economía en la Pontificia Universidad Católica de Chile.
+Apuntes organizados por área para el Examen de Grado de [Ingeniería Comercial, Mención Economía](https://economiayadministracion.uc.cl/ingenieria-comercial/) — [Pontificia Universidad Católica de Chile](https://www.uc.cl/).
 
-Apuntes organizados por curso.
+## Áreas
 
+- [Econometría](/grado/metrics/)
 - [Macroeconomía](/grado/macro/)
 - [Microeconomía](/grado/micro/)
-- [Métricas](/grado/metrics/)
