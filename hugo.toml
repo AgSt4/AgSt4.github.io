@@ -26,6 +26,9 @@ paginate = 10
   name = "linkedin"
   url = "https://www.linkedin.com/in/agustinsandovaltapia"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [menu]
   [[menu.main]]
     name = "Blog"

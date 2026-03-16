@@ -218,5 +218,19 @@
       <guid>http://localhost:4459/grado/macro/02_trabajo/</guid>
       <description>&lt;p&gt;dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Curriculum Vitae</title>
+      <link>http://localhost:4459/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/cv/</guid>
+      <description>&lt;p&gt;Estudiante de Magíster en Economía Aplicada (mención Economía Financiera) en la Pontificia Universidad Católica de Chile. Formación orientada a economía aplicada, econometría y análisis de datos, con experiencia en inversión sostenible, estrategia de datos e investigación aplicada.&lt;/p&gt;
+&lt;p&gt;📄 &lt;a href=&#34;./cv/cv-agustin-sandoval.pdf&#34;&gt;Descargar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;educación&#34;&gt;Educación&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Magíster en Economía Aplicada&lt;/strong&gt; · Mención Economía Financiera
+Pontificia Universidad Católica de Chile · 2025–2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ingeniería Comercial, Economía&lt;/strong&gt; · Minor en Macroeconomía y Finanzas
+Pontificia Universidad Católica de Chile · 2021–2026&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
