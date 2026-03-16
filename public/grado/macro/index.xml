@@ -6,91 +6,91 @@
     <description>Recent content in Macroeconomía on Agustín Sandoval Tapia</description>
     <generator>Hugo</generator>
     <language>es</language>
-    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/macro/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Consumo y ahorro</title>
-      <link>http://localhost:4459/grado/macro/03_ahorro_consumo/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/03_ahorro_consumo/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Crecimiento Económico</title>
       <link>http://localhost:4459/grado/macro/01_crecimiento/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/01_crecimiento/</guid>
       <description>Modelo neoclásico, regla de oro, crecimiento endógeno y contabilidad del crecimiento. Apunte basado en EAE2210 — Macroeconomía I.</description>
     </item>
     <item>
-      <title>Cuentas externas y balanza de pagos</title>
+      <title>Consumo y Ahorro</title>
+      <link>http://localhost:4459/grado/macro/03_ahorro_consumo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/03_ahorro_consumo/</guid>
+      <description>Función keynesiana, modelo de dos períodos, restricciones de liquidez, ciclo de vida, ingreso permanente, camino aleatorio y ahorro precautorio.</description>
+    </item>
+    <item>
+      <title>Cuentas Externas y Balanza de Pagos</title>
       <link>http://localhost:4459/grado/macro/10_balance/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/10_balance/</guid>
-      <description></description>
+      <description>Cuentas nacionales en economía abierta, enfoque intertemporal de la cuenta corriente, economías de dotación y con producción, ajuste en economías grandes y pequeñas, déficit gemelo.</description>
     </item>
     <item>
-      <title>Dinero</title>
-      <link>http://localhost:4459/grado/macro/07_dinero/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/07_dinero/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dinero, tipo de cambio, tasa de interés y precios</title>
+      <title>Dinero, Tipo de Cambio, Tasa de Interés y Precios</title>
       <link>http://localhost:4459/grado/macro/11_tcn/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/11_tcn/</guid>
-      <description></description>
+      <description>Enfoque de activos del tipo de cambio, paridades de interés y poder de compra, modelo monetario, Mundell-Fleming, overshooting de Dornbusch y regímenes cambiarios.</description>
     </item>
     <item>
-      <title>Equilibrio macroeconómico en una economía cerrada</title>
+      <title>Dinero: Naturaleza, Oferta y Demanda</title>
+      <link>http://localhost:4459/grado/macro/07_dinero/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/07_dinero/</guid>
+      <description>Funciones del dinero, multiplicadores monetarios, hojas de balance, modelo de Baumol-Tobin, dinero en la función de utilidad y cash-in-advance.</description>
+    </item>
+    <item>
+      <title>Equilibrio Macroeconómico en una Economía Cerrada</title>
       <link>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</guid>
-      <description></description>
+      <description>Equilibrio en el mercado de bienes, igualación ahorro-inversión y determinación de la tasa de interés real en una economía cerrada sin dinero.</description>
     </item>
     <item>
       <title>Inversión</title>
       <link>http://localhost:4459/grado/macro/04_inversion/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/04_inversion/</guid>
-      <description></description>
+      <description>Costo de uso del capital, q de Tobin, costos de ajuste, impuestos, irreversibilidad y opciones reales. Apunte basado en EAE2210 — Macroeconomía I.</description>
     </item>
     <item>
-      <title>Nivel de precios e inflación</title>
-      <link>http://localhost:4459/grado/macro/09_inflacion/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/09_inflacion/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Oferta agregada, demanda agregada y ciclos económicos</title>
-      <link>http://localhost:4459/grado/macro/08_oayda/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/08_oayda/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Política fiscal: Gasto público, impuestos y subsidios</title>
-      <link>http://localhost:4459/grado/macro/05_fiscal/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/05_fiscal/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tipo de cambio real</title>
-      <link>http://localhost:4459/grado/macro/12_tcr/</link>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/12_tcr/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Trabajo</title>
+      <title>Mercado del Trabajo</title>
       <link>http://localhost:4459/grado/macro/02_trabajo/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/macro/02_trabajo/</guid>
-      <description>&lt;p&gt;dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu&lt;/p&gt;</description>
+      <description>Tasa natural, desempleo friccional, rigideces salariales, modelo de Shapiro-Stiglitz y modelo de búsqueda y emparejamiento de Mortensen-Pissarides.</description>
+    </item>
+    <item>
+      <title>Nivel de Precios e Inflación</title>
+      <link>http://localhost:4459/grado/macro/09_inflacion/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/09_inflacion/</guid>
+      <description>Teoría cuantitativa, modelo monetario del nivel de precios, expectativas racionales, costos de la inflación, hiperinflación y el modelo de overshooting de Dornbusch.</description>
+    </item>
+    <item>
+      <title>Oferta Agregada, Demanda Agregada y Ciclos Económicos</title>
+      <link>http://localhost:4459/grado/macro/08_oa_da/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/08_oa_da/</guid>
+      <description>Ciclos económicos, modelo de Lucas, rigideces de precios y salarios, modelos de Fischer-Taylor-Calvo, oferta y demanda agregada, curva de Phillips y ajuste macroeconómico.</description>
+    </item>
+    <item>
+      <title>Política Fiscal: Gasto Público, Impuestos y Deuda</title>
+      <link>http://localhost:4459/grado/macro/05_fiscal/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/05_fiscal/</guid>
+      <description>Restricción presupuestaria intertemporal, sostenibilidad de la deuda, equivalencia ricardiana, el problema de Ramsey e impuestos óptimos.</description>
+    </item>
+    <item>
+      <title>Tipo de Cambio Real</title>
+      <link>http://localhost:4459/grado/macro/12_tcr/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/12_tcr/</guid>
+      <description>Definición y determinantes del tipo de cambio real en el corto y largo plazo. Modelo de transables y no transables. Efecto Balassa-Samuelson. Evidencia empírica y el PPP puzzle.</description>
     </item>
   </channel>
 </rss>

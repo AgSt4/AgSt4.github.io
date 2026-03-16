@@ -9,74 +9,74 @@
     <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/micro/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bienes públicos y externalidades</title>
+      <title>Bienes Públicos y Externalidades</title>
       <link>http://localhost:4459/grado/micro/05_publico/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/05_publico/</guid>
-      <description></description>
+      <description>Externalidades: ineficiencia de mercado, impuesto pigouviano, teorema de Coase. Bienes públicos: no-rivalidad y no-excludabilidad, problema del free rider, condición de Samuelson y equilibrio de Lindahl.</description>
     </item>
     <item>
-      <title>Elección bajo incertidumbre</title>
+      <title>Elección bajo Incertidumbre</title>
       <link>http://localhost:4459/grado/micro/06_riesgo/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/06_riesgo/</guid>
-      <description></description>
+      <description>Teoría de utilidad esperada, axiomas vNM, aversión al riesgo, medidas Arrow-Pratt, equivalente de certeza, prima de riesgo, mercado de seguros, diversificación y precios de activos.</description>
     </item>
     <item>
-      <title>Elección del consumidor y demanda</title>
+      <title>Elección del Consumidor y Demanda</title>
       <link>http://localhost:4459/grado/micro/01_consumidor/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/01_consumidor/</guid>
-      <description></description>
+      <description>Preferencias, UMP, EMP, dualidad, demanda marshalliana e hicksiana, ecuación de Slutsky, efectos ingreso y sustitución, elasticidades y medidas de bienestar.</description>
     </item>
     <item>
-      <title>Equilibrio general en competencia perfecta</title>
+      <title>Equilibrio General en Competencia Perfecta</title>
       <link>http://localhost:4459/grado/micro/04_general/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/04_general/</guid>
-      <description></description>
+      <description>Economía de intercambio puro, caja de Edgeworth, optimalidad de Pareto, equilibrio walrasiano, primer y segundo teorema del bienestar, equilibrio con producción.</description>
     </item>
     <item>
-      <title>Equilibrio parcial en competencia perfecta</title>
+      <title>Equilibrio Parcial en Competencia Perfecta</title>
       <link>http://localhost:4459/grado/micro/03_parcial/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/03_parcial/</guid>
-      <description></description>
+      <description>Equilibrio competitivo, análisis de bienestar, excedente del consumidor y productor, intervenciones de política: impuestos, subsidios, precio mínimo y precio máximo.</description>
     </item>
     <item>
-      <title>Información asimétrica</title>
+      <title>Información Asimétrica</title>
       <link>http://localhost:4459/grado/micro/08_informacion/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/08_informacion/</guid>
-      <description></description>
+      <description>El problema principal-agente, riesgo moral con modelos discretos y continuos, selección adversa y el mercado de limones, autoselección y screening, señalización de Spence.</description>
     </item>
     <item>
       <title>Oligopolio</title>
       <link>http://localhost:4459/grado/micro/10_oligopolio/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/10_oligopolio/</guid>
-      <description></description>
+      <description>Modelos de Cournot, Bertrand y Stackelberg. La paradoja de Bertrand y sus resoluciones. Diferenciación horizontal de productos. Colusión y el dilema del prisionero del oligopolio.</description>
     </item>
     <item>
-      <title>Poder de mercado y monopolio</title>
+      <title>Poder de Mercado y Monopolio</title>
       <link>http://localhost:4459/grado/micro/09_monopolio/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/09_monopolio/</guid>
-      <description></description>
+      <description>Fuentes del poder de mercado, optimización del monopolista, índice de Lerner, pérdida irrecuperable, discriminación de precios de primer, segundo y tercer grado, monopolio natural y regulación.</description>
     </item>
     <item>
-      <title>Teoría de juegos</title>
+      <title>Teoría de Juegos</title>
       <link>http://localhost:4459/grado/micro/07_juegos/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/07_juegos/</guid>
-      <description></description>
+      <description>Juegos estáticos y equilibrio de Nash, dominancia, juegos dinámicos con información perfecta, inducción hacia atrás, perfección en subjuegos, juegos repetidos y el teorema folk.</description>
     </item>
     <item>
-      <title>Teoría de la producción y oferta</title>
+      <title>Teoría de la Producción y Oferta</title>
       <link>http://localhost:4459/grado/micro/02_productor/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/micro/02_productor/</guid>
-      <description></description>
+      <description>Tecnología y funciones de producción, CMP, función de costos, lema de Shephard, PMP, función de beneficios, lema de Hotelling, función de oferta y dualidad producción-costo.</description>
     </item>
   </channel>
 </rss>

@@ -55,7 +55,7 @@ layout: "single"
 - Demanda por dinero: Baumol-Tobin · Dinero en función de utilidad
 - Oferta de dinero: señoreaje · multiplicadores monetarios · hojas de balance BC
 
-## (8) [Oferta y demanda agregada](08_OAyDA)
+## (8) [Oferta y demanda agregada](08_oa_da)
 - Curva de Phillips (corto y largo plazo) · rol de expectativas
 - Ciclos clásicos y keynesianos
 - Modelo IS-LM

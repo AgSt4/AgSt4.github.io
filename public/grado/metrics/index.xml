@@ -9,46 +9,46 @@
     <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/metrics/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>El modelo de regresión lineal (MRL) como modelo probabilístico</title>
+      <title>El Modelo de Regresión Lineal (MRL) como Modelo Probabilístico</title>
       <link>http://localhost:4459/grado/metrics/02_mrl/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/02_mrl/</guid>
-      <description></description>
+      <description>Supuestos del MRL, derivación y propiedades del estimador MCO, teorema de Gauss-Markov, inferencia estadística, bondad de ajuste y predicción.</description>
     </item>
     <item>
-      <title>Especificación y problemas en el MRL</title>
+      <title>Especificación y Problemas en el MRL</title>
       <link>http://localhost:4459/grado/metrics/03_problemas/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/03_problemas/</guid>
-      <description></description>
+      <description>Transformaciones de variables, variables ficticias, sesgo por omisión, inclusión de irrelevantes, multicolinealidad, errores de medición, cambio estructural y selección de modelos.</description>
     </item>
     <item>
-      <title>Heterocedasticidad y dependencia de los errores</title>
+      <title>Heterocedasticidad y Dependencia de los Errores</title>
       <link>http://localhost:4459/grado/metrics/05_errores/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/05_errores/</guid>
-      <description></description>
+      <description>Causas y consecuencias de la heterocedasticidad y autocorrelación, tests de diagnóstico, mínimos cuadrados generalizados, errores estándar robustos HAC e inferencia robusta.</description>
     </item>
     <item>
-      <title>Inferencia causal</title>
+      <title>Inferencia Causal</title>
       <link>http://localhost:4459/grado/metrics/04_inferencia/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/04_inferencia/</guid>
-      <description></description>
+      <description>Efectos de tratamiento, identificación causal, variables instrumentales, estimador MC2E, validez de instrumentos, instrumentos débiles, test de endogeneidad y evaluación experimental.</description>
     </item>
     <item>
-      <title>Método científico en Economía</title>
+      <title>Método Científico en Economía</title>
       <link>http://localhost:4459/grado/metrics/01_ciencia/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/01_ciencia/</guid>
-      <description></description>
+      <description>Estructura del dato en economía, causalidad vs. correlación, el modelo de resultados potenciales de Rubin-Neyman, sesgo de selección y el problema fundamental de la inferencia causal.</description>
     </item>
     <item>
-      <title>Series de tiempo</title>
+      <title>Series de Tiempo</title>
       <link>http://localhost:4459/grado/metrics/06_tiempo/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/grado/metrics/06_tiempo/</guid>
-      <description></description>
+      <description>Tendencia e integración, procesos estacionarios y no estacionarios, tests de raíz unitaria ADF, regresión espuria, cointegración de Engle-Granger, modelo de corrección de error.</description>
     </item>
   </channel>
 </rss>
