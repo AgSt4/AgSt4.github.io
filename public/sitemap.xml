@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:7277/agustin-sandoval/</loc>
+    <loc>http://localhost:7277/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/agustin-sandoval/posts/</loc>
+    <loc>http://localhost:7277/posts/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/agustin-sandoval/posts/primer-post/</loc>
+    <loc>http://localhost:7277/posts/primer-post/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/agustin-sandoval/tags/</loc>
+    <loc>http://localhost:7277/tags/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/agustin-sandoval/tags/test/</loc>
+    <loc>http://localhost:7277/tags/test/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:7277/agustin-sandoval/categories/</loc>
+    <loc>http://localhost:7277/categories/</loc>
   </url>
 </urlset>
