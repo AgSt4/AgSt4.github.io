@@ -1,0 +1,5 @@
+---
+title: "Inferencia causal"
+date: 2026-03-15
+draft: false
+---

@@ -1,5 +1,5 @@
 ---
-title: "Política Monetaria"
+title: "Crecimiento económico"
 date: 2026-03-15
 draft: false
 ---

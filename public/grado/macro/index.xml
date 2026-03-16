@@ -9,10 +9,87 @@
     <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/macro/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Política Monetaria</title>
-      <link>http://localhost:4459/grado/macro/01_pol_mon/</link>
+      <title>Consumo y ahorro</title>
+      <link>http://localhost:4459/grado/macro/03_ahorro_consumo/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:4459/grado/macro/01_pol_mon/</guid>
+      <guid>http://localhost:4459/grado/macro/03_ahorro_consumo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crecimiento económico</title>
+      <link>http://localhost:4459/grado/macro/01_crecimiento/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/01_crecimiento/</guid>
+      <description>&lt;p&gt;dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cuentas externas y balanza de pagos</title>
+      <link>http://localhost:4459/grado/macro/10_balance/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/10_balance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dinero</title>
+      <link>http://localhost:4459/grado/macro/07_dinero/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/07_dinero/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dinero, tipo de cambio, tasa de interés y precios</title>
+      <link>http://localhost:4459/grado/macro/11_tcn/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/11_tcn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equilibrio macroeconómico en una economía cerrada</title>
+      <link>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inversión</title>
+      <link>http://localhost:4459/grado/macro/04_inversion/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/04_inversion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nivel de precios e inflación</title>
+      <link>http://localhost:4459/grado/macro/09_inflacion/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/09_inflacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oferta agregada, demanda agregada y ciclos económicos</title>
+      <link>http://localhost:4459/grado/macro/08_oayda/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/08_oayda/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Política fiscal: Gasto público, impuestos y subsidios</title>
+      <link>http://localhost:4459/grado/macro/05_fiscal/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/05_fiscal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tipo de cambio real</title>
+      <link>http://localhost:4459/grado/macro/12_tcr/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/12_tcr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trabajo</title>
+      <link>http://localhost:4459/grado/macro/02_trabajo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/02_trabajo/</guid>
       <description>&lt;p&gt;dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu&lt;/p&gt;</description>
     </item>
   </channel>

@@ -6,6 +6,77 @@
     <description>Recent content in Microeconomía on Agustín Sandoval Tapia</description>
     <generator>Hugo</generator>
     <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/micro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bienes públicos y externalidades</title>
+      <link>http://localhost:4459/grado/micro/05_publico/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/05_publico/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Elección bajo incertidumbre</title>
+      <link>http://localhost:4459/grado/micro/06_riesgo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/06_riesgo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Elección del consumidor y demanda</title>
+      <link>http://localhost:4459/grado/micro/01_consumidor/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/01_consumidor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equilibrio general en competencia perfecta</title>
+      <link>http://localhost:4459/grado/micro/04_general/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/04_general/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equilibrio parcial en competencia perfecta</title>
+      <link>http://localhost:4459/grado/micro/03_parcial/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/03_parcial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Información asimétrica</title>
+      <link>http://localhost:4459/grado/micro/08_informacion/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/08_informacion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oligopolio</title>
+      <link>http://localhost:4459/grado/micro/10_oligopolio/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/10_oligopolio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poder de mercado y monopolio</title>
+      <link>http://localhost:4459/grado/micro/09_monopolio/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/09_monopolio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Teoría de juegos</title>
+      <link>http://localhost:4459/grado/micro/07_juegos/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/07_juegos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Teoría de la producción y oferta</title>
+      <link>http://localhost:4459/grado/micro/02_productor/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/02_productor/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

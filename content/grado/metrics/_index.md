@@ -18,18 +18,18 @@ layout: "single"
 
 # Econometría (EAE2510)
 
-## (1) Método científico en Economía
+## (1) [Método científico en Economía](01_ciencia)
 - Estructura de los datos en Economía
 - Análisis causal y ceteris paribus
 
-## (2) Modelo de Regresión Lineal (MRL)
+## (2) [Modelo de Regresión Lineal (MRL)](02_MRL)
 - MRL simple vs. múltiple
 - Estimador MCO y sus propiedades
 - Teorema de Gauss-Markov
 - Intervalos de confianza y test de hipótesis
 - Predicción
 
-## (3) Especificación y problemas en el MRL
+## (3) [Especificación y problemas en el MRL](03_problemas)
 - Transformación de variables y relaciones no lineales
 - Selección de modelos
 - Variables binarias dependientes e independientes
@@ -38,19 +38,19 @@ layout: "single"
 - Omisión/inclusión de variables
 - Errores de medida
 
-## (4) Inferencia causal
+## (4) [Inferencia causal](04_inferencia)
 - Modelo de resultados potenciales
 - Sesgo de selección
 - Variables Instrumentales / MC2E
 - Estimador de Efecto Fijo
 - Diferencias en Diferencias
 
-## (5) Heterocedasticidad y dependencia de errores
+## (5) [Heterocedasticidad y dependencia de errores](05_errores)
 - Causas y consecuencias
 - Contrastes de heterocedasticidad y autocorrelación
 - Inferencia robusta
 
-## (6) Series de tiempo
+## (6) [Series de tiempo](06_tiempo)
 - Tendencia lineal y exponencial
 - Dependencia débil
 - Prueba de raíz unitaria

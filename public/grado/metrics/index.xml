@@ -6,6 +6,49 @@
     <description>Recent content in Econometría on Agustín Sandoval Tapia</description>
     <generator>Hugo</generator>
     <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/grado/metrics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>El modelo de regresión lineal (MRL) como modelo probabilístico</title>
+      <link>http://localhost:4459/grado/metrics/02_mrl/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/02_mrl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Especificación y problemas en el MRL</title>
+      <link>http://localhost:4459/grado/metrics/03_problemas/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/03_problemas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Heterocedasticidad y dependencia de los errores</title>
+      <link>http://localhost:4459/grado/metrics/05_errores/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/05_errores/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Inferencia causal</title>
+      <link>http://localhost:4459/grado/metrics/04_inferencia/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/04_inferencia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Método científico en Economía</title>
+      <link>http://localhost:4459/grado/metrics/01_ciencia/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/01_ciencia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Series de tiempo</title>
+      <link>http://localhost:4459/grado/metrics/06_tiempo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/metrics/06_tiempo/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

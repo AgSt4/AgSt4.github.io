@@ -16,27 +16,27 @@ layout: "single"
 
 ## Microeconomía I (EAE2110) — Equilibrio Competitivo
 
-### (1) Elección del consumidor y demanda
+### (1) [Elección del consumidor y demanda](01_consumidor)
 - Demanda ordinaria y compensada
 - Efecto sustitución y efecto ingreso · elasticidades
 - Bienestar individual: variación compensatoria · excedente del consumidor
 - Oferta de trabajo
 
-### (2) Teoría de la producción y oferta
+### (2) [Teoría de la producción y oferta](02_productor)
 - Minimización de costos y demanda condicionada por factores
 - Demanda no condicionada por factores
 - Oferta individual · efectos sustitución y escala · elasticidades
 
-### (3) Equilibrio parcial en competencia perfecta
+### (3) [Equilibrio parcial en competencia perfecta](03_parcial)
 - Bienestar social y equilibrio parcial
 - Impuestos, subsidios, fijación de precios: incidencia y pérdida irrecuperable
 
-### (4) Equilibrio general en competencia perfecta
+### (4) [Equilibrio general en competencia perfecta](04_general)
 - Primer y segundo teoremas del bienestar
 - Equilibrio en economía de intercambio
 - Equilibrio en economía con producción (rendimientos constantes a escala)
 
-### (5) Bienes públicos y externalidades
+### (5) [Bienes públicos y externalidades](05_publico)
 - Bienestar social bajo bienes públicos o externalidades
 - Impuesto pigouviano · asignación de derechos de propiedad · cuotas
 
@@ -44,15 +44,15 @@ layout: "single"
 
 ## Microeconomía II (EAE2120) — Extensiones, juegos y riesgo
 
-### (6) Elección bajo incertidumbre
+### (6) [Elección bajo incertidumbre](06_riesgo)
 - Creencias y utilidad esperada
 - Aversión al riesgo y aseguramiento
 
-### (7) Teoría de juegos
+### (7) [Teoría de juegos](07_juegos)
 - Juegos estáticos y equilibrio de Nash
 - Juegos dinámicos con información perfecta y perfección en subjuegos
 
-### (8) Información asimétrica
+### (8) [Información asimétrica](08_informacion)
 - Equilibrio bayesiano perfecto
 - Riesgo moral y teoría de contratos
 - Selección adversa · señalización · autoselección
@@ -61,11 +61,11 @@ layout: "single"
 
 ## Competencia y Mercados (EAE2130) - Equilibrio No Competitivo
 
-### (9) Poder de mercado y monopolio
+### (9) [Poder de mercado y monopolio](09_monopolio)
 - Monopolio básico · monopolio natural · pérdida irrecuperable
 - Demandas relacionadas: sustitutos y complementos
 - Discriminación de precios: 1°, 2° y 3° grado
 
-### (10) Oligopolio
+### (10) [Oligopolio](10_oligopolio)
 - Modelos de Cournot y Bertrand
 - Diferenciación de productos: horizontal y vertical
