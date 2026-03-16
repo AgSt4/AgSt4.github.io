@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Inferencia causal | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Inferencia causal - Agustín Sandoval Tapia">
+<title>Inferencia Causal | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="econometría, causalidad, variables instrumentales, MC2E, instrumentos débiles, endogeneidad, experimentos, EAE2510">
+<meta name="description" content="Efectos de tratamiento, identificación causal, variables instrumentales, estimador MC2E, validez de instrumentos, instrumentos débiles, test de endogeneidad y evaluación experimental.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/metrics/04_inferencia/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,314 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/metrics/">Econometría</a></div>
     <h1 class="post-title entry-hint-parent">
-      Inferencia causal
+      Inferencia Causal
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Efectos de tratamiento, identificación causal, variables instrumentales, estimador MC2E, validez de instrumentos, instrumentos débiles, test de endogeneidad y evaluación experimental.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>15 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Cursos:</strong> Econometría (EAE2510) · Microeconometría Aplicada (EAE3101)<br>
+<strong>Referencia principal:</strong> Wooldridge (2008) caps. 15–16 · Angrist &amp; Pischke (2009) caps. 3–5 · Stock &amp; Watson (2006) cap. 12</p>
+<hr>
+<h2 id="1-el-problema-de-la-endogeneidad">1. El problema de la endogeneidad<a hidden class="anchor" aria-hidden="true" href="#1-el-problema-de-la-endogeneidad">#</a></h2>
+<h3 id="11-fuentes-de-endogeneidad">1.1 Fuentes de endogeneidad<a hidden class="anchor" aria-hidden="true" href="#11-fuentes-de-endogeneidad">#</a></h3>
+<p>La condición de exogeneidad GM4 ($E[\varepsilon_i|\mathbf{X}_i] = 0$) falla cuando el regresor de interés está correlacionado con el error. Las tres fuentes principales son:</p>
+<p><strong>Sesgo por omisión de variables:</strong> el más común. Si el verdadero modelo incluye una variable no observada $A_i$ correlacionada con $X_i$, el error del modelo estimado captura $A_i$ y viola GM4. Ejemplo: regresión de salarios en educación cuando la habilidad no observada determina ambas.</p>
+<p><strong>Causalidad simultánea (simultaneidad):</strong> $Y$ causa $X$ y $X$ causa $Y$ simultáneamente. Ejemplo: cantidad y precio en el mercado se determinan simultáneamente por oferta y demanda — regresar precio en cantidad da un estimador que refleja tanto la demanda como la oferta, no solo una de ellas.</p>
+<p><strong>Errores de medición en $X$:</strong> produce sesgo de atenuación hacia cero — discutido en el capítulo anterior.</p>
+<h3 id="12-la-consecuencia-inconsistencia">1.2 La consecuencia: inconsistencia<a hidden class="anchor" aria-hidden="true" href="#12-la-consecuencia-inconsistencia">#</a></h3>
+<p>Cuando $\text{Cov}(X_i, \varepsilon_i) \neq 0$, el estimador MCO es <strong>inconsistente</strong>:</p>
+<p>$$\text{plim}(\hat{\beta}_{MCO}) = \beta + \frac{\text{Cov}(X_i, \varepsilon_i)}{\text{Var}(X_i)} \neq \beta$$</p>
+<p>Más observaciones no resuelven el problema — el estimador converge al valor sesgado. Este es cualitativamente distinto del problema de varianza: con endogeneidad, la inferencia es fundamentalmente inválida sin importar el tamaño muestral.</p>
+<hr>
+<h2 id="2-el-marco-de-efectos-de-tratamiento">2. El marco de efectos de tratamiento<a hidden class="anchor" aria-hidden="true" href="#2-el-marco-de-efectos-de-tratamiento">#</a></h2>
+<h3 id="21-notación-de-resultados-potenciales">2.1 Notación de resultados potenciales<a hidden class="anchor" aria-hidden="true" href="#21-notación-de-resultados-potenciales">#</a></h3>
+<p>Siguiendo el marco de Rubin-Neyman (introducido en el capítulo de método científico), definimos para cada unidad $i$:</p>
+<ul>
+<li>$Y_i(1)$: resultado potencial bajo tratamiento.</li>
+<li>$Y_i(0)$: resultado potencial bajo control.</li>
+<li>$D_i \in {0,1}$: indicador de tratamiento recibido.</li>
+</ul>
+<p>El resultado observado: $Y_i = D_i Y_i(1) + (1-D_i)Y_i(0)$.</p>
+<h3 id="22-los-parámetros-de-interés">2.2 Los parámetros de interés<a hidden class="anchor" aria-hidden="true" href="#22-los-parámetros-de-interés">#</a></h3>
+<p><strong>ATE (Average Treatment Effect):</strong> $E[Y_i(1) - Y_i(0)]$ — efecto promedio para la población.</p>
+<p><strong>ATT (Average Treatment Effect on the Treated):</strong> $E[Y_i(1) - Y_i(0) | D_i = 1]$ — efecto promedio para quienes reciben el tratamiento.</p>
+<p><strong>LATE (Local Average Treatment Effect):</strong> efecto para el subgrupo de &ldquo;compliers&rdquo; — quienes cambian su tratamiento en respuesta al instrumento. Es el parámetro identificado por variables instrumentales. Formalmente: $LATE = E[Y_i(1) - Y_i(0) | \text{complier}]$.</p>
+<p>La distinción entre estos parámetros importa para la política: el LATE puede diferir sustancialmente del ATE si los compliers son una subpoblación atípica. Un instrumento que solo mueve a personas con alta elasticidad al tratamiento identifica el LATE para ese grupo, que puede no generalizarse.</p>
+<hr>
+<h2 id="3-variables-instrumentales">3. Variables instrumentales<a hidden class="anchor" aria-hidden="true" href="#3-variables-instrumentales">#</a></h2>
+<h3 id="31-la-intuición">3.1 La intuición<a hidden class="anchor" aria-hidden="true" href="#31-la-intuición">#</a></h3>
+<p>La idea de las variables instrumentales (VI) es explotar variación <strong>exógena</strong> en el regresor endógeno $X$ — variación que no está contaminada por la correlación con el error. Si existe una variable $Z$ que:</p>
+<ol>
+<li><strong>Relevancia:</strong> afecta a $X$ ($\text{Cov}(Z_i, X_i) \neq 0$).</li>
+<li><strong>Exclusión (exogeneidad):</strong> no afecta a $Y$ directamente ($\text{Cov}(Z_i, \varepsilon_i) = 0$).</li>
+</ol>
+<p>entonces podemos usar la variación en $X$ inducida por $Z$ para identificar el efecto causal de $X$ sobre $Y$.</p>
+<p>El segundo supuesto no es testeable directamente en el caso exactamente identificado — es una restricción de exclusión que debe justificarse con argumentos de diseño de investigación y conocimiento sustantivo.</p>
+<h3 id="32-el-estimador-iv-en-el-caso-simple">3.2 El estimador IV en el caso simple<a hidden class="anchor" aria-hidden="true" href="#32-el-estimador-iv-en-el-caso-simple">#</a></h3>
+<p>Con un regresor endógeno $X$, un instrumento $Z$ y sin controles:</p>
+<p>$$\hat{\beta}_{IV} = \frac{\sum_i (Z_i - \bar{Z})(Y_i - \bar{Y})}{\sum_i (Z_i - \bar{Z})(X_i - \bar{X})} = \frac{\widehat{\text{Cov}}(Z, Y)}{\widehat{\text{Cov}}(Z, X)}$$</p>
+<p>Alternativamente, usando la forma de Wald:</p>
+<p>$$\hat{\beta}_{IV} = \frac{E[Y|Z=1] - E[Y|Z=0]}{E[X|Z=1] - E[X|Z=0]}$$</p>
+<p>cuando $Z$ es binario. El numerador es el efecto reducido de $Z$ sobre $Y$; el denominador es el efecto de primera etapa de $Z$ sobre $X$. El estimador IV escala el efecto de $Z$ sobre $Y$ por el efecto de $Z$ sobre $X$ — extrayendo solo el componente de la variación de $X$ explicado por $Z$.</p>
+<p><strong>Consistencia del estimador IV:</strong></p>
+<p>$$\text{plim}(\hat{\beta}_{IV}) = \frac{\text{Cov}(Z_i, Y_i)}{\text{Cov}(Z_i, X_i)} = \frac{\text{Cov}(Z_i, \beta X_i + \varepsilon_i)}{\text{Cov}(Z_i, X_i)} = \beta + \frac{\text{Cov}(Z_i, \varepsilon_i)}{\text{Cov}(Z_i, X_i)}$$</p>
+<p>Si la restricción de exclusión se cumple ($\text{Cov}(Z_i, \varepsilon_i) = 0$), el segundo término desaparece y el estimador es consistente.</p>
+<h3 id="33-interpretación-como-late">3.3 Interpretación como LATE<a hidden class="anchor" aria-hidden="true" href="#33-interpretación-como-late">#</a></h3>
+<p>Bajo los supuestos de independencia, exclusión, primera etapa positiva y monotonicidad, el estimador IV identifica el LATE — el efecto causal promedio para el subgrupo de compliers, es decir, aquellas unidades cuyo tratamiento cambia en respuesta al instrumento.</p>
+<p>La <strong>monotonicidad</strong> es el supuesto adicional: el instrumento mueve a todas las unidades en la misma dirección (no hay &ldquo;defiers&rdquo; — unidades que hacen exactamente lo opuesto al instrumento). Bajo monotonicidad:</p>
+<p>$$\hat{\beta}_{IV} \xrightarrow{p} LATE = E[Y_i(1) - Y_i(0) | \text{complier}]$$</p>
+<p>Los <strong>compliers</strong> son quienes toman el tratamiento solo cuando $Z=1$ y no cuando $Z=0$. Los <strong>always-takers</strong> siempre toman el tratamiento; los <strong>never-takers</strong> nunca. El IV no identifica el efecto para estos últimos grupos.</p>
+<hr>
+<h2 id="4-mínimos-cuadrados-en-dos-etapas-mc2e--2sls">4. Mínimos cuadrados en dos etapas (MC2E / 2SLS)<a hidden class="anchor" aria-hidden="true" href="#4-mínimos-cuadrados-en-dos-etapas-mc2e--2sls">#</a></h2>
+<h3 id="41-el-procedimiento">4.1 El procedimiento<a hidden class="anchor" aria-hidden="true" href="#41-el-procedimiento">#</a></h3>
+<p>Con múltiples regresores, controles exógenos $\mathbf{W}$ y variables instrumentales $\mathbf{Z}$, el estimador <strong>MC2E (2SLS)</strong> se implementa en dos etapas:</p>
+<p><strong>Primera etapa:</strong> regresar el regresor endógeno $X$ en los instrumentos $\mathbf{Z}$ y los controles $\mathbf{W}$ por MCO:</p>
+<p>$$X_i = \pi_0 + \pi_1 Z_i + \mathbf{W}_i&rsquo;\boldsymbol{\gamma} + v_i$$</p>
+<p>Guardar los valores ajustados $\hat{X}_i = \hat{\pi}_0 + \hat{\pi}_1 Z_i + \mathbf{W}_i&rsquo;\hat{\boldsymbol{\gamma}}$.</p>
+<p><strong>Segunda etapa:</strong> regresar $Y$ en $\hat{X}$ y los controles $\mathbf{W}$ por MCO:</p>
+<p>$$Y_i = \beta_0 + \beta_1 \hat{X}_i + \mathbf{W}_i&rsquo;\boldsymbol{\delta} + \varepsilon_i$$</p>
+<p>El coeficiente $\hat{\beta}_1$ es el estimador MC2E.</p>
+<p><strong>Advertencia crucial:</strong> los errores estándar de la segunda etapa calculados manualmente son incorrectos — subestiman la varianza real porque no propagan la incertidumbre de la primera etapa. Siempre usar el comando dedicado en Stata (<code>ivregress 2sls</code>) que calcula los SE correctos automáticamente.</p>
+<h3 id="42-la-fórmula-matricial">4.2 La fórmula matricial<a hidden class="anchor" aria-hidden="true" href="#42-la-fórmula-matricial">#</a></h3>
+<p>El estimador IV (2SLS) con múltiples instrumentos es: $\hat{\boldsymbol{\beta}}_{2SLS} = (\hat{\mathbf{X}}&rsquo;\hat{\mathbf{X}})^{-1}\hat{\mathbf{X}}&rsquo;\mathbf{y}$, donde $\hat{\mathbf{X}} = \mathbf{P}_Z \mathbf{X}$ son los valores ajustados de la primera etapa y $\mathbf{P}_Z = \mathbf{Z}(\mathbf{Z}&rsquo;\mathbf{Z})^{-1}\mathbf{Z}&rsquo;$ es la matriz de proyección sobre el espacio de los instrumentos.</p>
+<p>Equivalentemente: $\hat{\boldsymbol{\beta}}_{2SLS} = (\mathbf{X}&rsquo;\mathbf{P}_Z\mathbf{X})^{-1}\mathbf{X}&rsquo;\mathbf{P}_Z\mathbf{y}$.</p>
+<p>La varianza asintótica bajo homocedasticidad: $\text{Var}(\hat{\boldsymbol{\beta}}_{2SLS}) = \sigma^2(\mathbf{X}&rsquo;\mathbf{P}_Z\mathbf{X})^{-1}$.</p>
+<h3 id="43-propiedades-del-estimador-mc2e">4.3 Propiedades del estimador MC2E<a hidden class="anchor" aria-hidden="true" href="#43-propiedades-del-estimador-mc2e">#</a></h3>
+<ul>
+<li><strong>Consistencia:</strong> bajo relevancia y exclusión del instrumento.</li>
+<li><strong>Sesgo de muestras finitas:</strong> el MC2E es sesgado en muestras finitas. El sesgo es proporcional a $1/F$ donde $F$ es el estadístico de la primera etapa — a mayor $F$ (instrumento más fuerte), menor el sesgo.</li>
+<li><strong>Mayor varianza que MCO:</strong> siempre. El costo de corregir la endogeneidad es pérdida de precisión.</li>
+<li><strong>Normalidad asintótica:</strong> bajo condiciones de regularidad, $\sqrt{n}(\hat{\boldsymbol{\beta}}_{2SLS} - \boldsymbol{\beta}) \xrightarrow{d} \mathcal{N}(\mathbf{0}, \mathbf{V})$.</li>
+</ul>
+<hr>
+<h2 id="5-validez-de-los-instrumentos">5. Validez de los instrumentos<a hidden class="anchor" aria-hidden="true" href="#5-validez-de-los-instrumentos">#</a></h2>
+<h3 id="51-la-relevancia-primer-estadístico-f-de-la-primera-etapa">5.1 La relevancia: primer estadístico $F$ de la primera etapa<a hidden class="anchor" aria-hidden="true" href="#51-la-relevancia-primer-estadístico-f-de-la-primera-etapa">#</a></h3>
+<p>La <strong>debilidad</strong> de los instrumentos es el problema más práctico en la aplicación de VI. Un instrumento débil genera:</p>
+<ul>
+<li>Sesgo de muestras finitas severo hacia el estimador MCO.</li>
+<li>Distribuciones asintóticas incorrectas — los errores estándar estándar no son válidos.</li>
+<li>Poder muy bajo para detectar efectos cuando el verdadero efecto existe.</li>
+</ul>
+<p>La regla práctica estándar de Stock &amp; Yogo (2005): el estadístico $F$ de la primera etapa debe superar 10 para que el sesgo del MC2E no supere el 10% del sesgo MCO. Si el estadístico F supera 10, se rechaza la hipótesis nula de que todos los instrumentos son débiles.</p>
+<p>Sin embargo, para los rangos del F de primera etapa típicamente aceptados de 10–20, la probabilidad de que 2SLS genere una estimación más cercana a la verdad que MCO es notablemente pequeña, a menos que la endogeneidad sea muy severa. Se argumenta que deberían adoptarse umbrales de F más rigurosos en el trabajo aplicado.</p>
+<p>El umbral más exigente recomendado actualmente en la literatura es $F &gt; 104.7$ para el caso exactamente identificado (Lee et al., 2022), basado en la condición de que el intervalo de confianza tenga cobertura de 95%.</p>
+<p>En Stata: después de <code>ivregress 2sls</code>, ejecutar <code>estat firststage</code> para obtener el estadístico $F$ de la primera etapa y el $F$ parcial de cada instrumento excluido.</p>
+<h3 id="52-la-exclusión-validez-de-los-instrumentos">5.2 La exclusión: validez de los instrumentos<a hidden class="anchor" aria-hidden="true" href="#52-la-exclusión-validez-de-los-instrumentos">#</a></h3>
+<p>La restricción de exclusión ($\text{Cov}(Z_i, \varepsilon_i) = 0$) no es directamente testeable en el caso exactamente identificado. Su justificación es inherentemente argumentativa — depende de teoría económica, conocimiento institucional y diseño de investigación.</p>
+<p>Algunas estrategias para fortalecer la credibilidad de la exclusión:</p>
+<ul>
+<li><strong>Aleatorización:</strong> si $Z$ se asigna aleatoriamente, la exclusión se cumple por diseño.</li>
+<li><strong>Experimentos naturales:</strong> cambios legislativos exógenos, discontinuidades geográficas, variación climática. La credibilidad depende de que el evento exógeno no afecte $Y$ por otros canales.</li>
+<li><strong>Pruebas de falsificación:</strong> si el instrumento tiene efecto sobre outcomes que no deberían verse afectados por $X$, sugiere que la exclusión viola.</li>
+<li><strong>Pruebas de balance:</strong> verificar que $Z$ no está correlacionado con características pre-tratamiento observadas que podrían estar correlacionadas con $\varepsilon$.</li>
+</ul>
+<h3 id="53-test-de-sobreidentificación-sargan-hansen">5.3 Test de sobreidentificación: Sargan-Hansen<a hidden class="anchor" aria-hidden="true" href="#53-test-de-sobreidentificación-sargan-hansen">#</a></h3>
+<p>Cuando hay más instrumentos que variables endógenas (caso sobreidentificado), es posible contrastar si los instrumentos adicionales son exógenos — <strong>condicionalmente a que al menos un instrumento sea válido</strong>. Este es el único test directo de la restricción de exclusión, y solo aplica para los instrumentos &ldquo;en exceso&rdquo;.</p>
+<p>El <strong>test de Sargan-Hansen (test J):</strong></p>
+<ol>
+<li>Estimar el modelo MC2E y obtener residuos $\hat{\varepsilon}_{2SLS}$.</li>
+<li>Regresar $\hat{\varepsilon}_{2SLS}$ en todos los instrumentos y controles exógenos.</li>
+<li>El estadístico $nR^2 \sim \chi^2(q)$ bajo $H_0$, donde $q$ es el número de restricciones de sobreidentificación (número de instrumentos menos número de variables endógenas).</li>
+</ol>
+<p>Bajo la hipótesis nula de que todos los instrumentos son exógenos, el estadístico $nR^2$ sigue una distribución $\chi^2$ con grados de libertad iguales al número de restricciones de sobreidentificación.</p>
+<p>Un estadístico de prueba grande y $p$-valor pequeño en el test de Sargan sugiere que el modelo está mal especificado — al menos un instrumento puede estar correlacionado con el error.</p>
+<p><strong>Limitación crítica:</strong> el test de Sargan-Hansen solo puede rechazar la validez del conjunto de instrumentos; no puede identificar cuál instrumento específico es inválido. Y si todos los instrumentos son igualmente inválidos, el test no tiene poder para detectarlo. El no-rechazo es evidencia débil de validez — no ausencia de violación.</p>
+<p>En Stata: <code>estat overid</code> después de <code>ivregress 2sls</code>.</p>
+<hr>
+<h2 id="6-test-de-endogeneidad-hausman-wu">6. Test de endogeneidad: Hausman-Wu<a hidden class="anchor" aria-hidden="true" href="#6-test-de-endogeneidad-hausman-wu">#</a></h2>
+<h3 id="61-la-lógica-del-test">6.1 La lógica del test<a hidden class="anchor" aria-hidden="true" href="#61-la-lógica-del-test">#</a></h3>
+<p>Si el regresor $X$ es <strong>exógeno</strong>, tanto MCO como MC2E son consistentes, y MCO es más eficiente (menor varianza). Si $X$ es <strong>endógeno</strong>, MCO es inconsistente pero MC2E sigue siendo consistente. La diferencia $\hat{\beta}<em>{2SLS} - \hat{\beta}</em>{MCO}$ converge en probabilidad a cero bajo exogeneidad y a un valor no nulo bajo endogeneidad.</p>
+<p>El test de Wu-Hausman aplicado a la regresión 2SLS es un test de endogeneidad. Si todos los regresores son exógenos, tanto MCO como 2SLS son consistentes, y MCO es más eficiente. Si hay endogeneidad, MCO es inconsistente. Un estadístico grande y $p$-valor pequeño sugiere que el estimador MCO es inconsistente y el 2SLS es preferible.</p>
+<h3 id="62-implementación-práctica">6.2 Implementación práctica<a hidden class="anchor" aria-hidden="true" href="#62-implementación-práctica">#</a></h3>
+<p>La implementación más directa del test Hausman-Wu para endogeneidad:</p>
+<ol>
+<li>En la <strong>primera etapa</strong>, regresar $X$ en $Z$ y los controles $\mathbf{W}$. Guardar los residuos $\hat{v}$.</li>
+<li>En el <strong>modelo aumentado</strong>, incluir $\hat{v}$ como regresor adicional junto a $X$ y $\mathbf{W}$:</li>
+</ol>
+<p>$$Y_i = \beta_0 + \beta_1 X_i + \mathbf{W}_i&rsquo;\boldsymbol{\delta} + \rho \hat{v}_i + \varepsilon_i$$</p>
+<ol start="3">
+<li>Contrastar $H_0: \rho = 0$ con un test $t$ estándar.</li>
+</ol>
+<p>Si $\rho \neq 0$ estadísticamente, hay evidencia de endogeneidad — $X$ está correlacionado con el error del modelo estructural. El coeficiente $\rho$ captura exactamente la parte endógena de $X$.</p>
+<p>Este test puede realizarse fácilmente: imagina que se estima la ecuación aumentada con los residuos de la primera etapa como regresor adicional. Un test $t$ sobre el coeficiente de estos residuos es equivalente al test de Hausman. La presencia de múltiples variables endógenas extiende el test a un F conjunto.</p>
+<p>En Stata: <code>estat endog</code> después de <code>ivregress 2sls</code>.</p>
+<p><strong>Sobre el resultado del test:</strong> no rechazar $H_0$ no prueba exogeneidad — solo dice que no hay evidencia estadística suficiente de endogeneidad dado el tamaño muestral e instrumento disponible. En presencia de instrumentos débiles, el test tiene poco poder.</p>
+<hr>
+<h2 id="7-instrumentos-débiles-diagnóstico-avanzado">7. Instrumentos débiles: diagnóstico avanzado<a hidden class="anchor" aria-hidden="true" href="#7-instrumentos-débiles-diagnóstico-avanzado">#</a></h2>
+<h3 id="71-el-problema-en-detalle">7.1 El problema en detalle<a hidden class="anchor" aria-hidden="true" href="#71-el-problema-en-detalle">#</a></h3>
+<p>Cuando los instrumentos son débiles (modelados como locales a cero), las distribuciones asintóticas estándar del estimador 2SLS no proveen buenas aproximaciones a las distribuciones muestrales. Esto afecta tanto las estimaciones puntuales como los intervalos de confianza.</p>
+<p>Con instrumento débil: el numerador del estimador IV ($\widehat{\text{Cov}}(Z,Y)$) converge a cero junto con el denominador ($\widehat{\text{Cov}}(Z,X)$). La distribución del cociente es una distribución de Cauchy-like con colas muy pesadas — los errores estándar estándar son severamente incorrectos.</p>
+<h3 id="72-estadísticos-robustos-a-instrumentos-débiles">7.2 Estadísticos robustos a instrumentos débiles<a hidden class="anchor" aria-hidden="true" href="#72-estadísticos-robustos-a-instrumentos-débiles">#</a></h3>
+<p>Ante instrumentos débiles, los estadísticos $t$ y $F$ estándar del MC2E tienen tasas de rechazo incorrectas bajo $H_0$. Las alternativas robustas incluyen:</p>
+<p><strong>Estadístico Anderson-Rubin (AR):</strong> invierte un test de la forma reducida para construir regiones de confianza. Es válido incluso con instrumentos débiles porque no requiere invertir la primera etapa. El precio es menor poder cuando los instrumentos son fuertes.</p>
+<p><strong>Conditional Likelihood Ratio (CLR):</strong> óptimo entre los tests robustos a debilidad. En Stata: <code>weakivtest</code> (de Pflueger &amp; Wang).</p>
+<p><strong>Regiones de confianza robustas:</strong> en vez de reportar el estimador puntual ± 2×SE (que es inválido con instrumentos débiles), reportar la región de valores de $\beta$ que el test AR no rechaza. Puede ser un intervalo muy amplio o incluso no acotado — lo que revela honestamente la poca información que el instrumento débil provee.</p>
+<hr>
+<h2 id="8-introducción-a-la-evaluación-experimental">8. Introducción a la evaluación experimental<a hidden class="anchor" aria-hidden="true" href="#8-introducción-a-la-evaluación-experimental">#</a></h2>
+<h3 id="81-el-experimento-aleatorio-como-gold-standard">8.1 El experimento aleatorio como gold standard<a hidden class="anchor" aria-hidden="true" href="#81-el-experimento-aleatorio-como-gold-standard">#</a></h3>
+<p>En un <strong>experimento controlado aleatorio (RCT)</strong>, la asignación al tratamiento $D_i$ es independiente de $(Y_i(0), Y_i(1))$ por diseño. La diferencia simple en medias estima el ATE sin sesgo:</p>
+<p>$$\hat{\tau}<em>{ATE} = \bar{Y}</em>{D=1} - \bar{Y}_{D=0} \xrightarrow{p} E[Y(1)] - E[Y(0)] = ATE$$</p>
+<p>No se necesita ni VI ni controles para identificar el efecto causal — la aleatorización los hace innecesarios para consistencia. Los controles pueden agregarse para mejorar la precisión (reducir varianza) pero no para corregir sesgo.</p>
+<h3 id="82-la-estimación-por-regresión-en-experimentos">8.2 La estimación por regresión en experimentos<a hidden class="anchor" aria-hidden="true" href="#82-la-estimación-por-regresión-en-experimentos">#</a></h3>
+<p>En la práctica, los efectos de tratamiento de RCTs se estiman por regresión:</p>
+<p>$$Y_i = \alpha + \tau D_i + \mathbf{X}_i&rsquo;\boldsymbol{\gamma} + \varepsilon_i$$</p>
+<p>donde $\mathbf{X}<em>i$ son características de control pre-tratamiento. Bajo aleatorización, $D_i$ es ortogonal a $\varepsilon_i$ con o sin controles, por lo que $\hat{\tau}</em>{MCO}$ es insesgado. La inclusión de $\mathbf{X}_i$ reduce la varianza residual y mejora la precisión de $\hat{\tau}$ sin afectar su consistencia.</p>
+<h3 id="83-amenazas-a-la-validez-interna-del-experimento">8.3 Amenazas a la validez interna del experimento<a hidden class="anchor" aria-hidden="true" href="#83-amenazas-a-la-validez-interna-del-experimento">#</a></h3>
+<p><strong>Incumplimiento (non-compliance):</strong> los asignados al tratamiento no lo reciben o los del control lo reciben de todas formas. La solución es la <strong>intención de tratar (ITT)</strong>: regresar $Y$ en la asignación aleatoria $Z_i$ (no en el tratamiento efectivo $D_i$). El ITT es el efecto de la política de asignación, que puede ser el parámetro relevante para el diseñador de políticas. Si se quiere el efecto del tratamiento efectivo, usar $Z$ como instrumento para $D$ — el estimador IV identifica el LATE para los compliers.</p>
+<p><strong>Desgaste (attrition):</strong> si algunos individuos salen del experimento de forma diferencial según el grupo, los resultados pueden sesgarse. Prueba: verificar que el desgaste no está correlacionado con el tratamiento.</p>
+<p><strong>Efectos de equilibrio general:</strong> en experimentos pequeños, los efectos identificados son locales y pueden no generalizarse si el programa se escala — la escala puede cambiar los precios de equilibrio o la composición de los grupos.</p>
+<h3 id="84-experimentos-naturales-y-cuasi-experimentos">8.4 Experimentos naturales y cuasi-experimentos<a hidden class="anchor" aria-hidden="true" href="#84-experimentos-naturales-y-cuasi-experimentos">#</a></h3>
+<p>Cuando los RCTs son éticamente inviables o demasiado costosos, los cuasi-experimentos explotan variación cuasi-aleatoria en la asignación al tratamiento. Los principales diseños son:</p>
+<p><strong>Diferencias en diferencias (DiD):</strong> compara el cambio en $Y$ antes y después del tratamiento entre el grupo tratado y un grupo de control no tratado. Bajo el supuesto de <strong>tendencias paralelas</strong> (en ausencia del tratamiento, ambos grupos habrían seguido la misma tendencia), DiD identifica el ATT. Requiere datos de panel o dos cortes transversales del mismo grupo.</p>
+<p><strong>Regresión discontinua (RDD):</strong> explota un umbral en la regla de asignación. Unidades justo por encima y debajo del umbral son comparables — el tratamiento es &ldquo;como si&rdquo; aleatorio en un vecindario del corte. Identifica el LATE en el umbral, que puede no generalizarse lejos de él.</p>
+<p><strong>Variables instrumentales con experimento natural:</strong> un cambio de política, una variación legislativa o un evento climático actúa como instrumento que afecta el tratamiento de forma exógena. La credibilidad depende de la plausibilidad de la restricción de exclusión.</p>
+<hr>
+<h2 id="9-implementación-en-stata">9. Implementación en Stata<a hidden class="anchor" aria-hidden="true" href="#9-implementación-en-stata">#</a></h2>
+<p>Los comandos esenciales para VI/2SLS en Stata:</p>
+<pre tabindex="0"><code class="language-stata" data-lang="stata">* Estimación 2SLS básica
+ivregress 2sls y w1 w2 (x = z1 z2), robust
+
+* Primera etapa
+estat firststage          // F de primera etapa y F parciales
+estat firststage, all     // incluye tests de Cragg-Donald y Kleibergen-Paap
+
+* Test de endogeneidad (Hausman-Wu)
+estat endog               // test de Durbin-Wu-Hausman
+
+* Test de sobreidentificación (Sargan-Hansen)
+estat overid              // solo con más instrumentos que endógenas
+
+* Errores robustos a heterocedasticidad (siempre recomendable)
+ivregress 2sls y w1 w2 (x = z1 z2), vce(robust)
+
+* Errores clusterizados (si hay correlación intra-cluster)
+ivregress 2sls y w1 w2 (x = z1 z2), vce(cluster id)
+
+* Tests robustos a instrumentos débiles (requiere ivreg2)
+ivreg2 y w1 w2 (x = z1 z2), robust ffirst
+</code></pre><hr>
+<h2 id="10-ejemplos-clásicos-de-instrumentos-en-economía">10. Ejemplos clásicos de instrumentos en economía<a hidden class="anchor" aria-hidden="true" href="#10-ejemplos-clásicos-de-instrumentos-en-economía">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Pregunta</th>
+          <th>Endógena</th>
+          <th>Instrumento</th>
+          <th>Restricción de exclusión</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Retorno a la educación (Angrist-Krueger 1991)</td>
+          <td>Años de educación</td>
+          <td>Trimestre de nacimiento</td>
+          <td>Nacimiento en Q1 → menos educación por leyes de asistencia escolar, sin efecto directo en salarios</td>
+      </tr>
+      <tr>
+          <td>Efecto del tamaño familiar (Angrist-Evans 1998)</td>
+          <td>Número de hijos</td>
+          <td>Gemelos o composición de sexos</td>
+          <td>Gemelos/composición de sexos afecta el tamaño de la familia pero no el empleo directamente</td>
+      </tr>
+      <tr>
+          <td>Efecto del servicio militar (Angrist 1990)</td>
+          <td>Servicio militar Vietnam</td>
+          <td>Número de lotería del draft</td>
+          <td>El número asignado aleatoriamente determina el servicio pero no afecta directamente los salarios futuros</td>
+      </tr>
+      <tr>
+          <td>Efecto del comercio en salarios (Card 2009)</td>
+          <td>Inmigración local</td>
+          <td>Distribución histórica de inmigrantes</td>
+          <td>Redes históricas determinan flujos actuales pero no afectan directamente el mercado laboral local excepto a través de la inmigración</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="11-síntesis-cuándo-usar-mco-vs-vi">11. Síntesis: cuándo usar MCO vs. VI<a hidden class="anchor" aria-hidden="true" href="#11-síntesis-cuándo-usar-mco-vs-vi">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Situación</th>
+          <th>Estimador recomendado</th>
+          <th>Razón</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Exogeneidad plausible</td>
+          <td>MCO</td>
+          <td>Consistente, más eficiente, errores estándar menores</td>
+      </tr>
+      <tr>
+          <td>Endogeneidad sospechada, instrumento fuerte y válido</td>
+          <td>MC2E / 2SLS</td>
+          <td>Consistente bajo endogeneidad</td>
+      </tr>
+      <tr>
+          <td>Endogeneidad sospechada, instrumento débil</td>
+          <td>MC2E con SE robustos a debilidad, LIML</td>
+          <td>2SLS estándar tiene distribución incorrecta</td>
+      </tr>
+      <tr>
+          <td>Endogeneidad sospechada, sin instrumento</td>
+          <td>MCO con caveat, o diseño alternativo</td>
+          <td>Reportar sesgo esperado, buscar otros diseños</td>
+      </tr>
+      <tr>
+          <td>RCT con cumplimiento completo</td>
+          <td>MCO de $Y$ en $D$</td>
+          <td>Equivale al estimador de diferencia de medias</td>
+      </tr>
+      <tr>
+          <td>RCT con incumplimiento</td>
+          <td>ITT o IV usando $Z$ como instrumento de $D$</td>
+          <td>Identifica LATE de compliers</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Angrist, J. &amp; Pischke, J.S. (2009). <em>Mostly Harmless Econometrics</em>. Princeton. Caps. 3–5.</li>
+<li>Imbens, G. &amp; Angrist, J. (1994). <em>Identification and Estimation of Local Average Treatment Effects</em>. Econometrica.</li>
+<li>Staiger, D. &amp; Stock, J.H. (1997). <em>Instrumental Variables Regression with Weak Instruments</em>. Econometrica.</li>
+<li>Stock, J.H. &amp; Yogo, M. (2005). <em>Testing for Weak Instruments in Linear IV Regression</em>. En Andrews &amp; Stock (eds.).</li>
+<li>Hausman, J.A. (1978). <em>Specification Tests in Econometrics</em>. Econometrica.</li>
+<li>Angrist, J. &amp; Krueger, A. (1991). <em>Does Compulsory School Attendance Affect Schooling and Earnings?</em> QJE.</li>
+<li>Lee, D.S., McCrary, J., Moreira, M.J. &amp; Porter, J. (2022). <em>Valid t-ratio Inference for IV</em>. AER.</li>
+<li>Wooldridge, J.M. (2008). <em>Introductory Econometrics</em>. Thomson. Caps. 15–16.</li>
+<li>Stock, J.H. &amp; Watson, M.W. (2006). <em>Introduction to Econometrics</em>. Pearson. Cap. 12.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/econometr%C3%ADa/">Econometría</a></li>
+      <li><a href="http://localhost:4459/tags/causalidad/">Causalidad</a></li>
+      <li><a href="http://localhost:4459/tags/variables-instrumentales/">Variables Instrumentales</a></li>
+      <li><a href="http://localhost:4459/tags/mc2e/">MC2E</a></li>
+      <li><a href="http://localhost:4459/tags/instrumentos-d%C3%A9biles/">Instrumentos Débiles</a></li>
+      <li><a href="http://localhost:4459/tags/endogeneidad/">Endogeneidad</a></li>
+      <li><a href="http://localhost:4459/tags/experimentos/">Experimentos</a></li>
+      <li><a href="http://localhost:4459/tags/eae2510/">EAE2510</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/metrics/05_errores/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Heterocedasticidad y dependencia de los errores</span>
+    <span>Heterocedasticidad y Dependencia de los Errores</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/micro/08_informacion/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Información asimétrica</span>
+    <span>Información Asimétrica</span>
   </a>
 </nav>
 

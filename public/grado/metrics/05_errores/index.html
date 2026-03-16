@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Heterocedasticidad y dependencia de los errores | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Heterocedasticidad y dependencia de los errores - Agustín Sandoval Tapia">
+<title>Heterocedasticidad y Dependencia de los Errores | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="econometría, heterocedasticidad, autocorrelación, GLS, FGLS, errores robustos, Newey-West, EAE2510">
+<meta name="description" content="Causas y consecuencias de la heterocedasticidad y autocorrelación, tests de diagnóstico, mínimos cuadrados generalizados, errores estándar robustos HAC e inferencia robusta.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/metrics/05_errores/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,311 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/metrics/">Econometría</a></div>
     <h1 class="post-title entry-hint-parent">
-      Heterocedasticidad y dependencia de los errores
+      Heterocedasticidad y Dependencia de los Errores
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Causas y consecuencias de la heterocedasticidad y autocorrelación, tests de diagnóstico, mínimos cuadrados generalizados, errores estándar robustos HAC e inferencia robusta.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>12 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Cursos:</strong> Econometría (EAE2510) · Macroeconometría Aplicada (EAE3102)<br>
+<strong>Referencia principal:</strong> Wooldridge (2008) caps. 8, 12 · Greene (2011) caps. 9–10 · Johnston &amp; DiNardo (2001)</p>
+<hr>
+<h2 id="1-el-supuesto-de-errores-esféricos-y-sus-violaciones">1. El supuesto de errores esféricos y sus violaciones<a hidden class="anchor" aria-hidden="true" href="#1-el-supuesto-de-errores-esféricos-y-sus-violaciones">#</a></h2>
+<p>El teorema de Gauss-Markov requiere que $\text{Var}(\boldsymbol{\varepsilon}|\mathbf{X}) = \sigma^2\mathbf{I}_n$ — la <strong>condición de esfericidad</strong>. Este supuesto tiene dos componentes:</p>
+<ul>
+<li><strong>Homocedasticidad:</strong> $\text{Var}(\varepsilon_i|\mathbf{X}) = \sigma^2$ para todo $i$ — varianza constante.</li>
+<li><strong>No autocorrelación:</strong> $\text{Cov}(\varepsilon_i, \varepsilon_j|\mathbf{X}) = 0$ para $i \neq j$ — no correlación entre errores.</li>
+</ul>
+<p>Cuando se viola, la estructura de la matriz de varianza-covarianza es:</p>
+<p>$$\text{Var}(\boldsymbol{\varepsilon}|\mathbf{X}) = \sigma^2\boldsymbol{\Omega} \neq \sigma^2\mathbf{I}_n$$</p>
+<p>donde $\boldsymbol{\Omega}$ es una matriz positiva definida no necesariamente diagonal o escalar. Las dos violaciones tienen nombres distintos:</p>
+<ul>
+<li><strong>Heterocedasticidad:</strong> $\boldsymbol{\Omega} = \text{diag}(\omega_1, \ldots, \omega_n)$ con $\omega_i$ no constante — diagonal pero heterogénea.</li>
+<li><strong>Autocorrelación:</strong> elementos fuera de la diagonal de $\boldsymbol{\Omega}$ son no nulos — correlación entre observaciones.</li>
+</ul>
+<hr>
+<h2 id="2-heterocedasticidad">2. Heterocedasticidad<a hidden class="anchor" aria-hidden="true" href="#2-heterocedasticidad">#</a></h2>
+<h3 id="21-definición-y-causas">2.1 Definición y causas<a hidden class="anchor" aria-hidden="true" href="#21-definición-y-causas">#</a></h3>
+<p>La <strong>heterocedasticidad</strong> ocurre cuando la varianza del error depende de los regresores o de otras variables:</p>
+<p>$$\text{Var}(\varepsilon_i | \mathbf{X}_i) = \sigma_i^2 \neq \sigma^2$$</p>
+<p>Las causas son variadas y frecuentemente identificables:</p>
+<ul>
+<li><strong>Escala de las unidades:</strong> empresas grandes tienen mayor variabilidad en ventas que pequeñas. Datos de hogares ricos tienen mayor varianza en consumo.</li>
+<li><strong>Aprendizaje y mejora:</strong> la variabilidad de errores disminuye conforme las unidades acumulan experiencia (modelos de producción).</li>
+<li><strong>Variables omitidas heterogéneas:</strong> si las variables omitidas afectan más a algunas observaciones que a otras.</li>
+<li><strong>Datos combinados de subpoblaciones:</strong> si se juntan grupos con distintas varianzas intrínsecas.</li>
+<li><strong>Transformación de modelos multiplicativos:</strong> si el verdadero modelo es $Y = e^{\beta_0 + \beta_1 X + \varepsilon}$ y se estima la versión lineal.</li>
+</ul>
+<h3 id="22-consecuencias-sobre-mco">2.2 Consecuencias sobre MCO<a hidden class="anchor" aria-hidden="true" href="#22-consecuencias-sobre-mco">#</a></h3>
+<p>La heterocedasticidad viola la suposición de varianza constante, lo que hace que el estimador MCO pierda eficiencia — deja de ser el estimador lineal insesgado de mínima varianza (BLUE). Esto lleva a errores estándar sesgados y complicaciones en el contraste de hipótesis.</p>
+<p>Precisamente:</p>
+<p><strong>MCO sigue siendo insesgado y consistente</strong> bajo heterocedasticidad si GM4 ($E[\varepsilon|\mathbf{X}]=0$) se mantiene — la heterocedasticidad no afecta la insesgadez ni la consistencia del estimador.</p>
+<p><strong>MCO deja de ser BLUE</strong> — ya no tiene la menor varianza entre estimadores lineales e insesgados.</p>
+<p><strong>Los errores estándar usuales son incorrectos:</strong> la fórmula $s^2(\mathbf{X}&rsquo;\mathbf{X})^{-1}$ asume homocedasticidad. Bajo heterocedasticidad, la verdadera varianza del estimador es:</p>
+<p>$$\text{Var}(\hat{\boldsymbol{\beta}}_{MCO}|\mathbf{X}) = (\mathbf{X}&rsquo;\mathbf{X})^{-1}\mathbf{X}&rsquo;\boldsymbol{\Sigma}\mathbf{X}(\mathbf{X}&rsquo;\mathbf{X})^{-1}$$</p>
+<p>donde $\boldsymbol{\Sigma} = \text{diag}(\sigma_1^2, \ldots, \sigma_n^2)$. Los errores estándar usuales pueden subestimar o sobreestimar esta varianza, haciendo los estadísticos $t$ y $F$ inválidos.</p>
+<h3 id="23-detección-tests-de-heterocedasticidad">2.3 Detección: tests de heterocedasticidad<a hidden class="anchor" aria-hidden="true" href="#23-detección-tests-de-heterocedasticidad">#</a></h3>
+<h4 id="test-de-breusch-pagan-1979">Test de Breusch-Pagan (1979)<a hidden class="anchor" aria-hidden="true" href="#test-de-breusch-pagan-1979">#</a></h4>
+<p>El test de Breusch-Pagan examina si la varianza de los residuos depende de las variables independientes. La hipótesis nula es homocedasticidad; la alternativa es que la varianza depende linealmente de los regresores.</p>
+<p><strong>Procedimiento:</strong></p>
+<ol>
+<li>Estimar el modelo por MCO y obtener los residuos $\hat{\varepsilon}_i$.</li>
+<li>Regresar $\hat{\varepsilon}<em>i^2$ en los regresores (o en un subconjunto de ellos):
+$$\hat{\varepsilon}<em>i^2 = \alpha_0 + \alpha_1 X</em>{1i} + \cdots + \alpha_K X</em>{Ki} + u_i$$</li>
+<li>El estadístico $LM = nR^2_{\text{aux}} \sim \chi^2(K)$ bajo $H_0$.</li>
+</ol>
+<p>Rechazar $H_0$ implica heterocedasticidad del tipo modelado en la regresión auxiliar.</p>
+<h4 id="test-de-white-1980">Test de White (1980)<a hidden class="anchor" aria-hidden="true" href="#test-de-white-1980">#</a></h4>
+<p>El test de White es más general — no asume una forma funcional específica de la heterocedasticidad. La regresión auxiliar incluye cuadrados e interacciones de todos los regresores:</p>
+<p>$$\hat{\varepsilon}<em>i^2 = \alpha_0 + \sum_j \alpha_j X</em>{ji} + \sum_j \alpha_{jj} X_{ji}^2 + \sum_{j&lt;k} \alpha_{jk} X_{ji}X_{ki} + u_i$$</p>
+<p>El estadístico $nR^2_{\text{aux}} \sim \chi^2(p)$ donde $p$ es el número de regresores en la regresión auxiliar. El test de White es más potente que Breusch-Pagan contra formas generales de heterocedasticidad pero consume más grados de libertad.</p>
+<p><strong>Versión simplificada:</strong> regresar $\hat{\varepsilon}_i^2$ en $\hat{Y}_i$ y $\hat{Y}_i^2$ — captura la mayoría de las formas comunes de heterocedasticidad con solo 2 grados de libertad.</p>
+<p>En Stata: <code>estat hettest</code> (Breusch-Pagan), <code>estat imtest, white</code> (White).</p>
+<h3 id="24-solución-1-errores-estándar-robustos-de-white-hc">2.4 Solución 1: errores estándar robustos de White (HC)<a hidden class="anchor" aria-hidden="true" href="#24-solución-1-errores-estándar-robustos-de-white-hc">#</a></h3>
+<p>La solución más simple y robusta es mantener el estimador MCO pero corregir los errores estándar para que sean válidos bajo heterocedasticidad de forma desconocida.</p>
+<p>Bajo heterocedasticidad, se puede seguir usando el estimador MCO ineficiente pero corregir los errores estándar usando errores estándar heteroscedasticidad-consistentes (HC), también llamados errores robustos o errores estándar de White. Estos son los más comunes y fáciles de implementar.</p>
+<p>El estimador de varianza robusto de White:</p>
+<p>$$\widehat{\text{Var}}<em>{HC}(\hat{\boldsymbol{\beta}}</em>{MCO}) = (\mathbf{X}&rsquo;\mathbf{X})^{-1}\left(\sum_i \hat{\varepsilon}_i^2 \mathbf{X}_i\mathbf{X}_i&rsquo;\right)(\mathbf{X}&rsquo;\mathbf{X})^{-1}$$</p>
+<p>Este estimador es <strong>consistente</strong> bajo heterocedasticidad de cualquier forma desconocida. Las variantes HC0 (original de White), HC1, HC2, HC3 difieren en correcciones de muestras finitas — HC3 tiene mejores propiedades en muestras pequeñas.</p>
+<p>En Stata: <code>regress y x1 x2, robust</code> o <code>vce(robust)</code>.</p>
+<p><strong>La práctica moderna</strong> es usar errores robustos por defecto en datos de corte transversal, como medida de precaución, independiente de si se rechaza o no la homocedasticidad. El costo es pequeño (SE ligeramente más grandes cuando los errores son homocedásticos); el beneficio es protección contra inferencia inválida cuando no lo son.</p>
+<h3 id="25-solución-2-mínimos-cuadrados-generalizados-mcggls">2.5 Solución 2: Mínimos Cuadrados Generalizados (MCG/GLS)<a hidden class="anchor" aria-hidden="true" href="#25-solución-2-mínimos-cuadrados-generalizados-mcggls">#</a></h3>
+<p>Si se conoce la forma de la heterocedasticidad ($\boldsymbol{\Omega}$ conocida), el MCG produce el estimador eficiente:</p>
+<p>$$\hat{\boldsymbol{\beta}}_{MCG} = (\mathbf{X}&rsquo;\boldsymbol{\Omega}^{-1}\mathbf{X})^{-1}\mathbf{X}&rsquo;\boldsymbol{\Omega}^{-1}\mathbf{y}$$</p>
+<p>El GLS hace OLS con las variables transformadas $\mathbf{y}^* = \mathbf{P}\mathbf{y}$ y $\mathbf{X}^* = \mathbf{P}\mathbf{X}$, donde $\mathbf{P} = \boldsymbol{\Omega}^{-1/2}$. Bajo las condiciones del modelo transformado, GLS es BLUE por el teorema de Gauss-Markov.</p>
+<p><strong>Mínimos Cuadrados Ponderados (WLS):</strong> caso especial de MCG con heterocedasticidad multiplicativa $\sigma_i^2 = \sigma^2 h_i$. La transformación divide cada observación por $\sqrt{h_i}$ — observaciones con mayor varianza reciben menor peso. Si $h_i = X_i^2$, las observaciones con $X$ grande se ponderan menos.</p>
+<p>El estimador WLS minimiza:</p>
+<p>$$\sum_i \frac{(Y_i - \mathbf{X}_i&rsquo;\boldsymbol{\beta})^2}{h_i}$$</p>
+<h3 id="26-solución-3-mcg-factible-mcgffgls">2.6 Solución 3: MCG Factible (MCGF/FGLS)<a hidden class="anchor" aria-hidden="true" href="#26-solución-3-mcg-factible-mcgffgls">#</a></h3>
+<p>En la práctica, $\boldsymbol{\Omega}$ es desconocida y debe estimarse. El <strong>MCGF</strong> sigue el procedimiento:</p>
+<p>Si no conocemos el valor de $\sigma^2\boldsymbol{\Omega}$, podemos estimarlo. El FGLS usa MCO para obtener residuos, estima la estructura de la heterocedasticidad a partir de ellos, y luego aplica GLS con los pesos estimados.</p>
+<ol>
+<li>Estimar el modelo por MCO y obtener $\hat{\varepsilon}_i$.</li>
+<li>Modelar la heterocedasticidad: regresionar $\ln(\hat{\varepsilon}_i^2)$ en los regresores → obtener $\hat{h}_i = \exp(\hat{g}_i)$.</li>
+<li>Usar WLS con pesos $1/\hat{h}_i$.</li>
+</ol>
+<p>El MCGF es consistente y asintóticamente más eficiente que MCO, pero tiene sesgo en muestras finitas por el error de estimación de $\boldsymbol{\Omega}$.</p>
+<hr>
+<h2 id="3-autocorrelación">3. Autocorrelación<a hidden class="anchor" aria-hidden="true" href="#3-autocorrelación">#</a></h2>
+<h3 id="31-definición-y-contexto">3.1 Definición y contexto<a hidden class="anchor" aria-hidden="true" href="#31-definición-y-contexto">#</a></h3>
+<p>La <strong>autocorrelación</strong> (o correlación serial) ocurre cuando los errores de distintas observaciones están correlacionados:</p>
+<p>$$\text{Cov}(\varepsilon_t, \varepsilon_{t-s}|\mathbf{X}) \neq 0 \quad \text{para } s \neq 0$$</p>
+<p>Es especialmente relevante en <strong>datos de series de tiempo</strong> (donde la dependencia temporal es natural) y en <strong>datos de panel</strong> (donde las observaciones del mismo individuo en distintos períodos pueden estar correlacionadas). En datos de corte transversal puro es menos frecuente salvo con dependencia espacial.</p>
+<h3 id="32-el-proceso-ar1-el-caso-estándar">3.2 El proceso AR(1): el caso estándar<a hidden class="anchor" aria-hidden="true" href="#32-el-proceso-ar1-el-caso-estándar">#</a></h3>
+<p>El modelo de autocorrelación más frecuente es el proceso autorregresivo de orden 1:</p>
+<p>$$\varepsilon_t = \rho \varepsilon_{t-1} + u_t, \quad ||\rho|| &lt; 1, \quad u_t \sim \text{i.i.d.}(0, \sigma_u^2)$$</p>
+<p>Las propiedades del proceso AR(1) estacionario:</p>
+<p>$$E[\varepsilon_t] = 0, \quad \text{Var}(\varepsilon_t) = \frac{\sigma_u^2}{1-\rho^2}, \quad \text{Cov}(\varepsilon_t, \varepsilon_{t-s}) = \rho^s \frac{\sigma_u^2}{1-\rho^2}$$</p>
+<p>La correlación decae geométricamente con el rezago $s$. Para $\rho &gt; 0$ (autocorrelación positiva), los errores consecutivos tienen el mismo signo — típico en series macroeconómicas (inercia). Para $\rho &lt; 0$ (autocorrelación negativa), los errores alternan signo — menos común.</p>
+<h3 id="33-consecuencias-sobre-mco">3.3 Consecuencias sobre MCO<a hidden class="anchor" aria-hidden="true" href="#33-consecuencias-sobre-mco">#</a></h3>
+<p>Las consecuencias son análogas a la heterocedasticidad:</p>
+<ul>
+<li>MCO sigue siendo <strong>insesgado y consistente</strong> (si GM4 se mantiene — exogeneidad estricta de los regresores).</li>
+<li>MCO <strong>deja de ser BLUE</strong> — no es eficiente.</li>
+<li>Los <strong>errores estándar usuales son incorrectos</strong> — típicamente los subestiman bajo autocorrelación positiva, generando estadísticos $t$ inflados y tasas de rechazo de $H_0$ mayores a las nominales.</li>
+</ul>
+<p>La intuición: con autocorrelación positiva, observaciones consecutivas aportan información redundante — efectivamente hay menos observaciones &ldquo;independientes&rdquo; que $n$. Los errores estándar usuales asumen $n$ observaciones independientes y subestiman la varianza real.</p>
+<h3 id="34-detección-tests-de-autocorrelación">3.4 Detección: tests de autocorrelación<a hidden class="anchor" aria-hidden="true" href="#34-detección-tests-de-autocorrelación">#</a></h3>
+<h4 id="estadístico-de-durbin-watson">Estadístico de Durbin-Watson<a hidden class="anchor" aria-hidden="true" href="#estadístico-de-durbin-watson">#</a></h4>
+<p>El estadístico de Durbin-Watson (DW) contrasta específicamente la autocorrelación de orden 1:</p>
+<p>$$DW = \frac{\sum_{t=2}^n (\hat{\varepsilon}<em>t - \hat{\varepsilon}</em>{t-1})^2}{\sum_{t=1}^n \hat{\varepsilon}_t^2} \approx 2(1-\hat{\rho})$$</p>
+<ul>
+<li>$DW \approx 2$: sin autocorrelación ($\hat{\rho} \approx 0$).</li>
+<li>$DW &lt; 2$: autocorrelación positiva ($\hat{\rho} &gt; 0$).</li>
+<li>$DW &gt; 2$: autocorrelación negativa ($\hat{\rho} &lt; 0$).</li>
+</ul>
+<p>Las tablas de Durbin-Watson proveen valores críticos $d_L$ y $d_U$: rechazar $H_0$ si $DW &lt; d_L$ (positiva) o $DW &gt; 4-d_L$ (negativa); zona de indeterminación si $d_L &lt; DW &lt; d_U$.</p>
+<p><strong>Limitación:</strong> el test DW no es válido cuando hay variables dependientes rezagadas como regresores — un caso muy frecuente en macroeconometría.</p>
+<h4 id="test-de-breusch-godfrey-lm">Test de Breusch-Godfrey (LM)<a hidden class="anchor" aria-hidden="true" href="#test-de-breusch-godfrey-lm">#</a></h4>
+<p>El test de Breusch-Godfrey (BG) es más general — contrasta autocorrelación de orden $p$ y es válido con rezagos de la variable dependiente como regresores:</p>
+<ol>
+<li>Estimar por MCO y obtener $\hat{\varepsilon}_t$.</li>
+<li>Regresar $\hat{\varepsilon}<em>t$ en $\mathbf{X}<em>t$, $\hat{\varepsilon}</em>{t-1}, \ldots, \hat{\varepsilon}</em>{t-p}$.</li>
+<li>El estadístico $(n-p)R^2_{\text{aux}} \sim \chi^2(p)$ bajo $H_0: \rho_1 = \cdots = \rho_p = 0$.</li>
+</ol>
+<p>En Stata: <code>estat bgodfrey, lags(p)</code> después de la regresión.</p>
+<h3 id="35-solución-1-errores-estándar-hac-newey-west">3.5 Solución 1: errores estándar HAC (Newey-West)<a hidden class="anchor" aria-hidden="true" href="#35-solución-1-errores-estándar-hac-newey-west">#</a></h3>
+<p>La solución práctica más extendida es usar errores estándar <strong>heteroscedasticidad y autocorrelación consistentes (HAC)</strong>, también llamados errores de Newey-West.</p>
+<p>Los errores estándar de Newey-West modifican el estimador de varianza para incluir el enfoque robusto de White a la heterocedasticidad y además la estructura de correlación serial. Para un número de rezagos $m$, el estimador HAC incluye tanto la heterocedasticidad como una estimación de la autocorrelación con estructura de $m$ rezagos.</p>
+<p>El estimador de varianza de Newey-West con $m$ rezagos:</p>
+<p>$$\hat{\mathbf{V}}_{HAC} = (\mathbf{X}&rsquo;\mathbf{X})^{-1}\hat{\mathbf{S}}(\mathbf{X}&rsquo;\mathbf{X})^{-1}$$</p>
+<p>donde:</p>
+<p>$$\hat{\mathbf{S}} = \hat{\boldsymbol{\Gamma}}<em>0 + \sum</em>{j=1}^m \left(1 - \frac{j}{m+1}\right)\left(\hat{\boldsymbol{\Gamma}}_j + \hat{\boldsymbol{\Gamma}}_j&rsquo;\right)$$</p>
+<p>y $\hat{\boldsymbol{\Gamma}}<em>j = \frac{1}{n}\sum</em>{t=j+1}^n \hat{\varepsilon}<em>t\hat{\varepsilon}</em>{t-j}\mathbf{X}<em>t\mathbf{X}</em>{t-j}&rsquo;$.</p>
+<p>El estimador de Newey-West colapsa al estimador de White (1980) si la correlación serial está ausente, pero incorpora apropiadamente la correlación serial en el cálculo de los errores estándar robustos cuando hay autocorrelación.</p>
+<p>La <strong>elección del ancho de banda</strong> $m$: la regla empírica de Newey-West es $m = \lfloor 4(n/100)^{2/9} \rfloor$. Más rezagos captura más autocorrelación pero reduce la precisión del estimador. La elección es más arte que ciencia — es buena práctica reportar sensibilidad a distintos $m$.</p>
+<p>En Stata: <code>newey y x1 x2, lag(m)</code> o <code>regress y x1 x2, vce(hac nw m)</code>.</p>
+<h3 id="36-solución-2-mcg-con-ar1-conocido">3.6 Solución 2: MCG con AR(1) conocido<a hidden class="anchor" aria-hidden="true" href="#36-solución-2-mcg-con-ar1-conocido">#</a></h3>
+<p>Si la estructura de autocorrelación es AR(1) y $\rho$ es conocido, la transformación de Cochrane-Orcutt elimina la autocorrelación:</p>
+<p>$$Y_t^* = Y_t - \rho Y_{t-1}, \quad X_t^* = X_t - \rho X_{t-1}, \quad \varepsilon_t^* = \varepsilon_t - \rho\varepsilon_{t-1}$$</p>
+<p>El modelo transformado tiene errores no autocorrelacionados:</p>
+<p>$$Y_t^* = \beta_0(1-\rho) + \beta_1 X_t^* + \varepsilon_t^*$$</p>
+<p>Las nuevas variables son $y_t - \phi y_{t-1}$ y $x_t - \phi x_{t-1}$. Crucialmente, el nuevo error es ruido blanco sin correlación. El estimador GLS es simplemente MCO aplicado al modelo transformado. Como la regresión transformada satisface las condiciones del teorema de Gauss-Markov, GLS es BLUE, más eficiente que MCO.</p>
+<h3 id="37-solución-3-mcgf-con-prais-winsten-o-cochrane-orcutt-iterado">3.7 Solución 3: MCGF con Prais-Winsten o Cochrane-Orcutt iterado<a hidden class="anchor" aria-hidden="true" href="#37-solución-3-mcgf-con-prais-winsten-o-cochrane-orcutt-iterado">#</a></h3>
+<p>En la práctica $\rho$ es desconocido. El procedimiento iterado de Cochrane-Orcutt:</p>
+<ol>
+<li>Estimar el modelo por MCO y obtener $\hat{\varepsilon}_t$.</li>
+<li>Estimar $\rho$: regresionar $\hat{\varepsilon}<em>t$ en $\hat{\varepsilon}</em>{t-1}$ → obtener $\hat{\rho}$.</li>
+<li>Transformar las variables: $Y_t^* = Y_t - \hat{\rho}Y_{t-1}$, $X_t^* = X_t - \hat{\rho}X_{t-1}$.</li>
+<li>Estimar el modelo transformado por MCO → nuevos residuos → nueva estimación de $\rho$.</li>
+<li>Repetir hasta convergencia.</li>
+</ol>
+<p>En la práctica $\phi$ es desconocido. Sin embargo, el procedimiento factible de tres pasos es: primero, ajustar MCO y guardar el residuo $\hat{u}<em>t$; segundo, reemplazar $u_t$ con $\hat{u}<em>t$ y obtener $\hat{\phi}$ por regresión; finalmente, regresionar $y_t - \hat{\phi}y</em>{t-1}$ en $x_t - \hat{\phi}x</em>{t-1}$.</p>
+<p>La variante de <strong>Prais-Winsten</strong> retiene la primera observación (que Cochrane-Orcutt descarta), mejorando la eficiencia en muestras pequeñas.</p>
+<p>En Stata: <code>prais y x1 x2</code> (Prais-Winsten/Cochrane-Orcutt iterado).</p>
+<hr>
+<h2 id="4-errores-clusterizados">4. Errores clusterizados<a hidden class="anchor" aria-hidden="true" href="#4-errores-clusterizados">#</a></h2>
+<p>En datos de panel o cuando las observaciones se agrupan en clusters (escuelas, empresas, regiones), los errores pueden estar correlacionados <strong>dentro</strong> de cada cluster pero ser independientes entre clusters. Este es un caso especial de dependencia que requiere una corrección específica.</p>
+<p>Los <strong>errores estándar clusterizados</strong> extienden los errores de White al contexto de dependencia intra-cluster:</p>
+<p>$$\widehat{\text{Var}}<em>{CL}(\hat{\boldsymbol{\beta}}) = (\mathbf{X}&rsquo;\mathbf{X})^{-1}\left(\sum</em>{c=1}^C \mathbf{X}_c&rsquo;\hat{\boldsymbol{\varepsilon}}_c\hat{\boldsymbol{\varepsilon}}_c&rsquo;\mathbf{X}_c\right)(\mathbf{X}&rsquo;\mathbf{X})^{-1}$$</p>
+<p>donde $c$ indexa clusters y $\mathbf{X}_c$, $\hat{\boldsymbol{\varepsilon}}_c$ son los regresores y residuos del cluster $c$.</p>
+<p>Los errores clusterizados son <strong>robustos a heterocedasticidad y a autocorrelación dentro del cluster de forma arbitraria</strong>, sin necesidad de especificar la estructura de correlación intra-cluster. Requieren suficiente número de clusters ($C \geq 50$ es una regla práctica para la validez asintótica) y que los clusters sean la unidad de asignación del tratamiento.</p>
+<p>En Stata: <code>regress y x1 x2, vce(cluster id)</code>.</p>
+<hr>
+<h2 id="5-inferencia-robusta-resumen-práctico">5. Inferencia robusta: resumen práctico<a hidden class="anchor" aria-hidden="true" href="#5-inferencia-robusta-resumen-práctico">#</a></h2>
+<p>El flujo de trabajo estándar en econometría aplicada:</p>
+<p><strong>Paso 1 — Estimar por MCO.</strong> Los coeficientes son consistentes bajo exogeneidad.</p>
+<p><strong>Paso 2 — Elegir el estimador de varianza apropiado:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Contexto</th>
+          <th>Estimador de varianza</th>
+          <th>Stata</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Corte transversal, sin heterocedasticidad aparente</td>
+          <td>Clásico $s^2(\mathbf{X}&rsquo;\mathbf{X})^{-1}$</td>
+          <td><code>regress y x</code></td>
+      </tr>
+      <tr>
+          <td>Corte transversal, posible heterocedasticidad</td>
+          <td>HC (errores robustos de White)</td>
+          <td><code>, robust</code></td>
+      </tr>
+      <tr>
+          <td>Series de tiempo, posible autocorrelación + heterocedasticidad</td>
+          <td>HAC (Newey-West)</td>
+          <td><code>newey y x, lag(m)</code></td>
+      </tr>
+      <tr>
+          <td>Panel, dependencia intra-cluster</td>
+          <td>Errores clusterizados</td>
+          <td><code>, vce(cluster id)</code></td>
+      </tr>
+      <tr>
+          <td>Panel, heterocedasticidad conocida</td>
+          <td>WLS/FGLS</td>
+          <td><code>wls</code> o <code>xtgls</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Paso 3 — Contrastar hipótesis con los errores estándar corregidos.</strong></p>
+<p><strong>Una advertencia:</strong> los errores robustos corrigen la inferencia pero no la eficiencia del estimador — si la heterocedasticidad o autocorrelación es severa y se conoce su estructura, MCGF produce estimadores más precisos. En la práctica, la robustez de los SE es la solución más común porque la estructura de $\boldsymbol{\Omega}$ rara vez se conoce con certeza.</p>
+<hr>
+<h2 id="6-mcg-vs-errores-robustos-el-debate">6. MCG vs. errores robustos: el debate<a hidden class="anchor" aria-hidden="true" href="#6-mcg-vs-errores-robustos-el-debate">#</a></h2>
+<p>En lugar de aceptar el estimador MCO ineficiente y corregir los errores estándar, se puede corregir la heterocedasticidad o autocorrelación usando un estimador completamente eficiente a través del GLS. Bajo heterocedasticidad o autocorrelación, aunque MCO y GLS son ambos insesgados, GLS tiene menor varianza.</p>
+<p>El debate en la práctica econométrica moderna:</p>
+<p><strong>A favor de errores robustos:</strong></p>
+<ul>
+<li>No requieren especificar la forma de $\boldsymbol{\Omega}$.</li>
+<li>Son robustos a errores de especificación de la estructura de la varianza.</li>
+<li>En muestras grandes, la pérdida de eficiencia de MCO sobre MCG es pequeña.</li>
+<li>Son la práctica estándar en microeconometría de corte transversal.</li>
+</ul>
+<p><strong>A favor de MCG/MCGF:</strong></p>
+<ul>
+<li>Son más eficientes cuando la estructura de $\boldsymbol{\Omega}$ está bien especificada.</li>
+<li>En series de tiempo con autocorrelación persistente, los errores HAC tienen propiedades de tamaño y potencia pobres en muestras finitas.</li>
+<li>El MCGF bien especificado domina a MCO+HAC en eficiencia y en control del tamaño del test.</li>
+</ul>
+<p>La tendencia reciente en macroeconometría es usar MCGF o modelos que modelan explícitamente la dinámica (VAR, modelos de corrección de error) en lugar de MCO+HAC. En microeconometría de corte transversal, los errores robustos (o clusterizados) son el estándar sin excepción.</p>
+<hr>
+<h2 id="7-síntesis">7. Síntesis<a hidden class="anchor" aria-hidden="true" href="#7-síntesis">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Problema</th>
+          <th>Supuesto violado</th>
+          <th>Consecuencia</th>
+          <th>Diagnóstico</th>
+          <th>Solución</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Heterocedasticidad</strong></td>
+          <td>GM5a ($\sigma_i^2$ no constante)</td>
+          <td>MCO ineficiente; SE incorrectos</td>
+          <td>BP, White</td>
+          <td>Errores robustos HC; WLS; MCGF</td>
+      </tr>
+      <tr>
+          <td><strong>Autocorrelación</strong></td>
+          <td>GM5b ($\text{Cov}(\varepsilon_i,\varepsilon_j)\neq 0$)</td>
+          <td>MCO ineficiente; SE incorrectos</td>
+          <td>DW; BG</td>
+          <td>Errores HAC (NW); Cochrane-Orcutt; Prais-Winsten</td>
+      </tr>
+      <tr>
+          <td><strong>Ambas</strong></td>
+          <td>GM5a y GM5b</td>
+          <td>Ídem</td>
+          <td>Ambos tests</td>
+          <td>Errores HAC; MCGF</td>
+      </tr>
+      <tr>
+          <td><strong>Dependencia intra-cluster</strong></td>
+          <td>GM5b dentro de clusters</td>
+          <td>SE incorrectos</td>
+          <td>Inspección del diseño</td>
+          <td>Errores clusterizados</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Wooldridge, J.M. (2008). <em>Introductory Econometrics</em>. Thomson. Caps. 8, 12.</li>
+<li>Greene, W.H. (2011). <em>Econometric Analysis</em>. Prentice Hall. Caps. 9–10.</li>
+<li>White, H. (1980). <em>A Heteroskedasticity-Consistent Covariance Matrix Estimator and a Direct Test for Heteroskedasticity</em>. Econometrica.</li>
+<li>Newey, W.K. &amp; West, K.D. (1987). <em>A Simple, Positive Semidefinite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix</em>. Econometrica.</li>
+<li>Breusch, T.S. &amp; Pagan, A.R. (1979). <em>A Simple Test for Heteroscedasticity and Random Coefficient Variation</em>. Econometrica.</li>
+<li>Cochrane, D. &amp; Orcutt, G.H. (1949). <em>Application of Least Squares Regression to Relationships Containing Auto-Correlated Error Terms</em>. JASA.</li>
+<li>Prais, S.J. &amp; Winsten, C.B. (1954). <em>Trend Estimators and Serial Correlation</em>. Cowles Commission Discussion Paper.</li>
+<li>Stock, J.H. &amp; Watson, M.W. (2006). <em>Introduction to Econometrics</em>. Pearson. Cap. 15.</li>
+<li>Cameron, A.C. &amp; Miller, D.L. (2015). <em>A Practitioner&rsquo;s Guide to Cluster-Robust Inference</em>. Journal of Human Resources.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/econometr%C3%ADa/">Econometría</a></li>
+      <li><a href="http://localhost:4459/tags/heterocedasticidad/">Heterocedasticidad</a></li>
+      <li><a href="http://localhost:4459/tags/autocorrelaci%C3%B3n/">Autocorrelación</a></li>
+      <li><a href="http://localhost:4459/tags/gls/">GLS</a></li>
+      <li><a href="http://localhost:4459/tags/fgls/">FGLS</a></li>
+      <li><a href="http://localhost:4459/tags/errores-robustos/">Errores Robustos</a></li>
+      <li><a href="http://localhost:4459/tags/newey-west/">Newey-West</a></li>
+      <li><a href="http://localhost:4459/tags/eae2510/">EAE2510</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/metrics/03_problemas/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Especificación y problemas en el MRL</span>
+    <span>Especificación y Problemas en el MRL</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/metrics/04_inferencia/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Inferencia causal</span>
+    <span>Inferencia Causal</span>
   </a>
 </nav>
 

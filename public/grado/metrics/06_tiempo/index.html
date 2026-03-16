@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Series de tiempo | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Series de tiempo - Agustín Sandoval Tapia">
+<title>Series de Tiempo | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="econometría, series de tiempo, estacionariedad, raíz unitaria, cointegración, ARMA, Dickey-Fuller, EAE2510, EAE3102">
+<meta name="description" content="Tendencia e integración, procesos estacionarios y no estacionarios, tests de raíz unitaria ADF, regresión espuria, cointegración de Engle-Granger, modelo de corrección de error.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/metrics/06_tiempo/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,351 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/metrics/">Econometría</a></div>
     <h1 class="post-title entry-hint-parent">
-      Series de tiempo
+      Series de Tiempo
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Tendencia e integración, procesos estacionarios y no estacionarios, tests de raíz unitaria ADF, regresión espuria, cointegración de Engle-Granger, modelo de corrección de error.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>15 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Cursos:</strong> Econometría (EAE2510) · Macroeconometría Aplicada (EAE3102)<br>
+<strong>Referencia principal:</strong> Wooldridge (2008) cap. 11 · Enders (1996) · Greene (2011) cap. 20</p>
+<hr>
+<h2 id="1-propiedades-estadísticas-de-las-series-de-tiempo">1. Propiedades estadísticas de las series de tiempo<a hidden class="anchor" aria-hidden="true" href="#1-propiedades-estadísticas-de-las-series-de-tiempo">#</a></h2>
+<h3 id="11-estacionariedad">1.1 Estacionariedad<a hidden class="anchor" aria-hidden="true" href="#11-estacionariedad">#</a></h3>
+<p>Un proceso estocástico ${Y_t}_{t=-\infty}^{\infty}$ es <strong>estacionario en covarianza</strong> (débilmente estacionario) si:</p>
+<ol>
+<li>$E[Y_t] = \mu$ — media constante en el tiempo.</li>
+<li>$\text{Var}(Y_t) = \sigma^2 &lt; \infty$ — varianza finita y constante.</li>
+<li>$\text{Cov}(Y_t, Y_{t-s}) = \gamma(s)$ — covarianza que depende solo del rezago $s$, no del tiempo $t$.</li>
+</ol>
+<p>La estacionariedad es una condición de <strong>homogeneidad temporal</strong>: la distribución de la serie no cambia con el tiempo. Es el supuesto que justifica usar la media y varianza muestral como estimadores de los parámetros poblacionales — si la serie no es estacionaria, esos estimadores no tienen interpretación estable.</p>
+<p>Una serie de tiempo no es estacionaria si su distribución — en particular su media, varianza o covarianza temporal — cambia con el tiempo. Las series no estacionarias no pueden usarse directamente en modelos de regresión porque pueden generar regresión espuria: una relación falsa debida, por ejemplo, a una tendencia común en variables por lo demás no relacionadas.</p>
+<h3 id="12-la-función-de-autocorrelación-fac">1.2 La función de autocorrelación (FAC)<a hidden class="anchor" aria-hidden="true" href="#12-la-función-de-autocorrelación-fac">#</a></h3>
+<p>La <strong>función de autocorrelación</strong> (ACF) mide la correlación entre $Y_t$ e $Y_{t-s}$:</p>
+<p>$$\rho_s = \frac{\text{Cov}(Y_t, Y_{t-s})}{\text{Var}(Y_t)} = \frac{\gamma(s)}{\gamma(0)}$$</p>
+<p>La <strong>función de autocorrelación parcial</strong> (PACF) mide la correlación entre $Y_t$ e $Y_{t-s}$ eliminando el efecto de los rezagos intermedios $Y_{t-1}, \ldots, Y_{t-s+1}$. Es análoga a un coeficiente de regresión parcial.</p>
+<p>Los correlograms (gráficos de FAC y FACP) son la herramienta de diagnóstico principal para identificar la estructura de dependencia temporal:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Proceso</th>
+          <th>FAC</th>
+          <th>FACP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AR(p)</td>
+          <td>Decae gradualmente</td>
+          <td>Corte después del rezago $p$</td>
+      </tr>
+      <tr>
+          <td>MA(q)</td>
+          <td>Corte después del rezago $q$</td>
+          <td>Decae gradualmente</td>
+      </tr>
+      <tr>
+          <td>ARMA(p,q)</td>
+          <td>Decae gradualmente</td>
+          <td>Decae gradualmente</td>
+      </tr>
+      <tr>
+          <td>Ruido blanco</td>
+          <td>Todos los rezagos ≈ 0</td>
+          <td>Todos los rezagos ≈ 0</td>
+      </tr>
+      <tr>
+          <td>Caminata aleatoria</td>
+          <td>Decae muy lentamente (casi lineal)</td>
+          <td>Gran pico en rezago 1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="2-procesos-estacionarios-arma">2. Procesos estacionarios: ARMA<a hidden class="anchor" aria-hidden="true" href="#2-procesos-estacionarios-arma">#</a></h2>
+<h3 id="21-procesos-autorregresivos-arp">2.1 Procesos autorregresivos AR(p)<a hidden class="anchor" aria-hidden="true" href="#21-procesos-autorregresivos-arp">#</a></h3>
+<p>El proceso AR(p) expresa $Y_t$ como función lineal de sus $p$ valores pasados más un error:</p>
+<p>$$Y_t = \phi_0 + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \cdots + \phi_p Y_{t-p} + \varepsilon_t$$</p>
+<p>Usando el operador de rezago $L$ ($LY_t = Y_{t-1}$):</p>
+<p>$$\Phi(L)Y_t = \phi_0 + \varepsilon_t, \quad \Phi(L) = 1 - \phi_1 L - \phi_2 L^2 - \cdots - \phi_p L^p$$</p>
+<p><strong>Condición de estacionariedad:</strong> todas las raíces del polinomio característico $\Phi(z) = 0$ deben caer <strong>fuera</strong> del círculo unitario (en módulo mayor a 1). Para AR(1): $|\phi_1| &lt; 1$.</p>
+<p><strong>Propiedades del AR(1) estacionario</strong> ($Y_t = \phi Y_{t-1} + \varepsilon_t$, $|\phi|&lt;1$):</p>
+<p>$$E[Y_t] = 0, \quad \text{Var}(Y_t) = \frac{\sigma^2}{1-\phi^2}, \quad \rho_s = \phi^s$$</p>
+<p>La autocorrelación decae geométricamente — exponencialmente hacia cero. La FAC nunca cae abruptamente; la PACF tiene un único pico en el rezago 1.</p>
+<h3 id="22-procesos-de-media-móvil-maq">2.2 Procesos de media móvil MA(q)<a hidden class="anchor" aria-hidden="true" href="#22-procesos-de-media-móvil-maq">#</a></h3>
+<p>El proceso MA(q) expresa $Y_t$ como combinación lineal de los errores presentes y pasados:</p>
+<p>$$Y_t = \mu + \varepsilon_t + \theta_1\varepsilon_{t-1} + \cdots + \theta_q\varepsilon_{t-q} = \mu + \Theta(L)\varepsilon_t$$</p>
+<p>Los procesos MA son <strong>siempre estacionarios</strong> (la varianza es finita para cualquier $\theta$). La FAC del MA(q) se trunca en el rezago $q$: $\rho_s = 0$ para $s &gt; q$.</p>
+<p><strong>Invertibilidad:</strong> para que el MA tenga una representación AR convergente, las raíces de $\Theta(z)=0$ deben estar fuera del círculo unitario.</p>
+<h3 id="23-procesos-armapq">2.3 Procesos ARMA(p,q)<a hidden class="anchor" aria-hidden="true" href="#23-procesos-armapq">#</a></h3>
+<p>El ARMA(p,q) combina ambas estructuras:</p>
+<p>$$\Phi(L)Y_t = \phi_0 + \Theta(L)\varepsilon_t$$</p>
+<p>Es más parsimonioso que AR o MA puros para series con estructura de autocorrelación compleja. La identificación de $p$ y $q$ se hace examinando FAC y FACP, y comparando criterios de información (AIC, BIC) entre especificaciones candidatas — la <strong>metodología Box-Jenkins</strong>.</p>
+<hr>
+<h2 id="3-procesos-no-estacionarios-tendencias-e-integración">3. Procesos no estacionarios: tendencias e integración<a hidden class="anchor" aria-hidden="true" href="#3-procesos-no-estacionarios-tendencias-e-integración">#</a></h2>
+<h3 id="31-tendencia-determinística-vs-estocástica">3.1 Tendencia determinística vs. estocástica<a hidden class="anchor" aria-hidden="true" href="#31-tendencia-determinística-vs-estocástica">#</a></h3>
+<p>Las series macroeconómicas típicamente crecen en el tiempo. La fuente del crecimiento importa para el tratamiento estadístico:</p>
+<p><strong>Proceso estacionario en tendencia (TS):</strong></p>
+<p>$$Y_t = \alpha + \beta t + \varepsilon_t, \quad \varepsilon_t \sim \text{estacionario}$$</p>
+<p>La tendencia es <strong>determinística</strong>: dado $t$, el proceso revierte a la tendencia. El tratamiento correcto es <strong>demeaning</strong>: incluir $t$ como regresor o restar la tendencia estimada.</p>
+<p><strong>Proceso integrado de orden 1 — I(1) — con tendencia estocástica:</strong></p>
+<p>$$Y_t = Y_{t-1} + \varepsilon_t \quad \text{(caminata aleatoria)}$$</p>
+<p>$$Y_t = Y_0 + \sum_{s=1}^t \varepsilon_s$$</p>
+<p>Los shocks se <strong>acumulan permanentemente</strong> — no hay reversión a ningún nivel fijo. La varianza crece sin límite con el tiempo: $\text{Var}(Y_t) = t\sigma^2 \to \infty$. El tratamiento correcto es <strong>diferenciar</strong>: $\Delta Y_t = Y_t - Y_{t-1} = \varepsilon_t$ es estacionario.</p>
+<p><strong>La distinción es crucial y no es trivial identificarla visualmente</strong> — ambos procesos pueden producir series que &ldquo;parecen&rdquo; con tendencia. Nelson y Plosser (1982) demostraron que la mayoría de las series macroeconómicas de EE.UU. son I(1), no TS — resultado con enormes implicancias para la interpretación de política económica.</p>
+<h3 id="32-la-caminata-aleatoria-con-drift">3.2 La caminata aleatoria con drift<a hidden class="anchor" aria-hidden="true" href="#32-la-caminata-aleatoria-con-drift">#</a></h3>
+<p>$$Y_t = \delta + Y_{t-1} + \varepsilon_t, \quad \delta \neq 0$$</p>
+<p>Combina tendencia estocástica y drift (tendencia determinística). Es el modelo de precios de activos (hipótesis de mercados eficientes): los cambios en precios son impredecibles pero en promedio positivos.</p>
+<h3 id="33-procesos-id-orden-de-integración">3.3 Procesos I(d): orden de integración<a hidden class="anchor" aria-hidden="true" href="#33-procesos-id-orden-de-integración">#</a></h3>
+<p>Un proceso es <strong>integrado de orden $d$</strong> — denotado $Y_t \sim I(d)$ — si es necesario diferenciarlo $d$ veces para obtener un proceso estacionario. Un proceso de ruido blanco es I(0). Una caminata aleatoria es I(1). Una serie es I(1) si no es estacionaria en niveles pero sí en primeras diferencias.</p>
+<p>La regla práctica: la mayoría de las series macroeconómicas son I(1) — PIB, consumo, inversión, nivel de precios, tipo de cambio. Las tasas de cambio (inflación, crecimiento del PIB) son generalmente I(0).</p>
+<hr>
+<h2 id="4-tests-de-raíz-unitaria">4. Tests de raíz unitaria<a hidden class="anchor" aria-hidden="true" href="#4-tests-de-raíz-unitaria">#</a></h2>
+<h3 id="41-el-test-de-dickey-fuller-df">4.1 El test de Dickey-Fuller (DF)<a hidden class="anchor" aria-hidden="true" href="#41-el-test-de-dickey-fuller-df">#</a></h3>
+<p>El test DF contrasta la hipótesis nula de raíz unitaria. Partiendo del AR(1):</p>
+<p>$$Y_t = \rho Y_{t-1} + \varepsilon_t$$</p>
+<p>La hipótesis de raíz unitaria es $H_0: \rho = 1$. Restando $Y_{t-1}$ de ambos lados:</p>
+<p>$$\Delta Y_t = \delta Y_{t-1} + \varepsilon_t, \quad \delta = \rho - 1$$</p>
+<p>$$H_0: \delta = 0 \quad (\text{raíz unitaria}), \quad H_1: \delta &lt; 0 \quad (\text{estacionariedad})$$</p>
+<p>El estadístico es el $t$-ratio usual de $\hat{\delta}$, pero <strong>su distribución bajo $H_0$ no es la $t$ estándar</strong> — es la <strong>distribución de Dickey-Fuller</strong>, con colas más pesadas a la izquierda. Los valores críticos son más negativos que los de la distribución $t$: aproximadamente $-2.86$ al 5% (sin constante ni tendencia), $-3.41$ (con constante), $-3.96$ (con constante y tendencia) para muestras grandes.</p>
+<p>Si la serie es estacionaria (o trend-stationary), tiende a retornar a una media constante (o con tendencia determinística). Por tanto, valores grandes serán seguidos por valores menores (cambios negativos), y valores pequeños por mayores. El nivel de la serie será un predictor significativo del cambio del próximo período, con coeficiente negativo. Si la serie es integrada, los cambios positivos y negativos ocurren con probabilidades independientes del nivel actual.</p>
+<p><strong>Variantes del test DF:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Especificación</th>
+          <th>Ecuación</th>
+          <th>Cuándo usar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sin constante</td>
+          <td>$\Delta Y_t = \delta Y_{t-1} + \varepsilon_t$</td>
+          <td>Serie centrada en cero sin tendencia</td>
+      </tr>
+      <tr>
+          <td>Con constante</td>
+          <td>$\Delta Y_t = \alpha + \delta Y_{t-1} + \varepsilon_t$</td>
+          <td>Serie con media no nula pero sin tendencia</td>
+      </tr>
+      <tr>
+          <td>Con constante y tendencia</td>
+          <td>$\Delta Y_t = \alpha + \beta t + \delta Y_{t-1} + \varepsilon_t$</td>
+          <td>Serie con tendencia determinística posible</td>
+      </tr>
+  </tbody>
+</table>
+<p>La estrategia general en investigación aplicada es comenzar con la forma más general — con constante y tendencia. Si la tendencia no es estadísticamente significativa, re-estimar solo con constante. Si la constante tampoco lo es, usar el modelo sin ambos para determinar si hay raíz unitaria pura.</p>
+<h3 id="42-el-test-adf-augmented-dickey-fuller">4.2 El test ADF (Augmented Dickey-Fuller)<a hidden class="anchor" aria-hidden="true" href="#42-el-test-adf-augmented-dickey-fuller">#</a></h3>
+<p>El test ADF es una extensión del DF que controla la autocorrelación de orden mayor en la serie de tiempo incluyendo diferencias rezagadas de la variable dependiente.</p>
+<p>$$\Delta Y_t = \alpha + \beta t + \delta Y_{t-1} + \sum_{j=1}^p \gamma_j \Delta Y_{t-j} + \varepsilon_t$$</p>
+<p>Los rezagos adicionales $\Delta Y_{t-j}$ absorben la autocorrelación serial residual — el error $\varepsilon_t$ debe ser ruido blanco para que el test sea válido. La hipótesis $H_0: \delta = 0$ sigue teniendo la distribución de Dickey-Fuller.</p>
+<p><strong>Selección del número de rezagos $p$:</strong> criterios de información (AIC, BIC) o la regla de Schwert ($p_{max} = \lfloor 12(T/100)^{1/4} \rfloor$). Incluir demasiados rezagos reduce el poder; muy pocos invalida el test por autocorrelación residual.</p>
+<p>En Stata: <code>dfuller y, lags(p) trend</code> (DF/ADF con tendencia opcional).</p>
+<h3 id="43-el-test-phillips-perron-pp">4.3 El test Phillips-Perron (PP)<a hidden class="anchor" aria-hidden="true" href="#43-el-test-phillips-perron-pp">#</a></h3>
+<p>El test PP es una alternativa no paramétrica al ADF que corrige la autocorrelación y heterocedasticidad de los errores sin necesidad de incluir rezagos explícitamente. Usa una corrección de Newey-West sobre el estadístico DF estándar.</p>
+<p>Phillips y Perron (1988) desarrollaron el test PP, que provee un método no paramétrico de testeo de raíz unitaria que supera los problemas de correlación serial y heterocedasticidad sin necesidad de aumentar con términos rezagados.</p>
+<p>En Stata: <code>pperron y, trend</code>.</p>
+<h3 id="44-el-test-kpss">4.4 El test KPSS<a hidden class="anchor" aria-hidden="true" href="#44-el-test-kpss">#</a></h3>
+<p>El test KPSS invierte las hipótesis respecto al ADF: $H_0$ es <strong>estacionariedad</strong> (o trend-stationarity), $H_1$ es raíz unitaria. Contrastar ambos tests en conjunto provee más información:</p>
+<table>
+  <thead>
+      <tr>
+          <th>ADF no rechaza $H_0$</th>
+          <th>KPSS no rechaza $H_0$</th>
+          <th>Conclusión</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Sí</td>
+          <td>Sí</td>
+          <td>Evidencia débil — ambiguedad</td>
+      </tr>
+      <tr>
+          <td>Sí</td>
+          <td>No</td>
+          <td>Evidencia de I(1)</td>
+      </tr>
+      <tr>
+          <td>No</td>
+          <td>Sí</td>
+          <td>Evidencia de I(0)</td>
+      </tr>
+      <tr>
+          <td>No</td>
+          <td>No</td>
+          <td>Contradicción — problema con los datos</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="45-limitaciones-de-los-tests-de-raíz-unitaria">4.5 Limitaciones de los tests de raíz unitaria<a hidden class="anchor" aria-hidden="true" href="#45-limitaciones-de-los-tests-de-raíz-unitaria">#</a></h3>
+<p>Los tests de raíz unitaria tienen <strong>bajo poder</strong> contra alternativas estacionarias con raíz cercana a (pero distinta de) la unidad. En muestras pequeñas, distinguir $\rho = 0.95$ de $\rho = 1.0$ es estadísticamente muy difícil.</p>
+<p>Además, los tests pueden confundir una raíz unitaria con <strong>quiebres estructurales</strong> — una serie estacionaria con un cambio en la media puede parecer no estacionaria si el quiebre no se controla. El test de Perron (1989) extiende el ADF para permitir quiebres estructurales conocidos; Zivot-Andrews (1992) permite quiebres desconocidos.</p>
+<hr>
+<h2 id="5-regresión-espuria">5. Regresión espuria<a hidden class="anchor" aria-hidden="true" href="#5-regresión-espuria">#</a></h2>
+<h3 id="51-el-problema">5.1 El problema<a hidden class="anchor" aria-hidden="true" href="#51-el-problema">#</a></h3>
+<p>Las series de tiempo no estacionarias no pueden usarse en modelos de regresión porque pueden crear regresión espuria: una relación falsa debida, por ejemplo, a una tendencia común en variables por lo demás no relacionadas.</p>
+<p>Si $Y_t$ y $X_t$ son dos caminatas aleatorias <strong>independientes</strong> e $Y_t$ se regresa en $X_t$, el estimador MCO no converge a cero — converge a un valor no nulo con alta probabilidad. El $R^2$ tiende a ser alto y el estadístico $t$ rechaza $H_0: \beta = 0$ frecuentemente incluso cuando la verdadera relación es cero.</p>
+<p>Los residuos de tal regresión espuria son autocorrelacionados. A pesar de no haber ninguna relación entre las series, hay una tendencia ascendente aparente en ambas.</p>
+<p>Las señales de regresión espuria: $R^2$ alto, estadístico $t$ grande, pero el estadístico de Durbin-Watson (DW) es muy bajo ($DW \approx 0$) — los residuos tienen fuerte autocorrelación positiva.</p>
+<h3 id="52-soluciones-a-la-regresión-espuria">5.2 Soluciones a la regresión espuria<a hidden class="anchor" aria-hidden="true" href="#52-soluciones-a-la-regresión-espuria">#</a></h3>
+<p><strong>Si las series no están cointegradas:</strong> trabajar con primeras diferencias $\Delta Y_t$ y $\Delta X_t$. El modelo en diferencias es estacionario y la inferencia estándar es válida. El costo: se pierde la información sobre niveles y relaciones de largo plazo.</p>
+<p><strong>Si las series están cointegradas:</strong> existe una relación de largo plazo genuina — la regresión en niveles es válida y los residuos son estacionarios. Ver la sección siguiente.</p>
+<hr>
+<h2 id="6-cointegración">6. Cointegración<a hidden class="anchor" aria-hidden="true" href="#6-cointegración">#</a></h2>
+<h3 id="61-definición">6.1 Definición<a hidden class="anchor" aria-hidden="true" href="#61-definición">#</a></h3>
+<p>Si el test ADF indica que tanto $x$ como $y$ son no estacionarias, modelar la cointegración entre variables no estacionarias provee un enfoque para obtener resultados de regresión útiles. A pesar de que las dos variables son individualmente no estacionarias, una combinación lineal puede ser estacionaria. En este caso se dice que existe un vínculo de cointegración y sugiere que hay una relación de largo plazo o de equilibrio entre las dos variables.</p>
+<p>Formalmente, dos series $I(1)$ $Y_t$ y $X_t$ son <strong>cointegradas</strong> si existe $\beta$ tal que:</p>
+<p>$$z_t = Y_t - \beta X_t \sim I(0)$$</p>
+<p>El vector $(1, -\beta)$ es el <strong>vector de cointegración</strong>. La existencia de cointegración implica que las dos series no pueden alejarse arbitrariamente en el largo plazo — están vinculadas por una relación de equilibrio.</p>
+<p>Ejemplos económicos de cointegración: consumo e ingreso (hipótesis del ingreso permanente), precios en dos mercados del mismo bien (arbitraje), tipo de cambio y precios relativos (PPP de largo plazo).</p>
+<h3 id="62-el-método-de-engle-granger-dos-pasos">6.2 El método de Engle-Granger (dos pasos)<a hidden class="anchor" aria-hidden="true" href="#62-el-método-de-engle-granger-dos-pasos">#</a></h3>
+<p>Para testear cointegración, se pueden construir residuos basados en la regresión estática y testear la presencia de raíz unitaria. Si las series están cointegradas, los residuos estimados estarán cerca de ser estacionarios.</p>
+<p><strong>Paso 1 — Estimar la relación de largo plazo:</strong></p>
+<p>$$Y_t = \alpha + \beta X_t + u_t$$</p>
+<p>Obtener los residuos $\hat{u}_t = Y_t - \hat{\alpha} - \hat{\beta}X_t$.</p>
+<p><strong>Paso 2 — Testear si $\hat{u}_t \sim I(0)$:</strong></p>
+<p>Aplicar el test ADF a los residuos. El test de cointegración de Engle-Granger es esencialmente el test de raíz unitaria aplicado al residuo de la regresión de cointegración. Las series están cointegradas si el residuo no tiene raíz unitaria.</p>
+<p><strong>Atención:</strong> los valores críticos del ADF aplicado a los residuos son distintos a los del ADF estándar — más negativos — porque $\hat{u}_t$ es un residuo de regresión, no una serie directamente observada. La distribución del test de Engle-Granger no sigue la distribución de Dickey-Fuller cuando $\beta$ es desconocido y estimado.  Los valores críticos apropiados son los de MacKinnon (1990).</p>
+<p>Cuando ${Y_t}$ y ${X_t}$ están cointegradas, el estimador MCO $\hat{\beta}$ de la regresión de cointegración es <strong>superconsistente</strong>: converge a $\beta$ a tasa $T$ (en vez de $\sqrt{T}$), pero bajo la hipótesis nula de que $z_t$ tiene raíz unitaria, debemos correr una regresión espuria para obtener $\hat{\beta}$.</p>
+<h3 id="63-el-modelo-de-corrección-de-error-ecm">6.3 El modelo de corrección de error (ECM)<a hidden class="anchor" aria-hidden="true" href="#63-el-modelo-de-corrección-de-error-ecm">#</a></h3>
+<p>El <strong>teorema de representación de Granger</strong> establece que si $Y_t$ y $X_t$ son cointegradas, existe una representación de <strong>modelo de corrección de error (ECM)</strong>:</p>
+<p>$$\Delta Y_t = \alpha_0 + \alpha_1 \Delta X_t + \lambda(Y_{t-1} - \beta X_{t-1}) + v_t$$</p>
+<p>donde $\lambda &lt; 0$ es el <strong>coeficiente de velocidad de ajuste</strong>: mide cuán rápido el sistema corrige las desviaciones del equilibrio de largo plazo $Y_{t-1} - \beta X_{t-1}$.</p>
+<p>El ECM tiene una interpretación económica rica:</p>
+<ul>
+<li>El término $\Delta X_t$ captura los efectos de <strong>corto plazo</strong>.</li>
+<li>El término $(Y_{t-1} - \beta X_{t-1})$ es el <strong>error de corrección</strong>: si $Y$ está por encima de su valor de equilibrio ($Y &gt; \beta X$), el sistema se ajusta hacia abajo ($\lambda &lt; 0$).</li>
+<li>La velocidad de ajuste $|\lambda|$ determina cuántos períodos toma el retorno al equilibrio.</li>
+</ul>
+<p>La estimación del ECM sigue el método de Engle-Granger: estimar $\beta$ en la primera etapa, usar los residuos $\hat{u}_{t-1}$ como el término de corrección, y estimar la dinámica de corto plazo en la segunda etapa.</p>
+<h3 id="64-el-enfoque-de-johansen-para-múltiples-series">6.4 El enfoque de Johansen para múltiples series<a hidden class="anchor" aria-hidden="true" href="#64-el-enfoque-de-johansen-para-múltiples-series">#</a></h3>
+<p>Cuando hay más de dos series I(1), puede haber múltiples vectores de cointegración. El método de <strong>Johansen (1988)</strong> usa el sistema VAR para identificar el número de relaciones de cointegración mediante el rango de la matriz $\Pi$ en:</p>
+<p>$$\Delta\mathbf{y}<em>t = \boldsymbol{\pi}<em>0 + \Pi\mathbf{y}</em>{t-1} + \sum</em>{i=1}^{p-1}\Phi_i\Delta\mathbf{y}_{t-i} + \boldsymbol{\varepsilon}_t$$</p>
+<p>Si $\text{rank}(\Pi) = r$, hay $r$ relaciones de cointegración independientes. Los dos tests de Johansen son:</p>
+<ul>
+<li><strong>Test de traza:</strong> $H_0: r \leq r_0$.</li>
+<li><strong>Test de máximo eigenvalor:</strong> $H_0: r = r_0$ vs. $H_1: r = r_0 + 1$.</li>
+</ul>
+<p>El enfoque de Johansen es más eficiente que Engle-Granger cuando hay múltiples vectores de cointegración — situación común en modelos macroeconómicos.</p>
+<p>En Stata: <code>vecrank y1 y2 y3, trend(rconstant) lags(p)</code>.</p>
+<hr>
+<h2 id="7-representaciones-de-tendencia-y-el-filtro-hp">7. Representaciones de tendencia y el filtro HP<a hidden class="anchor" aria-hidden="true" href="#7-representaciones-de-tendencia-y-el-filtro-hp">#</a></h2>
+<h3 id="71-componentes-de-una-serie-de-tiempo">7.1 Componentes de una serie de tiempo<a hidden class="anchor" aria-hidden="true" href="#71-componentes-de-una-serie-de-tiempo">#</a></h3>
+<p>Una serie de tiempo puede descomponerse en componentes con distintas características de frecuencia:</p>
+<p>$$Y_t = T_t + C_t + S_t + I_t$$</p>
+<p>donde $T_t$ es la tendencia, $C_t$ el ciclo, $S_t$ la estacionalidad e $I_t$ el componente irregular.</p>
+<h3 id="72-el-filtro-de-hodrick-prescott">7.2 El filtro de Hodrick-Prescott<a hidden class="anchor" aria-hidden="true" href="#72-el-filtro-de-hodrick-prescott">#</a></h3>
+<p>El <strong>filtro de Hodrick-Prescott (HP)</strong> es el método más usado en macroeconometría para descomponer una serie en tendencia y ciclo. Minimiza:</p>
+<p>$$\min_{{T_t}} \sum_{t=1}^T (Y_t - T_t)^2 + \lambda\sum_{t=2}^{T-1}[(T_{t+1} - T_t) - (T_t - T_{t-1})]^2$$</p>
+<p>El primer término penaliza las desviaciones de la tendencia; el segundo penaliza los cambios en la tasa de crecimiento de la tendencia. El parámetro $\lambda$ controla la suavidad: $\lambda = 1600$ para datos trimestrales (convención estándar), $\lambda = 100$ para anuales, $\lambda = 14400$ para mensuales.</p>
+<p>La <strong>brecha de producto</strong> es $\tilde{Y}_t = Y_t - T_t^{HP}$ — la desviación del producto respecto a su tendencia estimada por HP.</p>
+<p><strong>Crítica al filtro HP:</strong> Cogley y Nason (1995) y Hamilton (2018) documentaron que el filtro HP puede generar ciclos espurios en series I(1) — introduce autocorrelación artificial en el componente cíclico que no estaba en los datos originales. Hamilton propone una alternativa basada en proyecciones hacia adelante que evita este problema.</p>
+<hr>
+<h2 id="8-flujo-de-trabajo-para-series-de-tiempo-no-estacionarias">8. Flujo de trabajo para series de tiempo no estacionarias<a hidden class="anchor" aria-hidden="true" href="#8-flujo-de-trabajo-para-series-de-tiempo-no-estacionarias">#</a></h2>
+<p>El procedimiento estándar en macroeconometría aplicada:</p>
+<pre tabindex="0"><code>1. GRAFICAR la serie: ¿parece estacionaria? ¿Tiene tendencia clara?
+2. EXAMINAR FAC y FACP: ¿decaimiento lento? → probable I(1)
+3. TEST ADF/PP en niveles (con constante y tendencia):
+   - No rechaza H₀ → probable I(1)
+   - Rechaza H₀ → probable I(0) → usar en niveles
+4. Si I(1), TEST ADF en primeras diferencias:
+   - Rechaza H₀ → confirmado I(1)
+   - No rechaza → probable I(2) (raro en macro)
+5. Si hay múltiples series I(1):
+   a. TEST DE COINTEGRACIÓN (Engle-Granger o Johansen)
+   b. Si cointegradas → estimar ECM o VECM
+   c. Si no cointegradas → trabajar en primeras diferencias
+6. DIAGNÓSTICO de los residuos: normalidad, ausencia de autocorrelación
+</code></pre><hr>
+<h2 id="9-síntesis-estacionariedad-integración-y-cointegración">9. Síntesis: estacionariedad, integración y cointegración<a hidden class="anchor" aria-hidden="true" href="#9-síntesis-estacionariedad-integración-y-cointegración">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Situación</th>
+          <th>Tratamiento</th>
+          <th>Modelo resultante</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$Y_t, X_t \sim I(0)$</td>
+          <td>MCO en niveles</td>
+          <td>Regresión estándar</td>
+      </tr>
+      <tr>
+          <td>$Y_t \sim I(1)$, tendencia determinística</td>
+          <td>Incluir $t$ como regresor o demeaning</td>
+          <td>Modelo con tendencia</td>
+      </tr>
+      <tr>
+          <td>$Y_t \sim I(1)$, $X_t \sim I(0)$</td>
+          <td>MCO es inválido; trabajar en diferencias</td>
+          <td>Modelo mixto</td>
+      </tr>
+      <tr>
+          <td>$Y_t, X_t \sim I(1)$, no cointegradas</td>
+          <td>Diferenciar ambas</td>
+          <td>Regresión en $\Delta$</td>
+      </tr>
+      <tr>
+          <td>$Y_t, X_t \sim I(1)$, cointegradas</td>
+          <td>MCO superconsistente en niveles</td>
+          <td>ECM (corto + largo plazo)</td>
+      </tr>
+      <tr>
+          <td>$\mathbf{y}_t \sim I(1)$ multivariado</td>
+          <td>Johansen VECM</td>
+          <td>$r$ vectores de cointegración</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Wooldridge, J.M. (2008). <em>Introductory Econometrics</em>. Thomson. Cap. 11.</li>
+<li>Enders, W. (1996). <em>Applied Time Series Econometrics</em>. Wiley.</li>
+<li>Engle, R.F. &amp; Granger, C.W.J. (1987). <em>Co-integration and Error Correction: Representation, Estimation, and Testing</em>. Econometrica.</li>
+<li>Dickey, D.A. &amp; Fuller, W.A. (1979). <em>Distribution of the Estimators for Autoregressive Time Series with a Unit Root</em>. JASA.</li>
+<li>Phillips, P.C.B. &amp; Perron, P. (1988). <em>Testing for a Unit Root in Time Series Regression</em>. Biometrika.</li>
+<li>Nelson, C.R. &amp; Plosser, C.I. (1982). <em>Trends and Random Walks in Macroeconomic Time Series</em>. JME.</li>
+<li>Johansen, S. (1988). <em>Statistical Analysis of Cointegration Vectors</em>. Journal of Economic Dynamics and Control.</li>
+<li>Hodrick, R.J. &amp; Prescott, E.C. (1997). <em>Postwar U.S. Business Cycles: An Empirical Investigation</em>. JMCB.</li>
+<li>Hamilton, J.D. (2018). <em>Why You Should Never Use the Hodrick-Prescott Filter</em>. REStat.</li>
+<li>Greene, W.H. (2011). <em>Econometric Analysis</em>. Prentice Hall. Cap. 20.</li>
+<li>Stock, J.H. &amp; Watson, M.W. (1999). <em>Business Cycle Fluctuations in U.S. Macroeconomic Time Series</em>. Handbook of Macroeconomics.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/econometr%C3%ADa/">Econometría</a></li>
+      <li><a href="http://localhost:4459/tags/series-de-tiempo/">Series De Tiempo</a></li>
+      <li><a href="http://localhost:4459/tags/estacionariedad/">Estacionariedad</a></li>
+      <li><a href="http://localhost:4459/tags/ra%C3%ADz-unitaria/">Raíz Unitaria</a></li>
+      <li><a href="http://localhost:4459/tags/cointegraci%C3%B3n/">Cointegración</a></li>
+      <li><a href="http://localhost:4459/tags/arma/">ARMA</a></li>
+      <li><a href="http://localhost:4459/tags/dickey-fuller/">Dickey-Fuller</a></li>
+      <li><a href="http://localhost:4459/tags/eae2510/">EAE2510</a></li>
+      <li><a href="http://localhost:4459/tags/eae3102/">EAE3102</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/macro/05_fiscal/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Política fiscal: Gasto público, impuestos y subsidios</span>
+    <span>Política Fiscal: Gasto Público, Impuestos y Deuda</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/micro/07_juegos/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Teoría de juegos</span>
+    <span>Teoría de Juegos</span>
   </a>
 </nav>
 

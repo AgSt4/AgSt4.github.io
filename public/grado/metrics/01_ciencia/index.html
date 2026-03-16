@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Método científico en Economía | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Método científico en Economía - Agustín Sandoval Tapia">
+<title>Método Científico en Economía | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="econometría, causalidad, resultados potenciales, sesgo de selección, ceteris paribus, EAE2510">
+<meta name="description" content="Estructura del dato en economía, causalidad vs. correlación, el modelo de resultados potenciales de Rubin-Neyman, sesgo de selección y el problema fundamental de la inferencia causal.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/metrics/01_ciencia/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,167 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/metrics/">Econometría</a></div>
     <h1 class="post-title entry-hint-parent">
-      Método científico en Economía
+      Método Científico en Economía
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Estructura del dato en economía, causalidad vs. correlación, el modelo de resultados potenciales de Rubin-Neyman, sesgo de selección y el problema fundamental de la inferencia causal.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>13 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Cursos:</strong> Econometría (EAE2510) · Microeconometría Aplicada (EAE3101)<br>
+<strong>Referencia principal:</strong> Wooldridge (2008) cap. 1 · Angrist &amp; Pischke (2009) caps. 1–2 · Heckman (2008)</p>
+<hr>
+<h2 id="1-qué-hace-a-la-economía-una-ciencia-empírica">1. ¿Qué hace a la economía una ciencia empírica?<a hidden class="anchor" aria-hidden="true" href="#1-qué-hace-a-la-economía-una-ciencia-empírica">#</a></h2>
+<p>La economía aspira a responder preguntas causales sobre el mundo: ¿cuánto aumenta el ingreso con un año adicional de educación? ¿Reduce el salario mínimo el empleo? ¿Tiene la política monetaria efectos reales? La dificultad es que estas preguntas no pueden responderse con observación directa — requieren inferir relaciones causales a partir de datos que no provienen de experimentos controlados.</p>
+<p>La econometría es la disciplina que desarrolla los métodos para hacer esa inferencia de forma rigurosa. Pero antes de aplicar cualquier técnica estadística, es necesario entender qué estamos preguntando cuando preguntamos por un efecto causal, qué datos necesitamos para responderla, y qué puede salir mal.</p>
+<hr>
+<h2 id="2-estructura-de-los-datos-en-economía">2. Estructura de los datos en economía<a hidden class="anchor" aria-hidden="true" href="#2-estructura-de-los-datos-en-economía">#</a></h2>
+<p>Los datos económicos se presentan en cuatro estructuras principales, cada una con sus particularidades para el análisis:</p>
+<p><strong>Corte transversal (cross-section):</strong> observaciones de múltiples unidades (individuos, firmas, países) en un único punto del tiempo. Ejemplo: encuesta de hogares de un año. No permite controlar por características no observadas que no varían en el tiempo.</p>
+<p><strong>Serie de tiempo (time-series):</strong> observaciones de una única unidad a lo largo del tiempo. Ejemplo: PIB trimestral de Chile. Permite estudiar dinámica y dependencia temporal, pero la identificación causal es difícil porque las variables económicas co-evolucionan.</p>
+<p><strong>Datos de panel (panel data):</strong> múltiples unidades observadas en múltiples períodos. Combina variación cross-section e intertemporal. Es la estructura más rica para identificación causal porque permite controlar por características no observadas que son constantes en el tiempo (efectos fijos).</p>
+<p><strong>Datos de panel no balanceado:</strong> no todas las unidades están presentes en todos los períodos — la situación más común en la práctica.</p>
+<p>La estructura del dato no es neutral: las preguntas causales identificables dependen de qué variación existe en los datos. Un estimador de efectos fijos necesita variación intra-unidad en el tiempo; sin variación longitudinal, el parámetro de interés no está identificado con esa estrategia.</p>
+<hr>
+<h2 id="3-correlación-causalidad-y-ceteris-paribus">3. Correlación, causalidad y ceteris paribus<a hidden class="anchor" aria-hidden="true" href="#3-correlación-causalidad-y-ceteris-paribus">#</a></h2>
+<h3 id="31-la-distinción-fundamental">3.1 La distinción fundamental<a hidden class="anchor" aria-hidden="true" href="#31-la-distinción-fundamental">#</a></h3>
+<p>La confusión más frecuente en el análisis empírico es tratar la correlación como evidencia de causalidad. La correlación entre $X$ e $Y$ puede surgir de tres fuentes completamente distintas:</p>
+<ol>
+<li>$X$ causa $Y$ (la relación causal de interés).</li>
+<li>$Y$ causa $X$ (causalidad inversa o endogeneidad).</li>
+<li>Una tercera variable $Z$ causa tanto $X$ como $Y$ (variable omitida o confounding).</li>
+</ol>
+<p>La frase &ldquo;correlación no es causalidad&rdquo; aplica aquí con toda su fuerza. El efecto de tratamiento mide el efecto de un cambio ceteris paribus en el status de tratamiento, mientras que las comparaciones intuitivas capturan tanto el efecto de ese cambio como el de otros cambios correlacionados que contaminan espuriamente la comparación.</p>
+<h3 id="32-el-concepto-de-ceteris-paribus">3.2 El concepto de ceteris paribus<a hidden class="anchor" aria-hidden="true" href="#32-el-concepto-de-ceteris-paribus">#</a></h3>
+<p>El <strong>ceteris paribus</strong> (&ldquo;todo lo demás igual&rdquo;) es la condición bajo la cual queremos medir el efecto causal de $X$ sobre $Y$: cuánto cambia $Y$ cuando variamos solo $X$, manteniendo todo lo demás constante. Produce un efecto causal ceteris paribus del argumento sobre el resultado. Cambiar una coordenada mientras se fijan las otras produce un efecto causal marshalliano ceteris paribus de un cambio en esa coordenada sobre las variables de resultado.</p>
+<p>El problema fundamental es que en los datos observacionales, cuando $X$ varía, generalmente también varían otras cosas correlacionadas con $X$. El reto metodológico de la econometría es construir comparaciones que se aproximen al ceteris paribus.</p>
+<hr>
+<h2 id="4-el-modelo-de-resultados-potenciales-neyman-rubin">4. El modelo de resultados potenciales (Neyman-Rubin)<a hidden class="anchor" aria-hidden="true" href="#4-el-modelo-de-resultados-potenciales-neyman-rubin">#</a></h2>
+<h3 id="41-el-marco-conceptual">4.1 El marco conceptual<a hidden class="anchor" aria-hidden="true" href="#41-el-marco-conceptual">#</a></h3>
+<p>El modelo causal de Rubin está basado en la idea de resultados potenciales. Por ejemplo, una persona tendría un ingreso particular a los 40 años si hubiera asistido a la universidad, mientras que tendría un ingreso diferente si no hubiera asistido. Para medir el efecto causal de ir a la universidad para esta persona, necesitamos comparar el resultado para el mismo individuo en ambos futuros alternativos.</p>
+<p>Formalmente, para cada unidad $i$ y un tratamiento binario $D_i \in {0, 1}$:</p>
+<ul>
+<li>$Y_i(1)$: el resultado potencial de la unidad $i$ <strong>si recibe tratamiento</strong>.</li>
+<li>$Y_i(0)$: el resultado potencial de la unidad $i$ <strong>si no recibe tratamiento</strong>.</li>
+</ul>
+<p>El <strong>efecto causal individual</strong> de $D$ sobre $Y$ para la unidad $i$ es:</p>
+<p>$$\tau_i = Y_i(1) - Y_i(0)$$</p>
+<p>La <strong>ecuación de observación</strong> (switching equation) relaciona los resultados observados con los potenciales:</p>
+<p>$$Y_i = D_i Y_i(1) + (1-D_i)Y_i(0)$$</p>
+<p>Solo observamos $Y_i(1)$ si $D_i = 1$, y solo $Y_i(0)$ si $D_i = 0$. El resultado que no se observa es el <strong>contrafactual</strong>.</p>
+<h3 id="42-el-problema-fundamental-de-la-inferencia-causal">4.2 El problema fundamental de la inferencia causal<a hidden class="anchor" aria-hidden="true" href="#42-el-problema-fundamental-de-la-inferencia-causal">#</a></h3>
+<p>Medir el efecto causal de ir a la universidad para esta persona requiere comparar el resultado para el mismo individuo en ambos futuros alternativos alternativos. Como es imposible ver ambos resultados potenciales al mismo tiempo, uno de los resultados potenciales siempre está faltando. Este dilema es el &ldquo;problema fundamental de la inferencia causal&rdquo;.</p>
+<p>Nunca podemos observar $\tau_i = Y_i(1) - Y_i(0)$ directamente para ningún individuo — siempre falta uno de los dos resultados potenciales. Este no es un problema de tamaño muestral o poder estadístico: es un problema estructural de la causalidad.</p>
+<p>La inferencia causal se hace posible no porque podamos observar efectos individuales, sino porque bajo ciertas condiciones podemos estimar <strong>efectos promedio</strong> que son parámetros de población bien definidos.</p>
+<h3 id="43-los-parámetros-de-interés">4.3 Los parámetros de interés<a hidden class="anchor" aria-hidden="true" href="#43-los-parámetros-de-interés">#</a></h3>
+<p>Los estimandos causales estándar son:</p>
+<p><strong>Efecto promedio del tratamiento (ATE):</strong>
+$$ATE = E[\tau_i] = E[Y_i(1) - Y_i(0)]$$</p>
+<p>El efecto promedio para un individuo elegido al azar de la población.</p>
+<p><strong>Efecto promedio del tratamiento sobre los tratados (ATT):</strong>
+$$ATT = E[\tau_i | D_i = 1] = E[Y_i(1) - Y_i(0) | D_i = 1]$$</p>
+<p>El efecto promedio para quienes efectivamente reciben el tratamiento. Es el parámetro relevante para evaluar un programa existente.</p>
+<p><strong>Efecto promedio local del tratamiento (LATE):</strong>
+$$LATE = E[\tau_i | \text{complier}]$$</p>
+<p>El efecto para el subgrupo de &ldquo;compliers&rdquo; — quienes cambian su tratamiento en respuesta a una variación exógena (instrumento). Es el parámetro identificado por variables instrumentales. El LATE, introducido por Imbens y Angrist (1994), es el efecto promedio para la subpoblación de compliers, es decir, aquellos que se verían afectados en su toma del tratamiento por el instrumento.</p>
+<p>La elección del estimando no es neutral: ATE, ATT y LATE responden preguntas distintas sobre poblaciones distintas. Un policy maker que quiere evaluar si escalar un programa debería interesarse en el ATE; uno que quiere evaluar el programa existente, en el ATT.</p>
+<hr>
+<h2 id="5-el-sesgo-de-selección">5. El sesgo de selección<a hidden class="anchor" aria-hidden="true" href="#5-el-sesgo-de-selección">#</a></h2>
+<h3 id="51-la-descomposición-del-sesgo">5.1 La descomposición del sesgo<a hidden class="anchor" aria-hidden="true" href="#51-la-descomposición-del-sesgo">#</a></h3>
+<p>La diferencia simple en medias de resultados entre tratados y no tratados es:</p>
+<p>$$E[Y_i | D_i = 1] - E[Y_i | D_i = 0]$$</p>
+<p>¿Cuándo estima esto el ATT? Expandiendo usando la switching equation:</p>
+<p>$$E[Y_i | D_i = 1] - E[Y_i | D_i = 0] = \underbrace{E[Y_i(1) - Y_i(0) | D_i = 1]}<em>{ATT} + \underbrace{E[Y_i(0) | D_i = 1] - E[Y_i(0) | D_i = 0]}</em>{\text{sesgo de selección}}$$</p>
+<p>El sesgo de selección es la diferencia inherente entre los dos grupos si ambos hubieran recibido el tratamiento de control. Usualmente es una descripción de las diferencias entre los grupos si nunca hubiera habido tratamiento. El parámetro de interés ha sido enmascarado por el sesgo de selección y el sesgo de efectos de tratamiento heterogéneos.</p>
+<p>El <strong>sesgo de selección</strong> es $E[Y_i(0) | D_i = 1] - E[Y_i(0) | D_i = 0]$: la diferencia en resultados potenciales bajo control entre quienes se auto-seleccionan al tratamiento y quienes no. Si los que reciben educación universitaria habrían tenido ingresos mayores incluso sin ir a la universidad (por habilidad, familia, motivación), el sesgo de selección es positivo y la diferencia simple sobreestima el efecto causal de la educación.</p>
+<h3 id="52-cuando-la-diferencia-simple-es-válida-independencia">5.2 Cuando la diferencia simple es válida: independencia<a hidden class="anchor" aria-hidden="true" href="#52-cuando-la-diferencia-simple-es-válida-independencia">#</a></h3>
+<p>La diferencia simple en medias estima el ATT (y el ATE si los efectos son homogéneos) si y solo si:</p>
+<p>$$Y_i(0), Y_i(1) \perp D_i$$</p>
+<p>Es decir, la asignación al tratamiento es <strong>independiente</strong> de los resultados potenciales — quienes reciben tratamiento y quienes no son comparables en todas las dimensiones relevantes, observadas y no observadas. Esta condición se satisface <strong>por diseño</strong> en experimentos aleatorios: la aleatorización garantiza que $D_i$ es independiente de $(Y_i(0), Y_i(1))$.</p>
+<p>En datos observacionales, la independencia no se puede asumir libremente — requiere justificación sustantiva y estrategia de identificación.</p>
+<h3 id="53-el-supuesto-de-independencia-condicional-cia">5.3 El supuesto de independencia condicional (CIA)<a hidden class="anchor" aria-hidden="true" href="#53-el-supuesto-de-independencia-condicional-cia">#</a></h3>
+<p>Una versión más débil frecuentemente invocada es la <strong>independencia condicional</strong> o <strong>ignorabilidad</strong>:</p>
+<p>$$Y_i(0), Y_i(1) \perp D_i | X_i$$</p>
+<p>Dado el vector de controles observados $X_i$, la asignación al tratamiento es independiente de los resultados potenciales. Este es el supuesto que justifica la estimación por regresión múltiple, propensity score matching y métodos relacionados. Su plausibilidad depende de que $X_i$ capture todos los factores de confusión relevantes — un supuesto no testeable directamente.</p>
+<hr>
+<h2 id="6-sutva-el-supuesto-de-no-interferencia">6. SUTVA: el supuesto de no-interferencia<a hidden class="anchor" aria-hidden="true" href="#6-sutva-el-supuesto-de-no-interferencia">#</a></h2>
+<p>El marco de resultados potenciales coloca límites sobre el cálculo de efectos de tratamiento. El SUTVA (Stable Unit Treatment Value Assumption) establece que cada unidad recibe la misma dosis del tratamiento, no hay spillovers a los resultados potenciales de otras unidades cuando una unidad está expuesta al tratamiento, y no hay efectos de equilibrio general.</p>
+<p>El SUTVA tiene dos componentes:</p>
+<p><strong>No interferencia (SUTVA-1):</strong> el resultado potencial de la unidad $i$ bajo tratamiento $d$ no depende del tratamiento recibido por otras unidades. Formalmente: $Y_i(D_1, \ldots, D_N) = Y_i(D_i)$ — la notación de resultados potenciales solo necesita el tratamiento propio.</p>
+<p>Violaciones comunes: vacunación (la inmunidad de rebaño hace que el resultado de $i$ dependa de cuántos otros se vacunan), programas de empleo (un programa que capacita a muchos trabajadores puede afectar los salarios de quienes no participan).</p>
+<p><strong>Versión única del tratamiento (SUTVA-2):</strong> no hay variación en la intensidad o calidad del tratamiento — todos los tratados reciben la misma &ldquo;dosis&rdquo;. Si algunos médicos son mejores operadores que otros, el &ldquo;tratamiento&rdquo; (cirugía) no es homogéneo y el resultado potencial $Y_i(1)$ no está bien definido sin especificar qué médico opera.</p>
+<hr>
+<h2 id="7-estructura-causal-y-modelos-estructurales">7. Estructura causal y modelos estructurales<a hidden class="anchor" aria-hidden="true" href="#7-estructura-causal-y-modelos-estructurales">#</a></h2>
+<h3 id="71-ecuaciones-estructurales-vs-reducidas">7.1 Ecuaciones estructurales vs. reducidas<a hidden class="anchor" aria-hidden="true" href="#71-ecuaciones-estructurales-vs-reducidas">#</a></h3>
+<p>La tradición econométrica estructural (Haavelmo, 1943) modela el proceso generador de datos mediante sistemas de ecuaciones que representan mecanismos económicos:</p>
+<p>$$Y = f(D, X, \varepsilon)$$</p>
+<p>donde $\varepsilon$ captura los determinantes no observados de $Y$. El <strong>parámetro estructural</strong> tiene interpretación causal directa: mide el efecto de cambiar $D$ manteniendo $X$ y $\varepsilon$ fijos — el ceteris paribus formal.</p>
+<p>La <strong>forma reducida</strong> expresa la variable de resultado como función de variables exógenas solamente:</p>
+<p>$$Y = g(Z, \eta)$$</p>
+<p>La forma reducida es más fácil de estimar pero los parámetros no tienen necesariamente interpretación estructural directa. La relación entre ambas determina si los parámetros de la forma reducida identifican los estructurales.</p>
+<h3 id="72-la-crítica-de-lucas">7.2 La crítica de Lucas<a hidden class="anchor" aria-hidden="true" href="#72-la-crítica-de-lucas">#</a></h3>
+<p>Lucas (1976) argumentó que los parámetros de los modelos econométricos de forma reducida no son invariantes a cambios de política — cuando cambia la política, los agentes ajustan sus expectativas y comportamiento, alterando las relaciones empíricas observadas. Esto implica que los modelos de forma reducida no pueden usarse para evaluar el efecto de políticas nunca implementadas.</p>
+<p>La resolución es estimar parámetros estructurales — preferencias, tecnologías — que sí son invariantes a cambios de política porque representan características profundas del comportamiento de los agentes. Esta crítica es el fundamento intelectual de la macroeconomía moderna basada en modelos DSGE y de la microeconometría estructural.</p>
+<hr>
+<h2 id="8-la-jerarquía-de-diseños-de-investigación">8. La jerarquía de diseños de investigación<a hidden class="anchor" aria-hidden="true" href="#8-la-jerarquía-de-diseños-de-investigación">#</a></h2>
+<p>No todos los estudios empíricos tienen igual credibilidad para establecer relaciones causales. La <strong>jerarquía de diseños</strong> organiza las estrategias de identificación según la plausibilidad de sus supuestos:</p>
+<p><strong>1. Experimento aleatorio controlado (RCT):</strong> la aleatorización garantiza independencia entre tratamiento y resultados potenciales por diseño. El &ldquo;gold standard&rdquo; de la inferencia causal. Limitado por factibilidad ética, costo y validez externa.</p>
+<p><strong>2. Experimentos naturales:</strong> variaciones exógenas en $D$ generadas por el mundo (cambios legislativos, discontinuidades geográficas, loterías naturales) que aproximan la aleatorización sin intervención del investigador. La validez depende de la plausibilidad de la exogeneidad.</p>
+<p><strong>3. Variables instrumentales:</strong> cuando existe una variable $Z$ que afecta $D$ pero no afecta $Y$ directamente (solo a través de $D$), puede usarse para identificar el efecto causal de $D$ sobre $Y$. Identifica el LATE para los compliers.</p>
+<p><strong>4. Diferencias en diferencias:</strong> compara el cambio en $Y$ antes y después del tratamiento entre el grupo tratado y un grupo de control. Requiere el supuesto de tendencias paralelas: en ausencia del tratamiento, tratados y controles habrían tenido la misma evolución temporal.</p>
+<p><strong>5. Regresión discontinua (RDD):</strong> explota discontinuidades en la regla de asignación al tratamiento (un umbral de puntaje, una fecha de corte). Las unidades justo por encima y por debajo del umbral son comparables — el tratamiento es &ldquo;como si&rdquo; aleatorio en un vecindario del umbral.</p>
+<p><strong>6. Efectos fijos y controles:</strong> en ausencia de variación exógena, controlar por variables observadas (CIA) o efectos fijos que capturan heterogeneidad no observada constante en el tiempo.</p>
+<p>El enfoque econométrico modela la dependencia entre el resultado observado $Y = DY_1 + (1-D)Y_0$ y $D$ para sugerir estimadores alternativos que identifiquen parámetros causales.</p>
+<hr>
+<h2 id="9-validez-interna-y-validez-externa">9. Validez interna y validez externa<a hidden class="anchor" aria-hidden="true" href="#9-validez-interna-y-validez-externa">#</a></h2>
+<p>Todo estudio empírico enfrenta un trade-off entre dos dimensiones de validez:</p>
+<p><strong>Validez interna:</strong> ¿el estudio mide correctamente el efecto causal en la muestra/contexto analizado? Un RCT bien implementado tiene alta validez interna; un estudio observacional con fuerte sesgo de selección tiene baja validez interna.</p>
+<p><strong>Validez externa:</strong> ¿los resultados del estudio se generalizan a otros contextos, poblaciones o períodos? El LATE de un RCT identifica el efecto para los compliers en el contexto específico del experimento — puede no generalizarse a la población general o a otros contextos.</p>
+<p>El dilema es frecuentemente agudo: los diseños con mayor validez interna (experimentos muy controlados, RDDs con ventanas angostas) tienden a tener menor validez externa por su especificidad. Los estudios más generalizables (grandes muestras observacionales) tienen mayor dificultad para establecer causalidad.</p>
+<p>La evaluación de la evidencia empírica requiere juzgar ambas dimensiones simultáneamente — no basta con que un estudio sea &ldquo;estadísticamente significativo&rdquo; si el diseño no permite inferencia causal, ni basta con un diseño impecable si el contexto es tan específico que los resultados no son informativos para otras políticas.</p>
+<hr>
+<h2 id="10-la-revolución-de-la-credibilidad">10. La revolución de la credibilidad<a hidden class="anchor" aria-hidden="true" href="#10-la-revolución-de-la-credibilidad">#</a></h2>
+<p>La investigación económica empírica se ha transformado con el desarrollo de métodos de inferencia causal. La aleatorización de experimentos, cuando es factible, garantiza que los resultados potenciales son independientes de la asignación — haciendo la inferencia causal directa. En estudios observacionales, los investigadores buscan aproximar estas condiciones a través de diseños que explotan variación exógena.</p>
+<p>Angrist y Pischke (2010) documentaron lo que llamaron la &ldquo;revolución de la credibilidad&rdquo; en econometría: el giro de la profesión desde modelos estructurales complejos identificados por supuestos cuestionables hacia estrategias de identificación más transparentes basadas en variación cuasi-experimental. El estándar de prueba se volvió más exigente: no basta con estimar un modelo — hay que justificar por qué los parámetros estimados tienen interpretación causal.</p>
+<p>Esta revolución produjo los métodos que ocupan el núcleo de la econometría moderna: variables instrumentales con supuestos explícitos, diferencias en diferencias con pruebas de tendencias paralelas, regresión discontinua con pruebas de manipulación del running variable, y experimentos aleatorios en el campo. Es el lenguaje en que se escribe la investigación empírica de frontera en economía hoy.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Angrist, J. &amp; Pischke, J.S. (2009). <em>Mostly Harmless Econometrics</em>. Princeton University Press. Caps. 1–2.</li>
+<li>Heckman, J. (2008). <em>Econometric Causality</em>. International Statistical Review.</li>
+<li>Holland, P.W. (1986). <em>Statistics and Causal Inference</em>. JASA.</li>
+<li>Imbens, G. &amp; Angrist, J. (1994). <em>Identification and Estimation of Local Average Treatment Effects</em>. Econometrica.</li>
+<li>Lucas, R.E. (1976). <em>Econometric Policy Evaluation: A Critique</em>. Carnegie-Rochester Conference.</li>
+<li>Rubin, D.B. (1974). <em>Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies</em>. Journal of Educational Psychology.</li>
+<li>Wooldridge, J.M. (2008). <em>Introductory Econometrics</em>. Thomson. Cap. 1.</li>
+<li>Splawa-Neyman, J. (1923/1990). <em>On the Application of Probability Theory to Agricultural Experiments</em>. Statistical Science (traducción).</li>
+<li>Haavelmo, T. (1944). <em>The Probability Approach in Econometrics</em>. Econometrica (suplemento).</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/econometr%C3%ADa/">Econometría</a></li>
+      <li><a href="http://localhost:4459/tags/causalidad/">Causalidad</a></li>
+      <li><a href="http://localhost:4459/tags/resultados-potenciales/">Resultados Potenciales</a></li>
+      <li><a href="http://localhost:4459/tags/sesgo-de-selecci%C3%B3n/">Sesgo De Selección</a></li>
+      <li><a href="http://localhost:4459/tags/ceteris-paribus/">Ceteris Paribus</a></li>
+      <li><a href="http://localhost:4459/tags/eae2510/">EAE2510</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:4459/grado/macro/04_inversion/">
+  <a class="prev" href="http://localhost:4459/grado/macro/02_trabajo/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Inversión</span>
+    <span>Mercado del Trabajo</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/macro/09_inflacion/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Nivel de precios e inflación</span>
+    <span>Nivel de Precios e Inflación</span>
   </a>
 </nav>
 
