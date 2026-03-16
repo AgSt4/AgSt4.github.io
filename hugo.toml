@@ -1,0 +1,45 @@
+baseURL = "https://agst4.github.io/"
+languageCode = "es"
+title = "Agustín Sandoval Tapia"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  author = "Agustín Sandoval Tapia"
+  description = "Economista · Finanzas e Inversión (Sostenibles) · Development Economics · Socioeconomics"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+
+[params.homeInfoParams]
+  Title = "Hola, soy Agustín!"
+  Content = "Estudiante de magíster en economía aplicada en la PUC. Escribo sobre economía, finanzas, sostenibilidad, economía política y lo que me parezca interesante en el día a día."
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/agst4"
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "www.linkedin.com/in/agustinsandovaltapia"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "Apuntes"
+    url = "/apuntes/"
+    weight = 2
+  [[menu.main]]
+    name = "Proyectos"
+    url = "/proyectos/"
+    weight = 3
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 4
