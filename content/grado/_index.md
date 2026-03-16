@@ -85,7 +85,7 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 ### Macroeconomía II — Economía monetaria cerrada
 
 - [Dinero: Naturaleza, oferta y demanda](/grado/macro/07_dinero/)
-- [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/08_OAyDA/)
+- [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/08_OAyDA)
 - [Nivel de precios e inflación](/grado/macro/09_inflacion/)
 
 ### Macroeconomía Internacional — Economía abierta
