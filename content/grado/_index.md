@@ -3,7 +3,7 @@ title: "Apuntes para el Examen de Grado"
 layout: "single"
 ---
 
-Apuntes organizados por área para el Examen de Grado de [Ingeniería Comercial, Mención Economía](https://economiayadministracion.uc.cl/ingenieria-comercial/) en la [Pontificia Universidad Católica de Chile](https://www.uc.cl/). Cubren los contenidos del [temario oficial](https://economiayadministracion.uc.cl/ingenieria-comercial/examen-de-grado/) dividido en tres áreas: Econometría, Macroeconomía y Microeconomía.
+Apuntes organizados por área para el Examen de Grado de [Ingeniería Comercial, Mención Economía](https://economiayadministracion.uc.cl/ingenieria-comercial/) en la [Pontificia Universidad Católica de Chile](https://www.uc.cl/). Cubren los contenidos del examen de grado dividido en tres áreas: Econometría, Macroeconomía y Microeconomía.
 
 Estos apuntes están basados en los cursos del programa y complementados con literatura de referencia estándar. No pretenden ser exhaustivos — son un registro de cómo entiendo los temas en un momento dado y un punto de partida para profundizar.
 
@@ -45,7 +45,7 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
     </div>
   </a>
 
-  <a href="/apuntes/fundamentos/" style="text-decoration: none; color: inherit;">
+  <a href="/grado/fundamentos/" style="text-decoration: none; color: inherit;">
     <div style="border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)'; this.style.borderColor='var(--primary)'" onmouseout="this.style.boxShadow='none'; this.style.borderColor='var(--border)'">
       <div style="font-size: 2rem; margin-bottom: 0.75rem;">🧮</div>
       <h3 style="margin: 0 0 0.5rem 0;">Fundamentos</h3>
@@ -63,35 +63,36 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 
 ## Econometría
 
-- [Método científico en Economía](/grado/metrics/metodo-cientifico/)
-- [El MRL como modelo probabilístico](/grado/metrics/mrl/)
-- [Especificación y problemas en el MRL](/grado/metrics/especificacion/)
-- [Inferencia causal](/grado/metrics/inferencia-causal/)
-- [Heterocedasticidad y dependencia de los errores](/grado/metrics/heterocedasticidad/)
-- [Series de tiempo](/grado/metrics/series-de-tiempo/)
+- [Método científico en Economía](/grado/metrics/01_cienci/)
+- [El MRL como modelo probabilístico](/grado/metrics/02_MRL/)
+- [Especificación y problemas en el MRL](/grado/metrics/03_problemas/)
+- [Inferencia causal](/grado/metrics/04_inferencia/)
+- [Heterocedasticidad y dependencia de los errores](/grado/metrics/05_errores/)
+- [Series de tiempo](/grado/metrics/06_tiempo/)
 
 ---
 
 ## Macroeconomía
 
 ### Macroeconomía I — Economía real cerrada
-- [Crecimiento económico](/grado/macro/crecimiento/)
-- [Consumo y ahorro](/grado/macro/consumo/)
-- [Inversión](/grado/macro/inversion/)
-- [Política fiscal: Gasto público, impuestos y subsidios](/grado/macro/politica-fiscal/)
-- [Equilibrio macroeconómico en una economía cerrada](/grado/macro/equilibrio-cerrado/)
+- [Crecimiento económico](/grado/macro/01_crecimiento/)
+- [Mercado Laboral](/grado/macro/02_trabajo)
+- [Consumo y ahorro](/grado/macro/03_ahorro_consumo/)
+- [Inversión](/grado/macro/04_inversion/)
+- [Política fiscal: Gasto público, impuestos y subsidios](/grado/macro/05_fiscal/)
+- [Equilibrio macroeconómico en una economía cerrada](/grado/macro/06_equilibrio_cerrado/)
 
 ### Macroeconomía II — Economía monetaria cerrada
 
-- [Dinero: Naturaleza, oferta y demanda](/grado/macro/dinero/)
-- [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/oa-da/)
-- [Nivel de precios e inflación](/grado/macro/inflacion/)
+- [Dinero: Naturaleza, oferta y demanda](/grado/macro/07_dinero/)
+- [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/08_OAyDA/)
+- [Nivel de precios e inflación](/grado/macro/09_inflacion/)
 
 ### Macroeconomía Internacional — Economía abierta
 
-- [Cuentas externas y balanza de pagos](/grado/macro/balanza-de-pagos/)
-- [Dinero, tipo de cambio, tasa de interés y precios](/grado/macro/tipo-de-cambio/)
-- [Tipo de cambio real](/grado/macro/tcr/)
+- [Cuentas externas y balanza de pagos](/grado/macro/10_balance/)
+- [Dinero, tipo de cambio, tasa de interés y precios](/grado/macro/11_TCN/)
+- [Tipo de cambio real](/grado/macro/12_TCR/)
 
 ---
 
@@ -99,19 +100,19 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 
 ### Microeconomía I — Teoría clásica
 
-- [Elección del consumidor y demanda](/grado/micro/consumidor/)
-- [Teoría de la producción y oferta](/grado/micro/produccion/)
-- [Equilibrio parcial en competencia perfecta](/grado/micro/equilibrio-parcial/)
-- [Equilibrio general en competencia perfecta](/grado/micro/equilibrio-general/)
-- [Bienes públicos y externalidades](/grado/micro/externalidades/)
+- [Elección del consumidor y demanda](/grado/micro/01_consumidor/)
+- [Teoría de la producción y oferta](/grado/micro/02_productor/)
+- [Equilibrio parcial en competencia perfecta](/grado/micro/03_parcial/)
+- [Equilibrio general en competencia perfecta](/grado/micro/04_general/)
+- [Bienes públicos y externalidades](/grado/micro/05_publico/)
 
 ### Microeconomía II — Teoría moderna y riesgo
 
-- [Elección bajo incertidumbre](/grado/micro/incertidumbre/)
-- [Teoría de juegos](/grado/micro/juegos/)
-- [Información asimétrica](/grado/micro/info-asimetrica/)
+- [Elección bajo incertidumbre](/grado/micro/06_riesgo/)
+- [Teoría de juegos](/grado/micro/07_juegos/)
+- [Información asimétrica](/grado/micro/08_informacion/)
 
 ### Competencia y Mercados
 
-- [Poder de mercado y monopolio](/grado/micro/monopolio/)
-- [Oligopolio](/grado/micro/oligopolio/)
+- [Poder de mercado y monopolio](/grado/micro/09_monopolio/)
+- [Oligopolio](/grado/micro/10_oligopolio/)

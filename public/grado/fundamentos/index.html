@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=4459&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Fundamentos Matemáticos y Estadísticos | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="">
+<meta name="description" content="Herramientas formales que subyacen a los tres bloques del examen de grado. No son parte del temario oficial, pero son el lenguaje en que está escrito todo lo demás. Si algo del temario se siente opaco, probablemente el problema está aquí.
+
+Cálculo y análisis
+Funciones de una variable
+
+Límites y continuidad — definición $\varepsilon$-$\delta$, reglas operacionales
+Derivadas — reglas, regla de la cadena, derivadas de orden superior
+Optimización univariada — CPO, CSO, máximos y mínimos globales vs. locales
+Integrales — interpretación como área, teorema fundamental del cálculo
+Elasticidades — definición, relación con derivadas, interpretación log-log
+
+Funciones de varias variables
+
+Derivadas parciales y gradiente — interpretación geométrica y económica
+Diferencial total — regla de la cadena multivariada, tasas de sustitución implícita
+Optimización sin restricciones — CPO, matriz hessiana, condiciones de segundo orden
+Optimización con restricciones de igualdad — método de Lagrange, interpretación del multiplicador
+Optimización con restricciones de desigualdad — condiciones de Kuhn-Tucker
+Teorema de la envolvente — el resultado más usado en economía que nadie explica bien
+
+Tópicos adicionales
+
+Series de Taylor — aproximaciones de primer y segundo orden, aplicaciones en economía
+Ecuaciones diferenciales ordinarias — EDO lineales de primer orden, solución general y particular, modelos de crecimiento
+
+
+Álgebra lineal
+
+Vectores y matrices — operaciones, transpuesta, producto interno
+Sistemas de ecuaciones lineales — existencia y unicidad de soluciones
+Determinantes e inversas — regla de Cramer, condiciones de invertibilidad
+Rango y espacio nulo — implicancias para la identificación en econometría
+Formas cuadráticas — matrices positiva y negativa definidas, condiciones de segundo orden en optimización multivariada
+Proyecciones y geometría de MCO — la regresión como proyección ortogonal, intuición del estimador
+
+
+Probabilidad
+
+Álgebra de sucesos y axiomas de Kolmogorov — espacio muestral, eventos, probabilidad
+Probabilidad condicional e independencia — definición, implicancias
+Teorema de Bayes — actualización de creencias, aplicaciones en teoría de juegos e información asimétrica
+Variables aleatorias discretas — función de probabilidad, FDA, valor esperado, varianza
+Variables aleatorias continuas — función de densidad, FDA, momentos
+Distribuciones estándar — Bernoulli, Binomial, Poisson, Uniforme, Normal, Exponencial, Chi-cuadrado, $t$, $F$
+Variables aleatorias conjuntas — distribución conjunta, marginal y condicional, covarianza y correlación
+El modelo Normal multivariado — propiedades, independencia vs. no correlación
+Teorema del Límite Central — enunciado, condiciones, velocidad de convergencia
+
+
+Inferencia estadística
+
+Muestras y estadísticos — población vs. muestra, estadístico como variable aleatoria
+Propiedades de los estimadores — insesgadez, consistencia, eficiencia, ECMM
+Estimación por máxima verosimilitud (MLE) — función de verosimilitud, log-verosimilitud, propiedades asintóticas
+Distribuciones muestrales — distribución de $\bar{X}$, de $S^2$; distribuciones $\chi^2$, $t$ y $F$ como funciones de Normales
+Intervalos de confianza — construcción, interpretación correcta
+Tests de hipótesis — $H_0$ y $H_1$, errores tipo I y II, función de potencia, $p$-valor
+Regresión simple — estimación MCO, inferencia sobre $\beta$, $R^2$
+
+
+Herramientas formales de economía
+
+Correspondencias y teorema del punto fijo — Brouwer, Kakutani; base de la existencia del equilibrio de Nash y del equilibrio walrasiano
+Funciones homogéneas y el teorema de Euler — grados de homogeneidad, implicancias en producción y demanda
+Dualidad y el teorema de la envolvente (profundización) — aplicaciones en teoría del consumidor y del productor
+Programación dinámica (introducción) — valor presente, ecuación de Bellman, aplicaciones en consumo intertemporal y crecimiento
+Teoría de la medida (nociones básicas) — $\sigma$-álgebras, espacios de probabilidad, para quienes quieran entender el fundamento formal de la probabilidad
+
+
+Esta sección está en construcción permanente. Los temas marcados con # irán teniendo su propia entrada a medida que los vaya escribiendo.">
+<meta name="author" content="Agustín Sandoval Tapia">
+<link rel="canonical" href="http://localhost:4459/grado/fundamentos/">
+<link crossorigin="anonymous" href="../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:4459/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:4459/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:4459/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:4459/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:4459/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:4459/grado/fundamentos/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:4459/grado/fundamentos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body class="list" id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:4459/" accesskey="h" title="Agustín Sandoval Tapia (Alt + H)">Agustín Sandoval Tapia</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:4459/posts/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:4459/apuntes/" title="Apuntes">
+                    <span>Apuntes</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:4459/proyectos/" title="Proyectos">
+                    <span>Proyectos</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:4459/cv/" title="CV">
+                    <span>CV</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:4459/grado/" title="Grado">
+                    <span>Grado</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Fundamentos Matemáticos y Estadísticos
+    </h1>
+    <div class="post-meta"><span>3 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Herramientas formales que subyacen a los tres bloques del examen de grado. No son parte del temario oficial, pero son el lenguaje en que está escrito todo lo demás. Si algo del temario se siente opaco, probablemente el problema está aquí.</p>
+<hr>
+<h2 id="cálculo-y-análisis">Cálculo y análisis<a hidden class="anchor" aria-hidden="true" href="#cálculo-y-análisis">#</a></h2>
+<h3 id="funciones-de-una-variable">Funciones de una variable<a hidden class="anchor" aria-hidden="true" href="#funciones-de-una-variable">#</a></h3>
+<ul>
+<li><a href="#">Límites y continuidad</a> — definición $\varepsilon$-$\delta$, reglas operacionales</li>
+<li><a href="#">Derivadas</a> — reglas, regla de la cadena, derivadas de orden superior</li>
+<li><a href="#">Optimización univariada</a> — CPO, CSO, máximos y mínimos globales vs. locales</li>
+<li><a href="#">Integrales</a> — interpretación como área, teorema fundamental del cálculo</li>
+<li><a href="#">Elasticidades</a> — definición, relación con derivadas, interpretación log-log</li>
+</ul>
+<h3 id="funciones-de-varias-variables">Funciones de varias variables<a hidden class="anchor" aria-hidden="true" href="#funciones-de-varias-variables">#</a></h3>
+<ul>
+<li><a href="#">Derivadas parciales y gradiente</a> — interpretación geométrica y económica</li>
+<li><a href="#">Diferencial total</a> — regla de la cadena multivariada, tasas de sustitución implícita</li>
+<li><a href="#">Optimización sin restricciones</a> — CPO, matriz hessiana, condiciones de segundo orden</li>
+<li><a href="#">Optimización con restricciones de igualdad</a> — método de Lagrange, interpretación del multiplicador</li>
+<li><a href="#">Optimización con restricciones de desigualdad</a> — condiciones de Kuhn-Tucker</li>
+<li><a href="#">Teorema de la envolvente</a> — el resultado más usado en economía que nadie explica bien</li>
+</ul>
+<h3 id="tópicos-adicionales">Tópicos adicionales<a hidden class="anchor" aria-hidden="true" href="#tópicos-adicionales">#</a></h3>
+<ul>
+<li><a href="#">Series de Taylor</a> — aproximaciones de primer y segundo orden, aplicaciones en economía</li>
+<li><a href="#">Ecuaciones diferenciales ordinarias</a> — EDO lineales de primer orden, solución general y particular, modelos de crecimiento</li>
+</ul>
+<hr>
+<h2 id="álgebra-lineal">Álgebra lineal<a hidden class="anchor" aria-hidden="true" href="#álgebra-lineal">#</a></h2>
+<ul>
+<li><a href="#">Vectores y matrices</a> — operaciones, transpuesta, producto interno</li>
+<li><a href="#">Sistemas de ecuaciones lineales</a> — existencia y unicidad de soluciones</li>
+<li><a href="#">Determinantes e inversas</a> — regla de Cramer, condiciones de invertibilidad</li>
+<li><a href="#">Rango y espacio nulo</a> — implicancias para la identificación en econometría</li>
+<li><a href="#">Formas cuadráticas</a> — matrices positiva y negativa definidas, condiciones de segundo orden en optimización multivariada</li>
+<li><a href="#">Proyecciones y geometría de MCO</a> — la regresión como proyección ortogonal, intuición del estimador</li>
+</ul>
+<hr>
+<h2 id="probabilidad">Probabilidad<a hidden class="anchor" aria-hidden="true" href="#probabilidad">#</a></h2>
+<ul>
+<li><a href="#">Álgebra de sucesos y axiomas de Kolmogorov</a> — espacio muestral, eventos, probabilidad</li>
+<li><a href="#">Probabilidad condicional e independencia</a> — definición, implicancias</li>
+<li><a href="#">Teorema de Bayes</a> — actualización de creencias, aplicaciones en teoría de juegos e información asimétrica</li>
+<li><a href="#">Variables aleatorias discretas</a> — función de probabilidad, FDA, valor esperado, varianza</li>
+<li><a href="#">Variables aleatorias continuas</a> — función de densidad, FDA, momentos</li>
+<li><a href="#">Distribuciones estándar</a> — Bernoulli, Binomial, Poisson, Uniforme, Normal, Exponencial, Chi-cuadrado, $t$, $F$</li>
+<li><a href="#">Variables aleatorias conjuntas</a> — distribución conjunta, marginal y condicional, covarianza y correlación</li>
+<li><a href="#">El modelo Normal multivariado</a> — propiedades, independencia vs. no correlación</li>
+<li><a href="#">Teorema del Límite Central</a> — enunciado, condiciones, velocidad de convergencia</li>
+</ul>
+<hr>
+<h2 id="inferencia-estadística">Inferencia estadística<a hidden class="anchor" aria-hidden="true" href="#inferencia-estadística">#</a></h2>
+<ul>
+<li><a href="#">Muestras y estadísticos</a> — población vs. muestra, estadístico como variable aleatoria</li>
+<li><a href="#">Propiedades de los estimadores</a> — insesgadez, consistencia, eficiencia, ECMM</li>
+<li><a href="#">Estimación por máxima verosimilitud (MLE)</a> — función de verosimilitud, log-verosimilitud, propiedades asintóticas</li>
+<li><a href="#">Distribuciones muestrales</a> — distribución de $\bar{X}$, de $S^2$; distribuciones $\chi^2$, $t$ y $F$ como funciones de Normales</li>
+<li><a href="#">Intervalos de confianza</a> — construcción, interpretación correcta</li>
+<li><a href="#">Tests de hipótesis</a> — $H_0$ y $H_1$, errores tipo I y II, función de potencia, $p$-valor</li>
+<li><a href="#">Regresión simple</a> — estimación MCO, inferencia sobre $\beta$, $R^2$</li>
+</ul>
+<hr>
+<h2 id="herramientas-formales-de-economía">Herramientas formales de economía<a hidden class="anchor" aria-hidden="true" href="#herramientas-formales-de-economía">#</a></h2>
+<ul>
+<li><a href="#">Correspondencias y teorema del punto fijo</a> — Brouwer, Kakutani; base de la existencia del equilibrio de Nash y del equilibrio walrasiano</li>
+<li><a href="#">Funciones homogéneas y el teorema de Euler</a> — grados de homogeneidad, implicancias en producción y demanda</li>
+<li><a href="#">Dualidad y el teorema de la envolvente (profundización)</a> — aplicaciones en teoría del consumidor y del productor</li>
+<li><a href="#">Programación dinámica (introducción)</a> — valor presente, ecuación de Bellman, aplicaciones en consumo intertemporal y crecimiento</li>
+<li><a href="#">Teoría de la medida (nociones básicas)</a> — $\sigma$-álgebras, espacios de probabilidad, para quienes quieran entender el fundamento formal de la probabilidad</li>
+</ul>
+<hr>
+<p><em>Esta sección está en construcción permanente. Los temas marcados con <a href="#">#</a> irán teniendo su propia entrada a medida que los vaya escribiendo.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:4459/">Agustín Sandoval Tapia</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
