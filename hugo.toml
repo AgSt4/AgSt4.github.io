@@ -13,10 +13,32 @@ paginate = 10
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  ShowAllPagesInArchive = false
 
-[params.homeInfoParams]
-  Title = "Hola, soy Agustín!"
-  Content = "Estudiante de magíster en economía aplicada en la PUC. Escribo sobre economía, finanzas, sostenibilidad, economía política y lo que me parezca interesante en el día a día."
+[params.profileMode]
+  enabled = true
+  title = "Agustín Sandoval Tapia"
+  subtitle = "Estudiante de Magíster en Economía Aplicada (PUC). Escribo sobre finanzas, sostenibilidad, economía política y desarrollo económico."
+  imageUrl = "images/avatar.png"
+  imageWidth = 140
+  imageHeight = 140
+  imageTitle = "Agustín Sandoval Tapia"
+
+  [[params.profileMode.buttons]]
+    name = "Blog"
+    url = "/posts/"
+
+  [[params.profileMode.buttons]]
+    name = "Apuntes"
+    url = "/apuntes/"
+
+  [[params.profileMode.buttons]]
+    name = "Proyectos"
+    url = "/proyectos/"
+
+  [[params.profileMode.buttons]]
+    name = "CV"
+    url = "/cv/"
 
 [[params.socialIcons]]
   name = "github"
