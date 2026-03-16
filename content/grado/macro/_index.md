@@ -64,7 +64,7 @@ layout: "single"
 - Teoría cuantitativa del dinero
 - Reglas vs. discreción · metas de inflación
 - Mecanismos de transmisión de política monetaria
-
+ 
 ---
 
 # Macroeconomía Internacional (EAE3210) — Economía abierta

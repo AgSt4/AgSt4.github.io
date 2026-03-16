@@ -87,7 +87,7 @@ Estos apuntes están basados en los cursos del programa y complementados con lit
 - [Dinero: Naturaleza, oferta y demanda](/grado/macro/07_dinero/)
 - [Oferta agregada, demanda agregada y ciclos económicos](/grado/macro/08_oa_da)
 - [Nivel de precios e inflación](/grado/macro/09_inflacion/)
-
+ 
 ### Macroeconomía Internacional — Economía abierta
 
 - [Cuentas externas y balanza de pagos](/grado/macro/10_balance/)
