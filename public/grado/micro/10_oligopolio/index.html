@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Oligopolio | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Oligopolio - Agustín Sandoval Tapia">
+<meta name="keywords" content="microeconomía, oligopolio, Cournot, Bertrand, Stackelberg, diferenciación, colusión, EAE2110, EAE2130">
+<meta name="description" content="Modelos de Cournot, Bertrand y Stackelberg. La paradoja de Bertrand y sus resoluciones. Diferenciación horizontal de productos. Colusión y el dilema del prisionero del oligopolio.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/10_oligopolio/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -137,24 +137,261 @@
     <h1 class="post-title entry-hint-parent">
       Oligopolio
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Modelos de Cournot, Bertrand y Stackelberg. La paradoja de Bertrand y sus resoluciones. Diferenciación horizontal de productos. Colusión y el dilema del prisionero del oligopolio.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>13 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Cursos:</strong> Microeconomía I (EAE2110) · Competencia y Mercados (EAE2130)<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Peppal, Richards &amp; Norman (2006) · Tirole (1988) · Mas-Colell, Whinston &amp; Green (1995) cap. 12</p>
+<hr>
+<h2 id="1-el-oligopolio-como-estructura-de-mercado">1. El oligopolio como estructura de mercado<a hidden class="anchor" aria-hidden="true" href="#1-el-oligopolio-como-estructura-de-mercado">#</a></h2>
+<p>El <strong>oligopolio</strong> es la estructura de mercado donde pocas firmas compiten, cada una con suficiente tamaño como para que sus decisiones afecten el entorno estratégico de las demás. A diferencia de la competencia perfecta (donde cada firma es precio-aceptante) y el monopolio (donde hay un único vendedor), el oligopolio requiere análisis estratégico explícito: el beneficio de cada firma depende de las decisiones de sus rivales.</p>
+<p>Los oligopolistas enfrentan curvas de demanda con pendiente negativa, lo que implica que el precio es una función de la cantidad total producida, lo que a su vez implica que el output de una firma afecta no solo el precio que recibe sino el precio que recibe su competidora.</p>
+<p>La pregunta central es cómo modelar la interdependencia estratégica. Los tres modelos canónicos difieren en la <strong>variable estratégica</strong> (cantidad o precio) y el <strong>timing</strong> (simultáneo o secuencial):</p>
+<table>
+  <thead>
+      <tr>
+          <th>Modelo</th>
+          <th>Variable</th>
+          <th>Timing</th>
+          <th>Resultado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Cournot</strong></td>
+          <td>Cantidad</td>
+          <td>Simultáneo</td>
+          <td>Entre monopolio y competencia perfecta</td>
+      </tr>
+      <tr>
+          <td><strong>Bertrand</strong></td>
+          <td>Precio</td>
+          <td>Simultáneo</td>
+          <td>Competencia perfecta (paradoja)</td>
+      </tr>
+      <tr>
+          <td><strong>Stackelberg</strong></td>
+          <td>Cantidad</td>
+          <td>Secuencial</td>
+          <td>Líder ventaja, seguidor desventaja</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="2-el-modelo-de-cournot">2. El modelo de Cournot<a hidden class="anchor" aria-hidden="true" href="#2-el-modelo-de-cournot">#</a></h2>
+<h3 id="21-el-setup">2.1 El setup<a hidden class="anchor" aria-hidden="true" href="#21-el-setup">#</a></h3>
+<p>Cournot (1838) construyó funciones de beneficio para cada firma y usó diferenciación parcial para construir una función que representa la mejor respuesta de cada firma dado el nivel de output (exógeno) de la(s) otra(s) firma(s).</p>
+<p>Con dos firmas con bien homogéneo, demanda inversa $P(Q) = P(q_1 + q_2)$ y costos $C_i(q_i)$, la firma $i$ maximiza:</p>
+<p>$$\pi_i = P(q_1 + q_2)q_i - C_i(q_i)$$</p>
+<p>tomando como dada la cantidad $q_j$ de la rival — el <strong>supuesto de Cournot</strong>.</p>
+<h3 id="22-las-funciones-de-mejor-respuesta">2.2 Las funciones de mejor respuesta<a hidden class="anchor" aria-hidden="true" href="#22-las-funciones-de-mejor-respuesta">#</a></h3>
+<p>La CPO de la firma $i$:</p>
+<p>$$P(Q) + q_i P&rsquo;(Q) = C_i&rsquo;(q_i)$$</p>
+<p>$$MR_i = MC_i$$</p>
+<p>El ingreso marginal de la firma $i$ incorpora el efecto precio sobre sus propias unidades: $MR_i = P + q_i P&rsquo; &lt; P$. Dado $q_j$, la firma $i$ elige $q_i$ que satisface esta condición — la <strong>función de reacción</strong> $q_i^*(q_j)$, que es decreciente en $q_j$ (las cantidades son <strong>sustitutos estratégicos</strong>: si el rival produce más, yo produzco menos).</p>
+<p>Con demanda lineal $P = a - b(q_1 + q_2)$ y $MC_i = c$:</p>
+<p>$$MR_i = a - bq_j - 2bq_i = c \implies q_i^*(q_j) = \frac{a-c-bq_j}{2b} = \frac{a-c}{2b} - \frac{q_j}{2}$$</p>
+<p>Las funciones de reacción son líneas rectas con pendiente $-1/2$.</p>
+<h3 id="23-el-equilibrio-de-cournot-nash">2.3 El equilibrio de Cournot-Nash<a hidden class="anchor" aria-hidden="true" href="#23-el-equilibrio-de-cournot-nash">#</a></h3>
+<p>El equilibrio es la intersección de ambas funciones de reacción: $q_1^* = q_2^<em>(q_1^</em>)$ y $q_2^* = q_1^<em>(q_2^</em>)$. Por simetría con $c_1 = c_2 = c$:</p>
+<p>$$q_i^C = \frac{a-c}{3b}, \quad Q^C = \frac{2(a-c)}{3b}, \quad P^C = \frac{a+2c}{3}$$</p>
+<p>$$\pi_i^C = \frac{(a-c)^2}{9b}$$</p>
+<p>La estabilidad del equilibrio es notable: si algún productor se desvía de él por error, será llevado de regreso. Esta idea de estabilidad fue tomada posteriormente y construida como descripción de equilibrios de Nash, de los cuales los equilibrios de Cournot son un subconjunto.</p>
+<h3 id="24-comparación-con-monopolio-y-competencia-perfecta">2.4 Comparación con monopolio y competencia perfecta<a hidden class="anchor" aria-hidden="true" href="#24-comparación-con-monopolio-y-competencia-perfecta">#</a></h3>
+<p>Con $n$ firmas simétricas, el equilibrio de Cournot generalizado da:</p>
+<p>$$Q^C = \frac{n(a-c)}{(n+1)b}, \quad P^C = \frac{a + nc}{n+1}$$</p>
+<ul>
+<li>$n = 1$: monopolio, $Q^M = (a-c)/2b$, $P^M = (a+c)/2$.</li>
+<li>$n = 2$: Cournot duopolio.</li>
+<li>$n \to \infty$: $Q \to (a-c)/b = Q^{CP}$, $P \to c = P^{CP}$.</li>
+</ul>
+<p>En el oligopolio de Cournot, la cantidad total ofrecida es menor que el óptimo social pero mayor que la cantidad de monopolio.  El índice de Lerner del oligopolio de Cournot es $L = (P-MC)/P = -1/(n|\varepsilon_D|)$ — el poder de mercado cae con el número de firmas y la elasticidad de demanda.</p>
+<h3 id="25-el-oligopolio-de-cournot-como-dilema-del-prisionero">2.5 El oligopolio de Cournot como dilema del prisionero<a hidden class="anchor" aria-hidden="true" href="#25-el-oligopolio-de-cournot-como-dilema-del-prisionero">#</a></h3>
+<p>Si los beneficios se interpretan como pagos, la situación corresponde a un dilema del prisionero. Coludiendo, las firmas actuarían como un monopolista y dividirían cantidades y beneficios igualmente. La estructura de dilema del prisionero resulta del hecho de que la mitad del beneficio de monopolio es mayor que el beneficio del equilibrio Nash, y de que con desviación unilateral las firmas pueden aumentar sus beneficios sobre la mitad del monopolio.</p>
+<p>El equilibrio de Cournot es el único EN del juego estático — ninguna firma puede mejorar unilateralmente. Pero ambas firmas estarían mejor si coordinaran en la cantidad de monopolio. La colusión es mutuamente beneficiosa pero individualmente inestable — el mismo estructura del dilema del prisionero.</p>
+<hr>
+<h2 id="3-el-modelo-de-bertrand">3. El modelo de Bertrand<a hidden class="anchor" aria-hidden="true" href="#3-el-modelo-de-bertrand">#</a></h2>
+<h3 id="31-la-crítica-de-bertrand-a-cournot">3.1 La crítica de Bertrand a Cournot<a hidden class="anchor" aria-hidden="true" href="#31-la-crítica-de-bertrand-a-cournot">#</a></h3>
+<p>Bertrand argumentó que cada firma debería maximizar sus beneficios seleccionando un nivel de precio que subcotice a sus competidoras cuando sus precios superan el costo marginal.</p>
+<p>En el modelo de Bertrand con bien homogéneo, las firmas eligen precios simultáneamente. La demanda sigue la regla del precio más bajo: la firma más barata se lleva todo el mercado; si cobran lo mismo, se dividen la demanda.</p>
+<h3 id="32-la-paradoja-de-bertrand">3.2 La paradoja de Bertrand<a hidden class="anchor" aria-hidden="true" href="#32-la-paradoja-de-bertrand">#</a></h3>
+<p>En el modelo de Bertrand, el precio competitivo sirve como equilibrio Nash. Si ambas firmas establecen un precio competitivo al costo marginal, ninguna obtiene beneficios. Si una firma alinea su precio al costo marginal mientras la otra sube su precio, esta última no gana nada, ya que los consumidores optan por la opción competitivamente priceada. No hay otro escenario de precios que alcance el equilibrio.</p>
+<p>Con dos firmas y bien homogéneo, el <em><em>único EN de Bertrand es $p_1^</em> = p_2^</em> = MC$** — el resultado de competencia perfecta con solo dos firmas. Este es el <strong>resultado paradójico de Bertrand</strong>: basta con dos firmas para alcanzar el outcome competitivo, independientemente del número mayor de firmas.</p>
+<h3 id="33-las-resoluciones-de-la-paradoja">3.3 Las resoluciones de la paradoja<a hidden class="anchor" aria-hidden="true" href="#33-las-resoluciones-de-la-paradoja">#</a></h3>
+<p>La paradoja emerge de supuestos muy específicos. Sus resoluciones identifican cuándo el mercado real se aleja del resultado de precio igual a costo marginal:</p>
+<p><strong>Capacidad restringida (Bertrand-Edgeworth):</strong> el modelo ignora restricciones de capacidad. Si una sola firma no tiene capacidad para abastecer todo el mercado, el resultado de &ldquo;precio igual a costo marginal&rdquo; puede no mantenerse. Con restricciones de capacidad, puede no existir ningún equilibrio en estrategias puras — la paradoja de Edgeworth. Sin embargo, en general existirá un equilibrio en estrategias mixtas.</p>
+<p>Si las firmas primero eligen capacidades y luego compiten en precios (modelo de Kreps-Scheinkman), el resultado es el equilibrio de Cournot — las capacidades funcionan como compromisos de cantidad.</p>
+<p><strong>Diferenciación de productos:</strong> cuando los bienes no son perfectamente homogéneos, los consumidores no se mueven instantáneamente al precio más bajo. La firma más cara retiene algunos clientes — una demanda residual positiva. El equilibrio Bertrand con productos diferenciados implica precios por encima del costo marginal.</p>
+<p><strong>Costos asimétricos:</strong> cuando el costo marginal de la firma 2 es mayor que el de la firma 1, la firma 2 solo puede fijar su precio igual a su costo marginal. La firma 1 puede elegir su precio entre su costo marginal y el costo marginal de la firma 2. Así, las firmas no fijarán necesariamente precio al costo marginal bajo costos asimétricos.</p>
+<p><strong>Repetición:</strong> no coludiendo y cobrando costo marginal es el resultado no cooperativo y el único EN del modelo. Por tanto, pasando de un juego de movimiento simultáneo a un juego repetido con horizonte infinito, la colusión es posible por el teorema folk.</p>
+<hr>
+<h2 id="4-el-modelo-de-stackelberg">4. El modelo de Stackelberg<a hidden class="anchor" aria-hidden="true" href="#4-el-modelo-de-stackelberg">#</a></h2>
+<h3 id="41-estructura-secuencial">4.1 Estructura secuencial<a hidden class="anchor" aria-hidden="true" href="#41-estructura-secuencial">#</a></h3>
+<p>El modelo de Stackelberg considera firmas fijadoras de cantidades con producto idéntico que toman decisiones de output secuencialmente.  La firma 1 (líder) elige $q_1$ primero, de forma observable. La firma 2 (seguidor) observa $q_1$ y luego elige $q_2$.</p>
+<p>El equilibrio se resuelve por inducción hacia atrás.</p>
+<h3 id="42-el-equilibrio">4.2 El equilibrio<a hidden class="anchor" aria-hidden="true" href="#42-el-equilibrio">#</a></h3>
+<p>El seguidor maximiza dado $q_1$: $q_2^*(q_1) = (a-c-bq_1)/(2b)$ — idéntico a la función de reacción de Cournot.</p>
+<p>El líder anticipa la respuesta del seguidor y maximiza:</p>
+<p>$$\pi_1 = P(q_1 + q_2^*(q_1))q_1 - cq_1 = \left(a - bq_1 - b\cdot\frac{a-c-bq_1}{2b}\right)q_1 - cq_1$$</p>
+<p>$$= \frac{(a-c-bq_1)q_1}{2}$$</p>
+<p>CPO: $q_1^S = (a-c)/(2b)$, $q_2^S = (a-c)/(4b)$.</p>
+<p>Resultados:</p>
+<p>$$Q^S = \frac{3(a-c)}{4b} &gt; Q^C = \frac{2(a-c)}{3b}, \quad P^S &lt; P^C$$</p>
+<p>$$\pi_1^S = \frac{(a-c)^2}{8b} &gt; \pi_i^C = \frac{(a-c)^2}{9b} &gt; \pi_2^S = \frac{(a-c)^2}{16b}$$</p>
+<p>La cantidad individual del líder de Stackelberg es mayor que en Cournot. La del seguidor es menor. La cantidad total es mayor en Stackelberg que en Cournot, lo que significa que el precio es menor. Como el resultado de Cournot es una de las opciones para el líder, sus beneficios deben ser mayores en Stackelberg. Y como tanto la cantidad producida como el precio recibido son menores para el seguidor comparado con Cournot, los beneficios deben ser menores.</p>
+<p>La <strong>ventaja del primer movimiento</strong> emerge de la capacidad del líder de comprometerse creíblemente a una cantidad alta — el seguidor solo puede acomodarse con una cantidad menor. La clave es que el compromiso sea <strong>observable y creíble</strong>: si el seguidor no observara la elección del líder, el juego colapsa al equilibrio de Cournot.</p>
+<hr>
+<h2 id="5-diferenciación-de-productos">5. Diferenciación de productos<a hidden class="anchor" aria-hidden="true" href="#5-diferenciación-de-productos">#</a></h2>
+<h3 id="51-bertrand-con-productos-diferenciados">5.1 Bertrand con productos diferenciados<a hidden class="anchor" aria-hidden="true" href="#51-bertrand-con-productos-diferenciados">#</a></h3>
+<p>Con diferenciación, los consumidores no se mueven instantáneamente al precio más bajo — tienen preferencias por variedades. El modelo estándar con demanda lineal y diferenciación simétrica:</p>
+<p>$$q_i = a - bp_i + dp_j, \quad d \in (0, b)$$</p>
+<p>donde $d$ mide la sustituibilidad entre productos ($d \to 0$: bienes independientes; $d \to b$: bienes perfectos sustitutos). Las funciones de mejor respuesta en precios son crecientes (los precios son <strong>complementos estratégicos</strong>: si el rival sube su precio, yo también subo).</p>
+<p>El equilibrio Nash en precios:</p>
+<p>$$p_i^* = \frac{a + bc}{2b - d} &gt; MC = c$$</p>
+<p>El precio de equilibrio es mayor que el costo marginal — la diferenciación de productos restaura el poder de mercado y elimina la paradoja de Bertrand. Cuando $d \to 0$ el precio se acerca al de monopolio; cuando $d \to b$ el precio cae hacia $MC$.</p>
+<h3 id="52-cantidad-vs-precio-como-variable-estratégica">5.2 Cantidad vs. precio como variable estratégica<a hidden class="anchor" aria-hidden="true" href="#52-cantidad-vs-precio-como-variable-estratégica">#</a></h3>
+<p>Singh y Vives (1984) muestran que, con duopolio privado donde las firmas maximizan beneficios, y asumiendo demanda lineal y diferenciación de productos, un contrato de cantidad es la estrategia dominante para cada firma cuando los bienes son sustitutos.</p>
+<p>El resultado de Singh-Vives es notable: incluso con la opción de competir en precios, las firmas prefieren competir en cantidades cuando los bienes son sustitutos. La razón: comprometerse a una cantidad (rígida) es una postura más agresiva que comprometerse a un precio (flexible) — en el equilibrio, las firmas extraen más excedente compitiendo en cantidades.</p>
+<p>Con bienes complementos, se invierte: la competencia en precios es la estrategia dominante.</p>
+<h3 id="53-el-modelo-de-hotelling-diferenciación-horizontal">5.3 El modelo de Hotelling: diferenciación horizontal<a hidden class="anchor" aria-hidden="true" href="#53-el-modelo-de-hotelling-diferenciación-horizontal">#</a></h3>
+<p>El modelo de ciudad lineal de Hotelling captura la diferenciación espacial (o de características). Los consumidores están distribuidos uniformemente en $[0,1]$. Dos firmas se ubican en $x_1$ y $x_2$. El consumidor en $z$ tiene costo de transporte $t|z - x_i|$ para comprar en la firma $i$.</p>
+<p>El consumidor <strong>indiferente</strong> $\hat{z}$ satisface:</p>
+<p>$$p_1 + t|\hat{z} - x_1| = p_2 + t|\hat{z} - x_2|$$</p>
+<p>La firma $i$ captura el segmento de consumidores más cercanos a su ubicación. El equilibrio de precios Nash dado las ubicaciones es:</p>
+<p>$$p_i^* = c + \frac{t(x_2 - x_1)(2 + x_1 + 1 - x_2)}{3}$$</p>
+<p>Con ubicaciones en los extremos $x_1 = 0$, $x_2 = 1$ (máxima diferenciación):</p>
+<p>$$p_1^* = p_2^* = c + t$$</p>
+<p>El precio de equilibrio supera el costo marginal en $t$ — el parámetro de diferenciación. Mayor diferenciación (mayor $t$, o mayor distancia entre firmas) → mayor poder de mercado → precios más altos.</p>
+<p><strong>La paradoja de Hotelling (mínima diferenciación):</strong> en el juego de dos etapas donde primero se eligen ubicaciones y luego precios, el equilibrio predice máxima aglomeración — ambas firmas se ubican en el centro. La intuición es que alejarse del centro entrega mercado al rival. Esta predicción — estaciones de radio que convergen en géneros similares, partidos políticos que convergen al centro — captura una regularidad importante aunque el resultado estricto es frágil con más de dos firmas.</p>
+<hr>
+<h2 id="6-colusión-y-cárteles">6. Colusión y cárteles<a hidden class="anchor" aria-hidden="true" href="#6-colusión-y-cárteles">#</a></h2>
+<h3 id="61-la-inestabilidad-de-la-colusión">6.1 La inestabilidad de la colusión<a hidden class="anchor" aria-hidden="true" href="#61-la-inestabilidad-de-la-colusión">#</a></h3>
+<p>Un cártel maximiza beneficios conjuntos produciendo la cantidad de monopolio $Q^M$ dividida entre los miembros. Pero cada firma tiene incentivo individual a desviarse: producir más de su cuota aumenta sus beneficios a expensas de los demás.</p>
+<p>La teoría de juegos indica que los cárteles son inherentemente inestables. Cada miembro individual tiene incentivo a hacer trampa para obtener mayores beneficios en el corto plazo. El trampeo puede llevar al colapso del cártel. Con el colapso, las firmas revertirían a competir, lo que llevaría a menores beneficios.</p>
+<p>La estructura de dilema del prisionero resulta del hecho de que la mitad del beneficio de monopolio es mayor que el beneficio del equilibrio Nash, por un lado, y del hecho de que con desviación unilateral de las cantidades acordadas las firmas pueden aumentar sus beneficios sobre la mitad del monopolio, por otro.</p>
+<h3 id="62-colusión-sostenible-el-juego-repetido">6.2 Colusión sostenible: el juego repetido<a hidden class="anchor" aria-hidden="true" href="#62-colusión-sostenible-el-juego-repetido">#</a></h3>
+<p>En el juego de Cournot repetido infinitamente, la colusión puede sostenerse con estrategia de gatillo (Grim Trigger): cooperar si todos cooperaron en el pasado; producir la cantidad Cournot para siempre si alguien se desvió.</p>
+<p>La proposición es que si la tasa de descuento es &ldquo;suficientemente alta&rdquo;, estas estrategias constituyen un EPS del juego de Cournot repetido infinitamente: en el período $t$, la firma $i$ juega $q_i^C = q^J$ (cantidad de cártel) si $q_{i,t-1} = q^J$ para ambas. Juega $q^*$ (Cournot) si $q_{i,t-1} \neq q^J$ para alguna.</p>
+<p>La condición para que la colusión sea sostenible:</p>
+<p>$$\frac{\pi^M/2}{1-\delta} \geq \pi^D + \frac{\delta \pi^C}{1-\delta}$$</p>
+<p>donde $\pi^M/2$ es el beneficio de cártel, $\pi^D$ el beneficio de desviación óptima, y $\pi^C$ el beneficio de Cournot. Simplificando:</p>
+<p>$$\delta \geq \bar{\delta} = \frac{\pi^D - \pi^M/2}{\pi^D - \pi^C}$$</p>
+<p>La colusión es más difícil de sostener cuando:</p>
+<ul>
+<li><strong>Más firmas:</strong> mayor incentivo a desviarse y menor participación en los beneficios del cártel.</li>
+<li><strong>Demanda volátil:</strong> dificultad de distinguir desviación de un shock negativo de demanda.</li>
+<li><strong>Baja frecuencia de interacción:</strong> menor valor del futuro.</li>
+<li><strong>Asimetría de costos:</strong> las firmas de bajo costo tienen mayor incentivo a desviarse.</li>
+</ul>
+<h3 id="63-factores-que-facilitan-la-colusión">6.3 Factores que facilitan la colusión<a hidden class="anchor" aria-hidden="true" href="#63-factores-que-facilitan-la-colusión">#</a></h3>
+<p>La <strong>transparencia</strong> de precios y cantidades facilita la detección de desviaciones — los mercados opacos dificultan sostener la colusión porque el castigo llega tarde. La <strong>homogeneidad del producto</strong> también facilita la colusión al simplificar el acuerdo.</p>
+<p>La <strong>licitación por contratos</strong> (bid rigging) es una forma de colusión donde las firmas se turnan para ganar contratos presentando ofertas no competitivas. Es una de las formas de colusión más investigadas por las autoridades de competencia.</p>
+<p>El <strong>liderazgo de precios</strong> es una forma de coordinación tácita sin acuerdo explícito: una firma dominante anuncia su precio y las demás lo siguen. No requiere comunicación directa — solo señales de precios observables.</p>
+<hr>
+<h2 id="7-síntesis-comparación-de-modelos">7. Síntesis: comparación de modelos<a hidden class="anchor" aria-hidden="true" href="#7-síntesis-comparación-de-modelos">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Beneficio por firma</th>
+          <th>Bienestar</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Monopolio</td>
+          <td>$(a+c)/2$</td>
+          <td>$(a-c)/2b$</td>
+          <td>$(a-c)^2/4b$</td>
+          <td>Mínimo</td>
+      </tr>
+      <tr>
+          <td>Cournot ($n=2$)</td>
+          <td>$(a+2c)/3$</td>
+          <td>$(a-c)/3b$</td>
+          <td>$(a-c)^2/9b$</td>
+          <td>Intermedio</td>
+      </tr>
+      <tr>
+          <td>Stackelberg (líder)</td>
+          <td>—</td>
+          <td>$(a-c)/2b$</td>
+          <td>$(a-c)^2/8b$</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td>Stackelberg (seguidor)</td>
+          <td>—</td>
+          <td>$(a-c)/4b$</td>
+          <td>$(a-c)^2/16b$</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td>Bertrand (homogéneo)</td>
+          <td>$c$</td>
+          <td>$(a-c)/b$</td>
+          <td>$0$</td>
+          <td>Máximo</td>
+      </tr>
+      <tr>
+          <td>Comp. perfecta</td>
+          <td>$c$</td>
+          <td>$(a-c)/b$</td>
+          <td>$0$</td>
+          <td>Máximo</td>
+      </tr>
+  </tbody>
+</table>
+<p>La jerarquía de precios es: $P^M &gt; P^C &gt; P^S &gt; P^{Bertrand} = MC$.</p>
+<p>La jerarquía de bienestar es el inverso: el resultado de Bertrand maximiza el excedente total; el monopolio lo minimiza; Cournot y Stackelberg están en el medio.</p>
+<p><strong>¿Cuándo es aplicable cada modelo?</strong></p>
+<p>La precisión del modelo de Cournot o Bertrand varía de industria en industria, dependiendo de cuán fácil sea ajustar los niveles de output. Si la capacidad y output pueden cambiarse fácilmente, Bertrand es generalmente un mejor modelo de competencia de duopolio. Si el output y la capacidad son difíciles de ajustar, entonces Cournot es generalmente un mejor modelo.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Cournot, A.A. (1838). <em>Recherches sur les Principes Mathématiques de la Théorie des Richesses</em>. Hachette.</li>
+<li>Bertrand, J. (1883). Reseña de Cournot (1838). <em>Journal des Savants</em>.</li>
+<li>Stackelberg, H. von (1934). <em>Marktform und Gleichgewicht</em>. Springer.</li>
+<li>Singh, N. &amp; Vives, X. (1984). <em>Price and Quantity Competition in a Differentiated Duopoly</em>. RAND Journal.</li>
+<li>Hotelling, H. (1929). <em>Stability in Competition</em>. EJ.</li>
+<li>Kreps, D. &amp; Scheinkman, J. (1983). <em>Quantity Precommitment and Bertrand Competition Yield Cournot Outcomes</em>. Bell Journal.</li>
+<li>Peppal, L., Richards, D. &amp; Norman, G. (2006). <em>Organización Industrial</em>. Thompson. Caps. 7–10.</li>
+<li>Tirole, J. (1988). <em>The Theory of Industrial Organization</em>. MIT Press. Caps. 5–6.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford. Cap. 12.</li>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/oligopolio/">Oligopolio</a></li>
+      <li><a href="http://localhost:4459/tags/cournot/">Cournot</a></li>
+      <li><a href="http://localhost:4459/tags/bertrand/">Bertrand</a></li>
+      <li><a href="http://localhost:4459/tags/stackelberg/">Stackelberg</a></li>
+      <li><a href="http://localhost:4459/tags/diferenciaci%C3%B3n/">Diferenciación</a></li>
+      <li><a href="http://localhost:4459/tags/colusi%C3%B3n/">Colusión</a></li>
+      <li><a href="http://localhost:4459/tags/eae2110/">EAE2110</a></li>
+      <li><a href="http://localhost:4459/tags/eae2130/">EAE2130</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/macro/08_oayda/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Oferta agregada, demanda agregada y ciclos económicos</span>
+    <span>Oferta Agregada, Demanda Agregada y Ciclos Económicos</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/micro/09_monopolio/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Poder de mercado y monopolio</span>
+    <span>Poder de Mercado y Monopolio</span>
   </a>
 </nav>
 

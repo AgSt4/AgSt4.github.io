@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Teoría de la producción y oferta | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Teoría de la producción y oferta - Agustín Sandoval Tapia">
+<title>Teoría de la Producción y Oferta | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, producción, costos, oferta, dualidad, Shephard, Hotelling, EAE2110">
+<meta name="description" content="Tecnología y funciones de producción, CMP, función de costos, lema de Shephard, PMP, función de beneficios, lema de Hotelling, función de oferta y dualidad producción-costo.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/02_productor/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,284 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Teoría de la producción y oferta
+      Teoría de la Producción y Oferta
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Tecnología y funciones de producción, CMP, función de costos, lema de Shephard, PMP, función de beneficios, lema de Hotelling, función de oferta y dualidad producción-costo.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>13 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía I (EAE2110) · <strong>Profesora:</strong> María Luisa Vergara<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Nicholson (2008) · Mas-Colell, Whinston &amp; Green (1995) caps. 5–6</p>
+<hr>
+<h2 id="1-tecnología">1. Tecnología<a hidden class="anchor" aria-hidden="true" href="#1-tecnología">#</a></h2>
+<h3 id="11-el-conjunto-de-producción">1.1 El conjunto de producción<a hidden class="anchor" aria-hidden="true" href="#11-el-conjunto-de-producción">#</a></h3>
+<p>La firma transforma insumos $\mathbf{z} \in \mathbb{R}^N_+$ en producto $q \in \mathbb{R}_+$. La <strong>tecnología</strong> queda completamente descrita por el <strong>conjunto de posibilidades de producción</strong>:</p>
+<p>$$Y = {(\mathbf{z}, q) \in \mathbb{R}^{N+1} : q \text{ es producible con } \mathbf{z}}$$</p>
+<p>Una representación equivalente es el <strong>conjunto de requisitos de insumos</strong> para producir al menos $q$:</p>
+<p>$$V(q) = {\mathbf{z} \in \mathbb{R}^N_+ : (\mathbf{z}, q) \in Y}$$</p>
+<p>Propiedades estándar de $V(q)$:</p>
+<ul>
+<li><strong>No vacío</strong> para $q$ en el rango factible.</li>
+<li><strong>Libre disposición:</strong> si $\mathbf{z} \in V(q)$ y $\mathbf{z}&rsquo; \geq \mathbf{z}$, entonces $\mathbf{z}&rsquo; \in V(q)$ — insumos adicionales nunca reducen lo producible.</li>
+<li><strong>Convexidad:</strong> si $\mathbf{z}, \mathbf{z}&rsquo; \in V(q)$, entonces $\alpha\mathbf{z} + (1-\alpha)\mathbf{z}&rsquo; \in V(q)$ — combinaciones de planes factibles son factibles. Implica isocuantas convexas hacia el origen.</li>
+</ul>
+<h3 id="12-la-función-de-producción">1.2 La función de producción<a hidden class="anchor" aria-hidden="true" href="#12-la-función-de-producción">#</a></h3>
+<p>Cuando la frontera de $V(q)$ puede describirse como una función, la <strong>función de producción</strong> $f: \mathbb{R}^N_+ \to \mathbb{R}_+$ satisface:</p>
+<p>$$q^* = f(\mathbf{z}) \equiv \max{q : \mathbf{z} \in V(q)}$$</p>
+<p>Es el nivel máximo de producto alcanzable con el vector de insumos $\mathbf{z}$.</p>
+<h3 id="13-productividades-marginales-e-isocuantas">1.3 Productividades marginales e isocuantas<a hidden class="anchor" aria-hidden="true" href="#13-productividades-marginales-e-isocuantas">#</a></h3>
+<p>La <strong>productividad marginal</strong> del insumo $i$ es:</p>
+<p>$$PM_i = \frac{\partial f}{\partial z_i} &gt; 0$$</p>
+<p>Mide cuánto adicional se produce con una unidad más del insumo $i$, manteniendo los demás fijos. Con libre disposición y no-saciedad técnica, $PM_i &gt; 0$.</p>
+<p>La <strong>isocuanta</strong> para nivel $\bar{q}$ es el conjunto ${\mathbf{z} : f(\mathbf{z}) = \bar{q}}$ — todas las combinaciones de insumos que producen exactamente $\bar{q}$. Su pendiente es la <strong>tasa marginal de sustitución técnica</strong>:</p>
+<p>$$TMST_{ij} = -\frac{dz_j}{dz_i}\bigg|_{f=\bar{q}} = \frac{PM_i}{PM_j}$$</p>
+<p>La TMST mide cuántas unidades del insumo $j$ puede reemplazar una unidad del insumo $i$ sin alterar el producto. Con isocuantas convexas, la TMST es decreciente en $z_i/z_j$ — la ley de la TMST decreciente, análoga a la TMS decreciente del consumidor.</p>
+<h3 id="14-rendimientos-a-escala">1.4 Rendimientos a escala<a hidden class="anchor" aria-hidden="true" href="#14-rendimientos-a-escala">#</a></h3>
+<p>Los <strong>rendimientos a escala</strong> caracterizan cómo responde el producto cuando todos los insumos se escalan proporcionalmente. Para $\lambda &gt; 1$:</p>
+<ul>
+<li><strong>Rendimientos constantes a escala (RCE):</strong> $f(\lambda\mathbf{z}) = \lambda f(\mathbf{z})$.</li>
+<li><strong>Rendimientos crecientes a escala (RCrE):</strong> $f(\lambda\mathbf{z}) &gt; \lambda f(\mathbf{z})$.</li>
+<li><strong>Rendimientos decrecientes a escala (RDE):</strong> $f(\lambda\mathbf{z}) &lt; \lambda f(\mathbf{z})$.</li>
+</ul>
+<p>Con RCE, la función de producción es homogénea de grado 1. El <strong>teorema de Euler</strong> implica que $\sum_i z_i \cdot PM_i = q$ — el producto se agota exactamente al pagar a cada insumo su productividad marginal, lo que conecta con la distribución funcional del ingreso en mercados competitivos.</p>
+<h3 id="15-elasticidad-de-sustitución">1.5 Elasticidad de sustitución<a hidden class="anchor" aria-hidden="true" href="#15-elasticidad-de-sustitución">#</a></h3>
+<p>La <strong>elasticidad de sustitución</strong> $\sigma$ mide la sensibilidad de la razón de insumos ante cambios en la TMST, manteniendo el producto constante:</p>
+<p>$$\sigma = \frac{d\ln(z_j/z_i)}{d\ln(TMST_{ij})}$$</p>
+<p>Para la función CES $f = [\alpha z_1^\rho + (1-\alpha)z_2^\rho]^{1/\rho}$, $\sigma = 1/(1-\rho)$ es constante. Los casos límite son: $\rho \to 0$ ($\sigma = 1$, Cobb-Douglas), $\rho = 1$ ($\sigma \to \infty$, sustitutos perfectos) y $\rho \to -\infty$ ($\sigma = 0$, complementos perfectos).</p>
+<h3 id="16-funciones-de-producción-canónicas">1.6 Funciones de producción canónicas<a hidden class="anchor" aria-hidden="true" href="#16-funciones-de-producción-canónicas">#</a></h3>
+<p><strong>Cobb-Douglas:</strong> $f = Az_1^\alpha z_2^\beta$</p>
+<ul>
+<li>Rendimientos: constantes si $\alpha + \beta = 1$; crecientes si $&gt; 1$; decrecientes si $&lt; 1$.</li>
+<li>Elasticidades de producto de cada insumo son $\alpha$ y $\beta$ — constantes.</li>
+<li>$\sigma = 1$.</li>
+</ul>
+<p><strong>Leontief:</strong> $f = \min{z_1/a, z_2/b}$</p>
+<ul>
+<li>Insumos complementarios perfectos; no hay sustitución.</li>
+<li>$\sigma = 0$.</li>
+</ul>
+<p><strong>Lineal:</strong> $f = az_1 + bz_2$</p>
+<ul>
+<li>Sustitutos perfectos.</li>
+<li>$\sigma \to \infty$.</li>
+</ul>
+<hr>
+<h2 id="2-el-problema-de-minimización-de-costos-cmp">2. El problema de minimización de costos (CMP)<a hidden class="anchor" aria-hidden="true" href="#2-el-problema-de-minimización-de-costos-cmp">#</a></h2>
+<h3 id="21-formulación">2.1 Formulación<a hidden class="anchor" aria-hidden="true" href="#21-formulación">#</a></h3>
+<p>El problema de minimización de costos involucra derivar funciones de demanda condicional de factores y la función de costos.  Dados precios de insumos $\mathbf{w} \gg 0$ y nivel de producto objetivo $q$:</p>
+<p>$$\min_{\mathbf{z} \geq 0} \mathbf{w} \cdot \mathbf{z} \quad \text{s.a.} \quad f(\mathbf{z}) \geq q$$</p>
+<p>El CMP es el dual de la teoría del productor, análogo al EMP del consumidor con $q$ en lugar de $\bar{u}$.</p>
+<h3 id="22-condiciones-de-primer-orden-solución-interior">2.2 Condiciones de primer orden (solución interior)<a hidden class="anchor" aria-hidden="true" href="#22-condiciones-de-primer-orden-solución-interior">#</a></h3>
+<p>El Lagrangiano es:</p>
+<p>$$\mathcal{L} = \mathbf{w} \cdot \mathbf{z} - \lambda[f(\mathbf{z}) - q]$$</p>
+<p>Las CPO son:</p>
+<p>$$w_i = \lambda \frac{\partial f}{\partial z_i} \quad \forall i, \qquad f(\mathbf{z}) = q$$</p>
+<p>Dividiendo las CPO para dos insumos:</p>
+<p>$$\frac{w_i}{w_j} = \frac{PM_i}{PM_j} = TMST_{ij}$$</p>
+<p>La condición de optimalidad iguala la razón de precios de insumos con la TMST: la tasa técnica de sustitución debe igualar la tasa de sustitución del mercado. Geométricamente, la isocuanta es tangente a la isocosto.</p>
+<p><strong>Interpretación de $\lambda$:</strong> el multiplicador es el <strong>costo marginal</strong> — cuánto sube el costo mínimo si se exige producir una unidad adicional. Por el teorema de la envolvente: $\lambda = \partial C / \partial q \equiv MC$.</p>
+<h3 id="23-demanda-condicional-de-factores">2.3 Demanda condicional de factores<a hidden class="anchor" aria-hidden="true" href="#23-demanda-condicional-de-factores">#</a></h3>
+<p>La solución del CMP es la <strong>demanda condicional de factores</strong> $\mathbf{z}(\mathbf{w}, q)$: los insumos óptimos para producir $q$ al menor costo posible. Se llama &ldquo;condicional&rdquo; porque condiciona en el nivel de producto — no depende del precio del output.</p>
+<p>Propiedades:</p>
+<ul>
+<li>Homogénea de grado cero en $\mathbf{w}$: si todos los precios de insumos se duplican, la combinación óptima de insumos no cambia — solo el costo total.</li>
+<li>La demanda propia es no creciente en el precio propio: $\partial z_i / \partial w_i \leq 0$.</li>
+<li>Simetría: $\partial z_i / \partial w_j = \partial z_j / \partial w_i$.</li>
+</ul>
+<h3 id="24-la-función-de-costos">2.4 La función de costos<a hidden class="anchor" aria-hidden="true" href="#24-la-función-de-costos">#</a></h3>
+<p>La <strong>función de costos</strong> es el valor minimizado del CMP:</p>
+<p>$$C(\mathbf{w}, q) = \mathbf{w} \cdot \mathbf{z}(\mathbf{w}, q) = \min_\mathbf{z}{\mathbf{w} \cdot \mathbf{z} : f(\mathbf{z}) \geq q}$$</p>
+<p>Propiedades de $C(\mathbf{w}, q)$:</p>
+<ul>
+<li><strong>Homogénea de grado 1 en $\mathbf{w}$:</strong> si todos los precios de insumos se duplican, el costo mínimo se duplica.</li>
+<li><strong>No decreciente en $\mathbf{w}$ y en $q$:</strong> más caro o más producto nunca reduce el costo mínimo.</li>
+<li><strong>Cóncava en $\mathbf{w}$:</strong> la firma se beneficia de la variabilidad en precios porque puede reasignar insumos — $\nabla^2_\mathbf{w} C \leq 0$.</li>
+<li>Refleja completamente la tecnología: la función de producción puede recuperarse de $C$.</li>
+</ul>
+<h3 id="25-el-lema-de-shephard-para-el-productor">2.5 El lema de Shephard para el productor<a hidden class="anchor" aria-hidden="true" href="#25-el-lema-de-shephard-para-el-productor">#</a></h3>
+<p>En teoría del productor, el lema de Shephard interpreta la función de costos — que minimiza los gastos de producción para un producto fijo — en términos de demandas condicionales de factores. Muestra cómo las variaciones en los precios de insumos afectan los costos mínimos, destacando las posibilidades de sustitución entre factores mientras se mantiene el producto constante.</p>
+<p>Formalmente:</p>
+<p>$$z_i(\mathbf{w}, q) = \frac{\partial C(\mathbf{w}, q)}{\partial w_i}$$</p>
+<p>La demanda condicional del insumo $i$ es la derivada parcial de la función de costos respecto al precio de ese insumo. Resultado directo del teorema de la envolvente aplicado al CMP — análogo exacto del lema de Shephard del consumidor con $e(\mathbf{p}, \bar{u})$.</p>
+<h3 id="26-estructura-de-costos">2.6 Estructura de costos<a hidden class="anchor" aria-hidden="true" href="#26-estructura-de-costos">#</a></h3>
+<p>Definiciones estándar:</p>
+<p>$$CT(q) = C(\mathbf{w}, q) \quad \text{(costo total)}$$
+$$CF = C(\mathbf{w}, 0) \quad \text{(costo fijo)}$$
+$$CV(q) = C(\mathbf{w}, q) - CF \quad \text{(costo variable)}$$
+$$CMg(q) = \frac{\partial C}{\partial q} = \lambda \quad \text{(costo marginal)}$$
+$$CMe(q) = \frac{C(q)}{q} \quad \text{(costo medio total)}$$
+$$CVMe(q) = \frac{CV(q)}{q} \quad \text{(costo variable medio)}$$</p>
+<p>Relaciones clave:</p>
+<ul>
+<li>$CMg &lt; CMe \implies CMe$ decrece; $CMg &gt; CMe \implies CMe$ crece.</li>
+<li>$CMg$ corta $CMe$ y $CVMe$ en sus mínimos.</li>
+<li>En el largo plazo no hay costos fijos: $CT = CV$.</li>
+</ul>
+<h3 id="27-rendimientos-a-escala-y-estructura-de-costos">2.7 Rendimientos a escala y estructura de costos<a hidden class="anchor" aria-hidden="true" href="#27-rendimientos-a-escala-y-estructura-de-costos">#</a></h3>
+<p>Los rendimientos a escala de la función de producción se reflejan en la función de costos:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Rendimientos</th>
+          <th>Costo marginal vs. medio</th>
+          <th>Estructura de costos</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Constantes</td>
+          <td>$CMg = CMe$</td>
+          <td>Costo total lineal en $q$</td>
+      </tr>
+      <tr>
+          <td>Crecientes</td>
+          <td>$CMg &lt; CMe$ (CMe decreciente)</td>
+          <td>Economías de escala</td>
+      </tr>
+      <tr>
+          <td>Decrecientes</td>
+          <td>$CMg &gt; CMe$ (CMe creciente)</td>
+          <td>Deseconomías de escala</td>
+      </tr>
+  </tbody>
+</table>
+<p>Las <strong>economías de escala</strong> se miden por la elasticidad del costo respecto al producto:</p>
+<p>$$\varepsilon_{Cq} = \frac{\partial C / C}{\partial q / q} = \frac{CMg}{CMe}$$</p>
+<p>$\varepsilon_{Cq} &lt; 1$ implica economías de escala (RCrE); $\varepsilon_{Cq} &gt; 1$ implica deseconomías (RDE).</p>
+<hr>
+<h2 id="3-el-problema-de-maximización-de-beneficios-pmp">3. El problema de maximización de beneficios (PMP)<a hidden class="anchor" aria-hidden="true" href="#3-el-problema-de-maximización-de-beneficios-pmp">#</a></h2>
+<h3 id="31-formulación">3.1 Formulación<a hidden class="anchor" aria-hidden="true" href="#31-formulación">#</a></h3>
+<p>El problema de maximización de beneficios involucra derivar la función de oferta del producto, la función de beneficios y las funciones de demanda incondicional de factores.</p>
+<p>Dados el precio del producto $p &gt; 0$ y los precios de insumos $\mathbf{w} \gg 0$:</p>
+<p>$$\max_{q \geq 0, \mathbf{z} \geq 0} pq - \mathbf{w} \cdot \mathbf{z} \quad \text{s.a.} \quad f(\mathbf{z}) \geq q$$</p>
+<p>Equivalentemente, dado que la restricción será activa en el óptimo:</p>
+<p>$$\max_{q \geq 0} pq - C(\mathbf{w}, q)$$</p>
+<h3 id="32-condiciones-de-primer-orden">3.2 Condiciones de primer orden<a hidden class="anchor" aria-hidden="true" href="#32-condiciones-de-primer-orden">#</a></h3>
+<p>La CPO de primer orden:</p>
+<p>$$p = \frac{\partial C}{\partial q} = CMg(\mathbf{w}, q)$$</p>
+<p><strong>El precio del producto iguala el costo marginal.</strong> Esta es la condición central de la teoría de la firma competitiva: la firma expande la producción mientras el ingreso marginal (el precio) supere el costo marginal, e iguala ambos en el óptimo.</p>
+<p>La condición de segundo orden requiere $\partial^2 C / \partial q^2 \geq 0$ — el costo marginal debe ser no decreciente en el óptimo. Esto requiere que la función de producción sea estrictamente cóncava (RDE) o que existan costos fijos que generen una curva de CMg en forma de U.</p>
+<h3 id="33-la-función-de-oferta">3.3 La función de oferta<a hidden class="anchor" aria-hidden="true" href="#33-la-función-de-oferta">#</a></h3>
+<p>La solución del PMP es la <strong>función de oferta</strong> $q^*(p, \mathbf{w})$: la cantidad que maximiza beneficios a cada precio. Se obtiene invirtiendo la condición $p = CMg(q)$ para despejar $q$.</p>
+<p>Propiedades de $q^*(p, \mathbf{w})$:</p>
+<ul>
+<li><strong>Homogénea de grado cero en $(p, \mathbf{w})$:</strong> si todos los precios (producto e insumos) se duplican, la cantidad óptima no cambia — solo los beneficios nominales.</li>
+<li><strong>No decreciente en $p$:</strong> $\partial q^* / \partial p \geq 0$ — la <strong>ley de la oferta</strong>. Más precio incentiva más producción.</li>
+<li><strong>No creciente en $w_i$:</strong> $\partial q^* / \partial w_i \leq 0$ — insumos más caros reducen la producción óptima.</li>
+</ul>
+<h3 id="34-la-decisión-de-operar-precio-de-cierre">3.4 La decisión de operar: precio de cierre<a hidden class="anchor" aria-hidden="true" href="#34-la-decisión-de-operar-precio-de-cierre">#</a></h3>
+<p>En el corto plazo con costos fijos irrecuperables, la firma opera si el ingreso cubre los costos variables: $p \geq CVMe(q^*)$. Si $p &lt; CVMe$, la firma cierra porque opera generaría más pérdidas que no operar.</p>
+<p>En el largo plazo, la firma sale del mercado si $p &lt; CMe(q^*)$ — si no cubre la totalidad de sus costos incluyendo el retorno normal al capital.</p>
+<p><strong>El punto de cierre</strong> es el mínimo de la curva de $CVMe$; el <strong>punto de equilibrio</strong> es el mínimo de la curva de $CMe$. La curva de oferta de corto plazo es el segmento de $CMg$ por encima del mínimo de $CVMe$.</p>
+<h3 id="35-la-función-de-beneficios">3.5 La función de beneficios<a hidden class="anchor" aria-hidden="true" href="#35-la-función-de-beneficios">#</a></h3>
+<p>La <strong>función de beneficios</strong> es el valor maximizado del PMP:</p>
+<p>$$\pi(p, \mathbf{w}) = pq^<em>(p,\mathbf{w}) - C(\mathbf{w}, q^</em>(p,\mathbf{w}))$$</p>
+<p>Propiedades:</p>
+<ul>
+<li>Homogénea de grado 1 en $(p, \mathbf{w})$: si todos los precios se duplican, los beneficios se duplican.</li>
+<li>No decreciente en $p$ y no creciente en $\mathbf{w}$.</li>
+<li><strong>Convexa en $(p, \mathbf{w})$:</strong> la firma puede siempre al menos hacer lo que hacía antes cuando los precios cambian — los beneficios no caen proporcionalmente a la distancia desde el punto original.</li>
+</ul>
+<h3 id="36-el-lema-de-hotelling">3.6 El lema de Hotelling<a hidden class="anchor" aria-hidden="true" href="#36-el-lema-de-hotelling">#</a></h3>
+<p>Hotelling (1932) nos proveyó el lema de Hotelling y la monotonicidad cíclica. El lema de Hotelling establece que $(x, y) \in \partial\pi(p,w)$ si y solo si $(x,y)$ maximiza los beneficios a precios $(p,w)$.</p>
+<p>Para la firma competitiva con función de beneficios diferenciable:</p>
+<p>$$q^*(p, \mathbf{w}) = \frac{\partial \pi}{\partial p} \qquad z_i(p, \mathbf{w}) = -\frac{\partial \pi}{\partial w_i}$$</p>
+<p>La oferta óptima es la derivada de los beneficios respecto al precio del producto; la demanda incondicional de cada insumo es (menos) la derivada de los beneficios respecto al precio de ese insumo. Resultado directo del teorema de la envolvente aplicado al PMP.</p>
+<p>La <strong>demanda incondicional de factores</strong> $z_i(p, \mathbf{w})$ difiere de la condicional $z_i(\mathbf{w}, q)$ en que no condiciona en el nivel de producto — depende también de $p$ porque el nivel de producción se determina endógenamente en el PMP.</p>
+<hr>
+<h2 id="4-la-dualidad-producción-costo">4. La dualidad producción-costo<a hidden class="anchor" aria-hidden="true" href="#4-la-dualidad-producción-costo">#</a></h2>
+<h3 id="41-la-estructura-dual">4.1 La estructura dual<a hidden class="anchor" aria-hidden="true" href="#41-la-estructura-dual">#</a></h3>
+<p>El teorema de la envolvente provee una relación directa entre problemas primal y dual de optimización. Diferenciando la función de costos respecto a los precios de insumos genera el vector de demandas condicionales de factores que minimizan costos.</p>
+<p>La dualidad completa entre producción y costos establece que existe una correspondencia uno-a-uno entre funciones de producción con propiedades regulares y funciones de costos con propiedades regulares. La función de producción puede recuperarse completamente de la función de costos:</p>
+<p>$$f(\mathbf{z}) = \max_q{q : C(\mathbf{w}, q) \leq \mathbf{w} \cdot \mathbf{z} ; \forall \mathbf{w} \gg 0}$$</p>
+<p>Esta dualidad tiene implicancias prácticas importantes: es posible especificar y estimar funciones de costos flexibles directamente de los datos de costo y precios de insumos, sin necesidad de conocer la función de producción subyacente.</p>
+<h3 id="42-el-triángulo-de-dualidad">4.2 El triángulo de dualidad<a hidden class="anchor" aria-hidden="true" href="#42-el-triángulo-de-dualidad">#</a></h3>
+<p>Anidados dentro del proceso están el lema de Shephard, el lema de Hotelling, relaciones matemáticas directas e indirectas, y otros elementos que contribuyen a la dinámica del proceso.</p>
+<p>Las relaciones de dualidad se organizan en tres vértices:</p>
+<p>$$\boxed{f(\mathbf{z})} \xrightarrow{\text{CMP}} \boxed{C(\mathbf{w}, q)} \xrightarrow{\text{Shephard}} \boxed{z_i(\mathbf{w}, q)}$$</p>
+<p>$$\boxed{f(\mathbf{z})} \xrightarrow{\text{PMP}} \boxed{\pi(p, \mathbf{w})} \xrightarrow{\text{Hotelling}} \boxed{q^*(p,\mathbf{w}), z_i(p,\mathbf{w})}$$</p>
+<p>El CMP y el PMP son dos rutas alternativas hacia las mismas elecciones óptimas de la firma. En el óptimo del PMP, $q^* = q^<em>(p,\mathbf{w})$ y las demandas incondicionales coinciden con las condicionales evaluadas en ese $q^</em>$: $z_i(p,\mathbf{w}) = z_i(\mathbf{w}, q^*(p,\mathbf{w}))$.</p>
+<hr>
+<h2 id="5-estática-comparativa-efectos-de-cambios-en-precios">5. Estática comparativa: efectos de cambios en precios<a hidden class="anchor" aria-hidden="true" href="#5-estática-comparativa-efectos-de-cambios-en-precios">#</a></h2>
+<h3 id="51-efectos-sobre-la-oferta">5.1 Efectos sobre la oferta<a hidden class="anchor" aria-hidden="true" href="#51-efectos-sobre-la-oferta">#</a></h3>
+<p>De la condición de optimalidad $p = CMg(\mathbf{w}, q^*)$:</p>
+<p>$$\frac{\partial q^*}{\partial p} = \frac{1}{\partial CMg / \partial q} = \frac{1}{C_{qq}} &gt; 0$$</p>
+<p>La oferta es creciente en el precio — la ley de la oferta — con magnitud inversamente proporcional a la pendiente del costo marginal.</p>
+<p>$$\frac{\partial q^*}{\partial w_i} = -\frac{C_{qw_i}}{C_{qq}}$$</p>
+<p>El signo depende de $C_{qw_i} = \partial CMg / \partial w_i$: si el insumo $i$ es más utilizado en los niveles de producción altos (insumo &ldquo;variable&rdquo;), un alza en $w_i$ eleva el CMg y reduce $q^*$.</p>
+<h3 id="52-la-ley-del-insumo-demandado">5.2 La ley del insumo demandado<a hidden class="anchor" aria-hidden="true" href="#52-la-ley-del-insumo-demandado">#</a></h3>
+<p>De la convexidad de $\pi$ en $(p, \mathbf{w})$ y el lema de Hotelling:</p>
+<p>$$\frac{\partial z_i}{\partial w_i} = -\frac{\partial^2 \pi}{\partial w_i^2} \leq 0$$</p>
+<p>La demanda incondicional de cada insumo es no creciente en su propio precio — <strong>ley de la demanda del insumo</strong>. Es la contraparte productiva de la ley de la demanda del consumidor, y se deriva directamente de la convexidad de la función de beneficios.</p>
+<h3 id="53-simetría-de-efectos-cruzados">5.3 Simetría de efectos cruzados<a hidden class="anchor" aria-hidden="true" href="#53-simetría-de-efectos-cruzados">#</a></h3>
+<p>De la convexidad de $\pi$:</p>
+<p>$$\frac{\partial z_i}{\partial w_j} = -\frac{\partial^2 \pi}{\partial w_i \partial w_j} = \frac{\partial z_j}{\partial w_i}$$</p>
+<p>Los efectos cruzados sobre la demanda de insumos son simétricos — análogo exacto de la simetría de la matriz de Slutsky.</p>
+<hr>
+<h2 id="6-oferta-agregada">6. Oferta agregada<a hidden class="anchor" aria-hidden="true" href="#6-oferta-agregada">#</a></h2>
+<p>La <strong>oferta de mercado</strong> es la suma horizontal de las ofertas individuales de las $H$ firmas:</p>
+<p>$$Q^S(p, \mathbf{w}) = \sum_{h=1}^H q_h^*(p, \mathbf{w})$$</p>
+<p>En el largo plazo con libre entrada, el número de firmas es endógeno. Si todas las firmas son idénticas con costo mínimo $\bar{p}$, la oferta de largo plazo es perfectamente elástica a $p = \bar{p}$ — el precio iguala el mínimo de la curva de costo medio de largo plazo. En el corto plazo con factores fijos, la oferta tiene pendiente positiva finita.</p>
+<p>La <strong>elasticidad-precio de la oferta</strong> es:</p>
+<p>$$\varepsilon_S = \frac{\partial Q^S}{\partial p} \cdot \frac{p}{Q^S} = \frac{p}{Q^S \cdot C_{qq}}$$</p>
+<p>Es más alta cuando el costo marginal es poco sensible a cambios en la cantidad (tecnologías más flexibles) y en el largo plazo respecto al corto (mayor capacidad de ajuste).</p>
+<hr>
+<h2 id="7-funciones-específicas-resumen">7. Funciones específicas: resumen<a hidden class="anchor" aria-hidden="true" href="#7-funciones-específicas-resumen">#</a></h2>
+<p>Con <strong>Cobb-Douglas</strong> $f = z_1^\alpha z_2^\beta$ con $\alpha + \beta &lt; 1$ (RDE):</p>
+<ul>
+<li>Demanda condicional: $z_i(\mathbf{w}, q) = A_i(\alpha, \beta, w_1, w_2) \cdot q^{1/(\alpha+\beta)}$.</li>
+<li>Función de costos: $C(\mathbf{w}, q) = B(\alpha, \beta) \cdot w_1^{\alpha/(\alpha+\beta)} w_2^{\beta/(\alpha+\beta)} \cdot q^{1/(\alpha+\beta)}$.</li>
+<li>Elasticidad costo-producto: $1/(\alpha+\beta) &gt; 1$ con RDE.</li>
+</ul>
+<p>Con <strong>Leontief</strong> $f = \min{z_1/a, z_2/b}$:</p>
+<ul>
+<li>Demandas condicionales: $z_1 = aq$, $z_2 = bq$ — proporciones fijas independientes de precios.</li>
+<li>Función de costos: $C(\mathbf{w}, q) = (aw_1 + bw_2)q$ — lineal en $q$.</li>
+</ul>
+<p>Con <strong>CES</strong> $f = [\alpha z_1^\rho + (1-\alpha)z_2^\rho]^{1/\rho}$:</p>
+<ul>
+<li>Función de costos: $C(\mathbf{w}, q) = [\alpha^{\sigma} w_1^{1-\sigma} + (1-\alpha)^{\sigma} w_2^{1-\sigma}]^{1/(1-\sigma)} \cdot q$.</li>
+<li>Demanda condicional: $z_i \propto (w_i/p_i)^{-\sigma} q$.</li>
+</ul>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+<li>Nicholson, W. (2008). <em>Teoría Microeconómica</em>. Cengage Learning.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford University Press. Caps. 5–6.</li>
+<li>Shephard, R.W. (1953). <em>Cost and Production Functions</em>. Princeton University Press.</li>
+<li>Hotelling, H. (1932). <em>Edgeworth&rsquo;s Taxation Paradox and the Nature of Demand and Supply Functions</em>. JPE.</li>
+<li>Varian, H. (1992). <em>Microeconomic Analysis</em>. 3ra ed. Norton.</li>
+<li>Levin, J. &amp; Milgrom, P. (2004). <em>Producer Theory</em>. Stanford lecture notes.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/producci%C3%B3n/">Producción</a></li>
+      <li><a href="http://localhost:4459/tags/costos/">Costos</a></li>
+      <li><a href="http://localhost:4459/tags/oferta/">Oferta</a></li>
+      <li><a href="http://localhost:4459/tags/dualidad/">Dualidad</a></li>
+      <li><a href="http://localhost:4459/tags/shephard/">Shephard</a></li>
+      <li><a href="http://localhost:4459/tags/hotelling/">Hotelling</a></li>
+      <li><a href="http://localhost:4459/tags/eae2110/">EAE2110</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/micro/07_juegos/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Teoría de juegos</span>
+    <span>Teoría de Juegos</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/macro/12_tcr/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Tipo de cambio real</span>
+    <span>Tipo de Cambio Real</span>
   </a>
 </nav>
 

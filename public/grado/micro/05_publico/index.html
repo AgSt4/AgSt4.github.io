@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Bienes públicos y externalidades | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Bienes públicos y externalidades - Agustín Sandoval Tapia">
+<title>Bienes Públicos y Externalidades | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, externalidades, bienes públicos, Pigou, Coase, Samuelson, Lindahl, EAE2110">
+<meta name="description" content="Externalidades: ineficiencia de mercado, impuesto pigouviano, teorema de Coase. Bienes públicos: no-rivalidad y no-excludabilidad, problema del free rider, condición de Samuelson y equilibrio de Lindahl.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/05_publico/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,21 +135,300 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Bienes públicos y externalidades
+      Bienes Públicos y Externalidades
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Externalidades: ineficiencia de mercado, impuesto pigouviano, teorema de Coase. Bienes públicos: no-rivalidad y no-excludabilidad, problema del free rider, condición de Samuelson y equilibrio de Lindahl.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>15 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía I (EAE2110) · <strong>Profesora:</strong> María Luisa Vergara<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Mas-Colell, Whinston &amp; Green (1995) cap. 11 · Pigou (1920) · Coase (1960) · Samuelson (1954)</p>
+<hr>
+<h2 id="1-las-fallas-de-mercado-como-punto-de-partida">1. Las fallas de mercado como punto de partida<a hidden class="anchor" aria-hidden="true" href="#1-las-fallas-de-mercado-como-punto-de-partida">#</a></h2>
+<p>El primer teorema del bienestar establece que el equilibrio competitivo es Pareto eficiente. Los bienes públicos y las externalidades son las dos categorías más importantes de <strong>falla de mercado</strong> que quiebran este resultado: en su presencia, el equilibrio de mercado no maximiza el bienestar social porque los precios no capturan todos los costos y beneficios relevantes.</p>
+<p>Las externalidades y los bienes públicos son típicamente consistentes con la existencia del equilibrio general. Asumiendo continuidad, convexidad y la ley de Walras, el equilibrio general competitivo existirá bajo los supuestos usuales. El problema es con la eficiencia. En presencia de externalidades o bienes públicos, una asignación de equilibrio general puede no ser Pareto eficiente. Porque las externalidades y bienes públicos son típicamente asignados por mecanismos no-mercado, no hay razón para esperar que la asignación de equilibrio sea Pareto eficiente.</p>
+<hr>
+<h2 id="2-externalidades">2. Externalidades<a hidden class="anchor" aria-hidden="true" href="#2-externalidades">#</a></h2>
+<h3 id="21-definición-y-taxonomía">2.1 Definición y taxonomía<a hidden class="anchor" aria-hidden="true" href="#21-definición-y-taxonomía">#</a></h3>
+<p>Una <strong>externalidad</strong> existe cuando la acción de un agente afecta directamente el bienestar o las posibilidades de producción de otro agente, sin que esta afectación esté mediada por el sistema de precios. El elemento crucial es que el efecto no está incorporado en el precio de equilibrio.</p>
+<p>Taxonomía:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Dirección</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Negativa de producción</strong></td>
+          <td>Empresa → tercero</td>
+          <td>Planta química contamina río aguas abajo</td>
+      </tr>
+      <tr>
+          <td><strong>Positiva de producción</strong></td>
+          <td>Empresa → tercero</td>
+          <td>Apicultor beneficia a granjero vecino</td>
+      </tr>
+      <tr>
+          <td><strong>Negativa de consumo</strong></td>
+          <td>Consumidor → tercero</td>
+          <td>Fumador en espacio público</td>
+      </tr>
+      <tr>
+          <td><strong>Positiva de consumo</strong></td>
+          <td>Consumidor → tercero</td>
+          <td>Propietario cuida su jardín y mejora el vecindario</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="22-la-ineficiencia-de-mercado-con-externalidades">2.2 La ineficiencia de mercado con externalidades<a hidden class="anchor" aria-hidden="true" href="#22-la-ineficiencia-de-mercado-con-externalidades">#</a></h3>
+<p><strong>Caso: externalidad negativa de producción</strong></p>
+<p>Una firma produce $q$ generando un costo externo $d(q)$ sobre terceros. El mercado competitivo iguala precio a costo marginal privado:</p>
+<p>$$p = CMgP(q^M)$$</p>
+<p>El óptimo social iguala precio a costo marginal social:</p>
+<p>$$p = CMgS(q^<em>) = CMgP(q^</em>) + d&rsquo;(q^*)$$</p>
+<p>Como $d&rsquo;(q) &gt; 0$, se tiene $CMgS &gt; CMgP$ para cualquier $q &gt; 0$, lo que implica $q^M &gt; q^*$: el mercado produce en exceso relativo al óptimo social.</p>
+<p>El mercado determina $Q^M$ tal que el costo marginal privado iguala el beneficio marginal privado. Pero este resultado no es Pareto eficiente porque ignora el costo marginal del daño. El nivel cero de contaminación no es necesariamente deseable — lo óptimo es internalizar el daño, no eliminarlo.</p>
+<p>La pérdida irrecuperable es el área entre $CMgS$ y $CMgP$ para las unidades $[q^*, q^M]$ — el exceso de costo social sobre beneficio social en ese rango de producción.</p>
+<p><strong>Caso: externalidad positiva de consumo</strong></p>
+<p>Un agente genera un beneficio externo $b(q)$ al consumir $q$. El mercado iguala su beneficio marginal privado al precio, sin considerar el beneficio que genera a terceros. La cantidad de mercado $q^M &lt; q^*$ — subprovisión. El precio implícito del bien es demasiado alto relativo al costo marginal social.</p>
+<h3 id="23-el-impuesto-pigouviano">2.3 El impuesto pigouviano<a hidden class="anchor" aria-hidden="true" href="#23-el-impuesto-pigouviano">#</a></h3>
+<p>Pigou (1920) abogó por impuestos iguales al daño marginal sobre bienes producidos y consumidos que involucran externalidades negativas.</p>
+<p>El <strong>impuesto pigouviano</strong> $t$ corrige la externalidad haciendo que el agente privado internalice el costo (o beneficio) externo. Para una externalidad negativa, el impuesto óptimo se fija igual al daño marginal en el óptimo:</p>
+<p>$$t^* = d&rsquo;(q^<em>) = CMgS(q^</em>) - CMgP(q^*)$$</p>
+<p>Con este impuesto, la condición de optimización privada $p = CMgP(q) + t$ coincide con la condición social $p = CMgS(q)$. La firma internaliza el costo externo que impone sobre terceros.</p>
+<p>Para una externalidad positiva, el instrumento análogo es un <strong>subsidio pigouviano</strong> $s^* = b&rsquo;(q^*)$: reducir el precio efectivo que enfrenta el agente para inducir mayor provisión.</p>
+<p><strong>Limitaciones del enfoque pigouviano:</strong></p>
+<p>Para implementar el impuesto pigouviano se necesita conocer las formas de la curva de beneficio marginal, del costo marginal privado y del daño marginal. La medición del daño marginal es especialmente problemática porque no se puede usar preferencias reveladas — no hay mercado, que es precisamente por qué existe la externalidad.</p>
+<p>Adicionalmente, el impuesto pigouviano no provee incentivo para instalar tecnologías de reducción — la firma simplemente paga el impuesto por cada unidad producida. En equilibrio es de segundo mejor porque no incentiva la adopción de tecnologías que reducen el daño por unidad producida.</p>
+<h3 id="24-regulación-por-cantidad-estándares-y-permisos-transables">2.4 Regulación por cantidad: estándares y permisos transables<a hidden class="anchor" aria-hidden="true" href="#24-regulación-por-cantidad-estándares-y-permisos-transables">#</a></h3>
+<p>Alternativa al precio pigouviano: el regulador fija directamente la cantidad de externalidad permitida.</p>
+<p><strong>Estándar de emisión:</strong> límite directo sobre la cantidad de contaminación. Garantiza el objetivo cuantitativo pero no asegura que se alcance al menor costo social — distintas firmas tienen costos marginales de abatimiento diferentes.</p>
+<p><strong>Permisos transables (cap-and-trade):</strong> si se puede crear el mercado faltante, ese mercado implementará el nivel óptimo de la externalidad. El gobierno crea un mercado para el derecho a contaminar, y una vez creado el mercado faltante, el mercado funciona de forma que la asignación de equilibrio es Pareto eficiente.</p>
+<p>El sistema de permisos crea la eficiencia del impuesto pigouviano pero con la ventaja de garantizar la cantidad total de emisiones (el &ldquo;cap&rdquo;). Las firmas con costos de abatimiento bajos reducen emisiones y venden permisos; las de costos altos compran permisos. El equilibrio iguala los costos marginales de abatimiento entre todas las firmas — condición de eficiencia.</p>
+<h3 id="25-el-teorema-de-coase">2.5 El teorema de Coase<a hidden class="anchor" aria-hidden="true" href="#25-el-teorema-de-coase">#</a></h3>
+<p>Coase (1960) argumentó que el problema de las externalidades es fundamentalmente un problema de derechos de propiedad mal definidos — no de fallas de mercado que requieren intervención.</p>
+<p><strong>Teorema de Coase (versión eficiencia):</strong> si los derechos de propiedad están claramente asignados y los costos de transacción son cero, las partes negociarán de forma que se alcanza el nivel óptimo de la externalidad, independientemente de quién reciba los derechos.</p>
+<p><strong>Teorema de Coase (versión invarianza):</strong> La asignación eficiente es la misma sin importar si los derechos se asignan a la víctima o al generador de la externalidad — solo cambia la distribución del ingreso.</p>
+<p><strong>Ilustración con dos agentes:</strong></p>
+<p>Firma genera contaminación $h$ que daña al consumidor. El óptimo social es $h^*$ que maximiza el excedente conjunto $\pi(h) + v(-h)$, donde $\pi$ son los beneficios de la firma y $v$ la utilidad del consumidor.</p>
+<ul>
+<li>Si el consumidor tiene derecho a un ambiente sin contaminación: la firma ofrece compensación por contaminar. Negocian hasta $h^*$ donde la ganancia marginal de la firma iguala el daño marginal al consumidor.</li>
+<li>Si la firma tiene derecho a contaminar libremente: el consumidor paga a la firma para que reduzca la contaminación. Negocian hasta $h^*$ donde el ahorro en daño del consumidor iguala el costo de oportunidad de la firma.</li>
+</ul>
+<p>En ambos casos, $h^*$ es el resultado — la eficiencia es invariante a la asignación de derechos.</p>
+<p><strong>Limitaciones del teorema de Coase:</strong></p>
+<p>Para ser lógicamente correcto se necesitan supuestos restrictivos. Primero, los efectos secundarios deben ser bilaterales — aplica a casos que Coase investigó (ganado pisotea campos de un granjero, un edificio bloquea luz solar). No aplica a la contaminación en general donde hay múltiples víctimas.</p>
+<p>Las limitaciones prácticas principales son:</p>
+<ul>
+<li><strong>Costos de transacción positivos:</strong> identificar a las partes, negociar y hacer cumplir el acuerdo tiene costos que pueden superar los beneficios.</li>
+<li><strong>Múltiples partes:</strong> con muchos afectados, el problema del free rider emerge en la negociación — cada víctima espera que otros paguen.</li>
+<li><strong>Problema del hold-up:</strong> una vez que otras partes han aceptado, la última puede exigir más compensación.</li>
+<li><strong>Asimetría de información:</strong> las partes pueden mentir sobre la magnitud del daño o el beneficio.</li>
+</ul>
+<p>El propio Coase escribió que mientras lo que se conoció como el teorema de Coase exploró las implicancias de costos de transacción cero, su intención real era usar ese constructo como trampolín para entender el mundo real de costos de transacción positivos, corporaciones, sistemas legales y acciones gubernamentales.</p>
+<h3 id="26-la-externalidad-como-mercado-faltante">2.6 La externalidad como mercado faltante<a hidden class="anchor" aria-hidden="true" href="#26-la-externalidad-como-mercado-faltante">#</a></h3>
+<p>El problema de externalidades es frecuentemente llamado un problema de &ldquo;mercado faltante&rdquo;. Si el mercado faltante se puede crear, ese mercado implementará el nivel óptimo de la externalidad.</p>
+<p>Esta perspectiva unifica las soluciones: el impuesto pigouviano crea el precio que el mercado faltante habría generado; el permiso transable crea directamente el mercado faltante; la solución de Coase negocia directamente los derechos que ese mercado asignaría. La raíz del problema es que los derechos de propiedad sobre el bien ambiental no están asignados — ningún agente puede cobrar por su uso.</p>
+<hr>
+<h2 id="3-bienes-públicos">3. Bienes públicos<a hidden class="anchor" aria-hidden="true" href="#3-bienes-públicos">#</a></h2>
+<h3 id="31-definición-y-clasificación">3.1 Definición y clasificación<a hidden class="anchor" aria-hidden="true" href="#31-definición-y-clasificación">#</a></h3>
+<p>Un <strong>bien público</strong> se define por dos propiedades técnicas:</p>
+<ul>
+<li><strong>No-rivalidad:</strong> el consumo del bien por un individuo no reduce la cantidad disponible para otros. La utilidad marginal de proveer el bien a un consumidor adicional es cero — el costo marginal de servir a un consumidor adicional es cero.</li>
+<li><strong>No-excludabilidad:</strong> es imposible (o prohibitivamente costoso) excluir a individuos del consumo del bien una vez provisto.</li>
+</ul>
+<p>La defensa nacional es un bien público: provee beneficios a todos los residentes de un país, es no-excluyente porque no puedes excluir a una persona de ser protegida por el ejército, y es no-rival porque el consumo de una persona no disminuye la efectividad de la defensa para otros.</p>
+<p>La clasificación completa de bienes:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th><strong>Rival</strong></th>
+          <th><strong>No-rival</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Excluible</strong></td>
+          <td>Bien privado (alimento, ropa)</td>
+          <td>Bien de club (streaming, peaje)</td>
+      </tr>
+      <tr>
+          <td><strong>No-excluible</strong></td>
+          <td>Bien común (pesca, congestión)</td>
+          <td>Bien público puro (defensa, faro)</td>
+      </tr>
+  </tbody>
+</table>
+<p>Los bienes de club son no-rivales hasta el punto de congestión. Los bienes comunes son rivales pero no-excluibles — la &ldquo;tragedia de los comunes&rdquo; surge de la sobreexplotación.</p>
+<h3 id="32-el-problema-del-free-rider">3.2 El problema del free rider<a hidden class="anchor" aria-hidden="true" href="#32-el-problema-del-free-rider">#</a></h3>
+<p>Ningún grupo voluntariamente pagaría por el bien público. Pueden acceder al bien público incluso si no contribuyen — este es el equilibrio Nash. No es Pareto eficiente. El resultado de mercado lleva a la subprovisión del bien público.</p>
+<p>El problema del free rider puede formalizarse como un dilema del prisionero. Dos agentes deben decidir si contribuyen $c$ al bien público que genera beneficio $b &gt; c$ para cada uno:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Contribuye</th>
+          <th>No contribuye</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Contribuye</strong></td>
+          <td>$(b-c, b-c)$</td>
+          <td>$(-c, b)$</td>
+      </tr>
+      <tr>
+          <td><strong>No contribuye</strong></td>
+          <td>$(b, -c)$</td>
+          <td>$(0, 0)$</td>
+      </tr>
+  </tbody>
+</table>
+<p>Si $b &gt; c$ pero $b - c &lt; b$ (es decir, siempre), la estrategia dominante para cada agente es no contribuir — esperando que el otro provea el bien. El equilibrio Nash es $(0,0)$, que es Pareto-inferior a $(b-c, b-c)$.</p>
+<p>La severidad del problema del free rider aumenta con el número de agentes: mientras más agentes haya, menor es la probabilidad de que cada uno sea pivotal, y mayor la tentación de esperar la contribución de los demás.</p>
+<p>La condición de Samuelson para la provisión óptima de bienes públicos no se cumple debido al free riding. Los modelos de teoría de juegos (dilema del prisionero) ilustran cómo los incentivos individuales llevan a resultados colectivos subóptimos. El grado de subprovisión está influenciado por el número de potenciales beneficiarios, el costo de provisión y el valor percibido del bien público.</p>
+<h3 id="33-la-condición-de-samuelson">3.3 La condición de Samuelson<a hidden class="anchor" aria-hidden="true" href="#33-la-condición-de-samuelson">#</a></h3>
+<p>¿Cuál es el nivel óptimo de provisión de un bien público? Samuelson (1954) derivó la condición de eficiencia para una economía con $I$ consumidores y un bien público $G$ cuya provisión cuesta $c(G)$.</p>
+<p>Con utilidades $U^i(x^i, G)$ y restricción de recursos $\sum_i x^i + c(G) = \bar{\omega}$, el planificador social maximiza el bienestar. Las condiciones de primer orden dan la <strong>condición de Samuelson</strong>:</p>
+<p>$$\sum_{i=1}^I TMS^i_{Gx} = TMT_{Gx} = c&rsquo;(G)$$</p>
+<p>La suma de las tasas marginales de sustitución entre el bien público y el privado debe igualar el costo marginal de provisión. Esta es la regla de eficiencia del bien público: a diferencia del bien privado donde $TMS^i = p$ para cada $i$, el bien público requiere que la suma de todas las TMS individuales iguale el costo marginal.</p>
+<p>La intuición es que el bien público es consumido simultáneamente por todos los agentes, por lo que el beneficio marginal social de una unidad adicional es la suma de los beneficios marginales individuales — no el máximo ni el promedio, sino la suma.</p>
+<h3 id="34-el-equilibrio-de-lindahl">3.4 El equilibrio de Lindahl<a hidden class="anchor" aria-hidden="true" href="#34-el-equilibrio-de-lindahl">#</a></h3>
+<p>El equilibrio de Lindahl implementa la condición de Samuelson mediante <strong>precios personalizados</strong> para el bien público. La participación fiscal de cada agente en el costo del bien público se convierte en su precio individualizado. El equilibrio es el conjunto de precios tal que todas las personas demandan el mismo nivel del bien público.</p>
+<p>Formalmente, asignar a cada agente $i$ una participación $\tau^i$ en el costo tal que $\sum_i \tau^i = 1$. El agente $i$ elige $G$ para maximizar $U^i(x^i, G)$ sujeto a $x^i + \tau^i G = \omega^i$. El <strong>equilibrio de Lindahl</strong> es el par $(\tau^<em>, G^</em>)$ tal que todos los agentes demandan $G^<em>$ a las participaciones $\tau^</em>$.</p>
+<p>El equilibrio de Lindahl resulta ser que implementa la asignación Pareto óptima del bien público.  En equilibrio, $\tau^{<em>i} = TMS^i_{Gx} / c&rsquo;(G^</em>)$ — la participación de cada agente es proporcional a su valoración marginal, y la condición de Samuelson se cumple automáticamente.</p>
+<p><strong>El problema de implementación:</strong> la diferencia clave entre los equilibrios de Lindahl y los estándar es que no existe mecanismo descentralizado para llegar a los precios — no hay fuerzas de mercado. Cada agente tiene interés en fingir que valora poco el bien público para pagar menos. Cada agente tiene incentivos a revelar estratégicamente sus preferencias.</p>
+<p>Este es el <strong>problema de revelación de preferencias</strong>: para calcular los precios de Lindahl se necesita conocer $TMS^i$ de cada agente, pero los agentes tienen incentivos a subreportar su valoración.</p>
+<h3 id="35-mecanismos-de-revelación-y-provisión-privada">3.5 Mecanismos de revelación y provisión privada<a hidden class="anchor" aria-hidden="true" href="#35-mecanismos-de-revelación-y-provisión-privada">#</a></h3>
+<p>Se han propuesto distintos mecanismos para resolver el problema de revelación:</p>
+<p><strong>Mecanismo de Clarke-Groves (mecanismo VCG):</strong> diseñado para incentivar la revelación veraz. Cada agente reporta su valoración y paga un &ldquo;impuesto de Clarke&rdquo; igual al daño que impone sobre los demás. Bajo este mecanismo, reportar verazmente es la estrategia dominante. El costo es que el mecanismo puede no ser presupuestalmente balanceado — el recaudador puede tener superávit o déficit.</p>
+<p><strong>Provisión voluntaria privada:</strong> los agentes contribuyen voluntariamente al bien público. El resultado de Nash de este juego de contribuciones es subóptimo. Sin embargo, con suficiente heterogeneidad y preferencias altruistas, la subprovisión puede ser moderada. El modelo de &ldquo;warm glow&rdquo; de Andreoni (1990) — ahora visto como el modelo central de contribuciones caritativas — muestra que los agentes pueden derivar utilidad directa del acto de dar, no solo del nivel total del bien público.</p>
+<p><strong>Crowdfunding como solución coasiana:</strong> uno de los mecanismos coasianos más puros hoy es el crowdfunding en internet, donde las reglas son ejecutadas por algoritmos computacionales y contratos legales. En Kickstarter, cada financiador autoriza un cargo de tarjeta de crédito pero no se transfiere dinero hasta que se alcanza la meta de financiamiento. La automatización y el internet reducen enormemente los costos de transacción para agregar recursos.</p>
+<hr>
+<h2 id="4-políticas-públicas-en-presencia-de-externalidades-y-bienes-públicos">4. Políticas públicas en presencia de externalidades y bienes públicos<a hidden class="anchor" aria-hidden="true" href="#4-políticas-públicas-en-presencia-de-externalidades-y-bienes-públicos">#</a></h2>
+<h3 id="41-el-menú-de-instrumentos">4.1 El menú de instrumentos<a hidden class="anchor" aria-hidden="true" href="#41-el-menú-de-instrumentos">#</a></h3>
+<p>Para externalidades negativas, los instrumentos disponibles se ordenan por su relación con el sistema de precios:</p>
+<p><strong>Instrumentos de precio:</strong></p>
+<ul>
+<li>Impuesto pigouviano: correcto en teoría, difícil de calibrar.</li>
+<li>Subsidio a la reducción: equivalente al impuesto en incentivos pero con distribución diferente.</li>
+</ul>
+<p><strong>Instrumentos de cantidad:</strong></p>
+<ul>
+<li>Estándares de emisión: garantizan el objetivo pero son ineficientes si los costos difieren entre firmas.</li>
+<li>Permisos transables: combinan certeza sobre la cantidad con eficiencia distributiva.</li>
+</ul>
+<p><strong>Asignación de derechos:</strong></p>
+<ul>
+<li>Solución coasiana: eficiente si los costos de transacción son bajos y las partes son pocas.</li>
+</ul>
+<p>Para bienes públicos:</p>
+<ul>
+<li>Provisión pública directa con financiamiento tributario.</li>
+<li>Subsidios a la provisión privada (internaliza la externalidad positiva).</li>
+<li>Mecanismos de revelación de preferencias.</li>
+<li>Regulación de bienes comunes (cuotas de pesca, licencias de extracción).</li>
+</ul>
+<h3 id="42-la-comparación-precio-vs-cantidad-bajo-incertidumbre">4.2 La comparación precio vs. cantidad bajo incertidumbre<a hidden class="anchor" aria-hidden="true" href="#42-la-comparación-precio-vs-cantidad-bajo-incertidumbre">#</a></h3>
+<p>Weitzman (1974) demostró que bajo incertidumbre sobre los costos de abatimiento, la elección entre instrumentos de precio (impuesto) y cantidad (permiso) depende de la forma de las curvas de beneficio y costo marginales:</p>
+<ul>
+<li>Si la curva de beneficio marginal es más plana que la de costo marginal: los instrumentos de precio son superiores — el error en la cantidad tiene costo pequeño pero el error en el precio tiene costo grande.</li>
+<li>Si la curva de beneficio marginal es más inclinada: los instrumentos de cantidad son superiores.</li>
+</ul>
+<p>Para el cambio climático, la curva de daño marginal es relativamente plana en el corto plazo pero se vuelve muy inclinada cerca de los umbrales críticos — lo que sugiere preferir instrumentos de cantidad (compromisos de emisiones) cuando hay riesgo de cruzar umbrales irreversibles.</p>
+<h3 id="43-el-problema-de-doble-dividendo">4.3 El problema de doble dividendo<a hidden class="anchor" aria-hidden="true" href="#43-el-problema-de-doble-dividendo">#</a></h3>
+<p>El impuesto pigouviano genera ingresos fiscales que pueden usarse para reducir otros impuestos distorsionadores. La hipótesis del <strong>doble dividendo</strong> sugiere que el impuesto ambiental puede mejorar el bienestar por dos vías: corregir la externalidad (primer dividendo) y permitir reducir la distorsión de otros impuestos (segundo dividendo).</p>
+<p>La evidencia empírica es mixta: el doble dividendo en su forma fuerte (los beneficios del segundo dividendo superan los costos de eficiencia del impuesto ambiental) generalmente no se sostiene, pero la forma débil (el impuesto ambiental es menos costoso que otros impuestos que recaudan lo mismo) sí tiene apoyo.</p>
+<hr>
+<h2 id="5-síntesis-fallas-de-mercado-y-sus-correcciones">5. Síntesis: fallas de mercado y sus correcciones<a hidden class="anchor" aria-hidden="true" href="#5-síntesis-fallas-de-mercado-y-sus-correcciones">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Falla</th>
+          <th>Causa</th>
+          <th>Consecuencia de mercado</th>
+          <th>Instrumento corrector</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Externalidad negativa</strong></td>
+          <td>Precio &lt; costo social</td>
+          <td>Sobreproducción</td>
+          <td>Impuesto pigouviano, permiso transable</td>
+      </tr>
+      <tr>
+          <td><strong>Externalidad positiva</strong></td>
+          <td>Precio &gt; beneficio social</td>
+          <td>Subproducción</td>
+          <td>Subsidio pigouviano</td>
+      </tr>
+      <tr>
+          <td><strong>Bien público</strong></td>
+          <td>No-rivalidad + no-excludabilidad</td>
+          <td>Subprovisión, free rider</td>
+          <td>Provisión pública, subsidio, mecanismo VCG</td>
+      </tr>
+      <tr>
+          <td><strong>Bien común</strong></td>
+          <td>Rivalidad + no-excludabilidad</td>
+          <td>Sobreexplotación</td>
+          <td>Cuotas, derechos de propiedad privada</td>
+      </tr>
+      <tr>
+          <td><strong>Derechos mal definidos</strong></td>
+          <td>Costos de transacción altos</td>
+          <td>Externalidades no internalizadas</td>
+          <td>Asignación clara de derechos (Coase)</td>
+      </tr>
+  </tbody>
+</table>
+<p>El análisis de bienes públicos y externalidades cierra el círculo de la microeconomía de primer año: los mercados son eficientes cuando los precios reflejan completamente los costos y beneficios sociales; cuando no lo hacen, la intervención puede mejorar el bienestar — pero el diseño del instrumento corrector requiere información que el propio problema de la falla de mercado hace difícil obtener.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Pigou, A.C. (1920). <em>The Economics of Welfare</em>. Macmillan.</li>
+<li>Coase, R. (1960). <em>The Problem of Social Cost</em>. Journal of Law and Economics.</li>
+<li>Samuelson, P. (1954). <em>The Pure Theory of Public Expenditure</em>. REStat.</li>
+<li>Lindahl, E. (1919). <em>Just Taxation — A Positive Solution</em>. En Musgrave &amp; Peacock (eds.).</li>
+<li>Weitzman, M. (1974). <em>Prices vs. Quantities</em>. RES.</li>
+<li>Andreoni, J. (1990). <em>Impure Altruism and Donations to Public Goods</em>. EJ.</li>
+<li>Greenwald, B. &amp; Stiglitz, J. (1986). <em>Externalities in Economies with Imperfect Information</em>. QJE.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford. Cap. 11.</li>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/externalidades/">Externalidades</a></li>
+      <li><a href="http://localhost:4459/tags/bienes-p%C3%BAblicos/">Bienes Públicos</a></li>
+      <li><a href="http://localhost:4459/tags/pigou/">Pigou</a></li>
+      <li><a href="http://localhost:4459/tags/coase/">Coase</a></li>
+      <li><a href="http://localhost:4459/tags/samuelson/">Samuelson</a></li>
+      <li><a href="http://localhost:4459/tags/lindahl/">Lindahl</a></li>
+      <li><a href="http://localhost:4459/tags/eae2110/">EAE2110</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:4459/grado/macro/01_crecimiento/">
+    <span class="title">« Anterior</span>
+    <br>
+    <span>Crecimiento Económico</span>
+  </a>
   <a class="next" href="http://localhost:4459/grado/macro/03_ahorro_consumo/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Consumo y ahorro</span>
+    <span>Consumo y Ahorro</span>
   </a>
 </nav>
 

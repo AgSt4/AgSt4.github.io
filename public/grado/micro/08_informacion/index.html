@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Información asimétrica | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Información asimétrica - Agustín Sandoval Tapia">
+<title>Información Asimétrica | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, información asimétrica, riesgo moral, selección adversa, señalización, principal-agente, EAE2120">
+<meta name="description" content="El problema principal-agente, riesgo moral con modelos discretos y continuos, selección adversa y el mercado de limones, autoselección y screening, señalización de Spence.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/08_informacion/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,15 +135,250 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Información asimétrica
+      Información Asimétrica
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      El problema principal-agente, riesgo moral con modelos discretos y continuos, selección adversa y el mercado de limones, autoselección y screening, señalización de Spence.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>14 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía II (EAE2120)<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Mas-Colell, Whinston &amp; Green (1995) caps. 13–14 · Laffont &amp; Martimort (2002)</p>
+<hr>
+<h2 id="1-la-taxonomía-de-la-información-asimétrica">1. La taxonomía de la información asimétrica<a hidden class="anchor" aria-hidden="true" href="#1-la-taxonomía-de-la-información-asimétrica">#</a></h2>
+<p>La información asimétrica emerge cuando los agentes en una transacción tienen distintos conjuntos de información relevante. El objetivo de la literatura principal-agente es analizar situaciones en que un contrato se firma bajo información asimétrica: cuando una parte conoce cosas relevantes que la otra ignora.</p>
+<p>La taxonomía estándar organiza los problemas según el <strong>timing</strong> de la asimetría:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Problema</th>
+          <th>Timing</th>
+          <th>Información oculta</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Selección adversa</strong></td>
+          <td>Pre-contractual</td>
+          <td>Tipo del agente</td>
+          <td>Vendedor conoce calidad del auto</td>
+      </tr>
+      <tr>
+          <td><strong>Riesgo moral</strong></td>
+          <td>Post-contractual</td>
+          <td>Acción del agente</td>
+          <td>Asegurado controla nivel de cuidado</td>
+      </tr>
+      <tr>
+          <td><strong>Señalización</strong></td>
+          <td>Pre-contractual (agente actúa)</td>
+          <td>Tipo del agente</td>
+          <td>Educación como señal de habilidad</td>
+      </tr>
+      <tr>
+          <td><strong>Screening</strong></td>
+          <td>Pre-contractual (principal actúa)</td>
+          <td>Tipo del agente</td>
+          <td>Menú de contratos para autoselección</td>
+      </tr>
+  </tbody>
+</table>
+<p>En teoría moderna de contratos, la &ldquo;selección adversa&rdquo; caracteriza modelos principal-agente en que el agente tiene información privada antes de que se firme el contrato. El &ldquo;riesgo moral&rdquo; caracteriza modelos donde hay información simétrica al momento de contratar — el agente puede volverse privadamente informado después.</p>
+<hr>
+<h2 id="2-el-problema-del-riesgo-moral">2. El problema del riesgo moral<a hidden class="anchor" aria-hidden="true" href="#2-el-problema-del-riesgo-moral">#</a></h2>
+<h3 id="21-el-marco-principal-agente">2.1 El marco principal-agente<a hidden class="anchor" aria-hidden="true" href="#21-el-marco-principal-agente">#</a></h3>
+<p>El <strong>problema principal-agente</strong> modela una relación en que:</p>
+<ul>
+<li>El <strong>principal</strong> (empleador, asegurador, accionista) contrata al <strong>agente</strong> (empleado, asegurado, gerente).</li>
+<li>El agente toma una acción $a$ (esfuerzo) que afecta el resultado $x$.</li>
+<li>El principal observa $x$ pero no $a$ directamente.</li>
+<li>El agente soporta la desutilidad del esfuerzo $c(a)$.</li>
+</ul>
+<p>El resultado $x$ es estocástico: $x \sim F(x|a)$ con densidad $f(x|a)$. El principal diseña un contrato de pago $w(x)$ — salario contingente al output observado.</p>
+<p><strong>Benchmark: primer mejor (información perfecta)</strong></p>
+<p>Si el esfuerzo fuera observable y contractuable, el principal maximizaría el excedente conjunto eligiendo el esfuerzo eficiente $a^{FB}$ que maximiza $E[x|a] - c(a)$, y extraería toda la renta con un contrato de salario fijo.</p>
+<h3 id="22-modelo-discreto-dos-acciones-y-dos-resultados">2.2 Modelo discreto: dos acciones y dos resultados<a hidden class="anchor" aria-hidden="true" href="#22-modelo-discreto-dos-acciones-y-dos-resultados">#</a></h3>
+<p>El caso más simple ilustra la estructura esencial. El agente puede elegir esfuerzo alto $a_H$ o bajo $a_L$. El resultado puede ser $x_H$ (bueno) o $x_L$ (malo), con probabilidades $p_H &gt; p_L$ bajo esfuerzo alto y $q_H &lt; p_H$, $q_L &gt; p_L$ bajo esfuerzo bajo.</p>
+<p>El principal quiere implementar $a_H$. El contrato ${w_H, w_L}$ debe satisfacer:</p>
+<p><strong>Restricción de participación (IR):</strong> el agente prefiere aceptar el contrato a su reserva de utilidad $\bar{u}$:</p>
+<p>$$p_H u(w_H) + p_L u(w_L) - c_H \geq \bar{u}$$</p>
+<p><strong>Restricción de compatibilidad de incentivos (IC):</strong> el agente prefiere $a_H$ a $a_L$:</p>
+<p>$$p_H u(w_H) + p_L u(w_L) - c_H \geq q_H u(w_H) + q_L u(w_L) - c_L$$</p>
+<p>Simplificando la IC:</p>
+<p>$$(p_H - q_H)[u(w_H) - u(w_L)] \geq c_H - c_L$$</p>
+<p>La diferencia en pagos debe ser suficiente para que el incremento en probabilidad de $x_H$ bajo esfuerzo alto compense el mayor costo. La IC requiere <strong>dispersión salarial</strong> — $w_H &gt; w_L$ — para proveer incentivos.</p>
+<p><strong>El trade-off fundamental:</strong> el agente es averso al riesgo → prefiere $w_H = w_L$ (seguro completo). El principal quiere esfuerzo alto → necesita $w_H &gt; w_L$ (incentivos). Con información perfecta puede dar seguro completo e implementar $a^{FB}$; con información imperfecta debe sacrificar seguro para generar incentivos. Esta es la <strong>tensión entre aseguramiento e incentivos</strong> — el resultado central de la teoría de contratos.</p>
+<p>El contrato óptimo minimiza el costo de implementar $a_H$ sujeto a IR e IC. La solución tiene IR e IC ambas activas en el óptimo del principal con agente averso al riesgo:</p>
+<p>$$p_H u(w_H) + p_L u(w_L) - c_H = \bar{u} \quad \text{(IR activa)}$$</p>
+<p>$$(p_H - q_H)[u(w_H) - u(w_L)] = c_H - c_L \quad \text{(IC activa)}$$</p>
+<h3 id="23-modelo-continuo-el-approach-de-primer-orden">2.3 Modelo continuo: el approach de primer orden<a hidden class="anchor" aria-hidden="true" href="#23-modelo-continuo-el-approach-de-primer-orden">#</a></h3>
+<p>Con esfuerzo continuo $a \in [0, \bar{a}]$, el principal maximiza:</p>
+<p>$$\max_{w(\cdot), a} \int [x - w(x)] f(x|a) dx$$</p>
+<p>sujeto a IR: $\int u(w(x)) f(x|a) dx - c(a) \geq \bar{u}$</p>
+<p>y IC: $a \in \arg\max_{a&rsquo;} \int u(w(x)) f(x|a&rsquo;) dx - c(a&rsquo;)$</p>
+<p>La IC es una restricción global complicada. El <strong>approach de primer orden</strong> la reemplaza por su condición necesaria de primer orden:</p>
+<p>$$\int u(w(x)) f_a(x|a) dx = c&rsquo;(a)$$</p>
+<p>El contrato óptimo de segundo mejor (derivado por Mirrlees y Holmström) satisface la condición de pago punto a punto:</p>
+<p>$$\frac{1}{u&rsquo;(w^*(x))} = \lambda + \mu \frac{f_a(x|a)}{f(x|a)}$$</p>
+<p>donde $\lambda$ es el multiplicador de IR y $\mu$ es el multiplicador de IC. El término $f_a/f$ es la <strong>razón de verosimilitud</strong> — mide cuánto más probable es el resultado $x$ bajo esfuerzo alto relativo al bajo.</p>
+<p><strong>El principio de informatividad (Holmström, 1979):</strong> el salario óptimo es una función creciente de la razón de verosimilitud $f_a(x|a)/f(x|a)$. Una señal adicional $y$ debe incluirse en el contrato si y solo si es <strong>informativa</strong> sobre el esfuerzo del agente condicional en $x$ — es decir, si $y$ no es independiente de $a$ dado $x$.</p>
+<p>Corolarios del principio de informatividad:</p>
+<ul>
+<li><strong>Evaluación relativa:</strong> si los CEOs de distintas firmas enfrentan shocks comunes del sector, sus pagos deberían depender del desempeño relativo a sus pares — el shock común es una señal útil sobre el desempeño relativo.</li>
+<li><strong>Señales de largo plazo:</strong> si los esfuerzos hoy afectan las ganancias futuras, la compensación óptima debería incluir ganancias rezagadas.</li>
+</ul>
+<h3 id="24-riesgo-moral-en-el-mercado-de-seguros">2.4 Riesgo moral en el mercado de seguros<a hidden class="anchor" aria-hidden="true" href="#24-riesgo-moral-en-el-mercado-de-seguros">#</a></h3>
+<p>El riesgo moral surge cuando una parte, tras firmar el contrato, se comporta de forma diferente — usualmente más riesgosa — porque está protegida de las consecuencias de sus acciones. La aseguradora no puede monitorear perfectamente el comportamiento, llevando a toma de riesgo excesiva.</p>
+<p>El asegurado maximiza su utilidad esperada eligiendo nivel de cuidado $a$ (que reduce la probabilidad de siniestro). Con seguro completo $d = 1$, el asegurado no enfrenta ningún costo en el estado de pérdida — el nivel óptimo de cuidado privado es cero (mínimo). La aseguradora, anticipando esto, no puede ofrecer seguro completo a prima actuarialmente justa.</p>
+<p>La solución es el <strong>copago o deducible</strong>: el asegurado soporta parte del costo del siniestro, restaurando los incentivos para el cuidado. El copago óptimo balancea incentivos (mayor copago → más cuidado) contra seguro (mayor copago → más riesgo soportado por el asegurado). La cobertura de segundo mejor es estrictamente menor que uno — el mismo trade-off entre incentivos y aseguramiento del modelo general.</p>
+<hr>
+<h2 id="3-el-problema-de-la-selección-adversa">3. El problema de la selección adversa<a hidden class="anchor" aria-hidden="true" href="#3-el-problema-de-la-selección-adversa">#</a></h2>
+<h3 id="31-el-mercado-de-limones-akerlof-1970">3.1 El mercado de limones: Akerlof (1970)<a hidden class="anchor" aria-hidden="true" href="#31-el-mercado-de-limones-akerlof-1970">#</a></h3>
+<p>El ejemplo clásico de Akerlof (1970) ilustra el problema: el comprador de un auto usado tiene mucho menos información sobre el estado del vehículo que el vendedor.</p>
+<p><strong>El modelo:</strong> Hay autos de calidad alta (peaches, valor $v_H$) y baja (lemons, valor $v_L &lt; v_H$). La fracción de peaches es $\theta$. Los vendedores conocen la calidad de su auto; los compradores solo saben la distribución.</p>
+<p>El precio de mercado refleja la calidad esperada: $p = \theta v_H + (1-\theta)v_L$.</p>
+<p><strong>El colapso del mercado:</strong> Si $v_H &gt; p$ (los dueños de peaches valoran su auto más que el precio de mercado), los dueños de peaches no venden. El mercado se llena con lemons. Pero si los compradores anticipan esto, están dispuestos a pagar solo $v_L$. Los dueños de peaches definitivamente no venden a $v_L$.</p>
+<p>En el equilibrio, solo se transan lemons a precio $v_L$ — o el mercado colapsa completamente si incluso los lemon owners valoran sus autos más que lo que los compradores están dispuestos a pagar. Como resultado, el mercado se domina por productos de baja calidad.</p>
+<p>El mecanismo es una <strong>espiral descendente</strong>: información asimétrica → precio refleja calidad promedio → vendedores de alta calidad salen → calidad promedio cae → precio cae → más vendedores de alta calidad salen. El mercado puede desaparecer completamente aunque hubiera ganancias de intercambio mutuamente beneficiosas.</p>
+<p><strong>Aplicaciones:</strong></p>
+<ul>
+<li>Mercado de crédito: los bancos no pueden distinguir buenos y malos deudores → la tasa refleja el riesgo promedio → buenos deudores se van o pagan tasa ineficientemente alta.</li>
+<li>Mercado laboral: empleadores no observan la productividad → ofrecen salario promedio → los más productivos se van.</li>
+<li>Mercado de seguros de salud: aseguradoras no conocen el riesgo de cada asegurado → prima refleja riesgo promedio → los más sanos no compran → pool de riesgo empeora.</li>
+</ul>
+<h3 id="32-el-modelo-formal-de-selección-adversa-dos-tipos">3.2 El modelo formal de selección adversa: dos tipos<a hidden class="anchor" aria-hidden="true" href="#32-el-modelo-formal-de-selección-adversa-dos-tipos">#</a></h3>
+<p>El principal ofrece un contrato a un agente que puede ser de tipo $\theta_H$ (alta productividad) o $\theta_L &lt; \theta_H$ (baja productividad), con probabilidades $\nu$ y $1-\nu$. El agente conoce su tipo; el principal no.</p>
+<p>Con producción $q$ y contrato $(q, T)$ (cantidad producida y transferencia recibida), los pagos son:</p>
+<ul>
+<li>Agente tipo $\theta$: $U = T - c(q, \theta)$ donde $c_q &gt; 0$, $c_{q\theta} &lt; 0$ (el tipo alto tiene menor costo marginal).</li>
+<li>Principal: $\Pi = V(q) - T$.</li>
+</ul>
+<p><strong>El primer mejor</strong> con información perfecta: el principal extrae toda la renta imponiendo $T_i = c(q_i^{FB}, \theta_i)$ con $V&rsquo;(q_i^{FB}) = c_q(q_i^{FB}, \theta_i)$.</p>
+<p><strong>El segundo mejor</strong> con información asimétrica: el principal ofrece un menú ${(q_H, T_H), (q_L, T_L)}$ para inducir autoselección. Las restricciones son:</p>
+<p><strong>IR:</strong> cada tipo acepta su contrato diseñado:</p>
+<p>$$T_H - c(q_H, \theta_H) \geq 0$$
+$$T_L - c(q_L, \theta_L) \geq 0$$</p>
+<p><strong>IC:</strong> cada tipo prefiere el contrato diseñado para él:</p>
+<p>$$T_H - c(q_H, \theta_H) \geq T_L - c(q_L, \theta_H)$$
+$$T_L - c(q_L, \theta_L) \geq T_H - c(q_H, \theta_L)$$</p>
+<p>La <strong>condición de cruce único (single-crossing)</strong> es crucial: $\frac{\partial}{\partial\theta}\left(\frac{c_q}{U_T}\right) &lt; 0$ — el costo relativo de producción cae con el tipo. Garantiza que las curvas de indiferencia se crucen una sola vez y que el menú tiene una solución ordenada.</p>
+<p><strong>Resultado estándar del segundo mejor:</strong></p>
+<ol>
+<li><strong>IR del tipo bajo y IC del tipo alto son las restricciones activas</strong> — las demás son no vinculantes en el óptimo.</li>
+<li><strong>El tipo alto recibe renta de información:</strong> $U_H^{SB} = c(q_L^{SB}, \theta_H) - c(q_L^{SB}, \theta_L) &gt; 0$ — la diferencia en costos de producir $q_L$ entre tipos es la renta que el principal debe dejar al tipo alto para evitar que se haga pasar por el tipo bajo.</li>
+<li><strong>El tipo alto recibe la cantidad de primer mejor:</strong> $q_H^{SB} = q_H^{FB}$ — no hay distorsión en la cima.</li>
+<li><strong>El tipo bajo recibe cantidad distorsionada hacia abajo:</strong> $q_L^{SB} &lt; q_L^{FB}$ — la distorsión reduce la renta informacional del tipo alto.</li>
+</ol>
+<p>El trade-off: <strong>rentas vs. eficiencia</strong>. Para extraer más renta del tipo alto (más eficiencia), el principal baja $q_L$, lo que distorsiona la eficiencia del tipo bajo.</p>
+<h3 id="33-autoselección-competitiva-rothschild-stiglitz-1976">3.3 Autoselección competitiva: Rothschild-Stiglitz (1976)<a hidden class="anchor" aria-hidden="true" href="#33-autoselección-competitiva-rothschild-stiglitz-1976">#</a></h3>
+<p>Con múltiples aseguradoras en competencia, Rothschild y Stiglitz demostraron que el equilibrio en un mercado de seguros con selección adversa es <strong>un equilibrio separador</strong> (si existe) donde:</p>
+<ul>
+<li>Los de alto riesgo obtienen cobertura completa.</li>
+<li>Los de bajo riesgo obtienen cobertura parcial (para evitar que los de alto riesgo imiten).</li>
+</ul>
+<p>El resultado sorprendente: puede no existir equilibrio en Nash. Si hay muchos de bajo riesgo, una aseguradora puede desviar ofreciendo un contrato que atrae a los de bajo riesgo y es rentable — destruyendo el equilibrio separador. No emerge equilibrio agrupador (pooling) estable porque otra aseguradora puede ofrecer un contrato que solo atraiga a los de bajo riesgo.</p>
+<hr>
+<h2 id="4-modelos-de-señalización">4. Modelos de señalización<a hidden class="anchor" aria-hidden="true" href="#4-modelos-de-señalización">#</a></h2>
+<h3 id="41-el-modelo-de-spence-1973">4.1 El modelo de Spence (1973)<a hidden class="anchor" aria-hidden="true" href="#41-el-modelo-de-spence-1973">#</a></h3>
+<p>En modelos de señalización, una parte elige cómo presentar información sobre sí misma a otra parte para reducir la asimetría de información. La formulación comenzó en 1973 con Spence a través de su modelo de señalización en el mercado laboral.</p>
+<p><strong>Setup:</strong> Los trabajadores son de tipo alto ($\theta_H$, productividad $y_H$) o bajo ($\theta_L &lt; \theta_H$, productividad $y_L$). Los empleadores no observan el tipo. Los trabajadores pueden adquirir educación $e$ con costo $c(e, \theta)$ donde $c_e &gt; 0$ y $c_{e\theta} &lt; 0$ (el tipo alto tiene menor costo marginal de educación — la <strong>condición de cruce único</strong>).</p>
+<p>La educación no es productiva en el modelo de Spence — sirve solo como señal. Esta es la provocación: si la educación no crea productividad, ¿puede ser un equilibrio que los empleadores la usen como indicador de productividad?</p>
+<h3 id="42-equilibrios-separadores">4.2 Equilibrios separadores<a hidden class="anchor" aria-hidden="true" href="#42-equilibrios-separadores">#</a></h3>
+<p>Un <strong>equilibrio separador</strong> $e^<em>$ tiene los tipos altos eligiendo $e^</em> &gt; 0$ y los tipos bajos eligiendo $e = 0$. Los empleadores pagan $w(e \geq e^<em>) = y_H$ y $w(e &lt; e^</em>) = y_L$.</p>
+<p>Las condiciones de equilibrio son las IC de ambos tipos:</p>
+<p><strong>Tipo alto prefiere señalizar:</strong> $y_H - c(e^<em>, \theta_H) \geq y_L$, es decir $c(e^</em>, \theta_H) \leq y_H - y_L$.</p>
+<p><strong>Tipo bajo no quiere imitar:</strong> $y_L \geq y_H - c(e^<em>, \theta_L)$, es decir $c(e^</em>, \theta_L) \geq y_H - y_L$.</p>
+<p>La condición de cruce único garantiza que existe un rango $[e^{min}, e^{max}]$ donde ambas IC se satisfacen simultáneamente. Cualquier $e^* \in [e^{min}, e^{max}]$ sostiene un equilibrio separador — hay <strong>multiplicidad</strong>.</p>
+<p>El <strong>nivel mínimo de señalización</strong> $e^{min}$ que satisface exactamente la IC del tipo bajo: $c(e^{min}, \theta_L) = y_H - y_L$. Este es el equilibrio separador Pareto-dominante (mínima pérdida social por señalización).</p>
+<h3 id="43-equilibrios-agrupadores-y-refinamientos">4.3 Equilibrios agrupadores y refinamientos<a hidden class="anchor" aria-hidden="true" href="#43-equilibrios-agrupadores-y-refinamientos">#</a></h3>
+<p>En un <strong>equilibrio agrupador</strong>, ambos tipos eligen el mismo nivel de educación $\bar{e}$ y reciben el salario de productividad promedio $\bar{w} = \nu y_H + (1-\nu) y_L$.</p>
+<p>Condición para sostenimiento: ningún tipo quiere desviarse. El tipo alto no quiere señalizar más si el beneficio de ser identificado como alto no compensa el costo adicional de señal.</p>
+<p>La multiplicidad de equilibrios es problemática. El <strong>refinamiento D1 de Cho-Kreps</strong> selecciona el equilibrio separador mínimo: si un tipo se desviara a $e&rsquo; \notin {0, e^*}$, y solo el tipo alto podría beneficiarse de la desviación, el empleador debería actualizar sus creencias hacia el tipo alto. Este refinamiento elimina los equilibrios separadores con señalización excesiva.</p>
+<h3 id="44-bienestar-y-crítica-a-la-señalización">4.4 Bienestar y crítica a la señalización<a hidden class="anchor" aria-hidden="true" href="#44-bienestar-y-crítica-a-la-señalización">#</a></h3>
+<p>La señalización de Spence genera una externalidad negativa: al señalizar, los tipos altos elevan el umbral necesario para separarse — hacen más costoso para los tipos bajos imitar, pero esto no crea valor social. La señalización involucra a la parte informada demostrando su calidad o confiabilidad, como mostrar títulos universitarios en postulaciones laborales.</p>
+<p>Si la educación es puramente señalizadora (sin valor productivo), el equilibrio es Pareto-inferior a un mundo donde los tipos son perfectamente observables: los tipos altos obtienen el mismo salario $y_H$ pero incurren en costos de educación, mientras los tipos bajos obtienen $y_L$ en ambos mundos. La señalización es puro desperdicio social en este modelo extremo.</p>
+<p>Sin embargo, la educación típicamente tiene valor productivo y señalizador simultáneamente — la pregunta empírica es la magnitud relativa de cada componente, debatida ampliamente en economía de la educación (Caplan, 2018, argumenta que la fracción señalizadora es grande; la literatura canónica de retornos a la educación toma el valor productivo como dominante).</p>
+<hr>
+<h2 id="5-diseño-de-mecanismos-y-el-principio-de-revelación">5. Diseño de mecanismos y el principio de revelación<a hidden class="anchor" aria-hidden="true" href="#5-diseño-de-mecanismos-y-el-principio-de-revelación">#</a></h2>
+<h3 id="51-el-principio-de-revelación-directa">5.1 El principio de revelación directa<a hidden class="anchor" aria-hidden="true" href="#51-el-principio-de-revelación-directa">#</a></h3>
+<p>El <strong>principio de revelación</strong> establece que cualquier resultado implementable por algún mecanismo puede implementarse por un <strong>mecanismo de revelación directa</strong> — uno en que los agentes reportan sus tipos y el mecanismo asigna resultados directamente — donde reportar verazmente es un equilibrio.</p>
+<p>Formalmente: si existe un mecanismo que implementa una asignación ${q(\hat{\theta}), T(\hat{\theta})}$, entonces existe un mecanismo de revelación directa que implementa la misma asignación donde reportar verazmente $\hat{\theta} = \theta$ es incentivo compatible.</p>
+<p>La <strong>condición de compatibilidad de incentivos</strong> en el mecanismo directo:</p>
+<p>$$U(\theta, \theta) \geq U(\theta&rsquo;, \theta) \quad \forall \theta, \theta&rsquo;$$</p>
+<p>donde $U(\hat{\theta}, \theta) = T(\hat{\theta}) - c(q(\hat{\theta}), \theta)$ es la utilidad del tipo $\theta$ cuando reporta $\hat{\theta}$.</p>
+<p>El principio de revelación simplifica enormemente el diseño de mecanismos: en lugar de buscar el mecanismo óptimo en el espacio general de todos los juegos posibles, basta buscar en el espacio de mecanismos de revelación directa incentivo-compatibles.</p>
+<h3 id="52-la-condición-de-envolvente">5.2 La condición de envolvente<a hidden class="anchor" aria-hidden="true" href="#52-la-condición-de-envolvente">#</a></h3>
+<p>Diferenciando la condición de optimalidad del agente respecto a $\theta$ (teorema de la envolvente):</p>
+<p>$$\frac{\partial U^*(\theta)}{\partial \theta} = -c_\theta(q(\theta), \theta)$$</p>
+<p>La <strong>renta de información</strong> de cada tipo se determina completamente por la asignación de cantidades $q(\theta)$ — el principal no tiene libertad adicional para extraer rentas una vez fijada la asignación. La renta del tipo más bajo es cero (IR activa); la renta de cada tipo superior se integra hacia arriba.</p>
+<p>Esta ecuación de envolvente implica que el diseño óptimo se reduce a elegir el perfil de cantidades $q(\theta)$ que maximiza el excedente total menos las rentas informacionales — la intuición es que las rentas son costosas para el principal y el costo es mayor para tipos con mayor diferencial de productividad.</p>
+<hr>
+<h2 id="6-síntesis-los-problemas-de-información-y-sus-soluciones">6. Síntesis: los problemas de información y sus soluciones<a hidden class="anchor" aria-hidden="true" href="#6-síntesis-los-problemas-de-información-y-sus-soluciones">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Problema</th>
+          <th>Timing</th>
+          <th>Agente actúa primero</th>
+          <th>Solución canónica</th>
+          <th>Costo social</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Riesgo moral</strong></td>
+          <td>Post-contractual</td>
+          <td>Sí (acción oculta)</td>
+          <td>Contrato incentivo (pay-for-performance)</td>
+          <td>Subóptimo aseguramiento</td>
+      </tr>
+      <tr>
+          <td><strong>Selección adversa</strong></td>
+          <td>Pre-contractual</td>
+          <td>No (tipo oculto)</td>
+          <td>Menú de contratos (screening)</td>
+          <td>Renta informacional + distorsión</td>
+      </tr>
+      <tr>
+          <td><strong>Señalización</strong></td>
+          <td>Pre-contractual</td>
+          <td>Sí (señal costosa)</td>
+          <td>Equilibrio separador</td>
+          <td>Costo de señal sin valor productivo</td>
+      </tr>
+  </tbody>
+</table>
+<p>Los tres problemas comparten la estructura: la información privada del agente le confiere <strong>poder de negociación</strong> — una renta que el principal no puede eliminar sin incurrir en costos de eficiencia. El diseño óptimo de contratos, mecanismos e instituciones puede mitigar pero no eliminar estos costos bajo asimetría de información.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Akerlof, G. (1970). <em>The Market for Lemons</em>. QJE.</li>
+<li>Spence, M. (1973). <em>Job Market Signaling</em>. QJE.</li>
+<li>Mirrlees, J. (1971). <em>An Exploration in the Theory of Optimum Income Taxation</em>. RES.</li>
+<li>Holmström, B. (1979). <em>Moral Hazard and Observability</em>. Bell Journal of Economics.</li>
+<li>Rothschild, M. &amp; Stiglitz, J. (1976). <em>Equilibrium in Competitive Insurance Markets</em>. QJE.</li>
+<li>Cho, I. &amp; Kreps, D. (1987). <em>Signaling Games and Stable Equilibria</em>. QJE.</li>
+<li>Laffont, J.J. &amp; Martimort, D. (2002). <em>The Theory of Incentives</em>. Princeton University Press.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford. Caps. 13–14.</li>
+<li>Gibbons, R. (1992). <em>Game Theory for Applied Economists</em>. Princeton University Press.</li>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/informaci%C3%B3n-asim%C3%A9trica/">Información Asimétrica</a></li>
+      <li><a href="http://localhost:4459/tags/riesgo-moral/">Riesgo Moral</a></li>
+      <li><a href="http://localhost:4459/tags/selecci%C3%B3n-adversa/">Selección Adversa</a></li>
+      <li><a href="http://localhost:4459/tags/se%C3%B1alizaci%C3%B3n/">Señalización</a></li>
+      <li><a href="http://localhost:4459/tags/principal-agente/">Principal-Agente</a></li>
+      <li><a href="http://localhost:4459/tags/eae2120/">EAE2120</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/metrics/04_inferencia/">

@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Equilibrio general en competencia perfecta | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Equilibrio general en competencia perfecta - Agustín Sandoval Tapia">
+<title>Equilibrio General en Competencia Perfecta | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, equilibrio general, Pareto, Edgeworth, teoremas del bienestar, Arrow-Debreu, EAE2110">
+<meta name="description" content="Economía de intercambio puro, caja de Edgeworth, optimalidad de Pareto, equilibrio walrasiano, primer y segundo teorema del bienestar, equilibrio con producción.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/04_general/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,174 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Equilibrio general en competencia perfecta
+      Equilibrio General en Competencia Perfecta
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Economía de intercambio puro, caja de Edgeworth, optimalidad de Pareto, equilibrio walrasiano, primer y segundo teorema del bienestar, equilibrio con producción.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>12 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía I (EAE2110) · <strong>Profesora:</strong> María Luisa Vergara<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Mas-Colell, Whinston &amp; Green (1995) caps. 15–17 · Arrow &amp; Debreu (1954)</p>
+<hr>
+<h2 id="1-del-equilibrio-parcial-al-equilibrio-general">1. Del equilibrio parcial al equilibrio general<a hidden class="anchor" aria-hidden="true" href="#1-del-equilibrio-parcial-al-equilibrio-general">#</a></h2>
+<p>El análisis de equilibrio parcial estudia un mercado en aislamiento — tomando como dados los precios y cantidades en todos los demás. Esta abstracción es útil para muchos propósitos pero ignora las interdependencias entre mercados: un impuesto al petróleo afecta no solo ese mercado sino el transporte, la energía, los salarios y el precio de prácticamente todos los bienes.</p>
+<p>El <strong>equilibrio general</strong> estudia simultáneamente todos los mercados. La pregunta central es: ¿existe un vector de precios $\mathbf{p}^*$ que vacía simultáneamente todos los mercados, y qué propiedades de eficiencia tiene la asignación resultante?</p>
+<p>Walras (1874) fue el primero en formular el estado del sistema económico como la solución de un sistema de ecuaciones simultáneas representando la demanda de bienes por parte de los consumidores, la oferta por parte de los productores, y la condición de equilibrio de que oferta iguale demanda en cada mercado. Sin embargo, no proveyó argumentos concluyentes de que ese sistema tiene solución.  La existencia del equilibrio walrasiano tuvo que esperar hasta Arrow y Debreu (1954).</p>
+<hr>
+<h2 id="2-la-economía-de-intercambio-puro">2. La economía de intercambio puro<a hidden class="anchor" aria-hidden="true" href="#2-la-economía-de-intercambio-puro">#</a></h2>
+<h3 id="21-el-modelo">2.1 El modelo<a hidden class="anchor" aria-hidden="true" href="#21-el-modelo">#</a></h3>
+<p>La economía más simple de equilibrio general elimina la producción: los agentes solo intercambian dotaciones iniciales. Hay $I$ consumidores, $L$ bienes, y el consumidor $i$ tiene:</p>
+<ul>
+<li>Dotación inicial $\boldsymbol{\omega}^i \in \mathbb{R}^L_+$</li>
+<li>Preferencias representadas por $u^i(\mathbf{x}^i)$</li>
+</ul>
+<p>La dotación agregada es $\bar{\boldsymbol{\omega}} = \sum_i \boldsymbol{\omega}^i$. Una <strong>asignación</strong> $(\mathbf{x}^1, \ldots, \mathbf{x}^I)$ es <strong>factible</strong> si:</p>
+<p>$$\sum_i x^i_l \leq \bar{\omega}_l \quad \forall l = 1,\ldots,L$$</p>
+<p>No se pueden consumir más bienes de los disponibles en la dotación agregada.</p>
+<h3 id="22-la-caja-de-edgeworth">2.2 La caja de Edgeworth<a hidden class="anchor" aria-hidden="true" href="#22-la-caja-de-edgeworth">#</a></h3>
+<p>Para el caso de dos consumidores ($I=2$) y dos bienes ($L=2$), la <strong>caja de Edgeworth</strong> representa gráficamente el conjunto completo de asignaciones factibles. La caja de Edgeworth, presentada originalmente en <em>Mathematical Psychics</em> (1881) y desarrollada en su forma familiar por Pareto (1906) y Bowley, permite representar todas las asignaciones factibles y las preferencias de ambos consumidores en un único diagrama.</p>
+<p>La caja tiene dimensiones $\bar{\omega}_1 \times \bar{\omega}_2$. Las asignaciones del consumidor 1 se leen desde la esquina inferior-izquierda; las del consumidor 2, desde la esquina superior-derecha (rotadas 180°). Las curvas de indiferencia de ambos consumidores se superponen en el mismo diagrama.</p>
+<p><strong>La dotación inicial</strong> es un punto específico en la caja. El intercambio lleva la economía a otra asignación dentro de la caja, manteniendo la factibilidad.</p>
+<h3 id="23-optimalidad-de-pareto">2.3 Optimalidad de Pareto<a hidden class="anchor" aria-hidden="true" href="#23-optimalidad-de-pareto">#</a></h3>
+<p>Una asignación $(\mathbf{x}^1, \ldots, \mathbf{x}^I)$ es <strong>Pareto óptima</strong> si no existe otra asignación factible $(\mathbf{x}&rsquo;^1, \ldots, \mathbf{x}&rsquo;^I)$ tal que $u^i(\mathbf{x}&rsquo;^i) \geq u^i(\mathbf{x}^i)$ para todo $i$ con al menos una desigualdad estricta.</p>
+<p>Intuitivamente: una asignación es Pareto óptima si es imposible mejorar a alguien sin empeorar a algún otro. No es un criterio de equidad — puede ser Pareto óptima una asignación muy desigual donde un agente tiene todo. Es un criterio de no-desperdicio: en una asignación no Pareto óptima hay ganancias de intercambio sin explotar.</p>
+<p><strong>Condición de optimalidad:</strong> con preferencias diferenciables y soluciones interiores, la optimalidad de Pareto requiere que las TMS sean iguales entre todos los consumidores para cualquier par de bienes:</p>
+<p>$$TMS^i_{lk} = TMS^j_{lk} \quad \forall i,j \in I, \quad \forall l,k \in L$$</p>
+<p>Si las TMS difieren, existe un intercambio mutuamente beneficioso — una contradicción con la optimalidad.</p>
+<p>La herramienta matemática central es el teorema del hiperplano separador. Si los conjuntos de consumo preferido de todos los agentes (conjuntos estrictamente superiores a la asignación Pareto óptima) no se intersectan con el conjunto de asignaciones factibles, un hiperplano separador los divide — y su pendiente define los precios de equilibrio.</p>
+<p><strong>La curva de contrato</strong> es el lugar geométrico de todas las asignaciones Pareto óptimas en la caja de Edgeworth — la curva donde las curvas de indiferencia de ambos consumidores son tangentes (TMS iguales). En el interior de la caja, la curva de contrato es la &ldquo;lente&rdquo; de intercambios mutuamente beneficiosos reducida a sus fronteras.</p>
+<hr>
+<h2 id="3-el-equilibrio-walrasiano">3. El equilibrio walrasiano<a hidden class="anchor" aria-hidden="true" href="#3-el-equilibrio-walrasiano">#</a></h2>
+<h3 id="31-definición">3.1 Definición<a hidden class="anchor" aria-hidden="true" href="#31-definición">#</a></h3>
+<p>Un <strong>equilibrio walrasiano</strong> (o competitivo) es un par $(\mathbf{p}^<em>, \mathbf{x}^</em>)$ de precios y asignaciones tal que:</p>
+<ol>
+<li>
+<p><strong>Optimización individual:</strong> para cada consumidor $i$, $\mathbf{x}^{<em>i}$ resuelve:
+$$\max_{\mathbf{x}^i} u^i(\mathbf{x}^i) \quad \text{s.a.} \quad \mathbf{p}^</em> \cdot \mathbf{x}^i \leq \mathbf{p}^* \cdot \boldsymbol{\omega}^i$$</p>
+</li>
+<li>
+<p><strong>Vaciado de mercados:</strong> para cada bien $l$:
+$$\sum_i x^{*i}_l = \sum_i \omega^i_l = \bar{\omega}_l$$</p>
+</li>
+</ol>
+<p>El ingreso de cada consumidor es el valor de su dotación a los precios de equilibrio: $w^i = \mathbf{p}^* \cdot \boldsymbol{\omega}^i$.</p>
+<h3 id="32-la-ley-de-walras">3.2 La ley de Walras<a hidden class="anchor" aria-hidden="true" href="#32-la-ley-de-walras">#</a></h3>
+<p>Con no-saciedad local, cada consumidor gasta todo su ingreso (la restricción presupuestaria es activa). Sumando sobre todos los consumidores:</p>
+<p>$$\sum_i \mathbf{p} \cdot \mathbf{x}^i = \sum_i \mathbf{p} \cdot \boldsymbol{\omega}^i \implies \mathbf{p} \cdot \sum_i (\mathbf{x}^i - \boldsymbol{\omega}^i) = 0$$</p>
+<p>Definiendo el exceso de demanda agregado $z_l(\mathbf{p}) = \sum_i (x^i_l - \omega^i_l)$, la <strong>ley de Walras</strong> establece:</p>
+<p>$$\mathbf{p} \cdot \mathbf{z}(\mathbf{p}) = 0 \quad \forall \mathbf{p}$$</p>
+<p>El valor del exceso de demanda agregado es cero a cualquier vector de precios — no solo en equilibrio. Corolario: si $L-1$ mercados están en equilibrio, el mercado $L$ también lo está automáticamente. El $L$-ésimo precio es redundante; se puede normalizar sin pérdida de generalidad (por ejemplo, $p_L = 1$).</p>
+<h3 id="33-existencia-del-equilibrio-arrow-debreu-1954">3.3 Existencia del equilibrio: Arrow-Debreu (1954)<a hidden class="anchor" aria-hidden="true" href="#33-existencia-del-equilibrio-arrow-debreu-1954">#</a></h3>
+<p>En 1954, McKenzie y el par Arrow y Debreu probaron independientemente la existencia de equilibrios generales invocando el teorema del punto fijo de Kakutani sobre los puntos fijos de una función continua desde un conjunto compacto y convexo hacia sí mismo. En el enfoque de Arrow-Debreu, la convexidad es esencial porque tales teoremas de punto fijo son inaplicables a conjuntos no convexos.</p>
+<p>Los supuestos necesarios para la existencia son:</p>
+<ul>
+<li>Preferencias continuas, estrictamente monótonas y convexas.</li>
+<li>Dotaciones estrictamente positivas para todos los consumidores.</li>
+<li>Conjuntos de producción convexos (cuando hay producción).</li>
+</ul>
+<p>La prueba construye una función de exceso de demanda $\mathbf{z}(\mathbf{p})$ continua y homogénea de grado cero, y aplica el teorema del punto fijo para encontrar $\mathbf{p}^<em>$ tal que $\mathbf{z}(\mathbf{p}^</em>) \leq 0$.</p>
+<p>Aunque generalmente (asumiendo convexidad) existe un equilibrio y será eficiente, las condiciones bajo las cuales será único son mucho más fuertes. El teorema de Sonnenschein-Mantel-Debreu establece que la función de exceso de demanda agregado hereda solo ciertas propiedades de las funciones de demanda individuales — continuidad, homogeneidad de grado cero, ley de Walras y comportamiento en el borde cuando los precios se acercan a cero — y que estas son las únicas restricciones reales que se pueden esperar de una función de exceso de demanda agregada.</p>
+<p>Este es el resultado conocido como &ldquo;anything goes&rdquo;: la unicidad y estabilidad del equilibrio requieren supuestos adicionales fuertes más allá de los que garantizan existencia.</p>
+<hr>
+<h2 id="4-los-teoremas-fundamentales-del-bienestar">4. Los teoremas fundamentales del bienestar<a hidden class="anchor" aria-hidden="true" href="#4-los-teoremas-fundamentales-del-bienestar">#</a></h2>
+<h3 id="41-primer-teorema-del-bienestar">4.1 Primer teorema del bienestar<a hidden class="anchor" aria-hidden="true" href="#41-primer-teorema-del-bienestar">#</a></h3>
+<p><strong>Teorema (Arrow-Debreu, 1951):</strong> Si $(\mathbf{p}^<em>, \mathbf{x}^</em>)$ es un equilibrio walrasiano y las preferencias son localmente no saciadas, entonces $\mathbf{x}^*$ es Pareto óptima.</p>
+<p><strong>Prueba:</strong> Suponga por contradicción que $\mathbf{x}^*$ no es Pareto óptima. Existe entonces una asignación factible $\mathbf{x}&rsquo;$ con $u^i(\mathbf{x}&rsquo;^i) \geq u^i(\mathbf{x}^{*i})$ para todo $i$ y estrictamente mayor para algún $j$.</p>
+<ul>
+<li>Para el consumidor $j$: como $u^j(\mathbf{x}&rsquo;^j) &gt; u^j(\mathbf{x}^{<em>j})$ y $\mathbf{x}^{<em>j}$ maximiza $u^j$ sujeto al presupuesto, debe ser que $\mathbf{p}^</em> \cdot \mathbf{x}&rsquo;^j &gt; \mathbf{p}^</em> \cdot \boldsymbol{\omega}^j$.</li>
+<li>Para todo $i \neq j$: $u^i(\mathbf{x}&rsquo;^i) \geq u^i(\mathbf{x}^{<em>i})$ implica $\mathbf{p}^</em> \cdot \mathbf{x}&rsquo;^i \geq \mathbf{p}^* \cdot \boldsymbol{\omega}^i$ (por no-saciación local).</li>
+</ul>
+<p>Sumando: $\mathbf{p}^* \cdot \sum_i \mathbf{x}&rsquo;^i &gt; \mathbf{p}^* \cdot \sum_i \boldsymbol{\omega}^i$. Pero la factibilidad exige $\sum_i \mathbf{x}&rsquo;^i \leq \sum_i \boldsymbol{\omega}^i$, lo que implica $\mathbf{p}^* \cdot \sum_i \mathbf{x}&rsquo;^i \leq \mathbf{p}^* \cdot \sum_i \boldsymbol{\omega}^i$. Contradicción. $\blacksquare$</p>
+<p>El primer teorema formaliza la &ldquo;mano invisible&rdquo; de Adam Smith: el proceso descentralizado de precios lleva a una asignación eficiente sin coordinación central. La condición de localida no-saciación es débil — no requiere convexidad ni diferenciabilidad.</p>
+<h3 id="42-segundo-teorema-del-bienestar">4.2 Segundo teorema del bienestar<a hidden class="anchor" aria-hidden="true" href="#42-segundo-teorema-del-bienestar">#</a></h3>
+<p><strong>Teorema:</strong> Si las preferencias son continuas, estrictamente convexas y monótonas, y $\mathbf{x}^<em>$ es una asignación Pareto óptima, entonces existe un vector de precios $\mathbf{p}$ tal que $(\mathbf{p}, \mathbf{x}^</em>)$ es un equilibrio walrasiano con transferencias apropiadas de dotaciones.</p>
+<p>La prueba usa el teorema del hiperplano separador. Sea $(\mathbf{x}^*)$ una asignación Pareto óptima. Los conjuntos de consumo estrictamente preferidos a $\mathbf{x}^{*i}$ por cada consumidor no intersecan el conjunto de producciones netas factibles. Un hiperplano separador los divide — su pendiente define los precios $\mathbf{p}$. Con esos precios y dotaciones redistribuidas apropiadamente, cada consumidor maximiza su utilidad en $\mathbf{x}^{*i}$.</p>
+<p>El segundo teorema tiene implicancias de política fundamentales:</p>
+<ul>
+<li><strong>Separación entre eficiencia y equidad:</strong> cualquier asignación Pareto óptima puede implementarse como equilibrio competitivo mediante transferencias de suma alzada que redistribuyan dotaciones. No hay trade-off entre eficiencia y equidad si se dispone del instrumento correcto (transferencias de suma alzada).</li>
+<li><strong>El rol de los precios:</strong> los precios de equilibrio son las pendientes del hiperplano separador — reflejan las tasas de sustitución marginales en el óptimo social, coordinando la economía descentralizada.</li>
+<li><strong>Las limitaciones:</strong> el teorema requiere convexidad (excluye economías de escala), que los mercados sean completos, y que las transferencias de suma alzada sean factibles — condiciones que raramente se cumplen todas simultáneamente en la práctica.</li>
+</ul>
+<h3 id="43-interpretación-conjunta">4.3 Interpretación conjunta<a hidden class="anchor" aria-hidden="true" href="#43-interpretación-conjunta">#</a></h3>
+<p>Los contenidos de ambos teoremas eran antiguas creencias en economía. Arrow y Debreu trataron recientemente esta cuestión con técnicas que permiten probar estas proposiciones. Esta afirmación es precisamente correcta; antes había creencias, ahora hay conocimiento.</p>
+<p>Los dos teoremas en conjunto describen la relación entre mercados y eficiencia:</p>
+<ul>
+<li>El <strong>primer teorema</strong> dice: si el mercado está en equilibrio, la asignación es eficiente.</li>
+<li>El <strong>segundo teorema</strong> dice: si queremos implementar una asignación eficiente específica, podemos usar el mercado redistribuyendo dotaciones.</li>
+</ul>
+<p>El sistema de mercado es suficiente para la eficiencia (primer teorema) y necesario para implementarla (segundo teorema), bajo los supuestos del modelo.</p>
+<hr>
+<h2 id="5-equilibrio-general-con-producción">5. Equilibrio general con producción<a hidden class="anchor" aria-hidden="true" href="#5-equilibrio-general-con-producción">#</a></h2>
+<h3 id="51-estructura-de-la-economía-con-producción">5.1 Estructura de la economía con producción<a hidden class="anchor" aria-hidden="true" href="#51-estructura-de-la-economía-con-producción">#</a></h3>
+<p>Se incorporan $J$ firmas. La firma $j$ tiene conjunto de producción $Y^j \subset \mathbb{R}^L$ — los vectores netos de producción factibles. El beneficio de la firma $j$ a precios $\mathbf{p}$ es:</p>
+<p>$$\pi^j(\mathbf{p}) = \max_{\mathbf{y}^j \in Y^j} \mathbf{p} \cdot \mathbf{y}^j$$</p>
+<p>Las firmas son de propiedad privada: el consumidor $i$ posee una participación $\theta^{ij} \geq 0$ en la firma $j$, con $\sum_i \theta^{ij} = 1$. El ingreso del consumidor es la suma del valor de su dotación más los dividendos:</p>
+<p>$$w^i(\mathbf{p}) = \mathbf{p} \cdot \boldsymbol{\omega}^i + \sum_j \theta^{ij} \pi^j(\mathbf{p})$$</p>
+<h3 id="52-definición-del-equilibrio-walrasiano-con-producción">5.2 Definición del equilibrio walrasiano con producción<a hidden class="anchor" aria-hidden="true" href="#52-definición-del-equilibrio-walrasiano-con-producción">#</a></h3>
+<p>Un equilibrio walrasiano es una tripleta $(\mathbf{p}^<em>, \mathbf{x}^</em>, \mathbf{y}^*)$ tal que:</p>
+<ol>
+<li>Cada firma $j$ maximiza beneficios: $\mathbf{p}^* \cdot \mathbf{y}^{<em>j} \geq \mathbf{p}^</em> \cdot \mathbf{y}^j$ para todo $\mathbf{y}^j \in Y^j$.</li>
+<li>Cada consumidor $i$ maximiza utilidad sujeto a su restricción presupuestaria con ingreso $w^i(\mathbf{p}^*)$.</li>
+<li>Vaciado de mercados: $\sum_i \mathbf{x}^{*i} = \sum_i \boldsymbol{\omega}^i + \sum_j \mathbf{y}^{*j}$.</li>
+</ol>
+<h3 id="53-condiciones-de-optimalidad-con-producción">5.3 Condiciones de optimalidad con producción<a hidden class="anchor" aria-hidden="true" href="#53-condiciones-de-optimalidad-con-producción">#</a></h3>
+<p>La optimalidad de Pareto en una economía con producción requiere la igualdad de TMS entre consumidores y la igualdad entre TMS y tasa marginal de transformación (TMT):</p>
+<p>$$TMS^i_{lk} = TMT_{lk} \quad \forall i, \quad \forall l,k$$</p>
+<p>La <strong>TMT</strong> mide cuánto del bien $l$ debe sacrificarse para producir una unidad más del bien $k$. En equilibrio competitivo, las firmas igualan $p_l = CMg_l$, por lo que $TMT_{lk} = p_l/p_k$. Los consumidores igualan $TMS^i_{lk} = p_l/p_k$. La igualdad se satisface automáticamente en equilibrio.</p>
+<p>Los teoremas del bienestar se mantienen sin modificación con producción. Cualquier equilibrio competitivo es Pareto eficiente (primer teorema). Con convexidad, cualquier asignación Pareto eficiente puede ser descentralizada por mercados competitivos tras transferencias de suma alzada apropiadas (segundo teorema).</p>
+<hr>
+<h2 id="6-limitaciones-del-modelo-arrow-debreu">6. Limitaciones del modelo Arrow-Debreu<a hidden class="anchor" aria-hidden="true" href="#6-limitaciones-del-modelo-arrow-debreu">#</a></h2>
+<p>Greenwald y Stiglitz (1986) demostraron que los teoremas fundamentales del bienestar no se sostienen si hay mercados incompletos o información imperfecta. El paper establece que un equilibrio competitivo de una economía con información asimétrica no es genéricamente ni siquiera eficiente en el sentido de Pareto restringido. Un gobierno que enfrenta las mismas restricciones de información que los agentes privados puede no obstante encontrar intervenciones que mejoren el bienestar en sentido de Pareto.</p>
+<p>Las fallas del modelo identifican cuándo los mercados no logran la eficiencia:</p>
+<p><strong>Externalidades:</strong> cuando las acciones de un agente afectan directamente a otros sin pasar por el sistema de precios, la condición $TMS = TMT$ falla para los bienes con externalidad — el precio no refleja el costo o beneficio social completo.</p>
+<p><strong>Bienes públicos:</strong> bienes no rivales y no excluyentes no pueden provisionarse eficientemente por el mercado — la provisión privada es insuficiente porque los agentes se comportan como free-riders.</p>
+<p><strong>Información asimétrica:</strong> sin un conjunto completo de mercados Arrow-Debreu, el primer teorema del bienestar generalmente no se sostiene. Hay potencialmente espacio para intervención gubernamental y las preguntas de política se vuelven no triviales.</p>
+<p><strong>Economías de escala:</strong> la convexidad excluida por rendimientos crecientes implica que el equilibrio competitivo puede no existir — los monopolios naturales requieren regulación.</p>
+<p><strong>Mercados incompletos:</strong> si no existen mercados para todos los bienes contingentes (estados del mundo), la asignación del riesgo puede ser ineficiente incluso con preferencias convexas.</p>
+<p>Estas fallas son el fundamento microeconómico de la intervención del gobierno — el tema del próximo capítulo sobre bienes públicos y externalidades.</p>
+<hr>
+<h2 id="7-el-modelo-arrow-debreu-como-fundamento-de-la-economía-moderna">7. El modelo Arrow-Debreu como fundamento de la economía moderna<a hidden class="anchor" aria-hidden="true" href="#7-el-modelo-arrow-debreu-como-fundamento-de-la-economía-moderna">#</a></h2>
+<p>La teoría de equilibrio general tanto estudia economías usando el modelo de precios de equilibrio como busca determinar bajo qué circunstancias se sostienen los supuestos del equilibrio general. La teoría alcanzó su forma moderna con el trabajo de McKenzie, Arrow y Debreu en los 1950s. La diferencia entre microeconomía y macroeconomía ya no es tan clara como solía ser, puesto que gran parte de la macroeconomía moderna ha enfatizado las fundaciones microeconómicas y ha construido modelos de equilibrio general de las fluctuaciones macroeconómicas.</p>
+<p>El modelo Arrow-Debreu extiende el concepto de bien para incluir entregas en distintas fechas y estados del mundo. Los precios de estados Arrow-Debreu definen el valor presente justo de los pagos contingentes y el reparto óptimo del riesgo entre agentes — constituyendo las microfundaciones de la valoración sin arbitraje en finanzas.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Arrow, K.J. &amp; Debreu, G. (1954). <em>Existence of an Equilibrium for a Competitive Economy</em>. Econometrica.</li>
+<li>Debreu, G. (1959). <em>Theory of Value</em>. Yale University Press.</li>
+<li>Edgeworth, F.Y. (1881). <em>Mathematical Psychics</em>. Kegan Paul.</li>
+<li>Greenwald, B. &amp; Stiglitz, J. (1986). <em>Externalities in Economies with Imperfect Information and Incomplete Markets</em>. QJE.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford. Caps. 15–17.</li>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+<li>Nicholson, W. (2008). <em>Teoría Microeconómica</em>. Cengage. Cap. 13.</li>
+<li>Levin, J. (2006). <em>General Equilibrium</em>. Stanford lecture notes.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/equilibrio-general/">Equilibrio General</a></li>
+      <li><a href="http://localhost:4459/tags/pareto/">Pareto</a></li>
+      <li><a href="http://localhost:4459/tags/edgeworth/">Edgeworth</a></li>
+      <li><a href="http://localhost:4459/tags/teoremas-del-bienestar/">Teoremas Del Bienestar</a></li>
+      <li><a href="http://localhost:4459/tags/arrow-debreu/">Arrow-Debreu</a></li>
+      <li><a href="http://localhost:4459/tags/eae2110/">EAE2110</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/micro/01_consumidor/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Elección del consumidor y demanda</span>
+    <span>Elección del Consumidor y Demanda</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/macro/06_equilibrio_cerrado/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Equilibrio macroeconómico en una economía cerrada</span>
+    <span>Equilibrio Macroeconómico en una Economía Cerrada</span>
   </a>
 </nav>
 

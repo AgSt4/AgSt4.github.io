@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Elección bajo incertidumbre | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Elección bajo incertidumbre - Agustín Sandoval Tapia">
+<title>Elección bajo Incertidumbre | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, incertidumbre, utilidad esperada, von Neumann-Morgenstern, aversión al riesgo, Arrow-Pratt, seguros, CAPM, EAE2120">
+<meta name="description" content="Teoría de utilidad esperada, axiomas vNM, aversión al riesgo, medidas Arrow-Pratt, equivalente de certeza, prima de riesgo, mercado de seguros, diversificación y precios de activos.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/06_riesgo/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,15 +135,223 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Elección bajo incertidumbre
+      Elección bajo Incertidumbre
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Teoría de utilidad esperada, axiomas vNM, aversión al riesgo, medidas Arrow-Pratt, equivalente de certeza, prima de riesgo, mercado de seguros, diversificación y precios de activos.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>14 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía II (EAE2120)<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Mas-Colell, Whinston &amp; Green (1995) caps. 6, 11 · Pratt (1964) · Arrow (1965)</p>
+<hr>
+<h2 id="1-el-problema-de-la-decisión-bajo-incertidumbre">1. El problema de la decisión bajo incertidumbre<a hidden class="anchor" aria-hidden="true" href="#1-el-problema-de-la-decisión-bajo-incertidumbre">#</a></h2>
+<h3 id="11-motivación-el-problema-de-san-petersburgo">1.1 Motivación: el problema de San Petersburgo<a hidden class="anchor" aria-hidden="true" href="#11-motivación-el-problema-de-san-petersburgo">#</a></h3>
+<p>La teoría de decisión bajo incertidumbre parte de una paradoja planteada por Nicolás Bernoulli (1713): una lotería que paga $2^n$ con probabilidad $2^{-n}$ tiene valor esperado infinito:</p>
+<p>$$E[X] = \sum_{n=1}^\infty 2^n \cdot \frac{1}{2^n} = \sum_{n=1}^\infty 1 = \infty$$</p>
+<p>Sin embargo, nadie pagaría una suma infinita (ni siquiera muy grande) por participar. La paradoja muestra que maximizar el <strong>valor esperado monetario</strong> no describe adecuadamente las decisiones bajo riesgo. La solución de Bernoulli: los agentes maximizan la <strong>utilidad esperada</strong> del resultado, donde la utilidad crece con el dinero pero a tasa decreciente (utilidad logarítmica en su formulación).</p>
+<h3 id="12-loterías-como-objetos-de-elección">1.2 Loterías como objetos de elección<a hidden class="anchor" aria-hidden="true" href="#12-loterías-como-objetos-de-elección">#</a></h3>
+<p>Von Neumann y Morgenstern no se referían exactamente a Powerball cuando hablaban de loterías. En su definición, una lotería o apuesta es simplemente una distribución de probabilidad sobre un conjunto conocido y finito de resultados. Los resultados pueden ser cualquier cosa: sumas de dinero, bienes, o incluso eventos.</p>
+<p>Formalmente, una <strong>lotería simple</strong> $L$ es una distribución de probabilidad sobre el conjunto de resultados $Z = {z_1, \ldots, z_N}$:</p>
+<p>$$L = (p_1, \ldots, p_N) \quad \text{con} \quad p_n \geq 0, \quad \sum_n p_n = 1$$</p>
+<p>Una <strong>lotería compuesta</strong> es una distribución de probabilidad sobre loterías simples — puede reducirse a una lotería simple calculando las probabilidades compuestas. El espacio de todas las loterías simples es el simplex $\Delta(Z)$.</p>
+<hr>
+<h2 id="2-los-axiomas-de-von-neumann-morgenstern">2. Los axiomas de von Neumann-Morgenstern<a hidden class="anchor" aria-hidden="true" href="#2-los-axiomas-de-von-neumann-morgenstern">#</a></h2>
+<h3 id="21-las-preferencias-sobre-loterías">2.1 Las preferencias sobre loterías<a hidden class="anchor" aria-hidden="true" href="#21-las-preferencias-sobre-loterías">#</a></h3>
+<p>En su influyente libro de 1944 <em>Theory of Games and Economic Behavior</em>, von Neumann y Morgenstern se propusieron responder una pregunta engañosamente simple: ¿cuándo podemos decir que alguien que toma decisiones bajo incertidumbre se comporta racionalmente?</p>
+<p>La respuesta son cuatro axiomas sobre preferencias $\succeq$ sobre $\Delta(Z)$:</p>
+<p><strong>A1 — Completitud y transitividad:</strong> $\succeq$ es un orden completo y transitivo — idéntico al caso sin incertidumbre. La novedad es que el dominio son loterías, no canastas de bienes.</p>
+<p><strong>A2 — Continuidad:</strong> si $L \succ L&rsquo; \succ L&rsquo;&rsquo;$, existe $\alpha \in (0,1)$ tal que $L&rsquo; \sim \alpha L + (1-\alpha)L&rsquo;&rsquo;$. Pequeños cambios en probabilidades no generan saltos en las preferencias. Este axioma excluye lexicografías y otros ordenamientos discontinuos.</p>
+<p><strong>A3 — Independencia (el axioma crucial):</strong> para todo $L, L&rsquo;, L&rsquo;&rsquo;$ y $\alpha \in (0,1)$:</p>
+<p>$$L \succeq L&rsquo; \iff \alpha L + (1-\alpha)L&rsquo;&rsquo; \succeq \alpha L&rsquo; + (1-\alpha)L&rsquo;&rsquo;$$</p>
+<p>Mezclar cualquier lotería $L&rsquo;&rsquo;$ con igual probabilidad en ambos lados no cambia el orden de preferencia. Este axioma tiene una justificación de &ldquo;consequentialism&rdquo;: lo que importa es el resultado final, no el camino para llegar a él. Es también el axioma más controversial empíricamente.</p>
+<p><strong>A4 — Monotonicidad:</strong> si $L \succ L&rsquo;$, entonces para $\alpha &gt; \beta$: $\alpha L + (1-\alpha)L&rsquo; \succ \beta L + (1-\beta)L&rsquo;$. Más probabilidad en la lotería preferida es mejor.</p>
+<h3 id="22-el-teorema-de-representación">2.2 El teorema de representación<a hidden class="anchor" aria-hidden="true" href="#22-el-teorema-de-representación">#</a></h3>
+<p><strong>Teorema (von Neumann-Morgenstern, 1944):</strong> Si $\succeq$ sobre $\Delta(Z)$ satisface A1–A4, entonces existe una función $u: Z \to \mathbb{R}$ tal que para cualquier par de loterías:</p>
+<p>$$L \succeq L&rsquo; \iff \sum_n p_n u(z_n) \geq \sum_n p&rsquo;<em>n u(z_n) \equiv E_L[u] \geq E</em>{L&rsquo;}[u]$$</p>
+<p>Las preferencias se representan por la <strong>utilidad esperada</strong> de los resultados. $u$ se llama función de utilidad de Bernoulli o función de utilidad de von Neumann-Morgenstern (vNM).</p>
+<p><strong>Unicidad:</strong> $u$ es única salvo transformaciones afines positivas: si $u$ representa las preferencias, también lo hace $a + bu$ con $b &gt; 0$. A diferencia de la utilidad ordinal (única salvo transformaciones monótonas), la utilidad vNM es <strong>cardinal</strong> en un sentido específico: las diferencias de utilidad tienen significado, pero no los niveles absolutos.</p>
+<p>La formulación de von Neumann-Morgenstern es importante porque revivió la idea de utilidad cardinal después de la &ldquo;revolución ordinal&rdquo; de los 1930s de Hicks-Allen. Sin embargo, aunque la función de utilidad es cardinal en el sentido de que el comportamiento cambiaría con una transformación no lineal de $u$, la función de utilidad esperada es ordinal porque cualquier transformación monótona creciente de la utilidad esperada genera el mismo comportamiento.</p>
+<h3 id="23-el-axioma-de-independencia-y-sus-violaciones">2.3 El axioma de independencia y sus violaciones<a hidden class="anchor" aria-hidden="true" href="#23-el-axioma-de-independencia-y-sus-violaciones">#</a></h3>
+<p>El axioma de independencia implica que las curvas de indiferencia en el simplex son <strong>paralelas y lineales</strong>. Esta es la propiedad más fuertemente rechazada en los experimentos.</p>
+<p>La <strong>paradoja de Allais (1953)</strong> es el contraejemplo clásico. Considerando cuatro loterías con pagos en millones de francos:</p>
+<ul>
+<li>$L_1$: $1$ con certeza.</li>
+<li>$L_2$: $(0.89, 0.10, 0.01)$ para pagos $(1, 5, 0)$.</li>
+<li>$L_3$: $(0.11, 0, 0.89)$ para pagos $(1, 0, 0)$.</li>
+<li>$L_4$: $(0, 0.10, 0.90)$ para pagos $(0, 5, 0)$.</li>
+</ul>
+<p>La mayoría prefiere $L_1 \succ L_2$ y $L_4 \succ L_3$. Pero esta combinación viola la independencia: $L_1 \succ L_2$ implica $u(1) &gt; 0.10u(5) + 0.89u(1) + 0.01u(0)$, que a su vez implica $0.11u(1) &gt; 0.10u(5) + 0.01u(0)$, es decir $L_3 \succ L_4$. Contradicción.</p>
+<p>La paradoja de Allais revela que los individuos otorgan peso especial a los resultados seguros — el <strong>efecto de certeza</strong> — que el modelo vNM no captura.</p>
+<hr>
+<h2 id="3-aversión-al-riesgo">3. Aversión al riesgo<a hidden class="anchor" aria-hidden="true" href="#3-aversión-al-riesgo">#</a></h2>
+<h3 id="31-definición">3.1 Definición<a hidden class="anchor" aria-hidden="true" href="#31-definición">#</a></h3>
+<p>Un individuo es averso al riesgo si y solo si para todo $p \in \mathcal{P}$, $E_p{u} \leq u(E_p{x})$. Es amante del riesgo si $E_p{u} \geq u(E_p{x})$. El agente es neutral al riesgo si $E_p{u} = u(E_p{x})$.</p>
+<p><strong>Teorema:</strong> Un agente con función de utilidad vNM $u$ es:</p>
+<ul>
+<li><strong>Averso al riesgo</strong> $\iff$ $u$ es cóncava ($u&rsquo;&rsquo; &lt; 0$).</li>
+<li><strong>Neutral al riesgo</strong> $\iff$ $u$ es lineal ($u&rsquo;&rsquo; = 0$).</li>
+<li><strong>Amante del riesgo</strong> $\iff$ $u$ es convexa ($u&rsquo;&rsquo; &gt; 0$).</li>
+</ul>
+<p><strong>Prueba para aversión:</strong> Por la desigualdad de Jensen, para $u$ cóncava: $u(E[X]) \geq E[u(X)]$. El agente prefiere el valor esperado con certeza a la lotería — define precisamente la aversión al riesgo.</p>
+<h3 id="32-el-equivalente-de-certeza-y-la-prima-de-riesgo">3.2 El equivalente de certeza y la prima de riesgo<a hidden class="anchor" aria-hidden="true" href="#32-el-equivalente-de-certeza-y-la-prima-de-riesgo">#</a></h3>
+<p>El <strong>equivalente de certeza (CE)</strong> de una lotería es un monto de dinero que provee igual utilidad al pago aleatorio de la lotería. El equivalente de certeza es menor que el resultado esperado si la persona es aversa al riesgo.</p>
+<p>Formalmente, $CE$ satisface:</p>
+<p>$$u(CE) = E[u(X)]$$</p>
+<p>Para un agente averso al riesgo, $CE &lt; E[X]$.</p>
+<p>La <strong>prima de riesgo</strong> $\pi$ es la diferencia entre el pago esperado y el equivalente de certeza: $\pi = E[X] - CE$. La prima de riesgo cae al aumentar la riqueza para cualquier lotería si y solo si la medida Arrow-Pratt de aversión absoluta al riesgo es decreciente.</p>
+<h3 id="33-las-medidas-arrow-pratt">3.3 Las medidas Arrow-Pratt<a hidden class="anchor" aria-hidden="true" href="#33-las-medidas-arrow-pratt">#</a></h3>
+<p>Dado que las actitudes al riesgo no cambian bajo transformaciones afinas de $u$, la segunda derivada $u&rsquo;&rsquo;$ no es una medida adecuada de aversión al riesgo por sí sola — necesita normalizarse. Esto lleva a la definición de la medida Arrow-Pratt de aversión absoluta al riesgo.</p>
+<p>La <strong>aversión absoluta al riesgo (ARA)</strong> de Arrow-Pratt:</p>
+<p>$$A(w) = -\frac{u&rsquo;&rsquo;(w)}{u&rsquo;(w)}$$</p>
+<p>La prima de riesgo es aproximadamente igual a la medida Arrow-Pratt multiplicada por la mitad de la varianza cuando la varianza es pequeña:</p>
+<p>$$\pi \approx \frac{1}{2}A(w)\sigma^2$$</p>
+<p>Esta aproximación es la base de la demanda de seguros: la máxima prima que un agente está dispuesto a pagar por eliminar un riesgo de varianza $\sigma^2$ es proporcional a su ARA y a la varianza del riesgo.</p>
+<p>La <strong>aversión relativa al riesgo (ARR)</strong>:</p>
+<p>$$R(w) = -\frac{wu&rsquo;&rsquo;(w)}{u&rsquo;(w)} = wA(w)$$</p>
+<p>Mide la aversión al riesgo ante apuestas proporcionales a la riqueza (como retornos porcentuales de activos). Es la medida relevante en finanzas.</p>
+<h3 id="34-funciones-de-utilidad-estándar">3.4 Funciones de utilidad estándar<a hidden class="anchor" aria-hidden="true" href="#34-funciones-de-utilidad-estándar">#</a></h3>
+<p>Las clases especiales de funciones de utilidad son las CRRA (aversión relativa al riesgo constante), donde $R(w)$ es constante, y las CARA (aversión absoluta al riesgo constante), donde $A(w)$ es constante. Estas funciones se usan frecuentemente en economía para simplificar.</p>
+<p><strong>CARA (Constant Absolute Risk Aversion):</strong></p>
+<p>$$u(w) = -e^{-\alpha w}, \quad \alpha &gt; 0$$</p>
+<p>$A(w) = \alpha$ constante — la aversión al riesgo no depende de la riqueza. La demanda de activos riesgosos (en unidades monetarias) es independiente de la riqueza. Tractable con retornos normales.</p>
+<p>La utilidad CARA exhibe aversión absoluta al riesgo constante y por esta razón es frecuentemente evitada — aunque tiene la ventaja de ofrecer tractabilidad matemática sustancial cuando los retornos de activos son normalmente distribuidos.</p>
+<p><strong>CRRA (Constant Relative Risk Aversion):</strong></p>
+<p>$$u(w) = \frac{w^{1-\gamma}}{1-\gamma}, \quad \gamma &gt; 0, \quad \gamma \neq 1$$</p>
+<p>Con $\gamma = 1$: $u(w) = \ln(w)$ (Bernoulli). $R(w) = \gamma$ constante — la aversión relativa es independiente de la riqueza; la proporción óptima de riqueza invertida en activos riesgosos no varía con la riqueza. Es la especificación dominante en macroeconomía y finanzas.</p>
+<p><strong>Utilidad cuadrática:</strong> $u(w) = w - \frac{b}{2}w^2$, $b &gt; 0$</p>
+<p>Implica preferencias media-varianza: $E[u] = E[w] - \frac{b}{2}(E[w]^2 + \text{Var}(w))$. La utilidad cuadrática presenta utilidad marginal negativa para niveles de riqueza mayores al &ldquo;punto de saciedad&rdquo;, y tiene la característica poco atractiva de aversión absoluta al riesgo creciente  — a mayor riqueza, más averso al riesgo. Por estas razones se usa solo como aproximación.</p>
+<hr>
+<h2 id="4-el-mercado-de-seguros">4. El mercado de seguros<a hidden class="anchor" aria-hidden="true" href="#4-el-mercado-de-seguros">#</a></h2>
+<h3 id="41-demanda-óptima-de-seguro">4.1 Demanda óptima de seguro<a hidden class="anchor" aria-hidden="true" href="#41-demanda-óptima-de-seguro">#</a></h3>
+<p>Un agente con riqueza inicial $w$ enfrenta la posibilidad de una pérdida $L$ con probabilidad $p$. Puede comprar cobertura $d \in [0,1]$ (proporción de la pérdida cubierta) a prima actuarialmente justa $qd \cdot L$ donde $q = p$ (precio justo).</p>
+<p>El problema de optimización es:</p>
+<p>$$\max_d ; (1-p)u(w - qd \cdot L) + p \cdot u(w - L + dL - qdL)$$</p>
+<p>$$= \max_d ; (1-p)u(w - qdL) + p \cdot u(w - (1-d)(1-q)L - qL)$$</p>
+<p>Cuando $q = p$ (prima justa), el seguro completo $d = 1$ es óptimo. La utilidad marginal del gasto en seguro iguala la utilidad marginal de la riqueza en el estado sin pérdida.</p>
+<p>La condición de primer orden, evaluada en $d = 1$:</p>
+<p>$$\frac{d E[u]}{dd}\bigg|_{d=1} = (1-p)(-pL)u&rsquo;(w - pL) + p(1-p)Lu&rsquo;(w - pL) = 0$$</p>
+<p>Con prima actuarialmente justa, el <strong>seguro completo es óptimo</strong> para cualquier agente averso al riesgo: las utilidades marginales de la riqueza en el estado bueno y en el malo se igualan, que es la condición de asignación eficiente del riesgo.</p>
+<p>Un agente averso al riesgo está dispuesto a pagar una prima por encima del valor esperado para evitar incertidumbre. Esto explica por qué las personas compran seguros incluso cuando el pago esperado es menor que la prima — la ganancia de utilidad al eliminar el riesgo supera el costo monetario.</p>
+<h3 id="42-prima-cargada-seguro-incompleto">4.2 Prima cargada: seguro incompleto<a hidden class="anchor" aria-hidden="true" href="#42-prima-cargada-seguro-incompleto">#</a></h3>
+<p>Cuando $q &gt; p$ (la compañía de seguros carga una prima sobre el costo actuarial justo para cubrir gastos operativos y generar beneficios), la condición de optimalidad da $d^* &lt; 1$: el agente toma <strong>seguro incompleto</strong>. La cobertura óptima satisface:</p>
+<p>$$\frac{1-p}{p} \cdot \frac{u&rsquo;(w - q d^* L)}{u&rsquo;(w - L(1-d^*(1-q)))} = \frac{1-q}{q}$$</p>
+<p>La razón de utilidades marginales iguala la razón de las probabilidades ajustadas por el precio del seguro. Con CARA, la demanda de seguro es:</p>
+<p>$$d^* = 1 - \frac{1}{\alpha L}\ln\left(\frac{q(1-p)}{p(1-q)}\right)$$</p>
+<p>La cobertura óptima cae cuando la prima cargada $q$ sube, cuando la aversión al riesgo $\alpha$ baja, o cuando la pérdida $L$ cae.</p>
+<hr>
+<h2 id="5-diversificación-de-riesgos-y-precios-de-activos">5. Diversificación de riesgos y precios de activos<a hidden class="anchor" aria-hidden="true" href="#5-diversificación-de-riesgos-y-precios-de-activos">#</a></h2>
+<h3 id="51-el-principio-de-diversificación">5.1 El principio de diversificación<a hidden class="anchor" aria-hidden="true" href="#51-el-principio-de-diversificación">#</a></h3>
+<p>Con múltiples riesgos independientes, la diversificación reduce la varianza sin reducir el retorno esperado. Formalmente, si $X_1, \ldots, X_N$ son iid con media $\mu$ y varianza $\sigma^2$, la cartera igualmente ponderada $\bar{X} = \frac{1}{N}\sum_i X_i$ tiene:</p>
+<p>$$E[\bar{X}] = \mu, \qquad \text{Var}(\bar{X}) = \frac{\sigma^2}{N} \to 0$$</p>
+<p>Para un agente CARA con $u(w) = -e^{-\alpha w}$ y retornos normales, la inversión óptima en el activo riesgoso $\alpha^*$ es independiente de la riqueza — consistente con CARA. El beneficio marginal de diversificar es la reducción en la prima de riesgo $\approx \frac{1}{2}\alpha \cdot \text{Var}$.</p>
+<p>Un inversor con función de utilidad de Bernoulli cóncava prefiere distribuir su riqueza entre múltiples activos antes que concentrarla en uno solo, incluso si los retornos esperados son idénticos. La reducción en varianza aumenta la utilidad más que cualquier ganancia potencial de la concentración.</p>
+<h3 id="52-el-modelo-media-varianza-y-la-frontera-eficiente">5.2 El modelo media-varianza y la frontera eficiente<a hidden class="anchor" aria-hidden="true" href="#52-el-modelo-media-varianza-y-la-frontera-eficiente">#</a></h3>
+<p>Con utilidad cuadrática o retornos normales, las preferencias sobre carteras se resumen en el par $(\mu, \sigma)$:</p>
+<p>$$E[u(\tilde{w})] = V(\mu_p, \sigma_p^2), \quad V_\mu &gt; 0, \quad V_{\sigma^2} &lt; 0$$</p>
+<p>La <strong>frontera eficiente</strong> de Markowitz es el conjunto de carteras que minimizan $\sigma_p^2$ para cada nivel de $\mu_p$. El inversor es generalmente averso al riesgo y por tanto prefiere carteras con mayor retorno medio $\mu$ y menor riesgo (desviación estándar) $\sigma$. El conjunto de oportunidades se reduce a las carteras en la frontera eficiente — el arco que domina a todas las demás por tener mayor $\mu$ y menor $\sigma$.</p>
+<h3 id="53-el-capm-como-resultado-de-equilibrio">5.3 El CAPM como resultado de equilibrio<a hidden class="anchor" aria-hidden="true" href="#53-el-capm-como-resultado-de-equilibrio">#</a></h3>
+<p>En el modelo de una economía con $I$ inversores con preferencias media-varianza, un activo libre de riesgo con retorno $r_f$ y $N$ activos riesgosos, el equilibrio competitivo genera el <strong>Capital Asset Pricing Model</strong>:</p>
+<p>$$E[\tilde{r}_i] - r_f = \beta_i(E[\tilde{r}_M] - r_f)$$</p>
+<p>donde $\beta_i = \text{Cov}(\tilde{r}_i, \tilde{r}_M) / \text{Var}(\tilde{r}_M)$ y $\tilde{r}_M$ es el retorno de la cartera de mercado.</p>
+<p>El CAPM dice que el exceso de retorno esperado de un activo es proporcional a su <strong>riesgo sistemático</strong> $\beta_i$ — la covarianza con el mercado, no la varianza total. El riesgo idiosincrático (diversificable) no es compensado porque puede eliminarse gratis con diversificación. Solo el riesgo no diversificable exige prima.</p>
+<p>La aversión absoluta al riesgo constante provee una base para las preferencias media-varianza, que es el fundamento de la teoría financiera moderna. El CAPM surgió como corolario del marco media-varianza introducido por Markowitz en los 1950s.</p>
+<p>La conexión entre utilidad esperada y media-varianza es exacta con retornos normales o utilidad cuadrática; es una aproximación de segundo orden en el caso general.</p>
+<hr>
+<h2 id="6-modelación-alternativa-de-preferencias-al-riesgo">6. Modelación alternativa de preferencias al riesgo<a hidden class="anchor" aria-hidden="true" href="#6-modelación-alternativa-de-preferencias-al-riesgo">#</a></h2>
+<h3 id="61-dominancia-estocástica">6.1 Dominancia estocástica<a hidden class="anchor" aria-hidden="true" href="#61-dominancia-estocástica">#</a></h3>
+<p>La dominancia estocástica establece órdenes sobre distribuciones sin especificar la forma funcional de $u$.</p>
+<p><strong>Dominancia de primer orden (FSD):</strong> $F$ domina $G$ en primer orden si $F(x) \leq G(x)$ para todo $x$. Equivale a que $E_F[u] \geq E_G[u]$ para toda $u$ creciente. Una distribución FSD-domina a otra si, para cualquier nivel $x$, la probabilidad acumulada de resultados menores a $x$ es menor — toda la distribución está &ldquo;corrida a la derecha&rdquo;.</p>
+<p><strong>Dominancia de segundo orden (SSD):</strong> $F$ domina $G$ en segundo orden si $\int_{-\infty}^x [F(t) - G(t)]dt \leq 0$ para todo $x$. Equivale a que $E_F[u] \geq E_G[u]$ para toda $u$ creciente y cóncava (agentes aversos al riesgo). Si $F$ y $G$ tienen la misma media, $F$ domina en SSD si tiene menor dispersión.</p>
+<p>La dominancia estocástica permite comparaciones sin imponer forma funcional específica — útil para derivar resultados aplicables a toda una clase de agentes (por ejemplo, todos los aversos al riesgo).</p>
+<h3 id="62-la-teoría-prospectiva-de-kahneman-tversky">6.2 La teoría prospectiva de Kahneman-Tversky<a hidden class="anchor" aria-hidden="true" href="#62-la-teoría-prospectiva-de-kahneman-tversky">#</a></h3>
+<p>La teoría de la utilidad esperada falla empíricamente en múltiples dimensiones documentadas sistemáticamente por Kahneman y Tversky (1979). Los hechos estilizados son:</p>
+<ul>
+<li><strong>Aversión a la pérdida:</strong> las pérdidas pesan aproximadamente el doble que las ganancias equivalentes — la función de valor es más inclinada en el dominio de pérdidas.</li>
+<li><strong>Efecto de certeza:</strong> se sobrepondera los resultados ciertos relativo a los probables (paradoja de Allais).</li>
+<li><strong>Dependencia del punto de referencia:</strong> los resultados se evalúan relativo a un punto de referencia (status quo), no en niveles absolutos de riqueza.</li>
+<li><strong>Distorsión de probabilidades:</strong> probabilidades pequeñas son sobreestimadas; probabilidades altas son subestimadas.</li>
+</ul>
+<p>El efecto de dotación, que contribuye a explicar la aversión al riesgo, surge porque la desutilidad de arriesgar la pérdida de $1 es mayor que la utilidad de ganar $1.</p>
+<p>La <strong>función de valor</strong> de la teoría prospectiva es cóncava en ganancias, convexa en pérdidas, con un punto de quiebre en el punto de referencia — los agentes son aversos al riesgo en el dominio de ganancias y amantes del riesgo en el dominio de pérdidas. Esto explica comportamientos como el <strong>efecto de disposición</strong> en finanzas: los inversores mantienen activos perdedores demasiado tiempo (aversión a realizar la pérdida) y venden los ganadores demasiado pronto.</p>
+<hr>
+<h2 id="7-síntesis">7. Síntesis<a hidden class="anchor" aria-hidden="true" href="#7-síntesis">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Concepto</th>
+          <th>Condición</th>
+          <th>Implicancia</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Utilidad esperada</td>
+          <td>Axiomas A1–A4 (independencia)</td>
+          <td>Representación $E[u(X)]$</td>
+      </tr>
+      <tr>
+          <td>Aversión al riesgo</td>
+          <td>$u&rsquo;&rsquo; &lt; 0$ (concavidad)</td>
+          <td>$CE &lt; E[X]$, prima de riesgo positiva</td>
+      </tr>
+      <tr>
+          <td>CARA</td>
+          <td>$A(w) = \alpha$ constante</td>
+          <td>Demanda monetaria de activos riesgosos independiente de $w$</td>
+      </tr>
+      <tr>
+          <td>CRRA</td>
+          <td>$R(w) = \gamma$ constante</td>
+          <td>Proporción de riqueza en activos riesgosos independiente de $w$</td>
+      </tr>
+      <tr>
+          <td>Seguro óptimo (prima justa)</td>
+          <td>$q = p$</td>
+          <td>Cobertura completa es óptima</td>
+      </tr>
+      <tr>
+          <td>Diversificación</td>
+          <td>Activos no perfectamente correlacionados</td>
+          <td>Reduce varianza sin reducir retorno esperado</td>
+      </tr>
+      <tr>
+          <td>CAPM</td>
+          <td>Equilibrio con media-varianza</td>
+          <td>Solo el riesgo sistemático $\beta$ es compensado</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>von Neumann, J. &amp; Morgenstern, O. (1944). <em>Theory of Games and Economic Behavior</em>. Princeton University Press.</li>
+<li>Arrow, K.J. (1965). <em>Aspects of the Theory of Risk-Bearing</em>. Yrjö Jahnsson Lectures.</li>
+<li>Pratt, J.W. (1964). <em>Risk Aversion in the Small and in the Large</em>. Econometrica.</li>
+<li>Allais, M. (1953). <em>Le Comportement de l&rsquo;Homme Rationnel devant le Risque</em>. Econometrica.</li>
+<li>Markowitz, H. (1952). <em>Portfolio Selection</em>. Journal of Finance.</li>
+<li>Sharpe, W. (1964). <em>Capital Asset Prices: A Theory of Market Equilibrium</em>. Journal of Finance.</li>
+<li>Kahneman, D. &amp; Tversky, A. (1979). <em>Prospect Theory: An Analysis of Decision under Risk</em>. Econometrica.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford. Caps. 6, 11.</li>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/incertidumbre/">Incertidumbre</a></li>
+      <li><a href="http://localhost:4459/tags/utilidad-esperada/">Utilidad Esperada</a></li>
+      <li><a href="http://localhost:4459/tags/von-neumann-morgenstern/">Von Neumann-Morgenstern</a></li>
+      <li><a href="http://localhost:4459/tags/aversi%C3%B3n-al-riesgo/">Aversión Al Riesgo</a></li>
+      <li><a href="http://localhost:4459/tags/arrow-pratt/">Arrow-Pratt</a></li>
+      <li><a href="http://localhost:4459/tags/seguros/">Seguros</a></li>
+      <li><a href="http://localhost:4459/tags/capm/">CAPM</a></li>
+      <li><a href="http://localhost:4459/tags/eae2120/">EAE2120</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/metrics/02_mrl/">
@@ -154,7 +362,7 @@
   <a class="next" href="http://localhost:4459/grado/micro/01_consumidor/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Elección del consumidor y demanda</span>
+    <span>Elección del Consumidor y Demanda</span>
   </a>
 </nav>
 

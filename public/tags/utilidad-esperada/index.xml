@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Utilidad Esperada on Agustín Sandoval Tapia</title>
+    <link>http://localhost:4459/tags/utilidad-esperada/</link>
+    <description>Recent content in Utilidad Esperada on Agustín Sandoval Tapia</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4459/tags/utilidad-esperada/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elección bajo Incertidumbre</title>
+      <link>http://localhost:4459/grado/micro/06_riesgo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/micro/06_riesgo/</guid>
+      <description>Teoría de utilidad esperada, axiomas vNM, aversión al riesgo, medidas Arrow-Pratt, equivalente de certeza, prima de riesgo, mercado de seguros, diversificación y precios de activos.</description>
+    </item>
+  </channel>
+</rss>

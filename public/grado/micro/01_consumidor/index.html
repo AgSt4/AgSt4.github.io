@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Elección del consumidor y demanda | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Elección del consumidor y demanda - Agustín Sandoval Tapia">
+<title>Elección del Consumidor y Demanda | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="microeconomía, teoría del consumidor, demanda, Slutsky, dualidad, EAE2110">
+<meta name="description" content="Preferencias, UMP, EMP, dualidad, demanda marshalliana e hicksiana, ecuación de Slutsky, efectos ingreso y sustitución, elasticidades y medidas de bienestar.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/micro/01_consumidor/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,26 +135,325 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/micro/">Microeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Elección del consumidor y demanda
+      Elección del Consumidor y Demanda
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Preferencias, UMP, EMP, dualidad, demanda marshalliana e hicksiana, ecuación de Slutsky, efectos ingreso y sustitución, elasticidades y medidas de bienestar.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>14 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Microeconomía I (EAE2110) · <strong>Profesora:</strong> María Luisa Vergara<br>
+<strong>Referencia principal:</strong> Vial &amp; Zurita — <em>Microeconomía</em> · Nicholson (2008) · Mas-Colell, Whinston &amp; Green (1995) caps. 2–3</p>
+<hr>
+<h2 id="1-preferencias-y-representación-por-utilidad">1. Preferencias y representación por utilidad<a hidden class="anchor" aria-hidden="true" href="#1-preferencias-y-representación-por-utilidad">#</a></h2>
+<h3 id="11-relaciones-de-preferencia">1.1 Relaciones de preferencia<a hidden class="anchor" aria-hidden="true" href="#11-relaciones-de-preferencia">#</a></h3>
+<p>El consumidor se modela como un agente que tiene preferencias sobre el conjunto de consumo $X \subseteq \mathbb{R}^L_+$. La relación de preferencia $\succeq$ (débilmente preferido) debe satisfacer dos axiomas fundamentales:</p>
+<ul>
+<li><strong>Completitud:</strong> para todo $x, y \in X$: $x \succeq y$ o $y \succeq x$ (o ambas).</li>
+<li><strong>Transitividad:</strong> si $x \succeq y$ e $y \succeq z$, entonces $x \succeq z$.</li>
+</ul>
+<p>Con estos dos axiomas, $\succeq$ es una <strong>relación de orden</strong>. La preferencia estricta $\succ$ y la indiferencia $\sim$ se derivan: $x \succ y \iff x \succeq y$ pero no $y \succeq x$; $x \sim y \iff x \succeq y$ e $y \succeq x$.</p>
+<p>Axiomas adicionales con implicancias económicas:</p>
+<ul>
+<li><strong>No saciedad local:</strong> para todo $x$ y $\varepsilon &gt; 0$, existe $y$ con $|y - x| &lt; \varepsilon$ tal que $y \succ x$. Implica que la restricción presupuestaria es activa en el óptimo (se gasta todo el ingreso).</li>
+<li><strong>Continuidad:</strong> los conjuntos ${y : y \succeq x}$ y ${y : x \succeq y}$ son cerrados para todo $x$. Garantiza que pequeños cambios en los bienes no producen saltos en la preferencia.</li>
+<li><strong>Convexidad:</strong> si $x \sim y$, entonces $\alpha x + (1-\alpha)y \succeq x$ para $\alpha \in [0,1]$. Refleja preferencia por variedades — las curvas de indiferencia son convexas al origen.</li>
+<li><strong>Convexidad estricta:</strong> $\alpha x + (1-\alpha)y \succ x$ para $\alpha \in (0,1)$ cuando $x \neq y$. Garantiza demandas únicas (no correspondencias).</li>
+</ul>
+<h3 id="12-representación-por-función-de-utilidad">1.2 Representación por función de utilidad<a hidden class="anchor" aria-hidden="true" href="#12-representación-por-función-de-utilidad">#</a></h3>
+<p><strong>Teorema (Debreu, 1954):</strong> Si $\succeq$ es completa, transitiva y continua, entonces existe una función de utilidad continua $u: X \to \mathbb{R}$ que la representa: $u(x) \geq u(y) \iff x \succeq y$.</p>
+<p>Puntos clave:</p>
+<ul>
+<li>La representación <strong>no es única</strong>: cualquier transformación monótona creciente $f(u)$ representa las mismas preferencias. La utilidad es ordinal, no cardinal.</li>
+<li>La convexidad de preferencias equivale a quasiconcavidad de $u$: $u(\alpha x + (1-\alpha)y) \geq \min{u(x), u(y)}$.</li>
+<li>La convexidad estricta equivale a quasiconcavidad estricta.</li>
+</ul>
+<p><strong>Ejemplos canónicos:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Función</th>
+          <th>Forma</th>
+          <th>Elasticidad sustitución</th>
+          <th>Propiedad</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Cobb-Douglas</td>
+          <td>$u = x_1^\alpha x_2^\beta$</td>
+          <td>1</td>
+          <td>Homotética</td>
+      </tr>
+      <tr>
+          <td>CES</td>
+          <td>$u = [\alpha x_1^\rho + (1-\alpha)x_2^\rho]^{1/\rho}$</td>
+          <td>$1/(1-\rho)$</td>
+          <td>Homotética</td>
+      </tr>
+      <tr>
+          <td>Cuasilineal</td>
+          <td>$u = v(x_1) + x_2$</td>
+          <td>Variable</td>
+          <td>No homotética</td>
+      </tr>
+      <tr>
+          <td>Perfectamente complementarios</td>
+          <td>$u = \min{x_1/a, x_2/b}$</td>
+          <td>0</td>
+          <td>Demanda proporcional fija</td>
+      </tr>
+      <tr>
+          <td>Sustitutos perfectos</td>
+          <td>$u = ax_1 + bx_2$</td>
+          <td>$\infty$</td>
+          <td>Solución esquina</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="2-el-problema-de-maximización-de-utilidad-ump">2. El problema de maximización de utilidad (UMP)<a hidden class="anchor" aria-hidden="true" href="#2-el-problema-de-maximización-de-utilidad-ump">#</a></h2>
+<h3 id="21-formulación">2.1 Formulación<a hidden class="anchor" aria-hidden="true" href="#21-formulación">#</a></h3>
+<p>Dado precios $\mathbf{p} \gg 0$ e ingreso $w &gt; 0$, el consumidor resuelve:</p>
+<p>$$\max_{\mathbf{x} \geq 0} u(\mathbf{x}) \quad \text{s.a.} \quad \mathbf{p} \cdot \mathbf{x} \leq w$$</p>
+<p>El conjunto de consumo factible es el <strong>conjunto presupuestario</strong> $B(\mathbf{p}, w) = {\mathbf{x} \in \mathbb{R}^L_+ : \mathbf{p} \cdot \mathbf{x} \leq w}$, que es convexo y compacto (cerrado y acotado para $\mathbf{p} \gg 0$, $w &gt; 0$). Por el teorema del máximo, si $u$ es continua, el UMP tiene solución.</p>
+<h3 id="22-condiciones-de-primer-orden-solución-interior">2.2 Condiciones de primer orden (solución interior)<a hidden class="anchor" aria-hidden="true" href="#22-condiciones-de-primer-orden-solución-interior">#</a></h3>
+<p>El Lagrangiano es:</p>
+<p>$$\mathcal{L} = u(\mathbf{x}) + \lambda(w - \mathbf{p} \cdot \mathbf{x})$$</p>
+<p>Las CPO son:</p>
+<p>$$\frac{\partial u}{\partial x_i} = \lambda p_i \quad \forall i, \qquad \mathbf{p} \cdot \mathbf{x} = w$$</p>
+<p>Para dos bienes, dividiendo las CPO:</p>
+<p>$$\frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{p_1}{p_2} \implies \text{TMS}_{12} = \frac{p_1}{p_2}$$</p>
+<p>La <strong>tasa marginal de sustitución</strong> (TMS) debe igualar el precio relativo: la tasa subjetiva de intercambio entre bienes iguala la tasa objetiva del mercado. Geométricamente, la curva de indiferencia es tangente a la recta presupuestaria.</p>
+<p><strong>Interpretación de $\lambda$:</strong> el multiplicador de Lagrange mide la utilidad marginal del ingreso — cuánto aumenta la utilidad máxima si el ingreso sube marginalmente. Formalmente, por el teorema de la envolvente: $\lambda = \partial v / \partial w$, donde $v(\mathbf{p}, w)$ es la función de utilidad indirecta.</p>
+<h3 id="23-condiciones-kuhn-tucker-para-soluciones-esquina">2.3 Condiciones Kuhn-Tucker para soluciones esquina<a hidden class="anchor" aria-hidden="true" href="#23-condiciones-kuhn-tucker-para-soluciones-esquina">#</a></h3>
+<p>Con restricciones de no-negatividad, las CPO generalizadas son:</p>
+<p>$$\frac{\partial u}{\partial x_i} \leq \lambda p_i, \quad x_i \geq 0, \quad x_i\left(\frac{\partial u}{\partial x_i} - \lambda p_i\right) = 0$$</p>
+<p>Un bien no se consume ($x_i^* = 0$) cuando su utilidad marginal al precio vigente es menor que $\lambda$: el bien es &ldquo;demasiado caro&rdquo; relativo al beneficio que provee.</p>
+<h3 id="24-la-función-de-demanda-marshalliana">2.4 La función de demanda marshalliana<a hidden class="anchor" aria-hidden="true" href="#24-la-función-de-demanda-marshalliana">#</a></h3>
+<p>La solución del UMP es la <strong>demanda marshalliana</strong> (u ordinaria o walrasiana) $\mathbf{x}(\mathbf{p}, w)$. Sus propiedades directas del UMP:</p>
+<p><strong>Homogeneidad de grado cero:</strong> $\mathbf{x}(\lambda\mathbf{p}, \lambda w) = \mathbf{x}(\mathbf{p}, w)$ para $\lambda &gt; 0$. Solo importan los precios relativos y el ingreso real — sin ilusión monetaria.</p>
+<p><strong>Ley de Walras:</strong> $\mathbf{p} \cdot \mathbf{x}(\mathbf{p}, w) = w$. Con no-saciedad local, el consumidor gasta todo su ingreso.</p>
+<p><strong>Simetría y negativo-semidefinitismo:</strong> las propiedades de la demanda compensada se trasladan a la marshalliana vía la ecuación de Slutsky (ver sección 4).</p>
+<h3 id="25-la-función-de-utilidad-indirecta">2.5 La función de utilidad indirecta<a hidden class="anchor" aria-hidden="true" href="#25-la-función-de-utilidad-indirecta">#</a></h3>
+<p>La <strong>función de utilidad indirecta</strong> es el valor del problema maximizado:</p>
+<p>$$v(\mathbf{p}, w) = u(\mathbf{x}(\mathbf{p}, w)) = \max_{\mathbf{x}} {u(\mathbf{x}) : \mathbf{p} \cdot \mathbf{x} \leq w}$$</p>
+<p>Propiedades:</p>
+<ul>
+<li>Homogénea de grado cero en $(\mathbf{p}, w)$.</li>
+<li>Decreciente en precios y creciente en $w$.</li>
+<li>Quasiconvexa en $\mathbf{p}$ (no quasicóncava).</li>
+</ul>
+<p><strong>Identidad de Roy:</strong> la demanda marshalliana se recupera de la utilidad indirecta:</p>
+<p>$$x_i(\mathbf{p}, w) = -\frac{\partial v / \partial p_i}{\partial v / \partial w}$$</p>
+<p>La demanda del bien $i$ es la razón entre la utilidad marginal negativa de su precio y la utilidad marginal del ingreso. Roy permite recuperar demandas sin resolver el UMP directamente — útil en econometría cuando se especifica $v$ directamente.</p>
+<hr>
+<h2 id="3-el-problema-de-minimización-de-gasto-emp">3. El problema de minimización de gasto (EMP)<a hidden class="anchor" aria-hidden="true" href="#3-el-problema-de-minimización-de-gasto-emp">#</a></h2>
+<h3 id="31-formulación">3.1 Formulación<a hidden class="anchor" aria-hidden="true" href="#31-formulación">#</a></h3>
+<p>El dual del UMP pregunta: ¿cuál es el gasto mínimo necesario para alcanzar un nivel de utilidad $\bar{u}$?</p>
+<p>$$\min_{\mathbf{x} \geq 0} \mathbf{p} \cdot \mathbf{x} \quad \text{s.a.} \quad u(\mathbf{x}) \geq \bar{u}$$</p>
+<h3 id="32-la-demanda-hicksiana-compensada">3.2 La demanda hicksiana (compensada)<a hidden class="anchor" aria-hidden="true" href="#32-la-demanda-hicksiana-compensada">#</a></h3>
+<p>La demanda hicksiana $h(\mathbf{p}, \bar{u})$ proviene del EMP, mientras que la marshalliana proviene del UMP. Los dos problemas son duales matemáticos, y el teorema de dualidad provee métodos para probar las relaciones entre ellos.</p>
+<p>La demanda hicksiana mantiene la utilidad constante: aísla el <strong>efecto sustitución</strong> eliminando el efecto ingreso. Sus propiedades:</p>
+<ul>
+<li>Homogénea de grado cero en $\mathbf{p}$.</li>
+<li>La propia pendiente es no positiva: $\partial h_i / \partial p_i \leq 0$ — la demanda compensada siempre cumple la ley de la demanda.</li>
+<li>Simétrica: $\partial h_i / \partial p_j = \partial h_j / \partial p_i$ — el efecto compensado cruzado es simétrico.</li>
+</ul>
+<p>La demanda hicksiana aísla el efecto sustitución suponiendo que el consumidor es compensado con exactamente suficiente ingreso adicional tras el alza de precio para comprar alguna cesta sobre la misma curva de indiferencia. Si la demanda hicksiana es más inclinada que la marshalliana, el bien es normal; de lo contrario, es inferior.</p>
+<h3 id="33-la-función-de-gasto">3.3 La función de gasto<a hidden class="anchor" aria-hidden="true" href="#33-la-función-de-gasto">#</a></h3>
+<p>La <strong>función de gasto</strong> $e(\mathbf{p}, \bar{u})$ es el valor del problema minimizado:</p>
+<p>$$e(\mathbf{p}, \bar{u}) = \mathbf{p} \cdot h(\mathbf{p}, \bar{u}) = \min_\mathbf{x} {\mathbf{p} \cdot \mathbf{x} : u(\mathbf{x}) \geq \bar{u}}$$</p>
+<p>Propiedades:</p>
+<ul>
+<li>Homogénea de grado uno en $\mathbf{p}$: si todos los precios se duplican, el gasto mínimo se duplica.</li>
+<li>Creciente en $\bar{u}$ y en $\mathbf{p}$.</li>
+<li>Cóncava en $\mathbf{p}$.</li>
+</ul>
+<p><strong>Lema de Shephard:</strong> si la función de utilidad $u(\mathbf{x})$ es localmente no saciada y estrictamente convexa, entonces por el lema de Shephard $h(\mathbf{p}, u) = \nabla_\mathbf{p} e(\mathbf{p}, u)$.  La demanda compensada del bien $i$ es simplemente la derivada del gasto mínimo respecto al precio $p_i$ — resultado directo del teorema de la envolvente aplicado al EMP.</p>
+<h3 id="34-la-dualidad-entre-ump-y-emp">3.4 La dualidad entre UMP y EMP<a hidden class="anchor" aria-hidden="true" href="#34-la-dualidad-entre-ump-y-emp">#</a></h3>
+<p>Las funciones de utilidad indirecta $v(\mathbf{p}, w)$ y de gasto $e(\mathbf{p}, \bar{u})$ son inversas la una de la otra como funciones de su segundo argumento:</p>
+<p>$$e(\mathbf{p}, v(\mathbf{p}, w)) = w \qquad v(\mathbf{p}, e(\mathbf{p}, \bar{u})) = \bar{u}$$</p>
+<p>Y las demandas se relacionan:</p>
+<p>$$h(\mathbf{p}, \bar{u}) = \mathbf{x}(\mathbf{p}, e(\mathbf{p}, \bar{u})) \qquad \mathbf{x}(\mathbf{p}, w) = h(\mathbf{p}, v(\mathbf{p}, w))$$</p>
+<p>En el óptimo del consumidor, la demanda marshalliana a ingreso $w$ coincide con la hicksiana al nivel de utilidad que ese ingreso permite alcanzar, y viceversa. Esta dualidad es la estructura algebraica que subyace a toda la teoría del consumidor.</p>
+<hr>
+<h2 id="4-la-ecuación-de-slutsky">4. La ecuación de Slutsky<a hidden class="anchor" aria-hidden="true" href="#4-la-ecuación-de-slutsky">#</a></h2>
+<h3 id="41-derivación">4.1 Derivación<a hidden class="anchor" aria-hidden="true" href="#41-derivación">#</a></h3>
+<p>La ecuación de Slutsky relaciona los cambios en la demanda marshalliana (no compensada) con los cambios en la demanda hicksiana (compensada). El lado derecho de la ecuación iguala el cambio en la demanda del bien $i$ manteniendo la utilidad fija menos la cantidad del bien $j$ demandada multiplicada por el cambio en la demanda del bien $i$ cuando la riqueza cambia. El primer término representa el efecto sustitución y el segundo el efecto ingreso.</p>
+<p>Diferenciando la identidad $h_i(\mathbf{p}, u) = x_i(\mathbf{p}, e(\mathbf{p}, u))$ respecto a $p_j$ y usando el lema de Shephard ($\partial e / \partial p_j = h_j = x_j$ en el óptimo):</p>
+<p>$$\underbrace{\frac{\partial h_i}{\partial p_j}}<em>{\text{efecto sustitución}} = \underbrace{\frac{\partial x_i}{\partial p_j}}</em>{\text{efecto total}} + \underbrace{x_j \frac{\partial x_i}{\partial w}}_{\text{efecto ingreso}}$$</p>
+<p>Reordenando:</p>
+<p>$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial w}$$</p>
+<p>Esta es la <strong>ecuación de Slutsky</strong>: el efecto precio total sobre la demanda marshalliana es la suma del efecto sustitución (compensado) más el efecto ingreso. El efecto sustitución siempre tiene el signo predicho por la ley de la demanda ($\partial h_i / \partial p_i \leq 0$); el efecto ingreso puede ser positivo o negativo.</p>
+<h3 id="42-la-matriz-de-slutsky">4.2 La matriz de Slutsky<a hidden class="anchor" aria-hidden="true" href="#42-la-matriz-de-slutsky">#</a></h3>
+<p>Apilando las ecuaciones de Slutsky para todos los bienes, se obtiene la <strong>matriz de Slutsky</strong> $S(\mathbf{p}, w)$ con entradas $s_{ij} = \partial h_i / \partial p_j = \partial x_i / \partial p_j + x_j \partial x_i / \partial w$.</p>
+<p>Propiedades de $S$:</p>
+<ul>
+<li><strong>Simétrica:</strong> $s_{ij} = s_{ji}$ — los efectos sustitución cruzados son simétricos. Esta es la restricción más importante de la teoría del consumidor; es testeable y sirve para verificar la racionalidad.</li>
+<li><strong>Negativa semidefinida:</strong> $\mathbf{v}^T S \mathbf{v} \leq 0$ para todo $\mathbf{v}$. Implica que los efectos propios son no positivos: $s_{ii} \leq 0$.</li>
+<li><strong>$S \cdot \mathbf{p} = \mathbf{0}$:</strong> consecuencia de la homogeneidad de grado cero.</li>
+</ul>
+<h3 id="43-clasificación-de-bienes">4.3 Clasificación de bienes<a hidden class="anchor" aria-hidden="true" href="#43-clasificación-de-bienes">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Definición</th>
+          <th>Condición</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Normal</strong></td>
+          <td>$\partial x_i / \partial w &gt; 0$</td>
+          <td>La demanda sube con el ingreso</td>
+      </tr>
+      <tr>
+          <td><strong>Inferior</strong></td>
+          <td>$\partial x_i / \partial w &lt; 0$</td>
+          <td>La demanda cae con el ingreso</td>
+      </tr>
+      <tr>
+          <td><strong>Giffen</strong></td>
+          <td>$\partial x_i / \partial p_i &gt; 0$</td>
+          <td>Demanda sube cuando su precio sube</td>
+      </tr>
+      <tr>
+          <td><strong>Sustitutos brutos</strong></td>
+          <td>$\partial x_i / \partial p_j &gt; 0$</td>
+          <td>Efecto total de precio cruzado positivo</td>
+      </tr>
+      <tr>
+          <td><strong>Complementos brutos</strong></td>
+          <td>$\partial x_i / \partial p_j &lt; 0$</td>
+          <td>Efecto total de precio cruzado negativo</td>
+      </tr>
+      <tr>
+          <td><strong>Sustitutos netos</strong></td>
+          <td>$\partial h_i / \partial p_j &gt; 0$</td>
+          <td>Efecto sustitución cruzado positivo</td>
+      </tr>
+      <tr>
+          <td><strong>Complementos netos</strong></td>
+          <td>$\partial h_i / \partial p_j &lt; 0$</td>
+          <td>Efecto sustitución cruzado negativo</td>
+      </tr>
+  </tbody>
+</table>
+<p>Un bien Giffen es necesariamente inferior (efecto ingreso negativo suficientemente grande como para dominar el efecto sustitución negativo). Un bien inferior no es necesariamente Giffen. Los ejemplos empíricos de bienes Giffen son escasos; Jensen y Miller (2008) documentaron el caso de arroz y trigo en hogares pobres chinos.</p>
+<hr>
+<h2 id="5-elasticidades">5. Elasticidades<a hidden class="anchor" aria-hidden="true" href="#5-elasticidades">#</a></h2>
+<h3 id="51-las-elasticidades-fundamentales">5.1 Las elasticidades fundamentales<a hidden class="anchor" aria-hidden="true" href="#51-las-elasticidades-fundamentales">#</a></h3>
+<p>La <strong>elasticidad-precio de la demanda</strong> mide la sensibilidad porcentual de la cantidad demandada ante un cambio porcentual en el precio propio:</p>
+<p>$$\varepsilon_{ii} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i}$$</p>
+<p>Para bienes normales, $\varepsilon_{ii} &lt; 0$. La demanda es:</p>
+<ul>
+<li><strong>Elástica</strong> si $|\varepsilon_{ii}| &gt; 1$: el cambio porcentual en cantidad supera al del precio.</li>
+<li><strong>Inelástica</strong> si $|\varepsilon_{ii}| &lt; 1$.</li>
+<li><strong>Unitariamente elástica</strong> si $|\varepsilon_{ii}| = 1$.</li>
+</ul>
+<p>La <strong>elasticidad-ingreso</strong> mide la sensibilidad ante cambios en el ingreso:</p>
+<p>$$\varepsilon_{iw} = \frac{\partial x_i}{\partial w} \cdot \frac{w}{x_i}$$</p>
+<p>$\varepsilon_{iw} &gt; 0$: bien normal; $\varepsilon_{iw} &lt; 0$: bien inferior; $\varepsilon_{iw} &gt; 1$: bien de lujo.</p>
+<p>La <strong>elasticidad cruzada</strong> mide el efecto del precio de otro bien:</p>
+<p>$$\varepsilon_{ij} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i}$$</p>
+<h3 id="52-las-restricciones-sobre-elasticidades">5.2 Las restricciones sobre elasticidades<a hidden class="anchor" aria-hidden="true" href="#52-las-restricciones-sobre-elasticidades">#</a></h3>
+<p>De la homogeneidad de grado cero y la ley de Walras se derivan restricciones que las elasticidades deben satisfacer:</p>
+<p><strong>Ecuación de Euler (homogeneidad):</strong> para cada bien $i$:</p>
+<p>$$\sum_j \varepsilon_{ij} + \varepsilon_{iw} = 0$$</p>
+<p>La suma de todas las elasticidades precio más la elasticidad ingreso es cero. Si el ingreso y todos los precios suben en la misma proporción, la demanda no cambia.</p>
+<p><strong>Identidades de Cournot y Engel (Ley de Walras):</strong></p>
+<p>$$\sum_i s_i \varepsilon_{ij} = -s_j \quad \text{(Cournot)} \qquad \sum_i s_i \varepsilon_{iw} = 1 \quad \text{(Engel)}$$</p>
+<p>donde $s_i = p_i x_i / w$ es la participación del bien $i$ en el gasto. La identidad de Engel dice que el promedio ponderado de las elasticidades ingreso (con pesos en el gasto) es uno — si el ingreso sube 1%, el gasto total sube 1%.</p>
+<h3 id="53-la-ecuación-de-slutsky-en-elasticidades">5.3 La ecuación de Slutsky en elasticidades<a hidden class="anchor" aria-hidden="true" href="#53-la-ecuación-de-slutsky-en-elasticidades">#</a></h3>
+<p>La ecuación de Slutsky puede reescribirse en términos de elasticidades: $\varepsilon_p = \varepsilon_p^h - s_j \varepsilon_w$, donde $\varepsilon_p$ es la elasticidad-precio no compensada, $\varepsilon_p^h$ es la compensada, $\varepsilon_w$ la elasticidad ingreso y $s_j$ la participación en el gasto.</p>
+<hr>
+<h2 id="6-medidas-de-bienestar-del-consumidor">6. Medidas de bienestar del consumidor<a hidden class="anchor" aria-hidden="true" href="#6-medidas-de-bienestar-del-consumidor">#</a></h2>
+<h3 id="61-excedente-del-consumidor-y-sus-limitaciones">6.1 Excedente del consumidor y sus limitaciones<a hidden class="anchor" aria-hidden="true" href="#61-excedente-del-consumidor-y-sus-limitaciones">#</a></h3>
+<p>El <strong>excedente del consumidor</strong> es el área debajo de la curva de demanda marshalliana y por encima del precio:</p>
+<p>$$CS = \int_p^\infty x(q, w) dq$$</p>
+<p>Es una medida de bienestar intuitiva pero imprecisa: depende de la utilidad marginal del ingreso, que no es constante a lo largo de la curva marshalliana. Es exacta solo con utilidad cuasilineal (sin efecto ingreso).</p>
+<h3 id="62-variación-compensatoria-y-variación-equivalente">6.2 Variación compensatoria y variación equivalente<a hidden class="anchor" aria-hidden="true" href="#62-variación-compensatoria-y-variación-equivalente">#</a></h3>
+<p>Las medidas exactas de bienestar usan la función de gasto:</p>
+<p><strong>Variación compensatoria (VC):</strong> ingreso adicional que el consumidor necesitaría recibir (o pagar) a los nuevos precios para quedar en el mismo nivel de utilidad que antes del cambio:</p>
+<p>$$VC = e(\mathbf{p}^1, u^0) - e(\mathbf{p}^0, u^0) = e(\mathbf{p}^1, u^0) - w$$</p>
+<p>Cuando los precios cambian de $\mathbf{p}^0$ a $\mathbf{p}^1$, el consumidor necesita un ingreso mínimo de $e(\mathbf{p}^1, u^0)$ para alcanzar la misma utilidad. La variación compensatoria es la diferencia entre ese ingreso mínimo y el ingreso actual.</p>
+<p><strong>Variación equivalente (VE):</strong> ingreso que el consumidor estaría dispuesto a aceptar (o pagar) a los precios originales en lugar de que ocurra el cambio:</p>
+<p>$$VE = e(\mathbf{p}^1, u^1) - e(\mathbf{p}^0, u^1) = w - e(\mathbf{p}^0, u^1)$$</p>
+<p>Ambas medidas son exactas en el sentido de que eliminan el sesgo del efecto ingreso. Se calculan como áreas bajo la curva de demanda hicksiana a distintos niveles de utilidad. El CS está entre VC y VE para cambios de precio de bienes normales.</p>
+<h3 id="63-exceso-de-carga-deadweight-loss">6.3 Exceso de carga (deadweight loss)<a hidden class="anchor" aria-hidden="true" href="#63-exceso-de-carga-deadweight-loss">#</a></h3>
+<p>El <strong>exceso de carga</strong> de un impuesto es la pérdida de bienestar sobre y por encima del ingreso fiscal recaudado. Aproximando con elasticidades:</p>
+<p>$$DWL \approx \frac{1}{2} \varepsilon_p^h \frac{t^2}{p} x$$</p>
+<p>donde $t$ es el impuesto por unidad y $\varepsilon_p^h &lt; 0$ es la elasticidad compensada. El exceso de carga es proporcional al cuadrado del impuesto (los impuestos pequeños tienen pérdidas cuadráticas) y a la elasticidad compensada (bienes más elásticos generan más distorsión).</p>
+<hr>
+<h2 id="7-demanda-agregada">7. Demanda agregada<a hidden class="anchor" aria-hidden="true" href="#7-demanda-agregada">#</a></h2>
+<h3 id="71-el-problema-de-la-agregación">7.1 El problema de la agregación<a hidden class="anchor" aria-hidden="true" href="#71-el-problema-de-la-agregación">#</a></h3>
+<p>La demanda de mercado es la suma de las demandas individuales: $X_i(\mathbf{p}, \mathbf{w}) = \sum_h x_i^h(\mathbf{p}, w^h)$. El problema es que la demanda de mercado depende de la distribución del ingreso $\mathbf{w} = (w^1, \ldots, w^H)$, no solo del ingreso agregado $W = \sum_h w^h$.</p>
+<p>La demanda agregada puede escribirse como función solo de $\mathbf{p}$ y $W$ (sin depender de la distribución) si y solo si todos los consumidores tienen <strong>curvas de Engel paralelas y lineales</strong> — lo que requiere preferencias homotéticas o cuasilineales.</p>
+<h3 id="72-la-ley-de-gorman">7.2 La ley de Gorman<a hidden class="anchor" aria-hidden="true" href="#72-la-ley-de-gorman">#</a></h3>
+<p>Gorman (1953) demostró que la demanda agregada puede tratarse como si proviniera de un agente representativo si y solo si las funciones de gasto individuales tienen la forma:</p>
+<p>$$e^h(\mathbf{p}, u^h) = a^h(\mathbf{p}) + b(\mathbf{p}) u^h$$</p>
+<p>donde $b(\mathbf{p})$ es común a todos los consumidores. En este caso, la distribución del ingreso no importa para la demanda agregada — solo el ingreso total. Este es el fundamento del agente representativo en macroeconomía, y sus condiciones son bastante restrictivas.</p>
+<h3 id="73-propiedades-de-la-demanda-agregada">7.3 Propiedades de la demanda agregada<a hidden class="anchor" aria-hidden="true" href="#73-propiedades-de-la-demanda-agregada">#</a></h3>
+<p>La demanda de mercado hereda la homogeneidad de grado cero y la ley de Walras de las demandas individuales. Sin embargo, la simetría y negativo-semidefinitismo de la matriz de Slutsky <strong>no</strong> se preservan en la agregación bajo condiciones generales — la demanda de mercado puede exhibir patrones que ningún consumidor individual exhibiría. El teorema de Sonnenschein-Mantel-Debreu establece que básicamente cualquier función continua que satisfaga homogeneidad y Walras puede ser una demanda de mercado.</p>
+<hr>
+<h2 id="8-funciones-de-utilidad-específicas-resumen-de-resultados">8. Funciones de utilidad específicas: resumen de resultados<a hidden class="anchor" aria-hidden="true" href="#8-funciones-de-utilidad-específicas-resumen-de-resultados">#</a></h2>
+<p>Con <strong>Cobb-Douglas</strong> $u = x_1^\alpha x_2^{1-\alpha}$:</p>
+<ul>
+<li>Marshalliana: $x_1 = \alpha w / p_1$, $x_2 = (1-\alpha)w / p_2$.</li>
+<li>Participaciones de gasto constantes: $p_i x_i / w = \alpha_i$.</li>
+<li>Función de gasto: $e = \bar{u} \cdot p_1^\alpha p_2^{1-\alpha} / [\alpha^\alpha (1-\alpha)^{1-\alpha}]$.</li>
+<li>Elasticidad-precio propia: $-1$ (unitariamente elástica).</li>
+<li>Elasticidad ingreso: $1$ (bien normal).</li>
+</ul>
+<p>Con <strong>CES</strong> $u = [\alpha x_1^\rho + (1-\alpha)x_2^\rho]^{1/\rho}$:</p>
+<ul>
+<li>Elasticidad de sustitución constante: $\sigma = 1/(1-\rho)$.</li>
+<li>Cobb-Douglas es el caso límite $\rho \to 0$ ($\sigma \to 1$).</li>
+<li>Sustitutos perfectos: $\rho = 1$ ($\sigma \to \infty$).</li>
+<li>Complementos perfectos: $\rho \to -\infty$ ($\sigma \to 0$).</li>
+</ul>
+<p>Con <strong>cuasilineal</strong> $u = v(x_1) + x_2$:</p>
+<ul>
+<li>Sin efecto ingreso sobre $x_1$: $\partial x_1 / \partial w = 0$.</li>
+<li>CS = VC = VE (medida exacta de bienestar).</li>
+<li>Utilidad marginal del ingreso constante.</li>
+</ul>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Vial, B. &amp; Zurita, F. <em>Microeconomía</em>. Ediciones UC.</li>
+<li>Nicholson, W. (2008). <em>Teoría Microeconómica: Principios Básicos y Aplicaciones</em>. Cengage Learning.</li>
+<li>Mas-Colell, A., Whinston, M. &amp; Green, J. (1995). <em>Microeconomic Theory</em>. Oxford University Press. Caps. 2–3.</li>
+<li>Deaton, A. &amp; Muellbauer, J. (1980). <em>Economics and Consumer Behavior</em>. Cambridge University Press.</li>
+<li>Jensen, R.T. &amp; Miller, N.H. (2008). <em>Giffen Behavior and Subsistence Consumption</em>. AER.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/microeconom%C3%ADa/">Microeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/teor%C3%ADa-del-consumidor/">Teoría Del Consumidor</a></li>
+      <li><a href="http://localhost:4459/tags/demanda/">Demanda</a></li>
+      <li><a href="http://localhost:4459/tags/slutsky/">Slutsky</a></li>
+      <li><a href="http://localhost:4459/tags/dualidad/">Dualidad</a></li>
+      <li><a href="http://localhost:4459/tags/eae2110/">EAE2110</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/micro/06_riesgo/">
     <span class="title">« Anterior</span>
     <br>
-    <span>Elección bajo incertidumbre</span>
+    <span>Elección bajo Incertidumbre</span>
   </a>
   <a class="next" href="http://localhost:4459/grado/micro/04_general/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Equilibrio general en competencia perfecta</span>
+    <span>Equilibrio General en Competencia Perfecta</span>
   </a>
 </nav>
 
