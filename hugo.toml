@@ -33,6 +33,10 @@ paginate = 10
     url = "/apuntes/"
 
   [[params.profileMode.buttons]]
+    name = "Grado"
+    url = "/grado/"
+
+  [[params.profileMode.buttons]]
     name = "Proyectos"
     url = "/proyectos/"
 
