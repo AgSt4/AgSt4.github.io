@@ -5,6 +5,12 @@
     <loc>http://localhost:4459/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/datos/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/econometr%C3%ADa/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/tags/esg/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,7 +32,16 @@
     <loc>http://localhost:4459/posts/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/proyectos/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/python/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/tags/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/proyectos/proyecto-prueba/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/</loc>
@@ -131,8 +146,20 @@
     <loc>http://localhost:4459/grado/macro/02_trabajo/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/apuntes/</loc>
+  </url><url>
     <loc>http://localhost:4459/categories/</loc>
   </url><url>
     <loc>http://localhost:4459/cv/</loc>
+  </url><url>
+    <loc>http://localhost:4459/apuntes/desarrollo-economico/</loc>
+  </url><url>
+    <loc>http://localhost:4459/apuntes/diversos/</loc>
+  </url><url>
+    <loc>http://localhost:4459/apuntes/economia-financiera/</loc>
+  </url><url>
+    <loc>http://localhost:4459/apuntes/economia-politica/</loc>
+  </url><url>
+    <loc>http://localhost:4459/apuntes/finanzas-sostenibles/</loc>
   </url>
 </urlset>

@@ -9,6 +9,20 @@
     <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Datos</title>
+      <link>http://localhost:4459/tags/datos/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Econometría</title>
+      <link>http://localhost:4459/tags/econometr%C3%ADa/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/econometr%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>ESG</title>
       <link>http://localhost:4459/tags/esg/</link>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
@@ -41,6 +55,13 @@
       <link>http://localhost:4459/tags/medici%C3%B3n/</link>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/tags/medici%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:4459/tags/python/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/python/</guid>
       <description></description>
     </item>
     <item>

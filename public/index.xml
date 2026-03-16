@@ -16,6 +16,13 @@
       <description>Qué es, por qué importa, cómo se mide, cómo se invierte y qué dice la evidencia.</description>
     </item>
     <item>
+      <title>Título del proyecto</title>
+      <link>http://localhost:4459/proyectos/proyecto-prueba/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/proyectos/proyecto-prueba/</guid>
+      <description>Una línea describiendo el proyecto.</description>
+    </item>
+    <item>
       <title>Bienes públicos y externalidades</title>
       <link>http://localhost:4459/grado/micro/05_publico/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
