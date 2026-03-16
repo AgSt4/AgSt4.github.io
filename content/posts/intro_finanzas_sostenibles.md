@@ -1,18 +1,18 @@
 ---
-title: "Finanzas Sostenibles e Inversión ESG: Una Introducción Rigurosa"
+title: "Finanzas Sostenibles e Inversión ESG: Una Introducción"
 date: 2026-03-16
 draft: false
 tags: ["ESG", "finanzas sostenibles", "inversión", "inversión sostenible", "medición"]
 description: "Qué es, por qué importa, cómo se mide, cómo se invierte y qué dice la evidencia."
 ---
 
-Las finanzas sostenibles han dejado de ser un nicho ético para convertirse en una discusión central dentro de la teoría y práctica de la inversión. No porque el mundo se haya vuelto más virtuoso, sino porque la gestión de riesgos de largo plazo obliga a incorporar dimensiones que los modelos tradicionales ignoran sistemáticamente. Esta entrada busca ser una introducción honesta al campo: sus fundamentos, sus herramientas, sus limitaciones y lo que dice la evidencia empírica.
+Las finanzas sostenibles han dejado de ser un nicho ético para convertirse en una discusión central dentro de la práctica financiera de frontera. Esto no ha ocurrido porque el mundo se haya vuelto más virtuoso, sino porque la ***gestión de riesgos*** de largo plazo (y en cierta medida la demanda temática) obliga a los inversionistas institucionales y empresas a incorporar dimensiones que los modelos tradicionales ignoran. Esta entrada busca ser una introducción elemental al campo: sus fundamentos, sus herramientas, sus limitaciones y lo que dice la evidencia empírica.
 
 ---
 
-## Qué son las finanzas sostenibles
+## Qué son las *finanzas sostenibles*
 
-Las finanzas sostenibles son el conjunto de prácticas, instrumentos y marcos analíticos que incorporan factores ambientales, sociales y de gobernanza (ESG, por sus siglas en inglés) en la toma de decisiones financieras. No se trata de una ideología, sino de una expansión del conjunto de información relevante para estimar riesgo y retorno.
+Las finanzas sostenibles son el conjunto de prácticas, instrumentos y marcos analíticos que incorporan factores ambientales, sociales y de gobernanza (ESG, por sus siglas en inglés) en la toma de decisiones financieras. Se trata de una expansión del conjunto de información relevante para estimar nuevas clases de riesgo, para expandir la frontera invertible alcanzando mayores retornos y, en su conjunto, responder a una creciente demanda por activos que respondan de manera adecuada a problemáticas ***ESG***.
 
 El acrónimo ESG organiza tres dimensiones:
 
@@ -20,7 +20,7 @@ El acrónimo ESG organiza tres dimensiones:
 - **S (Social):** condiciones laborales, diversidad, relaciones con comunidades, cadena de suministro.
 - **G (Governance):** estructura del directorio, compensación ejecutiva, transparencia, derechos de accionistas minoritarios.
 
-La distinción es importante: no son tres cosas equivalentes. La evidencia empírica muestra consistentemente que la **G** es el factor más valorado por gestores institucionales y el que tiene relación más robusta con desempeño financiero. E y S importan, pero de forma más heterogénea, dependiente del sector y del horizonte temporal.
+Distinguir las problemáticas que afectan a cada tópico son relevantes puesto que activo es vulnerable a clases distintas de riesgos según su ***materialidad***. La evidencia empírica muestra consistentemente que los gestores institucionales dan mayor importancia a la gobernanza (*G*) de sus subyacentes puesto que es el que tiene relación más robusta con desempeño financiero. Factores medioambientales (*E*) y sociales (*S*) también tienen importancia, pero de forma heterogénea entre industrias, ubicaciones y clase de activos.
 
 ---
 
@@ -149,23 +149,27 @@ La convergencia regulatoria está cambiando la última fila. El ISSB (Internatio
 
 ## El estado del mercado y la política
 
-Los activos sostenibles globales totalizaron 3,2 billones de dólares a finales del primer trimestre de 2025.  El crecimiento ha sido sostenido, aunque con tensiones regionales importantes: Europa sigue siendo el mercado dominante, mientras que Estados Unidos acumula diez trimestres consecutivos de salidas netas de fondos ESG , reflejo de un clima político adverso con legislación anti-ESG a nivel estadual y retiradas corporativas de compromisos de sostenibilidad.
+Según el reporte [*Sustainable Reality 2H 2025*](https://www.morganstanley.com/insights/articles/sustainable-fund-performance-second-half-2025) del Morgan Stanley Institute for Sustainable Investing, los activos sostenibles globales alcanzaron un récord de USD 4,13 billones al cierre de 2025 (trillions), un alza de 4,0% respecto a junio y de 16,3% interanual.  Sin embargo, su participación en el total de activos globales bajó a 6,5%, continuando una caída gradual desde el peak de 7,2% alcanzado en junio de 2023 , reflejo de que los fondos tradicionales captaron flujos más fuertes.
 
-Esta politización —principalmente anglosajona— contrasta con el momentum regulatorio en Europa y Asia. La emisión de bonos sostenibles en Asia se aceleró, con volúmenes outstanding que se triplicaron hasta alcanzar 918 mil millones de dólares a finales de 2024. 
+En términos de flujos, los fondos sostenibles registraron salidas netas de USD 86,4 mil millones en el segundo semestre de 2025, llevando el saldo anual a salidas netas de USD 62,8 mil millones.  Europa, históricamente el mercado dominante, registró salidas por primera vez, aunque Morningstar señala que gran parte refleja reasignaciones desde fondos mancomunados hacia mandatos personalizados de sostenibilidad  que no quedan capturados en las bases de datos de fondos. Los fondos domiciliados en Asia fueron el único grupo regional con entradas netas en el semestre. 
 
-La discusión sobre si los fondos de defensa deberían incluirse en portafolios ESG ilustra bien cómo el campo sigue siendo un terreno en disputa normativa. La UE espera abordar esto en su revisión del SFDR.
+En retornos, los fondos sostenibles entregaron retornos medianos de 5,3% en 2H 2025, levemente por debajo del 5,5% de los fondos tradicionales. Sin embargo, el 89% de los fondos sostenibles tuvo retornos positivos frente al 84% de los tradicionales , lo que sugiere menor probabilidad de seleccionar un fondo con retorno negativo dentro del universo sostenible. La brecha en el agregado se explica principalmente por sesgo geográfico: el 70% de los fondos sostenibles invierte globalmente o en Europa, frente al 40% de los tradicionales , regiones que tuvieron peor desempeño relativo en el período.
+
+En perspectiva de largo plazo, una inversión hipotética de USD 100 en un fondo sostenible en diciembre de 2018 equivaldría a USD 162 hoy, frente a USD 152 en un fondo tradicional. 
+
+Norte América extiende una tendencia multianual de salidas que comenzó a finales de 2022, en parte reflejo de un clima político adverso con legislación anti-ESG a nivel estadual y retiradas corporativas de compromisos de sostenibilidad. La discusión sobre si los fondos de defensa deberían incluirse en portafolios ESG ilustra cómo el campo sigue siendo un terreno en disputa normativa, tema que la UE espera abordar en su revisión del SFDR.
 
 ---
 
 ## Lecturas y recursos recomendados
 
-**Académico:**
+**Evidencia empírica:**
 - Berg, Kölbel & Rigobon (2022). *Aggregate Confusion: The Divergence of ESG Ratings*. Review of Finance.
 - Friede, Busch & Bassen (2015). *ESG and Financial Performance: Aggregated Evidence from More than 2,000 Empirical Studies*. Journal of Sustainable Finance & Investment.
 - Edmans, Gosling & Jenter (2024). *Sustainable Investing: Evidence from the Field*. SSRN / Harvard Law Forum.
 - Giese et al. (2019). *Foundations of ESG Investing*. Journal of Portfolio Management.
 
-**Datos y reportes:**
+**Datos, reportes y metodología:**
 - MSCI ESG Ratings Methodology
 - Sustainalytics ESG Risk Ratings
 - US SIF Trends Report (anual)
