@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Consumo y ahorro | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Consumo y ahorro - Agustín Sandoval Tapia">
+<title>Consumo y Ahorro | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="macroeconomía, consumo, ahorro, ingreso permanente, ciclo de vida, EAE2210">
+<meta name="description" content="Función keynesiana, modelo de dos períodos, restricciones de liquidez, ciclo de vida, ingreso permanente, camino aleatorio y ahorro precautorio.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/macro/03_ahorro_consumo/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,15 +135,196 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/macro/">Macroeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Consumo y ahorro
+      Consumo y Ahorro
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Función keynesiana, modelo de dos períodos, restricciones de liquidez, ciclo de vida, ingreso permanente, camino aleatorio y ahorro precautorio.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>9 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Macroeconomía I (EAE2210) · <strong>Profesor:</strong> Emilio Depetris-Chauvin<br>
+<strong>Referencia principal:</strong> De Gregorio (2007) caps. 8–9 · Romer (2012) cap. 7 · Deaton (1992)</p>
+<hr>
+<h2 id="1-la-función-de-consumo-keynesiana">1. La función de consumo keynesiana<a hidden class="anchor" aria-hidden="true" href="#1-la-función-de-consumo-keynesiana">#</a></h2>
+<p>El punto de partida histórico es la función de consumo de Keynes (1936):</p>
+<p>$$C = c_0 + c_1 Y, \quad 0 &lt; c_1 &lt; 1$$</p>
+<p>donde $c_0 &gt; 0$ es el consumo autónomo y $c_1$ la propensidad marginal a consumir (PMC). Las propiedades que Keynes postulaba:</p>
+<ol>
+<li>El consumo es función del ingreso <strong>corriente</strong>.</li>
+<li>La PMC es positiva y menor a uno.</li>
+<li>La PMC decrece con el ingreso (los ricos ahorran más).</li>
+</ol>
+<p>Esta especificación tiene implicancias inmediatas para el multiplicador keynesiano, pero enfrenta problemas empíricos serios. Kuznets (1946) documentó que en series de tiempo largas la razón consumo/ingreso es aproximadamente constante, lo que es inconsistente con una PMC decreciente. Este hecho estilizado motivó las teorías modernas del consumo.</p>
+<hr>
+<h2 id="2-el-modelo-de-dos-períodos">2. El modelo de dos períodos<a hidden class="anchor" aria-hidden="true" href="#2-el-modelo-de-dos-períodos">#</a></h2>
+<h3 id="21-estructura-y-restricción-presupuestaria">2.1 Estructura y restricción presupuestaria<a hidden class="anchor" aria-hidden="true" href="#21-estructura-y-restricción-presupuestaria">#</a></h3>
+<p>El modelo de dos períodos es la unidad básica de análisis intertemporal. El consumidor vive dos períodos, recibe ingresos $Y_1$ e $Y_2$, y elige $C_1$ y $C_2$ para maximizar utilidad. La restricción presupuestaria de cada período es:</p>
+<p>$$C_1 + S = Y_1, \qquad C_2 = Y_2 + (1+r)S$$</p>
+<p>donde $S$ es el ahorro en el período 1 y $r$ la tasa de interés real. Combinando, la <strong>restricción presupuestaria intertemporal (RPI)</strong>:</p>
+<p>$$C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r} \equiv W$$</p>
+<p>El lado derecho $W$ es la riqueza de ciclo de vida en valor presente. El consumidor elige un plan $(C_1, C_2)$ sobre la recta presupuestaria con pendiente $-(1+r)$.</p>
+<h3 id="22-optimización">2.2 Optimización<a hidden class="anchor" aria-hidden="true" href="#22-optimización">#</a></h3>
+<p>Con función de utilidad separable en el tiempo:</p>
+<p>$$U = u(C_1) + \frac{1}{1+\rho}u(C_2)$$</p>
+<p>donde $\rho &gt; 0$ es la tasa de preferencia por el presente (impaciencia), la condición de primer orden es la <strong>ecuación de Euler</strong>:</p>
+<p>$$u&rsquo;(C_1) = \frac{1+r}{1+\rho}u&rsquo;(C_2)$$</p>
+<p>La ecuación de Euler es la condición central de cualquier modelo de consumo intertemporal: iguala el costo marginal de reducir consumo hoy (utilidad marginal sacrificada) al beneficio de hacerlo (utilidad marginal futura ponderada por el retorno). Con utilidad CRRA $u(C) = \frac{C^{1-\sigma}-1}{1-\sigma}$:</p>
+<p>$$\frac{C_2}{C_1} = \left(\frac{1+r}{1+\rho}\right)^{1/\sigma}$$</p>
+<p>donde $1/\sigma$ es la <strong>elasticidad de sustitución intertemporal (EIS)</strong>. Si $r = \rho$, el consumidor iguala consumo en ambos períodos (suavización perfecta). Si $r &gt; \rho$ (el mercado compensa bien la espera), el consumidor desplaza consumo hacia el futuro; cuánto depende de $\sigma$.</p>
+<h3 id="23-efectos-sobre-el-consumo">2.3 Efectos sobre el consumo<a hidden class="anchor" aria-hidden="true" href="#23-efectos-sobre-el-consumo">#</a></h3>
+<ul>
+<li><strong>Aumento en $Y_1$ transitorio:</strong> sube $W$ en la unidad. El consumidor lo distribuye entre ambos períodos → PMC &lt; 1. No consume todo el ingreso transitorio hoy.</li>
+<li><strong>Aumento en $Y_1$ permanente</strong> (sube $Y_1$ e $Y_2$ igualmente): la PMC se acerca a 1.</li>
+<li><strong>Aumento en $r$:</strong> efecto sustitución (consumo futuro más barato → menos $C_1$) + efecto ingreso si es acreedor neto (positivo sobre $C_1$). El signo neto depende de la posición financiera neta del agente.</li>
+</ul>
+<hr>
+<h2 id="3-restricciones-de-liquidez">3. Restricciones de liquidez<a hidden class="anchor" aria-hidden="true" href="#3-restricciones-de-liquidez">#</a></h2>
+<p>El modelo canónico supone que el consumidor puede pedir prestado libremente a la tasa $r$. Si esto no es posible — ya sea por fricciones del mercado de crédito o asimetrías de información — el consumidor enfrenta una restricción de liquidez:</p>
+<p>$$S \geq -\bar{B} \quad \text{(o en el caso extremo: } C_1 \leq Y_1\text{)}$$</p>
+<p>Cuando la restricción de liquidez es activa, el consumidor querría consumir más hoy pero no puede. Consecuencias:</p>
+<ul>
+<li>La ecuación de Euler deja de describir el consumo: $u&rsquo;(C_1) &gt; \frac{1+r}{1+\rho}u&rsquo;(C_2)$.</li>
+<li>La PMC respecto al ingreso corriente sube: transferencias de ingresos hoy tienen efecto mayor sobre el consumo que predicho por el modelo sin fricciones.</li>
+<li>Los estímulos fiscales temporales son más efectivos de lo que el modelo perfecto predice.</li>
+</ul>
+<p>La evidencia de exceso de sensibilidad del consumo al ingreso corriente (Flavin, 1981) es consistente con restricciones de liquidez prevalentes, especialmente en hogares jóvenes y de bajos ingresos.</p>
+<hr>
+<h2 id="4-teoría-del-ciclo-de-vida-modigliani-brumberg-1954">4. Teoría del ciclo de vida (Modigliani-Brumberg, 1954)<a hidden class="anchor" aria-hidden="true" href="#4-teoría-del-ciclo-de-vida-modigliani-brumberg-1954">#</a></h2>
+<h3 id="41-la-intuición">4.1 La intuición<a hidden class="anchor" aria-hidden="true" href="#41-la-intuición">#</a></h3>
+<p>El ingreso varía sistemáticamente a lo largo de la vida: bajo en juventud, alto en madurez, cero en retiro. Si los individuos son racionales y con visión de largo plazo, suavizan el consumo a lo largo del ciclo de vida, ahorrando durante los años de mayor ingreso para financiar el retiro.</p>
+<h3 id="42-el-modelo">4.2 El modelo<a hidden class="anchor" aria-hidden="true" href="#42-el-modelo">#</a></h3>
+<p>Con $T$ períodos de vida, $R$ períodos de trabajo (ingreso $Y$) y $T - R$ períodos de retiro (ingreso 0), la RPI es:</p>
+<p>$$\sum_{t=1}^{T} \frac{C_t}{(1+r)^{t-1}} = \sum_{t=1}^{R} \frac{Y_t}{(1+r)^{t-1}} + A_0$$</p>
+<p>donde $A_0$ es la riqueza inicial. Si $r = \rho$ y el consumidor quiere suavizar perfectamente:</p>
+<p>$$C^* = \frac{W}{T} = \frac{R \cdot \bar{Y} + A_0}{T}$$</p>
+<p>La PMC respecto a la riqueza total es $1/T$ — pequeña para horizontes largos. La PMC respecto al ingreso corriente depende de cuántos períodos de trabajo quedan.</p>
+<h3 id="43-implicancias">4.3 Implicancias<a hidden class="anchor" aria-hidden="true" href="#43-implicancias">#</a></h3>
+<ul>
+<li><strong>Perfil de ahorro en forma de joroba:</strong> ahorro negativo en juventud, positivo en madurez, negativo en retiro.</li>
+<li><strong>Efecto riqueza:</strong> cambios en precios de activos (acciones, vivienda) afectan el consumo a través de $A_0$.</li>
+<li><strong>Política fiscal:</strong> el impacto del déficit fiscal depende de si el consumidor percibe el cambio como transitorio o permanente, y de su horizonte de vida.</li>
+</ul>
+<p>La evidencia empírica muestra que el perfil de consumo en el ciclo de vida tiene forma de joroba: sube en la juventud, alcanza su peak en la madurez y declina antes del retiro. Esto no es completamente consistente con el modelo estándar de ciclo de vida bajo mercados completos, que predice un perfil monótono cuando la tasa de descuento iguala la tasa de interés.  La explicación más plausible involucra ahorro precautorio ante incertidumbre de ingreso que declina con la edad.</p>
+<hr>
+<h2 id="5-teoría-del-ingreso-permanente-friedman-1957">5. Teoría del ingreso permanente (Friedman, 1957)<a hidden class="anchor" aria-hidden="true" href="#5-teoría-del-ingreso-permanente-friedman-1957">#</a></h2>
+<h3 id="51-ingreso-permanente-y-transitorio">5.1 Ingreso permanente y transitorio<a hidden class="anchor" aria-hidden="true" href="#51-ingreso-permanente-y-transitorio">#</a></h3>
+<p>Friedman distingue entre:</p>
+<ul>
+<li><strong>Ingreso permanente ($Y^P$):</strong> valor presente del flujo esperado de ingresos futuros — lo que el agente puede gastar sosteniblemente.</li>
+<li><strong>Ingreso transitorio ($Y^T$):</strong> componente temporal, no repetible.</li>
+</ul>
+<p>La hipótesis es que el consumo depende solo del ingreso permanente:</p>
+<p>$$C = \alpha Y^P, \quad 0 &lt; \alpha &lt; 1$$</p>
+<p>La PMC respecto al ingreso transitorio es aproximadamente cero: un bono fiscal único, una herencia inesperada o una pérdida de empleo temporal tiene poco efecto sobre el consumo si el agente percibe el cambio como no permanente.</p>
+<h3 id="52-reconciliación-con-kuznets">5.2 Reconciliación con Kuznets<a hidden class="anchor" aria-hidden="true" href="#52-reconciliación-con-kuznets">#</a></h3>
+<p>La hipótesis resuelve la paradoja de Kuznets: en series largas, el ingreso observado $\approx$ ingreso permanente (las fluctuaciones transitorias promedian a cero), por lo que la razón $C/Y$ es constante. En corte transversal, los ricos tienen ingreso permanente alto pero también pueden tener ingresos transitorios altos que inflan $Y$ sin aumentar proporcionalmente $C$ — la razón $C/Y$ parece caer con $Y$ en el corte transversal, aunque no en el largo plazo.</p>
+<hr>
+<h2 id="6-el-modelo-del-camino-aleatorio-hall-1978">6. El modelo del camino aleatorio: Hall (1978)<a hidden class="anchor" aria-hidden="true" href="#6-el-modelo-del-camino-aleatorio-hall-1978">#</a></h2>
+<h3 id="61-la-implicancia-central">6.1 La implicancia central<a hidden class="anchor" aria-hidden="true" href="#61-la-implicancia-central">#</a></h3>
+<p>Hall (1978) demostró que si los consumidores optimizan intertemporalmente bajo expectativas racionales, la utilidad marginal del consumo sigue un camino aleatorio. Bajo supuestos estándar, el consumo mismo sigue aproximadamente un camino aleatorio: ninguna variable disponible en $t$ — salvo el consumo corriente — debería predecir el consumo futuro.</p>
+<p>Formalmente, la ecuación de Euler con expectativas racionales implica:</p>
+<p>$$C_{t+1} = C_t + \varepsilon_{t+1}$$</p>
+<p>donde $\varepsilon_{t+1}$ es un ruido blanco no predecible en $t$. Esta es la implicancia testeable clave: <strong>solo las sorpresas de ingreso mueven el consumo</strong>.</p>
+<h3 id="62-exceso-de-sensibilidad-y-exceso-de-suavidad">6.2 Exceso de sensibilidad y exceso de suavidad<a hidden class="anchor" aria-hidden="true" href="#62-exceso-de-sensibilidad-y-exceso-de-suavidad">#</a></h3>
+<p>La evidencia empírica presenta dos anomalías respecto al modelo de Hall:</p>
+<ul>
+<li>
+<p><strong>Exceso de sensibilidad</strong> (Flavin, 1981): el consumo responde al ingreso corriente predecible, lo que no debería ocurrir bajo expectativas racionales. Flavin mostró que los cambios pasados en el ingreso actual son significativos al predecir el consumo futuro, contradiciendo la predicción del camino aleatorio.  Interpretación: restricciones de liquidez o miopía.</p>
+</li>
+<li>
+<p><strong>Exceso de suavidad</strong> (Deaton, 1987): si los cambios en el ingreso son muy persistentes, las innovaciones al consumo deberían ser más volátiles que las del ingreso; en los datos el consumo es más suave de lo predicho.  Interpretación: los consumidores no responden completamente a noticias de ingreso — posiblemente porque no las perciben como permanentes.</p>
+</li>
+</ul>
+<p>Estas dos anomalías son difíciles de reconciliar simultáneamente con el modelo estándar, lo que ha motivado extensiones con restricciones de liquidez, formación de hábitos y agentes heterogéneos.</p>
+<hr>
+<h2 id="7-consumo-bajo-incertidumbre-ahorro-precautorio">7. Consumo bajo incertidumbre: ahorro precautorio<a hidden class="anchor" aria-hidden="true" href="#7-consumo-bajo-incertidumbre-ahorro-precautorio">#</a></h2>
+<h3 id="71-prudencia-y-la-tercera-derivada">7.1 Prudencia y la tercera derivada<a hidden class="anchor" aria-hidden="true" href="#71-prudencia-y-la-tercera-derivada">#</a></h3>
+<p>El modelo de certeza equivalente supone que la incertidumbre no altera el nivel de consumo — solo su distribución. Esto requiere utilidad cuadrática. Con utilidad más general (en particular $u&rsquo;&rsquo;&rsquo; &gt; 0$, es decir, <strong>prudencia</strong> en el sentido de Kimball, 1990), la incertidumbre sobre el ingreso futuro genera ahorro adicional: el <strong>ahorro precautorio</strong>.</p>
+<p>Intuitivamente: si el ingreso futuro es incierto, el consumidor reduce el consumo presente para acumular un buffer contra estados adversos. La magnitud del ahorro precautorio depende del coeficiente de prudencia relativa $-Cu&rsquo;&rsquo;&rsquo;/u&rsquo;&rsquo;$.</p>
+<h3 id="72-el-modelo-de-buffer-stock-carroll-1997">7.2 El modelo de buffer stock (Carroll, 1997)<a hidden class="anchor" aria-hidden="true" href="#72-el-modelo-de-buffer-stock-carroll-1997">#</a></h3>
+<p>Carroll (1997) formaliza el ahorro precautorio en un modelo de ciclo de vida con incertidumbre de ingreso no asegurable. Los consumidores mantienen un stock de riqueza de amortiguación (<em>buffer stock</em>) que les permite suavizar consumo ante shocks negativos de ingreso. Los resultados son consistentes con modelos de buffer stock donde los motivos precautorios reducen significativamente la disposición de consumidores prudentes a consumir de ingreso futuro incierto.</p>
+<p>En equilibrio de buffer stock, el consumo crece a una tasa determinada por la impaciencia, la tasa de interés y la incertidumbre — no por el ingreso permanente solamente. Esto explica la correlación positiva entre crecimiento del consumo e ingreso observada en los datos sin necesitar restricciones de liquidez.</p>
+<hr>
+<h2 id="8-equilibrio-general-en-una-economía-de-dotación">8. Equilibrio general en una economía de dotación<a hidden class="anchor" aria-hidden="true" href="#8-equilibrio-general-en-una-economía-de-dotación">#</a></h2>
+<p>Hasta aquí el análisis es de equilibrio parcial: se toma $r$ como dado. En equilibrio general, la tasa de interés se determina endógenamente para vaciar el mercado de bienes.</p>
+<p><strong>Economía cerrada:</strong> el ahorro agregado debe igualar la inversión. Si no hay inversión (economía de dotación pura), el mercado de bienes requiere $C = Y$ en cada período. La tasa de interés de equilibrio es aquella que hace consistente la elección óptima de consumo con esta restricción de vaciado.</p>
+<p><strong>Economía abierta:</strong> la economía puede tener superávit o déficit de cuenta corriente. La cuenta corriente es el ahorro nacional neto: $CA = Y - C - G - I$. Un déficit de cuenta corriente significa que el país consume más de lo que produce, financiado por entradas de capital externo. La dinámica de la cuenta corriente refleja decisiones de suavización intertemporal: un shock transitorio negativo genera déficit (el país pide prestado al exterior); un shock permanente no genera déficit (el ingreso permanente cae con el ingreso).</p>
+<hr>
+<h2 id="9-síntesis-comparación-de-modelos">9. Síntesis: comparación de modelos<a hidden class="anchor" aria-hidden="true" href="#9-síntesis-comparación-de-modelos">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Modelo</th>
+          <th>Variable clave</th>
+          <th>PMC ingreso transitorio</th>
+          <th>PMC ingreso permanente</th>
+          <th>Anomalías</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Keynesiano</td>
+          <td>Ingreso corriente</td>
+          <td>$c_1 &lt; 1$</td>
+          <td>$c_1$</td>
+          <td>No distingue transitorios/permanentes</td>
+      </tr>
+      <tr>
+          <td>Ciclo de vida</td>
+          <td>Riqueza de ciclo de vida</td>
+          <td>$\approx 1/T$</td>
+          <td>$\approx 1$</td>
+          <td>Perfil en joroba, legados</td>
+      </tr>
+      <tr>
+          <td>Ingreso permanente</td>
+          <td>$Y^P$</td>
+          <td>$\approx 0$</td>
+          <td>$\alpha$</td>
+          <td>Exceso de sensibilidad</td>
+      </tr>
+      <tr>
+          <td>Camino aleatorio</td>
+          <td>Sorpresas de ingreso</td>
+          <td>$\approx 0$</td>
+          <td>$\approx 1$</td>
+          <td>Exceso de sensibilidad y suavidad</td>
+      </tr>
+      <tr>
+          <td>Buffer stock</td>
+          <td>$Y^P$ + incertidumbre</td>
+          <td>Baja</td>
+          <td>Moderada</td>
+          <td>Correlación consumo-ingreso</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Keynes, J.M. (1936). <em>The General Theory of Employment, Interest and Money</em>. Cap. 8–10.</li>
+<li>Modigliani, F. &amp; Brumberg, R. (1954). <em>Utility Analysis and the Consumption Function</em>. En Kurihara (ed.).</li>
+<li>Friedman, M. (1957). <em>A Theory of the Consumption Function</em>. Princeton University Press.</li>
+<li>Hall, R.E. (1978). <em>Stochastic Implications of the Life Cycle–Permanent Income Hypothesis</em>. JPE.</li>
+<li>Flavin, M. (1981). <em>The Adjustment of Consumption to Changing Expectations About Future Income</em>. JPE.</li>
+<li>Carroll, C.D. (1997). <em>Buffer-Stock Saving and the Life Cycle/Permanent Income Hypothesis</em>. QJE.</li>
+<li>Deaton, A. (1992). <em>Understanding Consumption</em>. Oxford University Press.</li>
+<li>De Gregorio, J. (2007). <em>Macroeconomía: Teoría y Políticas</em>. Caps. 8–9.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/macroeconom%C3%ADa/">Macroeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/consumo/">Consumo</a></li>
+      <li><a href="http://localhost:4459/tags/ahorro/">Ahorro</a></li>
+      <li><a href="http://localhost:4459/tags/ingreso-permanente/">Ingreso Permanente</a></li>
+      <li><a href="http://localhost:4459/tags/ciclo-de-vida/">Ciclo De Vida</a></li>
+      <li><a href="http://localhost:4459/tags/eae2210/">EAE2210</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/micro/05_publico/">
@@ -151,10 +332,10 @@
     <br>
     <span>Bienes públicos y externalidades</span>
   </a>
-  <a class="next" href="http://localhost:4459/grado/macro/01_crecimiento/">
+  <a class="next" href="http://localhost:4459/grado/macro/10_balance/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Crecimiento económico</span>
+    <span>Cuentas externas y balanza de pagos</span>
   </a>
 </nav>
 

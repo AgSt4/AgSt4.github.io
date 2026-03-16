@@ -9,10 +9,31 @@
     <lastBuildDate>Mon, 16 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:4459/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Crecimiento</title>
+      <link>http://localhost:4459/tags/crecimiento/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/crecimiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Crecimiento Endógeno</title>
+      <link>http://localhost:4459/tags/crecimiento-end%C3%B3geno/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/crecimiento-end%C3%B3geno/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Datos</title>
       <link>http://localhost:4459/tags/datos/</link>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/tags/datos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EAE2210</title>
+      <link>http://localhost:4459/tags/eae2210/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/eae2210/</guid>
       <description></description>
     </item>
     <item>
@@ -51,6 +72,13 @@
       <description></description>
     </item>
     <item>
+      <title>Macroeconomía</title>
+      <link>http://localhost:4459/tags/macroeconom%C3%ADa/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/macroeconom%C3%ADa/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Medición</title>
       <link>http://localhost:4459/tags/medici%C3%B3n/</link>
       <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
@@ -65,10 +93,213 @@
       <description></description>
     </item>
     <item>
+      <title>Solow</title>
+      <link>http://localhost:4459/tags/solow/</link>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/solow/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ahorro</title>
+      <link>http://localhost:4459/tags/ahorro/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/ahorro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Baumol-Tobin</title>
+      <link>http://localhost:4459/tags/baumol-tobin/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/baumol-tobin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Búsqueda Y Emparejamiento</title>
+      <link>http://localhost:4459/tags/b%C3%BAsqueda-y-emparejamiento/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/b%C3%BAsqueda-y-emparejamiento/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Calvo</title>
+      <link>http://localhost:4459/tags/calvo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/calvo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ciclo De Vida</title>
+      <link>http://localhost:4459/tags/ciclo-de-vida/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/ciclo-de-vida/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ciclos Económicos</title>
+      <link>http://localhost:4459/tags/ciclos-econ%C3%B3micos/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/ciclos-econ%C3%B3micos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Consumo</title>
+      <link>http://localhost:4459/tags/consumo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/consumo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Costos De Ajuste</title>
+      <link>http://localhost:4459/tags/costos-de-ajuste/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/costos-de-ajuste/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Curva De Phillips</title>
+      <link>http://localhost:4459/tags/curva-de-phillips/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/curva-de-phillips/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demanda Por Dinero</title>
+      <link>http://localhost:4459/tags/demanda-por-dinero/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/demanda-por-dinero/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desempleo</title>
+      <link>http://localhost:4459/tags/desempleo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/desempleo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dinero</title>
+      <link>http://localhost:4459/tags/dinero/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/dinero/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EAE2220</title>
+      <link>http://localhost:4459/tags/eae2220/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/eae2220/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equilibrio</title>
+      <link>http://localhost:4459/tags/equilibrio/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/equilibrio/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Equivalencia Ricardiana</title>
+      <link>http://localhost:4459/tags/equivalencia-ricardiana/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/equivalencia-ricardiana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Impuestos Óptimos</title>
+      <link>http://localhost:4459/tags/impuestos-%C3%B3ptimos/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/impuestos-%C3%B3ptimos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ingreso Permanente</title>
+      <link>http://localhost:4459/tags/ingreso-permanente/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/ingreso-permanente/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Irreversibilidad</title>
+      <link>http://localhost:4459/tags/irreversibilidad/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/irreversibilidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IS-LM</title>
+      <link>http://localhost:4459/tags/is-lm/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/is-lm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lucas</title>
+      <link>http://localhost:4459/tags/lucas/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/lucas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Política Fiscal</title>
+      <link>http://localhost:4459/tags/pol%C3%ADtica-fiscal/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/pol%C3%ADtica-fiscal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Q De Tobin</title>
+      <link>http://localhost:4459/tags/q-de-tobin/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/q-de-tobin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rigideces Nominales</title>
+      <link>http://localhost:4459/tags/rigideces-nominales/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/rigideces-nominales/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Salarios De Eficiencia</title>
+      <link>http://localhost:4459/tags/salarios-de-eficiencia/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/salarios-de-eficiencia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Señoreaje</title>
+      <link>http://localhost:4459/tags/se%C3%B1oreaje/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/se%C3%B1oreaje/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sostenibilidad Fiscal</title>
+      <link>http://localhost:4459/tags/sostenibilidad-fiscal/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/sostenibilidad-fiscal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tasa De Interés Real</title>
+      <link>http://localhost:4459/tags/tasa-de-inter%C3%A9s-real/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/tasa-de-inter%C3%A9s-real/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Test</title>
       <link>http://localhost:4459/tags/test/</link>
       <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:4459/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trabajo</title>
+      <link>http://localhost:4459/tags/trabajo/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/tags/trabajo/</guid>
       <description></description>
     </item>
   </channel>

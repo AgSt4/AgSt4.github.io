@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Equilibrio on Agustín Sandoval Tapia</title>
+    <link>http://localhost:4459/tags/equilibrio/</link>
+    <description>Recent content in Equilibrio on Agustín Sandoval Tapia</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4459/tags/equilibrio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Equilibrio Macroeconómico en una Economía Cerrada</title>
+      <link>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/06_equilibrio_cerrado/</guid>
+      <description>Equilibrio en el mercado de bienes, igualación ahorro-inversión y determinación de la tasa de interés real en una economía cerrada sin dinero.</description>
+    </item>
+  </channel>
+</rss>

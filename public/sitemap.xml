@@ -5,7 +5,22 @@
     <loc>http://localhost:4459/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/grado/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/crecimiento/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/grado/macro/01_crecimiento/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/crecimiento-end%C3%B3geno/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/tags/datos/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/eae2210/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/tags/econometr%C3%ADa/</loc>
@@ -26,6 +41,12 @@
     <loc>http://localhost:4459/tags/inversi%C3%B3n-sostenible/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/grado/macro/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/macroeconom%C3%ADa/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/tags/medici%C3%B3n/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -38,31 +59,58 @@
     <loc>http://localhost:4459/tags/python/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/solow/</loc>
+    <lastmod>2026-03-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/tags/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/proyectos/proyecto-prueba/</loc>
     <lastmod>2026-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4459/grado/</loc>
+    <loc>http://localhost:4459/tags/ahorro/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/baumol-tobin/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/micro/05_publico/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/b%C3%BAsqueda-y-emparejamiento/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/ciclo-de-vida/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/consumo/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/macro/03_ahorro_consumo/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4459/grado/macro/01_crecimiento/</loc>
+    <loc>http://localhost:4459/tags/costos-de-ajuste/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/macro/10_balance/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4459/grado/macro/07_dinero/</loc>
+    <loc>http://localhost:4459/tags/demanda-por-dinero/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/desempleo/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/dinero/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/macro/11_tcn/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/grado/macro/07_dinero/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/eae2220/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/metrics/</loc>
@@ -77,6 +125,9 @@
     <loc>http://localhost:4459/grado/micro/01_consumidor/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/equilibrio/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/micro/04_general/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
@@ -86,10 +137,16 @@
     <loc>http://localhost:4459/grado/micro/03_parcial/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/equivalencia-ricardiana/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/metrics/03_problemas/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/metrics/05_errores/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/impuestos-%C3%B3ptimos/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/metrics/04_inferencia/</loc>
@@ -98,10 +155,16 @@
     <loc>http://localhost:4459/grado/micro/08_informacion/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/ingreso-permanente/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/macro/04_inversion/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4459/grado/macro/</loc>
+    <loc>http://localhost:4459/tags/irreversibilidad/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/grado/macro/02_trabajo/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/metrics/01_ciencia/</loc>
@@ -122,13 +185,31 @@
     <loc>http://localhost:4459/grado/micro/09_monopolio/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/pol%C3%ADtica-fiscal/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/macro/05_fiscal/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/posts/primer-post/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:4459/tags/q-de-tobin/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/salarios-de-eficiencia/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/se%C3%B1oreaje/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:4459/grado/metrics/06_tiempo/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/sostenibilidad-fiscal/</loc>
+    <lastmod>2026-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:4459/tags/tasa-de-inter%C3%A9s-real/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/grado/micro/07_juegos/</loc>
@@ -143,7 +224,7 @@
     <loc>http://localhost:4459/grado/macro/12_tcr/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:4459/grado/macro/02_trabajo/</loc>
+    <loc>http://localhost:4459/tags/trabajo/</loc>
     <lastmod>2026-03-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:4459/apuntes/</loc>

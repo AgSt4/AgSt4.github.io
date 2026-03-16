@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Crecimiento económico | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu">
+<title>Crecimiento Económico | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="macroeconomía, crecimiento, Solow, crecimiento endógeno, EAE2210">
+<meta name="description" content="Modelo neoclásico, regla de oro, crecimiento endógeno y contabilidad del crecimiento. Apunte basado en EAE2210 — Macroeconomía I.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/macro/01_crecimiento/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,30 +135,152 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/macro/">Macroeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Crecimiento económico
+      Crecimiento Económico
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Modelo neoclásico, regla de oro, crecimiento endógeno y contabilidad del crecimiento. Apunte basado en EAE2210 — Macroeconomía I.
+    </div>
+    <div class="post-meta"><span title='2026-03-16 00:00:00 +0000 UTC'>March 16, 2026</span>&nbsp;·&nbsp;<span>8 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
-  <div class="post-content"><p>dbdfuibifub fhifsdiudfb jdbfibfiuwe udhfiuwebfiu</p>
+  <div class="post-content"><p><strong>Curso:</strong> Macroeconomía I (EAE2210) · <strong>Profesor:</strong> Emilio Depetris-Chauvin<br>
+<strong>Referencia principal:</strong> De Gregorio (2007) caps. 1–4 · Barro &amp; Sala-i-Martin (2004)</p>
+<hr>
+<h2 id="1-regularidades-empíricas-del-crecimiento">1. Regularidades empíricas del crecimiento<a hidden class="anchor" aria-hidden="true" href="#1-regularidades-empíricas-del-crecimiento">#</a></h2>
+<p>Antes de modelar, conviene anclar los modelos en los hechos estilizados que cualquier teoría del crecimiento debe poder explicar. Kaldor (1961) documentó las siguientes regularidades para economías desarrolladas:</p>
+<ol>
+<li>El producto per cápita crece a una tasa aproximadamente constante en el largo plazo.</li>
+<li>El stock de capital per cápita crece a una tasa aproximadamente constante.</li>
+<li>La tasa de retorno al capital es relativamente estable en el tiempo.</li>
+<li>La razón capital/producto es relativamente estable.</li>
+<li>Las participaciones del trabajo y capital en el ingreso son aproximadamente constantes.</li>
+<li>Existen grandes diferencias en las tasas de crecimiento entre países.</li>
+</ol>
+<p>El sexto hecho es el más relevante para la pregunta de fondo: <strong>¿por qué algunos países son ricos y otros pobres, y por qué la brecha persiste?</strong> Los modelos de crecimiento buscan responder esto.</p>
+<hr>
+<h2 id="2-el-modelo-neoclásico-de-solow-swan">2. El modelo neoclásico de Solow-Swan<a hidden class="anchor" aria-hidden="true" href="#2-el-modelo-neoclásico-de-solow-swan">#</a></h2>
+<h3 id="21-supuestos-y-estructura">2.1 Supuestos y estructura<a hidden class="anchor" aria-hidden="true" href="#21-supuestos-y-estructura">#</a></h3>
+<p>El modelo de Solow (1956) es el punto de partida canónico. Supuestos centrales:</p>
+<ul>
+<li>Economía cerrada, un bien, competencia perfecta.</li>
+<li>Función de producción $Y = F(K, AL)$ con retornos constantes a escala (RCS): $F(\lambda K, \lambda AL) = \lambda Y$.</li>
+<li>$A$ es tecnología que aumenta la eficiencia del trabajo (<em>labor-augmenting</em> o progreso técnico de Harrod-neutral), crece a tasa exógena $g$.</li>
+<li>La población (y trabajo) crece a tasa exógena $n$.</li>
+<li>Los hogares ahorran una fracción constante $s$ del ingreso.</li>
+<li>El capital se deprecia a tasa $\delta$.</li>
+</ul>
+<p>La función de producción más usada es Cobb-Douglas:</p>
+<p>$$Y = K^\alpha (AL)^{1-\alpha}, \quad 0 &lt; \alpha &lt; 1$$</p>
+<h3 id="22-dinámica-en-términos-per-cápita-efectivos">2.2 Dinámica en términos per cápita efectivos<a hidden class="anchor" aria-hidden="true" href="#22-dinámica-en-términos-per-cápita-efectivos">#</a></h3>
+<p>Definiendo $k \equiv K/AL$ (capital por trabajador efectivo) e $y \equiv Y/AL$, la ecuación fundamental del modelo es:</p>
+<p>$$\dot{k} = sf(k) - (n + g + \delta)k$$</p>
+<p>donde $f(k) = k^\alpha$ con Cobb-Douglas. La interpretación es directa: el capital por trabajador efectivo crece cuando el ahorro/inversión $sf(k)$ supera el <em>capital de reposición</em> $(n+g+\delta)k$, que debe cubrir depreciación, crecimiento poblacional y progreso técnico.</p>
+<h3 id="23-estado-estacionario">2.3 Estado estacionario<a hidden class="anchor" aria-hidden="true" href="#23-estado-estacionario">#</a></h3>
+<p>El estado estacionario $k^*$ satisface $\dot{k} = 0$:</p>
+<p>$$sf(k^<em>) = (n + g + \delta)k^</em>$$</p>
+<p>En estado estacionario:</p>
+<ul>
+<li>$k$, $y$ son constantes → el capital y producto <strong>por trabajador efectivo</strong> no crecen.</li>
+<li>El capital y producto <strong>por trabajador</strong> crecen a tasa $g$.</li>
+<li>El capital y producto <strong>agregados</strong> crecen a tasa $n + g$.</li>
+</ul>
+<p>La tasa de crecimiento del producto per cápita en el largo plazo es enteramente determinada por $g$, que es <strong>exógena</strong>. Esta es la limitación central del modelo: no explica de dónde viene el progreso tecnológico.</p>
+<h3 id="24-dinámica-de-transición-y-convergencia">2.4 Dinámica de transición y convergencia<a hidden class="anchor" aria-hidden="true" href="#24-dinámica-de-transición-y-convergencia">#</a></h3>
+<p>Fuera del estado estacionario, la economía converge monótonamente a $k^<em>$. Si $k &lt; k^</em>$, la productividad marginal del capital es alta → alta inversión → convergencia hacia arriba. Esto implica <strong>convergencia condicional</strong>: países con los mismos parámetros $(s, n, g, \delta)$ convergen al mismo estado estacionario, y los más pobres crecen más rápido en la transición.</p>
+<p>La evidencia empírica respalda convergencia condicional pero no absoluta. Países con estructuras institucionales y tasas de ahorro distintas tienen distintos $k^*$ — la condicionalidad importa.</p>
+<h3 id="25-efectos-de-política">2.5 Efectos de política<a hidden class="anchor" aria-hidden="true" href="#25-efectos-de-política">#</a></h3>
+<p>Un aumento permanente en la tasa de ahorro $s$:</p>
+<ul>
+<li><strong>Sube el nivel</strong> del estado estacionario $k^<em>$ e $y^</em>$.</li>
+<li><strong>No altera la tasa de crecimiento</strong> de largo plazo (que sigue siendo $g$).</li>
+<li>Genera crecimiento transitorio durante la convergencia al nuevo $k^*$.</li>
+</ul>
+<p>Esto tiene implicancias de política importantes: las políticas que aumentan el ahorro o la inversión tienen efectos de nivel pero no de tasa en el largo plazo. Solo el progreso tecnológico mueve la tasa de crecimiento sostenido.</p>
+<hr>
+<h2 id="3-la-regla-de-oro-de-la-acumulación">3. La regla de oro de la acumulación<a hidden class="anchor" aria-hidden="true" href="#3-la-regla-de-oro-de-la-acumulación">#</a></h2>
+<h3 id="31-consumo-en-estado-estacionario">3.1 Consumo en estado estacionario<a hidden class="anchor" aria-hidden="true" href="#31-consumo-en-estado-estacionario">#</a></h3>
+<p>El consumo por trabajador efectivo en estado estacionario es:</p>
+<p>$$c^* = f(k^<em>) - (n + g + \delta)k^</em>$$</p>
+<p>Este consumo depende de $k^<em>$, que a su vez depende de $s$. ¿Existe una tasa de ahorro óptima que maximiza $c^</em>$?</p>
+<h3 id="32-la-condición-de-la-regla-de-oro">3.2 La condición de la regla de oro<a hidden class="anchor" aria-hidden="true" href="#32-la-condición-de-la-regla-de-oro">#</a></h3>
+<p>Maximizando $c^<em>$ respecto a $k^</em>$, la condición de primer orden da la <strong>regla de oro de Phelps (1961)</strong>:</p>
+<p>$$f&rsquo;(k^*_{RO}) = n + g + \delta$$</p>
+<p>Es decir, en el óptimo la productividad marginal del capital debe igualar la tasa de reposición. Con Cobb-Douglas: $\alpha k^{-(1-\alpha)} = n + g + \delta$, lo que determina $k^*_{RO}$.</p>
+<p>La tasa de ahorro de la regla de oro es $s_{RO} = \alpha$ (con Cobb-Douglas), que coincide con la participación del capital en el ingreso. En la práctica, muchas economías tienen tasas de ahorro por debajo de $s_{RO}$ (<em>subacumulación de capital</em>), aunque la sobreacumulación dinámica es posible en teoría.</p>
+<h3 id="33-eficiencia-dinámica">3.3 Eficiencia dinámica<a hidden class="anchor" aria-hidden="true" href="#33-eficiencia-dinámica">#</a></h3>
+<p>Una economía con $k^* &gt; k^*_{RO}$ sobreacumula capital: reduce consumo presente y futuro innecesariamente. Es <strong>dinámicamente ineficiente</strong>. Reducir la tasa de ahorro aumentaría el bienestar intergeneracional. La condición de Abel et al. (1989) para eficiencia dinámica es que la rentabilidad del capital supere el crecimiento del producto, lo que se verifica empíricamente en la mayoría de las economías desarrolladas.</p>
+<hr>
+<h2 id="4-crecimiento-endógeno">4. Crecimiento endógeno<a hidden class="anchor" aria-hidden="true" href="#4-crecimiento-endógeno">#</a></h2>
+<h3 id="41-la-insatisfacción-con-solow">4.1 La insatisfacción con Solow<a hidden class="anchor" aria-hidden="true" href="#41-la-insatisfacción-con-solow">#</a></h3>
+<p>El modelo neoclásico tiene dos problemas estructurales:</p>
+<ol>
+<li>La tasa de crecimiento de largo plazo depende de $g$, que es exógena y no explicada.</li>
+<li>Predice convergencia absoluta que los datos no respaldan uniformemente.</li>
+</ol>
+<p>La literatura de crecimiento endógeno, iniciada por Romer (1986) y Lucas (1988), busca que $g$ emerja endógenamente de las decisiones de los agentes.</p>
+<h3 id="42-modelo-ak-retornos-constantes-al-capital-agregado">4.2 Modelo AK: retornos constantes al capital agregado<a hidden class="anchor" aria-hidden="true" href="#42-modelo-ak-retornos-constantes-al-capital-agregado">#</a></h3>
+<p>El modelo AK es la versión más simple. Supone función de producción:</p>
+<p>$$Y = AK$$</p>
+<p>donde $A$ es una constante que captura la productividad total. La clave es que <strong>no hay rendimientos decrecientes al capital a nivel agregado</strong>. La justificación es que las externalidades del capital (aprendizaje, spillovers de conocimiento) compensan los rendimientos privados decrecientes.</p>
+<p>La tasa de crecimiento del consumo (con optimización intertemporal) es:</p>
+<p>$$\frac{\dot{C}}{C} = \frac{1}{\sigma}(A - \rho - \delta)$$</p>
+<p>donde $\sigma$ es la elasticidad de sustitución intertemporal y $\rho$ la tasa de descuento. Crucialmente, la tasa de crecimiento depende de $A$, $\rho$ y $\sigma$ — todos parámetros potencialmente influenciables por política. Un subsidio a la inversión que eleve $A$ aumenta permanentemente la tasa de crecimiento, a diferencia del modelo de Solow donde solo afecta el nivel.</p>
+<h3 id="43-modelos-con-externalidades-basados-en-el-conocimiento">4.3 Modelos con externalidades basados en el conocimiento<a hidden class="anchor" aria-hidden="true" href="#43-modelos-con-externalidades-basados-en-el-conocimiento">#</a></h3>
+<p>Romer (1986) formaliza la idea de que el capital conocimiento genera externalidades positivas. Cada firma individual enfrenta rendimientos decrecientes, pero a nivel agregado el conocimiento acumulado por todas las firmas eleva la productividad de cada una.</p>
+<p>La función de producción de la firma $i$ es:</p>
+<p>$$Y_i = AK_i^\alpha L_i^{1-\alpha} \cdot \bar{K}^\phi$$</p>
+<p>donde $\bar{K}$ es el stock agregado de capital (que la firma individual toma como dado). Si $\alpha + \phi = 1$, la economía agrega rendimientos constantes al capital y la tasa de crecimiento es endógena. El equilibrio descentralizado es subóptimo porque las firmas no internalizan su contribución a $\bar{K}$: hay un argumento para subsidiar la inversión o I+D.</p>
+<h3 id="44-modelos-de-progreso-técnico-romer-1990">4.4 Modelos de progreso técnico (Romer 1990)<a hidden class="anchor" aria-hidden="true" href="#44-modelos-de-progreso-técnico-romer-1990">#</a></h3>
+<p>El modelo más completo de Romer (1990) distingue tres sectores: producción de bienes finales, producción de insumos intermedios (variedades), e I+D. El crecimiento proviene de la expansión del número de variedades de insumos, financiada por empresas que buscan rentas monopólicas. La <strong>no rivalidad</strong> de las ideas (una idea puede usarse simultáneamente por múltiples agentes) es la propiedad fundamental que genera rendimientos crecientes a nivel agregado manteniendo competencia a nivel de firma.</p>
+<p>Implicación de política: los derechos de propiedad intelectual son un instrumento para incentivar la innovación, pero al precio de crear distorsiones monopólicas. El diseño óptimo de la política de innovación requiere balancear estos efectos.</p>
+<hr>
+<h2 id="5-contabilidad-del-crecimiento">5. Contabilidad del crecimiento<a hidden class="anchor" aria-hidden="true" href="#5-contabilidad-del-crecimiento">#</a></h2>
+<h3 id="51-descomposición-de-solow">5.1 Descomposición de Solow<a hidden class="anchor" aria-hidden="true" href="#51-descomposición-de-solow">#</a></h3>
+<p>Dado $Y = AK^\alpha L^{1-\alpha}$, tomando logaritmos y diferenciando:</p>
+<p>$$\frac{\dot{Y}}{Y} = \frac{\dot{A}}{A} + \alpha\frac{\dot{K}}{K} + (1-\alpha)\frac{\dot{L}}{L}$$</p>
+<p>Reordenando, el <strong>residuo de Solow</strong> (o TFP, Total Factor Productivity) es:</p>
+<p>$$\frac{\dot{A}}{A} = \frac{\dot{Y}}{Y} - \alpha\frac{\dot{K}}{K} - (1-\alpha)\frac{\dot{L}}{L}$$</p>
+<p>El residuo captura todo el crecimiento no explicado por la acumulación de factores. En EE.UU., históricamente alrededor de la mitad del crecimiento del producto per cápita se atribuye a TFP.</p>
+<h3 id="52-el-problema-de-la-medida-de-nuestra-ignorancia">5.2 El problema de la &ldquo;medida de nuestra ignorancia&rdquo;<a hidden class="anchor" aria-hidden="true" href="#52-el-problema-de-la-medida-de-nuestra-ignorancia">#</a></h3>
+<p>Solow mismo llamó al residuo &ldquo;una medida de nuestra ignorancia&rdquo;. TFP captura no solo progreso tecnológico sino también mejoras en la eficiencia de asignación, economías de escala, capital humano no medido, y errores de medición. Mankiw, Romer y Weil (1992) mostraron que incorporar capital humano al modelo de Solow reduce sustancialmente el residuo y mejora la capacidad de explicar diferencias de ingreso entre países.</p>
+<hr>
+<h2 id="6-convergencia-la-evidencia">6. Convergencia: la evidencia<a hidden class="anchor" aria-hidden="true" href="#6-convergencia-la-evidencia">#</a></h2>
+<p>La hipótesis de convergencia tiene dos versiones:</p>
+<ul>
+<li><strong>Convergencia absoluta (β-convergencia):</strong> países más pobres crecen incondicionalmente más rápido. No respaldada para la muestra global.</li>
+<li><strong>Convergencia condicional:</strong> países más pobres crecen más rápido <em>dado</em> un mismo estado estacionario. Respaldada empíricamente (Barro &amp; Sala-i-Martin 1992).</li>
+</ul>
+<p>La <strong>σ-convergencia</strong> (reducción de la dispersión del ingreso entre países) es un concepto complementario. Puede haber β-convergencia sin σ-convergencia si hay shocks que aumentan la dispersión.</p>
+<p>La evidencia reciente es más matizada: la convergencia de los &ldquo;tigres asiáticos&rdquo; coexiste con divergencia en partes de África Subsahariana. Esto sugiere que los parámetros estructurales del estado estacionario — instituciones, educación, apertura — importan más que la posición inicial de capital.</p>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Solow, R. (1956). <em>A Contribution to the Theory of Economic Growth</em>. QJE.</li>
+<li>Romer, P. (1986). <em>Increasing Returns and Long-Run Growth</em>. JPE.</li>
+<li>Romer, P. (1990). <em>Endogenous Technological Change</em>. JPE.</li>
+<li>Lucas, R. (1988). <em>On the Mechanics of Economic Development</em>. JME.</li>
+<li>Mankiw, N. G., Romer, D. &amp; Weil, D. (1992). <em>A Contribution to the Empirics of Economic Growth</em>. QJE.</li>
+<li>Barro, R. &amp; Sala-i-Martin, X. (2004). <em>Economic Growth</em>. MIT Press. Caps. 1–4.</li>
+<li>De Gregorio, J. (2007). <em>Macroeconomía: Teoría y Políticas</em>. Caps. 5–7.</li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/macroeconom%C3%ADa/">Macroeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/crecimiento/">Crecimiento</a></li>
+      <li><a href="http://localhost:4459/tags/solow/">Solow</a></li>
+      <li><a href="http://localhost:4459/tags/crecimiento-end%C3%B3geno/">Crecimiento Endógeno</a></li>
+      <li><a href="http://localhost:4459/tags/eae2210/">EAE2210</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:4459/grado/macro/03_ahorro_consumo/">
-    <span class="title">« Anterior</span>
-    <br>
-    <span>Consumo y ahorro</span>
-  </a>
-  <a class="next" href="http://localhost:4459/grado/macro/10_balance/">
+  <a class="next" href="http://localhost:4459/grado/micro/05_publico/">
     <span class="title">Siguiente »</span>
     <br>
-    <span>Cuentas externas y balanza de pagos</span>
+    <span>Bienes públicos y externalidades</span>
   </a>
 </nav>
 

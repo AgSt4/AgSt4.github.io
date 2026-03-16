@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Irreversibilidad on Agustín Sandoval Tapia</title>
+    <link>http://localhost:4459/tags/irreversibilidad/</link>
+    <description>Recent content in Irreversibilidad on Agustín Sandoval Tapia</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Sun, 15 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:4459/tags/irreversibilidad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Inversión</title>
+      <link>http://localhost:4459/grado/macro/04_inversion/</link>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:4459/grado/macro/04_inversion/</guid>
+      <description>Costo de uso del capital, q de Tobin, costos de ajuste, impuestos, irreversibilidad y opciones reales. Apunte basado en EAE2210 — Macroeconomía I.</description>
+    </item>
+  </channel>
+</rss>

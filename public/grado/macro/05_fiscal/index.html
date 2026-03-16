@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Política fiscal: Gasto público, impuestos y subsidios | Agustín Sandoval Tapia</title>
-<meta name="keywords" content="">
-<meta name="description" content="Política fiscal: Gasto público, impuestos y subsidios - Agustín Sandoval Tapia">
+<title>Política Fiscal: Gasto Público, Impuestos y Deuda | Agustín Sandoval Tapia</title>
+<meta name="keywords" content="macroeconomía, política fiscal, equivalencia ricardiana, sostenibilidad fiscal, impuestos óptimos, EAE2210">
+<meta name="description" content="Restricción presupuestaria intertemporal, sostenibilidad de la deuda, equivalencia ricardiana, el problema de Ramsey e impuestos óptimos.">
 <meta name="author" content="Agustín Sandoval Tapia">
 <link rel="canonical" href="http://localhost:4459/grado/macro/05_fiscal/">
 <link crossorigin="anonymous" href="../../../assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
@@ -135,15 +135,172 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:4459/">Inicio</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/">Apuntes para el Examen de Grado</a>&nbsp;»&nbsp;<a href="http://localhost:4459/grado/macro/">Macroeconomía</a></div>
     <h1 class="post-title entry-hint-parent">
-      Política fiscal: Gasto público, impuestos y subsidios
+      Política Fiscal: Gasto Público, Impuestos y Deuda
     </h1>
-    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>0 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
+    <div class="post-description">
+      Restricción presupuestaria intertemporal, sostenibilidad de la deuda, equivalencia ricardiana, el problema de Ramsey e impuestos óptimos.
+    </div>
+    <div class="post-meta"><span title='2026-03-15 00:00:00 +0000 UTC'>March 15, 2026</span>&nbsp;·&nbsp;<span>11 min</span>&nbsp;·&nbsp;<span>Agustín Sandoval Tapia</span>
 
 </div>
   </header> 
+  <div class="post-content"><p><strong>Curso:</strong> Macroeconomía I (EAE2210) · <strong>Profesor:</strong> Emilio Depetris-Chauvin<br>
+<strong>Referencia principal:</strong> De Gregorio (2007) cap. 12 · Barro (1979, 1989) · Blanchard (2017) caps. 22–23</p>
+<hr>
+<h2 id="1-la-restricción-presupuestaria-del-gobierno">1. La restricción presupuestaria del gobierno<a hidden class="anchor" aria-hidden="true" href="#1-la-restricción-presupuestaria-del-gobierno">#</a></h2>
+<h3 id="11-restricción-por-período">1.1 Restricción por período<a hidden class="anchor" aria-hidden="true" href="#11-restricción-por-período">#</a></h3>
+<p>El gobierno tiene tres fuentes de financiamiento para su gasto: impuestos, emisión de deuda y señoreaje. La restricción presupuestaria por período es:</p>
+<p>$$G_t + r_t B_t = T_t + (B_{t+1} - B_t) + \Delta M_t / P_t$$</p>
+<p>donde $G_t$ es el gasto público (excluido el pago de intereses), $r_t B_t$ son los intereses sobre la deuda $B_t$, $T_t$ son los ingresos tributarios y $\Delta M_t/P_t$ es el señoreaje. Ignorando el señoreaje por ahora:</p>
+<p>$$B_{t+1} - B_t = G_t + r_t B_t - T_t = \text{Déficit primario} + r_t B_t$$</p>
+<p>El <strong>déficit primario</strong> es $G_t - T_t$ (gasto menos recaudación, sin intereses). El déficit total o fiscal incluye además el servicio de la deuda.</p>
+<h3 id="12-restricción-presupuestaria-intertemporal-rpi">1.2 Restricción presupuestaria intertemporal (RPI)<a hidden class="anchor" aria-hidden="true" href="#12-restricción-presupuestaria-intertemporal-rpi">#</a></h3>
+<p>Iterando hacia adelante la restricción por período y aplicando la condición de no-Ponzi (el gobierno no puede financiar deuda con deuda indefinidamente):</p>
+<p>$$B_t = \sum_{s=0}^{\infty} \frac{T_{t+s} - G_{t+s}}{(1+r)^{s+1}}$$</p>
+<p>La deuda vigente debe ser igual al valor presente de todos los superávit primarios futuros. Esta es la <strong>restricción presupuestaria intertemporal del gobierno</strong>: el valor presente del gasto público debe ser igual al valor presente de los impuestos más los activos iniciales.</p>
+<p>En términos del PIB, definiendo $b_t = B_t/Y_t$ la razón deuda/PIB:</p>
+<p>$$b_{t+1} = \frac{1+r}{1+g} b_t + d_t$$</p>
+<p>donde $g$ es la tasa de crecimiento del PIB y $d_t = (G_t - T_t)/Y_t$ es el déficit primario como fracción del PIB. Si $r &gt; g$, un déficit primario nulo no es suficiente para estabilizar $b$ — se requiere superávit primario. Si $r &lt; g$, la economía puede sostener déficits primarios moderados indefinidamente.</p>
+<p>La condición $r$ vs. $g$ es central en la discusión contemporánea sobre sostenibilidad fiscal. Blanchard (2019) argumentó que en economías avanzadas con $r &lt; g$ persistente, el costo fiscal de la deuda pública es menor de lo que los modelos estándar sugieren — generando un debate activo sobre los límites de la política fiscal expansiva.</p>
+<hr>
+<h2 id="2-sostenibilidad-de-la-deuda-pública">2. Sostenibilidad de la deuda pública<a hidden class="anchor" aria-hidden="true" href="#2-sostenibilidad-de-la-deuda-pública">#</a></h2>
+<h3 id="21-cuándo-es-sostenible-la-deuda">2.1 ¿Cuándo es sostenible la deuda?<a hidden class="anchor" aria-hidden="true" href="#21-cuándo-es-sostenible-la-deuda">#</a></h3>
+<p>La deuda es <strong>sostenible</strong> cuando el gobierno puede cumplir su RPI sin recurrir a ajustes fiscales drásticos, default o monetización. Formalmente, la razón deuda/PIB no debe crecer explosivamente.</p>
+<p>La dinámica de $b_t$ depende de tres variables:</p>
+<p>$$\Delta b_t = (r - g) b_{t-1} + d_t$$</p>
+<ul>
+<li>Si $(r-g)b_{t-1} + d_t &gt; 0$: la deuda crece.</li>
+<li>Si $(r-g)b_{t-1} + d_t = 0$: la deuda se estabiliza. El superávit primario requerido para estabilizar es $d^* = -(r-g)b$.</li>
+<li>Si $r &gt; g$ y $b &gt; 0$: se necesita superávit primario solo para mantener la razón deuda/PIB constante.</li>
+</ul>
+<h3 id="22-el-análisis-de-sostenibilidad-fiscal">2.2 El análisis de sostenibilidad fiscal<a hidden class="anchor" aria-hidden="true" href="#22-el-análisis-de-sostenibilidad-fiscal">#</a></h3>
+<p>El ejercicio estándar de sostenibilidad consiste en calcular el <strong>superávit primario requerido</strong> para estabilizar la deuda al nivel actual:</p>
+<p>$$\tilde{d} = (r - g) b$$</p>
+<p>Si el superávit primario corriente $-d_t &lt; \tilde{d}$, existe una brecha fiscal que requiere ajuste. El Fondo Monetario Internacional y el Banco Mundial usan variantes de este marco en sus evaluaciones de artículo IV.</p>
+<p>Las crisis de deuda soberana típicamente involucran situaciones donde los mercados perciben que la brecha fiscal es insalvable sin default o inflación — lo que eleva la tasa de interés exigida $r$, empeorando la dinámica y pudiendo generar equilibrios múltiples (crisis de confianza self-fulfilling).</p>
+<h3 id="23-el-rol-del-señoreaje">2.3 El rol del señoreaje<a hidden class="anchor" aria-hidden="true" href="#23-el-rol-del-señoreaje">#</a></h3>
+<p>El gobierno puede también monetizar deuda: el banco central compra bonos públicos creando dinero. El señoreaje es:</p>
+<p>$$\text{Señoreaje} = \frac{\Delta M}{P} = \frac{\Delta M}{M} \cdot \frac{M}{P} = \mu \cdot m$$</p>
+<p>donde $\mu$ es la tasa de crecimiento monetario y $m$ son los saldos reales. El señoreaje tiene un límite: más allá de cierto punto, la inflación reduce la demanda de dinero $m$ y la recaudación de señoreaje cae — la <strong>curva de Laffer del señoreaje</strong>. La hiperinflación emerge cuando el gobierno intenta financiar déficits crecientes con señoreaje en un contexto de demanda de dinero que colapsa.</p>
+<hr>
+<h2 id="3-equivalencia-ricardiana">3. Equivalencia Ricardiana<a hidden class="anchor" aria-hidden="true" href="#3-equivalencia-ricardiana">#</a></h2>
+<h3 id="31-el-argumento-de-barro-1974">3.1 El argumento de Barro (1974)<a hidden class="anchor" aria-hidden="true" href="#31-el-argumento-de-barro-1974">#</a></h3>
+<p>La proposición de equivalencia ricardiana sostiene que los consumidores son forward-looking e internalizan la restricción presupuestaria del gobierno en sus decisiones de consumo. Esto lleva al resultado de que, para un patrón dado de gasto público, el método de financiamiento no afecta las decisiones de consumo de los agentes y por tanto no cambia la demanda agregada.</p>
+<p>La lógica es directa en el modelo de dos períodos. El gobierno reduce impuestos hoy en $\Delta T$ y financia la diferencia con deuda, prometiendo subir impuestos mañana en $(1+r)\Delta T$. El consumidor racional anticipa la suba futura de impuestos: su riqueza de ciclo de vida no cambia, porque el valor presente del flujo de impuestos es idéntico bajo ambos esquemas. Por tanto, no cambia su consumo — aumenta su ahorro privado exactamente en $\Delta T$ para pagar los impuestos futuros.</p>
+<p>Cambiar de financiamiento con impuestos a financiamiento con deuda aumenta el ahorro privado exactamente en la misma cantidad que cae el ahorro público, dejando el ahorro nacional sin cambios.</p>
+<p>Formalmente, la RPI del gobierno garantiza que:</p>
+<p>$$\frac{T_1}{1} + \frac{T_2}{1+r} = \frac{G_1}{1} + \frac{G_2}{1+r} + B_0(1+r)$$</p>
+<p>Dado $G_1, G_2$ fijos, el valor presente de los impuestos está determinado. La distribución temporal (impuestos hoy vs. mañana) es irrelevante para la riqueza del consumidor.</p>
+<h3 id="32-los-supuestos-que-sostienen-la-equivalencia">3.2 Los supuestos que sostienen la equivalencia<a hidden class="anchor" aria-hidden="true" href="#32-los-supuestos-que-sostienen-la-equivalencia">#</a></h3>
+<p>La discusión de Barro considera cuatro objeciones teóricas principales a la equivalencia ricardiana: vidas finitas, mercados de capital imperfectos, incertidumbre sobre impuestos futuros y rentas, y los efectos distorsionadores de la tributación.</p>
+<p>Cada supuesto es cuestionable:</p>
+<p><strong>Horizonte infinito / altruismo intergeneracional:</strong> Barro asume que los hogares actúan como dinastías con altruismo hacia sus hijos, efectivamente infinitamente vividos. Si los agentes tienen horizonte finito y no se preocupan por las generaciones futuras, la deuda pública redistribuye carga impositiva entre generaciones — los vivos hoy se benefician y las generaciones futuras pagan. Weil (1987) muestra que con nuevas generaciones sin vínculos altruistas hacia los actuales, la equivalencia falla.</p>
+<p><strong>Mercados de capital perfectos:</strong> si los consumidores enfrentan restricciones de liquidez, una rebaja tributaria hoy (financiada con deuda) aumenta su ingreso disponible corriente y eleva el consumo — la equivalencia falla. Los hogares que quisieran endeudarse pero no pueden usan la rebaja como sustituto del crédito privado.</p>
+<p><strong>Impuestos no distorsionadores:</strong> la equivalencia asume impuestos de suma alzada. Con impuestos distorsionadores (sobre ingreso o consumo), el timing importa porque altera los precios relativos trabajo/ocio y consumo presente/futuro.</p>
+<p><strong>Certeza sobre impuestos futuros:</strong> los consumidores deben saber que la deuda hoy implica impuestos mañana. Con incertidumbre sobre quién pagará o cuándo, el efecto riqueza puede ser positivo.</p>
+<h3 id="33-la-evidencia-empírica">3.3 La evidencia empírica<a hidden class="anchor" aria-hidden="true" href="#33-la-evidencia-empírica">#</a></h3>
+<p>La evidencia es mixta y metodológicamente difícil. Los tests más directos buscan si el consumo responde a cambios en déficit fiscales controlando por gasto público. Bernheim (1987) y Carroll et al. encuentran evidencia contra la equivalencia — el consumo responde al ingreso disponible corriente más de lo predicho. Por otro lado, Barro argumenta que la equivalencia ricardiana es una aproximación de primer orden útil, y que la evidencia sobre tasas de interés, consumo, ahorro y déficits de cuenta corriente es en general consistente con el enfoque ricardiano como benchmark.</p>
+<p>El consenso pragmático es que la equivalencia no se cumple exactamente, pero tampoco el multiplicador keynesiano de textbook. Los multiplicadores fiscales empíricos (Ramey, 2011; Blanchard y Leigh, 2013) se estiman entre 0,5 y 1,5 dependiendo del estado del ciclo, el régimen monetario y el tipo de instrumento fiscal — lejos tanto del cero ricardiano como del multiplicador keynesiano sin crowding-out.</p>
+<hr>
+<h2 id="4-el-problema-de-ramsey-impuestos-óptimos">4. El problema de Ramsey: impuestos óptimos<a hidden class="anchor" aria-hidden="true" href="#4-el-problema-de-ramsey-impuestos-óptimos">#</a></h2>
+<h3 id="41-la-pregunta">4.1 La pregunta<a hidden class="anchor" aria-hidden="true" href="#41-la-pregunta">#</a></h3>
+<p>El problema de Ramsey (1927) — formalizado para finanzas públicas por Diamond y Mirrlees (1971) — pregunta: dado que el gobierno debe recaudar una cantidad fija $R$ de impuestos, ¿cómo debe estructurarlos para minimizar la pérdida de bienestar (exceso de carga)?</p>
+<h3 id="42-la-regla-de-ramsey-regla-de-elasticidades-inversas">4.2 La regla de Ramsey (regla de elasticidades inversas)<a hidden class="anchor" aria-hidden="true" href="#42-la-regla-de-ramsey-regla-de-elasticidades-inversas">#</a></h3>
+<p>Con impuestos sobre bienes y mercados perfectamente competitivos, el resultado central es la <strong>regla de elasticidades inversas</strong>: el impuesto óptimo sobre cada bien debe ser inversamente proporcional a su elasticidad-precio de la demanda:</p>
+<p>$$\frac{t_i}{p_i} \propto \frac{1}{|\varepsilon_i|}$$</p>
+<p>Los bienes con demanda inelástica (necesidades básicas, medicamentos) deben gravarse más porque la distorsión que introduce el impuesto es menor — la cantidad demandada cae poco. Los bienes con demanda elástica (bienes de lujo con sustitutos cercanos) deben gravarse menos.</p>
+<p>Una formulación equivalente es la <strong>regla de Ramsey-Boiteux</strong>: el impuesto óptimo reduce la demanda compensada de todos los bienes en la misma proporción. Esto garantiza que la distorsión se distribuye homogéneamente.</p>
+<h3 id="43-implicancias-para-el-impuesto-al-capital">4.3 Implicancias para el impuesto al capital<a hidden class="anchor" aria-hidden="true" href="#43-implicancias-para-el-impuesto-al-capital">#</a></h3>
+<p>Una extensión importante es la pregunta sobre el impuesto óptimo al capital. Chamley (1986) y Judd (1985) demostraron que en el modelo de Ramsey con agentes infinitamente vividos, <strong>la tasa óptima de impuesto al capital es cero en el largo plazo</strong>. La intuición es que un impuesto sobre el capital es equivalente a un impuesto sobre el consumo futuro, y gravar el consumo futuro más que el presente distorsiona la asignación intertemporal sin límite — la distorsión se acumula en el tiempo.</p>
+<p>Barro argumenta que las tasas de impuesto deben suavizarse en el tiempo (<em>tax smoothing</em>), y que los impuestos deben fijarse en función del gasto público permanente antes que el corriente. La deuda pública es el instrumento clave para suavizar impuestos: debe usarse para amortiguar los déficits y superávits resultantes.</p>
+<p>Este resultado de Chamley-Judd fue cuestionado recientemente por Straub y Werning (2020), quienes muestran que bajo supuestos más generales sobre preferencias, el impuesto óptimo al capital puede ser positivo incluso en el largo plazo — el debate está abierto.</p>
+<h3 id="44-tax-smoothing-barro-1979">4.4 Tax smoothing (Barro, 1979)<a hidden class="anchor" aria-hidden="true" href="#44-tax-smoothing-barro-1979">#</a></h3>
+<p>El principio de suavización de impuestos aplica la lógica del ingreso permanente al gobierno. Ante un gasto transitoriamente alto (una guerra, una pandemia), el gobierno no debe subir los impuestos en la misma magnitud del gasto: debe endeudarse y distribuir la carga tributaria en el tiempo. Esto minimiza la distorsión acumulada porque la pérdida de eficiencia de los impuestos es convexa en la tasa — mejor dos períodos con tasa $\bar{t}$ que un período con $2\bar{t}$ y otro con 0.</p>
+<p>La implicancia es que el déficit óptimo en recesiones no es keynesiano (estímulo de demanda) sino de suavización de impuestos: el gasto no cae con el ingreso porque los impuestos tampoco deben caer tanto como el ingreso. El estabilizador automático emerge de la suavización, no del multiplicador.</p>
+<hr>
+<h2 id="5-efectos-macroeconómicos-de-la-política-fiscal">5. Efectos macroeconómicos de la política fiscal<a hidden class="anchor" aria-hidden="true" href="#5-efectos-macroeconómicos-de-la-política-fiscal">#</a></h2>
+<h3 id="51-el-modelo-neoclásico-básico">5.1 El modelo neoclásico básico<a hidden class="anchor" aria-hidden="true" href="#51-el-modelo-neoclásico-básico">#</a></h3>
+<p>En el modelo neoclásico (sin rigideces nominales), un aumento del gasto público $G$ financiado con impuestos de suma alzada tiene los siguientes efectos:</p>
+<ul>
+<li><strong>Efecto riqueza negativo:</strong> los hogares son más pobres en valor presente → reducen consumo y aumentan oferta laboral.</li>
+<li><strong>Demanda de trabajo aumenta:</strong> el gasto público eleva el producto y la demanda de trabajo.</li>
+<li><strong>El resultado neto:</strong> el producto sube menos que $\Delta G$ (multiplicador &lt; 1), el consumo cae, el empleo y el salario real dependen de las elasticidades.</li>
+</ul>
+<p>Financiado con deuda bajo equivalencia ricardiana: mismo resultado (el consumo cae anticipando impuestos futuros). Sin equivalencia ricardiana: el efecto riqueza es menor → el consumo cae menos → el multiplicador puede ser mayor que 1.</p>
+<h3 id="52-el-multiplicador-fiscal-qué-dice-la-evidencia">5.2 El multiplicador fiscal: qué dice la evidencia<a hidden class="anchor" aria-hidden="true" href="#52-el-multiplicador-fiscal-qué-dice-la-evidencia">#</a></h3>
+<p>La magnitud del multiplicador fiscal es una de las preguntas más debatidas en macroeconomía aplicada. Los puntos de acuerdo son:</p>
+<ul>
+<li>El multiplicador es mayor en recesiones que en expansiones (Auerbach y Gorodnichenko, 2012).</li>
+<li>El multiplicador es mayor cuando la política monetaria no contrarresta el estímulo (zero lower bound).</li>
+<li>El multiplicador del gasto es mayor que el de rebajas tributarias para hogares de alto ingreso, y menor que el de transferencias a hogares con restricciones de liquidez.</li>
+<li>El tipo de gasto importa: inversión pública tiene multiplicadores mayores que gasto corriente en el largo plazo.</li>
+</ul>
+<p>Blanchard y Leigh (2013) documentaron que el FMI sistematicamente subestimó los multiplicadores durante la austeridad fiscal post-2010 en Europa, generando ajustes más recesivos de lo proyectado — un caso paradigmático de las consecuencias de asumir multiplicadores bajos en contextos de ZLB.</p>
+<hr>
+<h2 id="6-síntesis">6. Síntesis<a hidden class="anchor" aria-hidden="true" href="#6-síntesis">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Pregunta</th>
+          <th>Modelo neoclásico</th>
+          <th>Keynesiano</th>
+          <th>Evidencia</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>¿Importa el timing de impuestos?</td>
+          <td>No (equivalencia ricardiana)</td>
+          <td>Sí (restricciones de liquidez)</td>
+          <td>Parcialmente — depende del agente</td>
+      </tr>
+      <tr>
+          <td>¿Cuál es el multiplicador del gasto?</td>
+          <td>&lt; 1 (crowding out)</td>
+          <td>&gt; 1</td>
+          <td>0.5–1.5 según contexto</td>
+      </tr>
+      <tr>
+          <td>¿Impuesto óptimo al capital?</td>
+          <td>0 en largo plazo (Chamley-Judd)</td>
+          <td>Positivo (redistribución)</td>
+          <td>Debate abierto</td>
+      </tr>
+      <tr>
+          <td>¿Cómo manejar deuda transitoria?</td>
+          <td>Tax smoothing (endeudarse)</td>
+          <td>Estímulo fiscal</td>
+          <td>Consistentes en recesiones profundas</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="referencias">Referencias<a hidden class="anchor" aria-hidden="true" href="#referencias">#</a></h2>
+<ul>
+<li>Barro, R.J. (1974). <em>Are Government Bonds Net Wealth?</em> JPE.</li>
+<li>Barro, R.J. (1979). <em>On the Determination of the Public Debt</em>. JPE.</li>
+<li>Barro, R.J. (1989). <em>The Ricardian Approach to Budget Deficits</em>. JEP.</li>
+<li>Ramsey, F.P. (1927). <em>A Contribution to the Theory of Taxation</em>. EJ.</li>
+<li>Diamond, P. &amp; Mirrlees, J. (1971). <em>Optimal Taxation and Public Production</em>. AER.</li>
+<li>Chamley, C. (1986). <em>Optimal Taxation of Capital Income in General Equilibrium</em>. Econometrica.</li>
+<li>Blanchard, O. (2019). <em>Public Debt and Low Interest Rates</em>. AER.</li>
+<li>Blanchard, O. &amp; Leigh, D. (2013). <em>Growth Forecast Errors and Fiscal Multipliers</em>. AER.</li>
+<li>Auerbach, A. &amp; Gorodnichenko, Y. (2012). <em>Measuring the Output Responses to Fiscal Policy</em>. AEJ: Economic Policy.</li>
+<li>Straub, L. &amp; Werning, I. (2020). <em>Positive Long-Run Capital Taxation: Chamley-Judd Revisited</em>. AER.</li>
+<li>De Gregorio, J. (2007). <em>Macroeconomía: Teoría y Políticas</em>. Cap. 12.</li>
+</ul>
+
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:4459/tags/macroeconom%C3%ADa/">Macroeconomía</a></li>
+      <li><a href="http://localhost:4459/tags/pol%C3%ADtica-fiscal/">Política Fiscal</a></li>
+      <li><a href="http://localhost:4459/tags/equivalencia-ricardiana/">Equivalencia Ricardiana</a></li>
+      <li><a href="http://localhost:4459/tags/sostenibilidad-fiscal/">Sostenibilidad Fiscal</a></li>
+      <li><a href="http://localhost:4459/tags/impuestos-%C3%B3ptimos/">Impuestos Óptimos</a></li>
+      <li><a href="http://localhost:4459/tags/eae2210/">EAE2210</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="http://localhost:4459/grado/micro/09_monopolio/">
