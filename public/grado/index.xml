@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Agustín Sandoval Tapia</title>
+    <title>Apuntes para el Examen de Grado on Agustín Sandoval Tapia</title>
     <link>http://localhost:7277/grado/</link>
-    <description>Recent content on Agustín Sandoval Tapia</description>
+    <description>Recent content in Apuntes para el Examen de Grado on Agustín Sandoval Tapia</description>
     <generator>Hugo</generator>
     <language>es</language>
     <atom:link href="http://localhost:7277/grado/index.xml" rel="self" type="application/rss+xml" />
