@@ -1,0 +1,82 @@
+{{- /* Footer custom content area start */ -}}
+<script>
+(() => {
+  const mobileQuery = window.matchMedia("(max-width: 768px) and (pointer: coarse)");
+  if (!mobileQuery.matches) return;
+
+  const menu = document.getElementById("menu");
+  if (!menu) return;
+
+  const links = Array.from(menu.querySelectorAll("a[href]"))
+    .map((link) => {
+      const url = new URL(link.href, window.location.href);
+      const path = url.pathname.endsWith("/") ? url.pathname : `${url.pathname}/`;
+      return { link, path, href: url.href };
+    })
+    .filter((item) => item.path !== "/");
+
+  if (links.length < 2) return;
+
+  const currentPath = window.location.pathname.endsWith("/")
+    ? window.location.pathname
+    : `${window.location.pathname}/`;
+
+  let currentIndex = links.reduce((bestIndex, item, index) => {
+    const best = bestIndex >= 0 ? links[bestIndex] : null;
+    if (currentPath.startsWith(item.path) && (!best || item.path.length > best.path.length)) {
+      return index;
+    }
+    return bestIndex;
+  }, -1);
+
+  if (currentIndex < 0) return;
+
+  let startX = 0;
+  let startY = 0;
+  let startTarget = null;
+
+  const ignoredSelector = [
+    "a",
+    "button",
+    "input",
+    "textarea",
+    "select",
+    "#menu",
+    "pre",
+    "code",
+    "table",
+    ".highlight"
+  ].join(",");
+
+  document.addEventListener("touchstart", (event) => {
+    if (event.touches.length !== 1) return;
+    startTarget = event.target;
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener("touchend", (event) => {
+    if (!startTarget || event.changedTouches.length !== 1) return;
+    if (startTarget.closest(ignoredSelector)) return;
+    if (window.getSelection && window.getSelection().toString()) return;
+
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+    const deltaX = endX - startX;
+    const deltaY = endY - startY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const threshold = Math.min(110, Math.max(70, window.innerWidth * 0.18));
+
+    startTarget = null;
+
+    if (absX < threshold || absX < absY * 1.5) return;
+
+    const nextIndex = deltaX < 0 ? currentIndex + 1 : currentIndex - 1;
+    if (nextIndex < 0 || nextIndex >= links.length) return;
+
+    window.location.href = links[nextIndex].href;
+  }, { passive: true });
+})();
+</script>
+{{- /* Footer custom content area end */ -}}
