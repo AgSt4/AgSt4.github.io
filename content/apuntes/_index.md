@@ -18,6 +18,9 @@ Inversión sostenible, medición ESG, marcos regulatorios, evidencia empírica. 
 ### [Economía Política](/apuntes/economia-politica/)
 Instituciones, poder, incentivos políticos y su interacción con los mercados. Desde economía política clásica hasta literatura reciente sobre estado y desarrollo.
 
+### [Economía Social de Mercado](/apuntes/social-market-economy/)
+Economía social cristiana, ordoliberalismo, competencia, regulación, subsidiariedad, solidaridad y diseño de políticas públicas con foco económico e institucional.
+
 ### [Desarrollo Económico](/apuntes/desarrollo-economico/)
 Crecimiento, desigualdad, historia económica, rol del estado. Preguntas de largo plazo sobre por qué algunos países prosperan y otros no.
 
