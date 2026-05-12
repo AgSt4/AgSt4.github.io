@@ -11,6 +11,16 @@ description: "Modelo neoclásico, regla de oro, crecimiento endógeno y contabil
 
 ---
 
+## 0. ¿Qué es el crecimiento económico?
+
+El **crecimiento económico** es el aumento sostenido del producto real (PIB) de una economía a lo largo del tiempo. En el contexto de este curso (**Macroeconomía I — Economía Real Cerrada**), nos enfocamos en el estudio del largo plazo: qué determina que la capacidad productiva de un país se expanda y permita mejorar los niveles de vida de la población.
+
+A diferencia del análisis de corto plazo (fluctuaciones o ciclos económicos), donde el foco está en la demanda agregada y el uso de la capacidad instalada, la teoría del crecimiento estudia la **oferta agregada**: cómo la acumulación de factores (capital y trabajo) y las mejoras en la eficiencia (tecnología) desplazan la frontera de producción.
+
+Este bloque es fundamental porque pequeñas diferencias en las tasas de crecimiento anual, sostenidas por décadas, generan disparidades masivas en el bienestar material de los países (el efecto del interés compuesto).
+
+---
+
 ## 1. Regularidades empíricas del crecimiento
 
 Antes de modelar, conviene anclar los modelos en los hechos estilizados que cualquier teoría del crecimiento debe poder explicar. Kaldor (1961) documentó las siguientes regularidades para economías desarrolladas:
