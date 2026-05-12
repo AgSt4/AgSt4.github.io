@@ -36,9 +36,9 @@ El sexto hecho es el más relevante para la pregunta de fondo de cualquier model
 
 ## 2. El modelo neoclásico de Solow-Swan
 
-### 2.1 Supuestos y estructura
+Más que un recurso metodológico, el modelo de Solow y Swan (1956) fundó la teoría del crecimiento como subdisciplina. Fue el primer intento exitoso de reducir la acumulación de capital a un esquema matemático que permitiera cuantificar cómo se mueve una economía a largo plazo.
 
-El modelo de Solow (1956) es el punto de partida canónico. Supuestos centrales:
+### 2.1 Supuestos y estructura
 
 - Economía cerrada, un bien, competencia perfecta.
 - Función de producción $Y = F(K, AL)$ con retornos constantes a escala (RCS): $F(\lambda K, \lambda AL) = \lambda Y$.
