@@ -11,28 +11,26 @@ description: "Modelo neoclásico, regla de oro, crecimiento endógeno y contabil
 
 ---
 
-## 0. ¿Qué es el crecimiento económico?
+## ¿Qué es el crecimiento económico?
 
-El **crecimiento económico** es el aumento sostenido del producto real (PIB) de una economía a lo largo del tiempo. En el contexto de este curso (**Macroeconomía I — Economía Real Cerrada**), nos enfocamos en el estudio del largo plazo: qué determina que la capacidad productiva de un país se expanda y permita mejorar los niveles de vida de la población.
+El **crecimiento económico** es el aumento sostenido del producto real (PIB) de una economía a lo largo del tiempo. En el contexto de este curso (**Macroeconomía I — Economía Real Cerrada**), nos enfocamos en el estudio del largo plazo: qué determinará que la capacidad productiva de un país se expanda y permita mejorar los niveles de vida de la población.
 
-A diferencia del análisis de corto plazo (fluctuaciones o ciclos económicos), donde el foco está en la demanda agregada y el uso de la capacidad instalada, la teoría del crecimiento estudia la **oferta agregada**: cómo la acumulación de factores (capital y trabajo) y las mejoras en la eficiencia (tecnología) desplazan la frontera de producción.
-
-Este bloque es fundamental porque pequeñas diferencias en las tasas de crecimiento anual, sostenidas por décadas, generan disparidades masivas en el bienestar material de los países (el efecto del interés compuesto).
+A diferencia del análisis de corto plazo (como fluctuaciones o ciclos económicos), donde el foco está en la demanda agregada y el uso de la capacidad instalada, la teoría del crecimiento intenta estudiar la **oferta agregada**: cómo la acumulación de factores (capital y trabajo) y las mejoras en la eficiencia (tecnología) desplazan la frontera de producción. Además, como extensión también existen modelos que buscan drivers endógenos para el crecimiento.
 
 ---
 
 ## 1. Regularidades empíricas del crecimiento
 
-Antes de modelar, conviene anclar los modelos en los hechos estilizados que cualquier teoría del crecimiento debe poder explicar. Kaldor (1961) documentó las siguientes regularidades para economías desarrolladas:
+Para estudiar crecimiento económico, conviene anclar los modelos en los hechos estilizados descritos por Kaldor (1961) y sobre los que se ha desarrollado gran parte de esta subdisciplina:
 
-1. El producto per cápita crece a una tasa aproximadamente constante en el largo plazo.
-2. El stock de capital per cápita crece a una tasa aproximadamente constante.
-3. La tasa de retorno al capital es relativamente estable en el tiempo.
-4. La razón capital/producto es relativamente estable.
-5. Las participaciones del trabajo y capital en el ingreso son aproximadamente constantes.
-6. Existen grandes diferencias en las tasas de crecimiento entre países.
+   1. El producto per cápita crece a una tasa aproximadamente constante en el largo plazo.
+   2. El stock de capital per cápita crece a una tasa aproximadamente constante.
+   3. La tasa de retorno al capital es relativamente estable en el tiempo.
+   4. La razón capital/producto es relativamente estable.
+   5. Las participaciones del trabajo y capital en el ingreso son aproximadamente constantes.
+   6. Existen grandes diferencias en las tasas de crecimiento entre países.
 
-El sexto hecho es el más relevante para la pregunta de fondo: **¿por qué algunos países son ricos y otros pobres, y por qué la brecha persiste?** Los modelos de crecimiento buscan responder esto.
+El sexto hecho es el más relevante para la pregunta de fondo de cualquier modelo aplicado: **¿por qué algunos países son ricos y otros pobres, y por qué la brecha persiste?** Los modelos de crecimiento en general buscan responder el problema central de la divergencia puesto que el crecimiento económico, en general, es un problema de comparación entre los niveles de distintas economías.
 
 ---
 
